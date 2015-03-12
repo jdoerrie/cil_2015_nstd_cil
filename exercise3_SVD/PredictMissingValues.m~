@@ -1,0 +1,31 @@
+function X_pred = PredictMissingValues(X, nil)
+% Predict missing entries in matrix X based on known entries. Missing
+% values in X are denoted by the special constant value nil.
+
+% your collaborative filtering code here!
+X_pred = X;
+for i = 1 : size(X,2)
+    X_mean = 0;
+    count = 0;
+    for j = 1 : size(X,1)
+        if (X_pred(j, i)) ~= nil
+            X_mean = X_mean + X_pred(j, i);
+            count = count + 1;
+        end 
+    end
+    X_mean = X_mean/count;
+    for j = 1 : size(X,1)
+        if (X_pred(j, i)) == nil
+            X_pred(j, i) = X_mean;
+        end 
+    end
+end
+
+[U, D, V] = svd(X_pred, 0);
+U = U * sqrt(D);
+V = sqrt(D) * V;
+V = V.';
+
+for i = 1 : size(X,1)
+    for j
+end
