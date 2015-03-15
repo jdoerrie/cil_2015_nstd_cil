@@ -17,7 +17,7 @@ L = load(filename);
 X = L.X;
 
 % Split intro training and testing index sets
-idx = find(X ~= nil); 
+idx = find(X ~= nil);
 n = numel(idx);
 
 n_trn = round(n*prc_trn);
