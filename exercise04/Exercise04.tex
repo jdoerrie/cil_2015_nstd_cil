@@ -1,0 +1,87 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb,amsthm}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{CIL Series 3}
+\author{The Nonstandard Deviations}
+\begin{document}
+  \maketitle
+
+  \section*{Problem 1} % (fold)
+  \label{sec:problem_1}
+    \begin{enumerate}
+      \item $P(G) = P[\{BG, GB, GG\}] = 3/4$
+      \item $P(GG) = P[\{GG\}] = 1/4$
+      \item $P(GG|GX) = P[\{GG\}] / P[\{GB, GG\}] = 1/2$
+      \item $P(GG|G) = P[\{GG\}] / P[\{BG, GB, GG\}] = 1/3$
+      \item $P(GG|G) = P[\{GG\}] / P[\{BG, GB, GG\}] = 1/3$
+    \end{enumerate}
+  % section problem_1 (end)
+
+  \section*{Problem 2} % (fold)
+  \label{sec:problem_2}
+    \begin{itemize}
+      \item $p(\text{inf}) = (1/100)$
+      \item $p(\text{pos} | \text{inf}) = (99/100)$
+      \item $p(\text{neg} | \text{not inf}) = (99/100)$
+      \item $p(\text{inf} | \text{pos}) =
+             p(\text{pos} | \text{inf}) * p(\text{inf}) / p(\text{pos})$
+      \item $p(\text{pos}) = p(\text{pos}, \text{inf}) + p(\text{pos}, \text{not inf})
+           = p(\text{pos} | \text{inf}) * p(\text{inf}) + p(\text{pos} | \text{not inf}) * p(\text{not inf})
+           = (99/100) * (1/100) + (1/100) * (99/100) = (99/5000)$
+      \item $p(\text{inf} | \text{pos}) =
+             p(\text{pos} | \text{inf}) * p(\text{inf}) / p(\text{pos}) =
+             (99/100) * (1/100) / (99/5000) = 1/2$
+    \end{itemize}
+  % section problem_2 (end)
+
+  \section*{Problem 3} % (fold)
+  \label{sec:problem_3}
+  \begin{enumerate}
+    \item \begin{itemize}
+      \item Optimal Assignment:
+        Consider $\mathbf{z}_n$ for arbitrary $n$. By the hard assignment
+        constraint we have $\sum_{k=1}^K z_{k,n} = 1$ with $z_{k,n} \in \{0,1\}$.
+        Line 2 dictates that $z_{k,n} = 1$ if $k = k^*$ where
+        $k^* = \arg\min_{k \in \{1,\dots,K\}} \norm{\mathbf{x}_n - \mathbf{u}_k}_2^2$.
+        Now consider the case where $z_{k',n} = 1$ and $k'$ does not minimize
+        $\norm{\mathbf{x}_n - \mathbf{u}_k}_2^2$. Then $J_n = \sum_{k=1}^K z_{k,n}
+        \norm{\mathbf{x}_n - \mathbf{u}_k}_2^2 = \norm{\mathbf{x}_n - \mathbf{u}_{k'}}_2^2
+        > \norm{\mathbf{x}_n - \mathbf{u}_{k^*}}_2^2$. Hence this alternate assignment
+        can not be optimal.
+      \item Optimal Centroids:
+        Lecture slide 12/38 already shows that
+        \[
+            \nabla_{\mathbf{U}} J(\mathbf{U}, \mathbf{Z}) \overset{!}{=} 0
+            \implies \mathbf{u}_k^*(\mathbf{Z}) = \frac{\sum_{n=1}^N z_{k,n}\mathbf{x}_n}
+            {\sum_{n=1}^N z_{k,n}}\text{, if} \sum_{n=1}^{N} z_{k,n} > 0.
+        \]
+
+        Since $J(\mathbf{U}, \mathbf{Z})$ is convex when $\mathbf{Z}$ is fixed,
+        this shows that the given centroids are optimal.
+    \end{itemize}
+    \item \begin{proof}
+    \begin{align*}
+      \norm{\mathbf{X-UZ}}_F^2
+       &= \sum_{d=1}^{D} \sum_{n=1}^{N} (x_{dn} - \mathbf{UZ}_{dn})^2
+       &\text{(definition of matrix multiplication)}\\
+       &= \sum_{d=1}^{D} \sum_{n=1}^{N} (x_{dn} - \sum_{k=1}^K u_{dk}z_{kn})^2
+       &\text{(definition of Frobenious norm)}\\
+       &= \sum_{d=1}^{D} \sum_{n=1}^{N} (x_{dn} - u_{dk^*})^2
+       &(z_{k^*n} = 1, z_{kn} = 0\text{ for }k \neq k^*) \\
+       &= \sum_{d=1}^{D} \sum_{n=1}^{N} \sum_{k=1}^{K} z_{kn} (x_{dn} - u_{dk})^2
+       &(z_{k^*n} = 1, z_{kn} = 0\text{ for }k \neq k^*) \\
+       &= \sum_{n=1}^{N} \sum_{k=1}^{K} \sum_{d=1}^{D} z_{kn} (x_{dn} - u_{dk})^2
+       &\text{(reordering of summations)}\\
+       &= \sum_{n=1}^{N} \sum_{k=1}^{K} z_{kn} \sum_{d=1}^{D} (x_{dn} - u_{dk})^2
+       &\text{(distributivity)}\\
+       &= \sum_{n=1}^{N} \sum_{k=1}^{K} z_{kn} \norm{\mathbf{x}_n - \mathbf{u}_k}^2
+       &\text{(definition of vector 2-norm)}\\
+    \end{align*}
+    \end{proof}
+
+  \end{enumerate}
+
+  % section problem_3 (end)
+\end{document}
