@@ -1,4 +1,4 @@
-function X_pred = PredictMissingValues(X, nil)
+function X_pred = PredictMissingValues(X, nil, K)
 % Predict missing entries in matrix X based on known entries. Missing
 % values in X are denoted by the special constant value nil.
 
@@ -22,10 +22,16 @@ means = bsxfun(@plus, alpha, beta) + mu;
 X_pred = X;
 X_pred(nils) = means(nils);
 
-K = 5;
+% K = 5;
 clusters = kmeans(X_pred, K);
 means = zeros(K, 100);
 for k = 1:K
     means(k,:) = nanmean(X(clusters == k, :));
 end
 
+[rows, cols] = find(nils);
+num_nans = size(rows);
+
+for n = 1:num_nans
+    X_pred(rows(n), cols(n)) = means(clusters(rows(n)), cols(n));
+end
