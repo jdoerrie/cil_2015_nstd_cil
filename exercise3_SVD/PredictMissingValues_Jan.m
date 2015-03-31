@@ -18,6 +18,8 @@ Y = bsxfun(@minus, Y, beta);
 alpha = nanmean(Y, 2);
 
 means = bsxfun(@plus, alpha, beta) + mu;
+% means might contain NaNs if a full row or column is missing
+means(isnan(means)) = 0;
 
 % fill in nils with means
 X_pred = X;
@@ -25,7 +27,8 @@ X_pred(nils) = means(nils);
 
 % truncated SVD
 [U, D, V] = svd(X_pred, 0);
-k = 8;
+% best k for the new Data.mat
+k = 19;
 res = U(:,1:k) * D(1:k,1:k) * V(:,1:k)';
 
 % set nils to predicted values
