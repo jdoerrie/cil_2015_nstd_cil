@@ -1,0 +1,4 @@
+PCA (Principal Component Analysis) -> Dimension Reduction
+SVD (Singular Value Decomposition) -> Compression
+K-Means Clustering -> Compression, Collaborative Filtering
+GMM -> More general version of K-Means
