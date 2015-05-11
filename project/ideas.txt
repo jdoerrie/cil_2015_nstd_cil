@@ -1,5 +1,8 @@
-- SVD
-- biases
-- K-Means/ / Mixture Models
-- Nearest Neighbor
-- User/item-based CF
+- SVD - Jan
+- biases - Jan
+- K-Means / Mixture Models - Dina / Alvaro
+- Nearest Neighbor - Dina
+- User/item-based CF - Jan
+- Personality Diagnosis
+- pLSM
+- Temporal Dynamics
