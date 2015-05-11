@@ -1,0 +1,5 @@
+- SVD
+- biases
+- K-Means/ / Mixture Models
+- Nearest Neighbor
+- User/item-based CF
