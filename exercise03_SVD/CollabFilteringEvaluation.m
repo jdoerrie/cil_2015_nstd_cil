@@ -10,7 +10,7 @@ rand('seed', 1);  % fix random seed for reproducibility
 % Constants
 filename = 'Data.mat';
 prc_trn = 0.5;  % percentage of training data
-nil = 99;  % missing value indicator
+nil = 0;  % missing value indicator
 
 % Load data
 L = load(filename);
