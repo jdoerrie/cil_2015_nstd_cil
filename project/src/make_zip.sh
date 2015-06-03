@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-set -ex
+set -x
 shopt -s extglob
 ZIP_FILE=code.zip
 rm $ZIP_FILE
