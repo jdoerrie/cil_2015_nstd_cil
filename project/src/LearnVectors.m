@@ -1,25 +1,15 @@
-function [P, Q, mu, bu, bi] = LearnVectors(X, nil, K, gamma, lambda)
+function [P, Q, mu, bu, bi] = LearnVectors(X, K, gamma, lambda)
 % set default values of parameters
 if nargin < 2
-  nil = 0;
-end
-
-if nargin < 3
   K = 8;
 end
 
-if nargin < 4
+if nargin < 3
   gamma = 0.001;
 end
 
-if nargin < 5
+if nargin < 4
   lambda = 0.5;
-end
-
-% set nil values to NaN
-if ~isnan(nil)
-  nils = (X == nil);
-  X(nils) = NaN;
 end
 
 % dimensions of X

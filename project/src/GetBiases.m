@@ -1,23 +1,14 @@
-function [mu, b_u, b_i] = GetBiases(X, nil, l_1, l_2)
+function [mu, b_u, b_i] = GetBiases(X, l_1, l_2)
 % set default value of nil to 0
 origX = X;
-if nargin < 2
-  nil = 0;
-end
 
 % set default values of l_1 and l_2 to eps
-if nargin < 3
+if nargin < 2
   l_1 = eps;
 end
 
-if nargin < 4
+if nargin < 3
   l_2 = eps;
-end
-
-% set nil values to NaN
-if ~isnan(nil)
-  nils = (X == nil);
-  X(nils) = NaN;
 end
 
 mu = reg_nanmean(X(:));
