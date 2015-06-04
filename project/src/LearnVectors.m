@@ -1,4 +1,4 @@
-function [P, Q] = LearnVectors(X, nil, K, gamma, lambda)
+function [P, Q, mu, bu, bi] = LearnVectors(X, nil, K, gamma, lambda)
 % set default values of parameters
 if nargin < 2
   nil = 0;
@@ -35,6 +35,10 @@ numEntries = length(I);
 P = rand(N, K);
 Q = rand(M, K);
 
+bu = zeros(N, 1);
+bi = zeros(M, 1);
+mu = reg_nanmean(X(:));
+
 % number of iterations of SGD
 numIter = 1e7;
 numDbgIter = 1e6;
@@ -49,9 +53,11 @@ for iter=0:numIter
   p_u = P(u,:);
   q_i = Q(i,:);
 
-  e_ui = r_ui - q_i * p_u';
+  e_ui = r_ui - mu - bu(u) - bi(i) - q_i * p_u';
   P(u,:) = p_u + gamma * (e_ui * q_i - lambda * p_u);
   Q(i,:) = q_i + gamma * (e_ui * p_u - lambda * q_i);
+  bu(u) = bu(u) + gamma * (e_ui - lambda * bu(u));
+  bi(i) = bi(i) + gamma * (e_ui - lambda * bi(i));
 
   % compute current loss for given user/item combination
   % loss = X(u,i) - Q(u) - b_i(i)
@@ -62,7 +68,7 @@ for iter=0:numIter
 
   if mod(iter, numDbgIter) == 0
     fprintf('iter: %d\n', iter);
-    loss_mat = X - P*Q';
+    loss_mat = X - mu - bsxfun(@plus, bu, bi') - P*Q';
     fprintf('sum loss: %f\n', nansum(loss_mat(:).^2));
   end
 end

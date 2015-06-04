@@ -44,4 +44,3 @@ for k=1:20
   disp(['Root of Mean-squared error: ' num2str(mse)]);
 end
 
-clear mu b_u b_i;

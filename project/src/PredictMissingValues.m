@@ -19,11 +19,13 @@ else
   nils = (X == nil);
   X(nils) = NaN;
 end
-[P,Q] = LearnVectors(X, nil, k, 0.01, 0);
-X_pred = P*Q';
+[P, Q, mu, bu, bi] = LearnVectors(X, nil, k, 0.01, 0);
+X_pred = mu + bsxfun(@plus, bu, bi') + P*Q';
+X_pred(~nils) = X(~nils);
+X_pred = min(max(X_pred, 1), 5);
+
 % try to approximate missing b_ui by mu + b_u + b_i
 % idea taken from "The BellKor Solution to the Netflix Grand Prize"
-% persistent mu b_u b_i;
 % if isempty(mu)
 %   [mu, b_u, b_i] = GetBiases(X, NaN);
 % end
