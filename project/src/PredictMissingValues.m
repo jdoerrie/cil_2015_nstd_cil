@@ -22,7 +22,9 @@ if nargin < 3
 end
 
 X_pred = X;
-X_pred(nils) = nanmean(X(:));
+[mu, b_u, b_i] = GetBiases(X);
+means = bsxfun(@plus, b_u, b_i) + mu;
+X_pred(nils) = means(nils);
 X_pred = TruncatedSVD(X_pred, k);
 % [P, Q, mu, bu, bi] = LearnVectors(X, nil, k, 0.01, 0);
 % X_pred = mu + bsxfun(@plus, bu, bi') + P*Q';

@@ -14,10 +14,10 @@ end
 mu = reg_nanmean(X(:));
 X = X - mu;
 
-% b_i = reg_nanmean(X, 1, l_1);
-% X = bsxfun(@minus, X, b_i);
-% b_u = reg_nanmean(X, 2, l_2);
-[b_u, b_i] = GetBiasesSGD(X, 0);
+b_i = reg_nanmean(X, 1, l_1);
+X = bsxfun(@minus, X, b_i);
+b_u = reg_nanmean(X, 2, l_2);
+% [b_u, b_i] = GetBiasesSGD(X, 0);
 % loss_mat = origX - bsxfun(@plus, b_u, b_i) - mu;
 % fprintf('sum loss: %f\n', nansum(loss_mat(:).^2));
 end
