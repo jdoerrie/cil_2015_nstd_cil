@@ -48,7 +48,7 @@ while 1
     r_ui = X(u,i);
     p_u = P(u,:);
     q_i = Q(i,:);
-    r_hat = bu(u) + bi(i) + p_u' * q_i;
+    r_hat = bu(u) + bi(i) + p_u * q_i';
 
     e_ui = r_ui - r_hat; % - mu - bu(u) - bi(i)
     P(u,:) = p_u + gamma * (e_ui * q_i - lambda_1 * p_u);
