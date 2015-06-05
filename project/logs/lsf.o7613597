@@ -1,0 +1,56 @@
+Sender: LSF System <lsfadmin@e2109>
+Subject: Job 7613597: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler03> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2109>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun  4 11:29:24 2015
+Results reported on Thu Jun  4 11:29:33 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               6.72 sec.
+    Max Memory :             762 MB
+    Average Memory :         83.00 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           262.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+iter: 1
+sum loss: 693006.774788
+{Undefined function 'b' for input arguments of type 'double'.
+
+Error in LearnVectors (line 71)
+  reg_term = sum(P(:).^2) + sum(Q(:).^2) + sum(bu(:).^2) + sum(b(i).^2);
+
+Error in PredictMissingValues (line 22)
+[P, Q, mu, bu, bi] = LearnVectors(X, nil, k, 0.01, 0);
+
+Error in CollabFilteringEvaluation (line 38)
+  X_pred = PredictMissingValues(X_trn, nil, k);
+} 
+>> 
