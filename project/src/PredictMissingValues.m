@@ -21,16 +21,29 @@ if nargin < 3
   k = 6;
 end
 
-[P, Q, mu, bu, bi] = LearnVectors(X, k);
-X_pred = P*Q' + bsxfun(@plus, bu, bi');
+lambda = 1e-3;
+for i=1:20
+  [mu, bu, bi] = LearnBiases(X, lambda);
+  BaseLine = mu + bsxfun(@plus, bu, bi');
+  fprintf('lambda: %f\n', lambda);
+  for k=1:20
+    X_pred = X - BaseLine;
+    X_pred(nils) = 0;
+    X_pred = TruncatedSVD(X_pred, k);
+    X_pred = X_pred + BaseLine;
+    X_pred = min(max(X_pred, 1), 5);
+    fprintf('k = %d; err = %f\n', k, RMSE(X_pred));
+  end
+  lambda = lambda * 2;
+end
+% [P, Q, mu, bu, bi] = LearnVectors(X, k);
+% X_pred = P*Q' + bsxfun(@plus, bu, bi');
 % [mu, b_u, b_i] = GetBiases(X);
 % means = bsxfun(@plus, b_u, b_i) + mu;
 % X_pred(nils) = means(nils);
-% X_pred = TruncatedSVD(X_pred, k);
 % [P, Q, mu, bu, bi] = LearnVectors(X, nil, k, 0.01, 0);
 % X_pred = mu + bsxfun(@plus, bu, bi') + P*Q';
 % X_pred(~nils) = X(~nils);
-X_pred = min(max(X_pred, 1), 5);
 
 % try to approximate missing b_ui by mu + b_u + b_i
 % idea taken from "The BellKor Solution to the Netflix Grand Prize"

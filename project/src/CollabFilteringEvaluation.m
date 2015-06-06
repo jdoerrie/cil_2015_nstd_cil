@@ -35,18 +35,18 @@ X_tst = ones(size(X))*nil;
 X_tst(idx_tst) = X(idx_tst);  % add known training values
 
 % Predict the missing values here!
+X_pred = PredictMissingValues(X_trn, nil, k);
 nils = X_trn == nil;
-for k=2:20
-  X_pred = PredictMissingValues(X_trn, nil, k);
-    % X_pred = X_trn;
-    % X_pred(nils) = NaN;
-    % X_pred(nils) = nanmean(X_pred(:));
+% for k=6:8
+%     % X_pred = X_trn;
+%     % X_pred(nils) = NaN;
+%     % X_pred(nils) = nanmean(X_pred(:));
 
-  % Compute MSE
-  mse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2));  % error on known test values
+%   % Compute MSE
+%   mse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2));  % error on known test values
 
-  fprintf('simple RSVD, 20 iter, r = 0.001, l = 0.02, K = %d; %f; -\n', k, mse);
-  % fprintf('RMSE: %f\n', mse);
-  %disp(['Root of Mean-squared error: ' num2str(mse)]);
-end
+%   fprintf('simple RSVD, 20 iter, r = 0.001, l = 0.02, K = %d; %f; -\n', k, mse);
+%   % fprintf('RMSE: %f\n', mse);
+%   %disp(['Root of Mean-squared error: ' num2str(mse)]);
+% end
 
