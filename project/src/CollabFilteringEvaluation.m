@@ -8,7 +8,7 @@
 rand('seed', 1);  % fix random seed for reproducibility
 
 % Constants
-filename = 'data/Data.mat';
+filename = '../data/Data.mat';
 prc_trn = 0.5;  % percentage of training data
 nil = 0;  % missing value indicator
 
