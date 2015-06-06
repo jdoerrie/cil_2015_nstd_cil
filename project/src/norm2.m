@@ -1,3 +1,3 @@
 function n = norm2(X)
-  n = sum(X(:).^2, 'omitnan');
+  n = nansum(X(:).^2);
 end

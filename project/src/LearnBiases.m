@@ -4,7 +4,7 @@ if nargin < 2
   lambda = 0.05;
 end
 
-mu = mean(X(:), 'omitnan');
+mu = nanmean(X(:));
 X = X - mu;
 
 [b_u, b_i] = LearnBiasesSGD(X, lambda);

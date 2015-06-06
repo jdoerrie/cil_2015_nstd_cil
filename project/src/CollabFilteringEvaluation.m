@@ -35,7 +35,7 @@ X_tst = ones(size(X))*nil;
 X_tst(idx_tst) = X(idx_tst);  % add known training values
 
 % Predict the missing values here!
-X_pred = PredictMissingValues(X_trn, nil, k);
+X_pred = PredictMissingValues(X_trn, nil);
 nils = X_trn == nil;
 % for k=6:8
 %     % X_pred = X_trn;
