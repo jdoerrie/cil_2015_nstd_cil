@@ -21,21 +21,30 @@ if nargin < 3
   k = 6;
 end
 
-lambda = 1e-3;
-for i=1:20
-  [mu, bu, bi] = LearnBiases(X, lambda);
-  BaseLine = mu + bsxfun(@plus, bu, bi');
-  fprintf('lambda: %f\n', lambda);
-  for k=1:20
-    X_pred = X - BaseLine;
-    X_pred(nils) = 0;
-    X_pred = TruncatedSVD(X_pred, k);
-    X_pred = X_pred + BaseLine;
-    X_pred = min(max(X_pred, 1), 5);
-    fprintf('k = %d; err = %f\n', k, RMSE(X_pred));
-  end
-  lambda = lambda * 2;
-end
+X_pred = AsymmetricSVD(X, k);
+% lambda = 0.1;
+% % for i=1:20
+%   [mu, bu, bi] = LearnBiases(X, lambda);
+%   BaseLine = mu + bsxfun(@plus, bu, bi');
+%   % fprintf('lambda: %f\n', lambda);
+%   for k=6:8
+%     [P,Q,mu,bu,bi] = LearnVectors(X, k);
+%     X_pred = P*Q' + mu + bsxfun(@plus,bu, bi');
+%     X_pred = X - BaseLine;
+%     X_pred(nils) = 0;
+%     % Item Based Clusters
+%     [IDX, C] = kmeans(X_pred', k);
+%     X_pred(nils) = NaN;
+%     for i=1:k
+%       idx = IDX == i;
+
+%     % X_pred = TruncatedSVD(X_pred, k);
+%     % X_pred = X_pred + BaseLine;
+%     X_pred = min(max(X_pred, 1), 5);
+%     fprintf('k = %d; err = %f\n', k, RMSE(X_pred));
+%   end
+  % lambda = lambda * 2;
+% end
 % [P, Q, mu, bu, bi] = LearnVectors(X, k);
 % X_pred = P*Q' + bsxfun(@plus, bu, bi');
 % [mu, b_u, b_i] = GetBiases(X);

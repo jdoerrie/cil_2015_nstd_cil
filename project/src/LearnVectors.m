@@ -1,4 +1,4 @@
-function [P_best, Q_best, mu, bu_best, bi_best] = LearnVectors(X, K, gamma, lambda_1, lambda_2)
+function [P, Q, mu, bu, bi] = LearnVectors(X, K, gamma, lambda_1, lambda_2)
 % set default values of parameters
 if nargin < 2
   K = 8;
@@ -16,8 +16,11 @@ if nargin < 5
   lambda_2 = 0.05;
 end
 
+[mu, bu, bi] = LearnBiases(X, 0.1);
+BaseLine = mu + bsxfun(@plus, bu, bi');
+X = X - BaseLine;
 % dimensions of X
-[N, M] = size(X);
+[M, N] = size(X);
 
 % I and J are the index vectors corresponding to non-entries entries in X,
 % i.e. X(I(i), J(i)) is not NaN for all i
@@ -26,35 +29,27 @@ end
 % numEntries is the total number of existing entries in the data matrix X
 numEntries = length(I);
 
-P_best = rand(N, K);
-Q_best = rand(M, K);
+P = rand(M, K);
+Q = rand(N, K);
 
-bu_best = zeros(N, 1);
-bi_best = zeros(M, 1);
-mu = reg_nanmean(X(:));
-
-rmse = RMSE(P_best * Q_best');
+rmse = RMSE(P * Q');
 iter = 0;
-while 1
+while true
   iter = iter + 1;
-  P = P_best;
-  Q = Q_best;
-  bu = bu_best;
-  bi = bi_best;
+  p = P;
+  q = Q;
   for idx=1:numEntries
     u = I(idx);
     i = J(idx);
 
     r_ui = X(u,i);
-    p_u = P(u,:);
-    q_i = Q(i,:);
-    r_hat = bu(u) + bi(i) + p_u * q_i';
+    p_u = p(u,:);
+    q_i = q(i,:);
+    r_hat = p_u * q_i';
 
     e_ui = r_ui - r_hat; % - mu - bu(u) - bi(i)
-    P(u,:) = p_u + gamma * (e_ui * q_i - lambda_1 * p_u);
-    Q(i,:) = q_i + gamma * (e_ui * p_u - lambda_1 * q_i);
-    bu(u) = bu(u) + gamma * (e_ui - lambda_2 * (bu(u) + bi(i) - mu));
-    bi(i) = bi(i) + gamma * (e_ui - lambda_2 * (bu(u) + bi(i) - mu));
+    p(u,:) = p_u + gamma * (e_ui * q_i - lambda_1 * p_u);
+    q(i,:) = q_i + gamma * (e_ui * p_u - lambda_1 * q_i);
 
     % compute current loss for given user/item combination
     % loss = X(u,i) - Q(u) - b_i(i)
@@ -65,18 +60,19 @@ while 1
   end
 
   fprintf('iter: %d\n', iter);
-  X_pred = P*Q' + bsxfun(@plus, bu, bi');
+  X_pred = p*q' + BaseLine;
   err = RMSE(X_pred);
   fprintf('loss term: %f\n', err);
   eps = 1e-4;
-  if rmse < err || abs(rmse - err) < eps
+  if rmse < err
     break
-  else
-    P_best = P;
-    Q_best = Q;
-    bu_best = bu;
-    bi_best = bi;
-    rmse = err;
+  end
+  P = p;
+  Q = q;
+  if abs(rmse - err) < eps
+    break;
+  end
+  rmse = err;
   % loss_mat = X - mu - bsxfun(@plus, bu, bi') - P*Q';
   % fprintf('sum loss: %f\n', nansum(loss_mat(:).^2));
   % reg_term = sum(P(:).^2) + sum(Q(:).^2) + sum(bu(:).^2) + sum(b(i).^2);

@@ -1,4 +1,4 @@
-function [mu, b_u, b_i] = ComputeBiases(X, lambda)
+function [mu, b_u, b_i, B] = ComputeBiases(X)
 mu = mean(X(:), 'omitnan');
 X = X - mu;
 
@@ -8,4 +8,6 @@ X = bsxfun(@minus, X, b_i);
 b_i = b_i';
 b_u = mean(X, 2, 'omitnan');
 b_u(isnan(b_u)) = 0;
+
+B = mu + bsxfun(@plus, b_u, b_i');
 end

@@ -1,20 +1,21 @@
-function [mu, b_u, b_i] = LearnBiases(X, lambda)
+function [mu, b_u, b_i, B] = LearnBiases(X, lambda)
 % set default values of lambda
 if nargin < 2
-  lambda = 0.05;
+  lambda = 0.1;
 end
 
+[mu, b_u, b_i] = LearnBiasesSGD(X, lambda);
+B = mu + bsxfun(@plus, b_u, b_i');
+end
+
+function [mu, b_u, b_i] = LearnBiasesSGD(X, lambda)
 mu = nanmean(X(:));
 X = X - mu;
 
-[b_u, b_i] = LearnBiasesSGD(X, lambda);
-end
-
-function [b_u, b_i] = LearnBiasesSGD(X, lambda)
 % Gamma is the learning rate
 gamma = 0.001;
 
-my_eps = 1e0;
+my_eps = 1e2;
 % Learn Biases via Stochastic Gradient Descent.  Idea and notation are inspired
 % by "The BellKor Solution to the Netflix Grand Prize".
 [M, N] = size(X);
