@@ -36,11 +36,19 @@ function X_pred = AsymmetricSVD(X, f)
 
   % initialize return value
   X_pred = mu + bsxfun(@plus, bu, bi');
-  old_err = RMSE(X_pred)
+  old_err = RMSE(X_pred);
+  fprintf('Base RMSE: %f\n', old_err);
+  my_eps = 1e-4;
+  epoch = 0;
 
   while true
     % Iterate over all known ratings
+    epoch = epoch + 1;
     for idx=1 : length(U)
+      if mod(idx, 1e5) == 0
+        fprintf('epoch: %d, iter: %d\n', epoch, idx);
+      end
+
       u = U(idx);            % current user
       i = I(idx);            % current item
       Bu = mu + bu(u) + bi'; % baseline ratings for current user
@@ -74,7 +82,8 @@ function X_pred = AsymmetricSVD(X, f)
 
     % compute predictions
     X_curr = mu + bsxfun(@plus, bu, bi') + p*q';
-    new_err = RMSE(X_curr)
+    new_err = RMSE(X_curr);
+    fprintf('Curr RMSE: %f\n', new_err);
     if old_err < new_err
       break
     end
