@@ -1,0 +1,91 @@
+\documentclass{scrartcl}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\iprod}[1]{\left\langle#1\right\rangle}
+
+\title{CIL Series 7}
+\author{The Nonstandard Deviations}
+\begin{document}
+  \maketitle
+
+  \section{Problem 1 (1D Compression and Orthonormal Basis):} % (fold)
+  \label{sec:problem_1_1d_compression_and_orthonormal_basis_}
+    \begin{proof}
+      Let
+      \[
+        \mathbf{\hat{x}_{-\sigma}} = \mathbf{x} - \mathbf{\hat{x}_\sigma} =
+        \sum_{k = \tilde{K} + 1}^K z_{\sigma(k)} \mathbf{u}_{\sigma(k)},
+      \]
+      then $\norm{\mathbf{\hat{x}_{-\sigma}}}_2^2$ denotes the error term of our
+      approximation.
+
+      \begin{align*}
+        \norm{\mathbf{\hat{x}_{-\sigma}}}_2^2
+          &= \iprod{\mathbf{\hat{x}_{-\sigma}}, \mathbf{\hat{x}_{-\sigma}}}
+          & \qquad\text{rewrite as inner product}\\
+          &= \iprod{
+               \sum_{k=\tilde{K}+1}^K z_{\sigma(k)}\mathbf{u}_{\sigma(k)},
+               \sum_{k=\tilde{K}+1}^K z_{\sigma(k)}\mathbf{u}_{\sigma(k)}
+             }
+          & \qquad\text{definition of $\mathbf{\hat{x}_{-\sigma}}$}\\
+          &= \sum_{n=1}^N
+               \left\{
+                 \left(
+                  \sum_{k=\tilde{K}+1}^K z_{\sigma(k)}u_{\sigma(k),n}
+                 \right)
+                 \left(
+                  \sum_{k=\tilde{K}+1}^K z_{\sigma(k)}u_{\sigma(k),n}
+                 \right)
+               \right\}
+          & \qquad\text{definition of inner product}\\
+          &= \sum_{n=1}^N
+               \left\{
+                  \sum_{k=\tilde{K}+1}^K
+                \left[
+                  z_{\sigma(k)}u_{\sigma(k),n}
+                 \left(
+                  \sum_{l=\tilde{K}+1}^K z_{\sigma(l)}u_{\sigma(l),n}
+                 \right)
+               \right]
+               \right\}
+          & \qquad\text{distributivity}\\
+          &= \sum_{n=1}^N
+               \sum_{k=\tilde{K}+1}^K
+                 \sum_{l=\tilde{K}+1}^K
+                   z_{\sigma(k)}u_{\sigma(k),n} z_{\sigma(l)}u_{\sigma(l),n}
+          & \qquad\text{pull out sum}\\
+          &= \sum_{k=\tilde{K}+1}^K
+               \sum_{l=\tilde{K}+1}^K
+                 \sum_{n=1}^N
+                   z_{\sigma(k)}u_{\sigma(k),n} z_{\sigma(l)}u_{\sigma(l),n}
+          & \qquad\text{reorder sums}\\
+          &= \sum_{k=\tilde{K}+1}^K
+                z_{\sigma(k)}
+               \sum_{l=\tilde{K}+1}^K
+                z_{\sigma(l)}
+                 \sum_{n=1}^N
+                   u_{\sigma(k),n} u_{\sigma(l),n}
+          & \qquad\text{pull out terms}\\
+          &= \sum_{k=\tilde{K}+1}^K
+                z_{\sigma(k)}
+               \sum_{l=\tilde{K}+1}^K
+                z_{\sigma(l)}
+                 \iprod{\mathbf{u}_{\sigma(k)}, \mathbf{u}_{\sigma(l)}}
+          & \qquad\text{definition of inner product}\\
+          &= \sum_{k=\tilde{K}+1}^K
+                z_{\sigma(k)}
+               \sum_{l=\tilde{K}+1}^K
+                z_{\sigma(l)} [k = l]
+          & \qquad\text{orthonormal}\\
+          &= \sum_{k=\tilde{K}+1}^K z_{\sigma(k)}^2
+      \end{align*}
+
+      It follows that in order to minimize the error term we choose the indices
+      of the $\tilde{K}$ largest $z_k$ for our permutation.
+    \end{proof}
+  % section problem_1_1d_compression_and_orthonormal_basis_ (end)
+\end{document}
