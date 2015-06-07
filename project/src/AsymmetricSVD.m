@@ -3,7 +3,7 @@ function X_pred = AsymmetricSVD(X, f)
   % Neighborhood: a Multifaceted Collaborative Filtering Model" Section 4
 
   % Hyperparameters
-  gamma = 0.002; % learning rate
+  gamma = 0.02; % learning rate
   lambda = 0.04; % regularizer term
 
   % Dimensions of the input
