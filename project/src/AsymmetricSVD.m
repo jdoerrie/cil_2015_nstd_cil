@@ -80,7 +80,7 @@ function X_pred = AsymmetricSVD(X, f)
     end
 
     X_pred = X_curr;
-    if abs(old_err - new_err) < my_eps:
+    if abs(old_err - new_err) < my_eps
       break;
     end
 
