@@ -44,6 +44,7 @@ X_tst(idx_tst) = X(idx_tst);  % add known testing values
 X_pred = PredictMissingValues(X_trn, nil);
 
 % Compute MSE on the test set
+me = mean(X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil))
 rmse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2));  % error on known test values
 
 disp(['Root of Mean-squared error on test set: ' num2str(rmse)]);
