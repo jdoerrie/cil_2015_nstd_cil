@@ -1,0 +1,78 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{CIL Series 5}
+\author{The Nonstandard Deviations}
+\begin{document}
+  \maketitle
+
+  \section{Problem 1 (Semi-NMF does $K$-means clustering)} % (fold)
+  \label{sec:_problem_1_semi_nmf_does_k_means_clustering_}
+    \begin{enumerate}
+        \item
+          \begin{proof}
+            $\mathbf{Z}$ being orthogonal implies $\mathbf{ZZ}^T = \mathbf{I}$,
+            or $\mathbf{z}_i \mathbf{z}_j^T = [i = j]$ for rows $i$ and $j$.
+            Assume that there exists a column $c$ with multiple non-zero entries, let
+            $z_{ic}$ and $z_{jc}$ with $i \neq j$ be some of them. Due to the
+            orthogonality constraint we have $\mathbf{z}_i \mathbf{z}_j^T = \sum_{k=1}^K
+            z_{ik}z_{jk} = 0$. However, combining this with the non-negativity
+            constraint this only holds if $z_{ik}z_{jk} = 0 \quad \forall k \in \{1,\dots,K\}$.
+            But we know $z_{ic} \neq 0$ and $z_{jc} \neq 0$, thus $z_{ic}z_{jc} \neq 0$,
+            which is a contradiction. Hence there can be no column with multiple
+            non-zero entries.
+          \end{proof}
+      \end{enumerate}
+  % section _problem_1_semi_nmf_does_k_means_clustering_ (end)
+
+  \section{Problem 1 (Singularities in Gaussian Mixture Models)} % (fold)
+  \label{sec:problem_1_singularities_in_gaussian_mixture_models_}
+    \begin{enumerate}
+      \item \begin{align*}
+        p(\bm{X} | \bm{\pi}, \bm{\mu}, \bm{\Sigma}) &= \prod_{n=1}^N \left\{ \sum_{k=1}^K
+          \pi_k \mathcal{N}(\bm{x_n} | \bm{\mu}_k, \bm{\Sigma}_k) \right\}\\
+        \iff \ln p(\bm{X} | \bm{\pi}, \bm{\mu}, \bm{\Sigma}) &= \sum_{n=1}^N
+          \ln\left\{\sum_{k=1}^{K} \pi_k \mathcal{N}(\bm{x_n} | \bm{\mu}_k, \bm{\Sigma}_k)\right\} \\
+      \end{align*}
+      \item \[
+        \ln p(\bm{x}_n | \bm{\pi}, \bm{\mu}, \bm{\Sigma}) =
+          \ln\left\{\sum_{k=1}^{K} \pi_k \mathcal{N}(\bm{x_n} | \bm{\mu}_k, \bm{\Sigma}_k)\right\}
+      \]
+      \item
+      \begin{align*}
+        \mathcal{N}(\bm{x_n} | \bm{\mu}_j, \bm{\Sigma}_{j})
+          &= \frac{1}{(2 \pi)^{\frac{D}{2}} \abs{\bm{\Sigma}_j}^{\frac{1}{2}}}
+          \exp \left( -\frac{1}{2} (\bm{x}_n - \bm{\mu}_j)^T \bm{\Sigma}_{j}^{-1} (\bm{x}_n - \bm{\mu}_j) \right) \\
+          &= \frac{1}{(2 \pi)^{\frac{D}{2}} \abs{\sigma_j^2\bm{I}}^{\frac{1}{2}}}
+          \exp \left( -\frac{1}{2} (\bm{x}_n - \bm{x}_n)^T (\sigma_j^2\bm{I})^{-1} (\bm{x}_n - \bm{x}_n) \right) \\
+          &= \frac{1}{(\sqrt{2 \pi} \sigma_j)^{D}} \\
+      \end{align*}
+      \item $
+        \lim_{\sigma_j \to 0} \mathcal{N}(\bm{x_n} | \bm{\mu}_j, \bm{\Sigma}_{j}) = \infty
+      $, the same holds true for the log likelihood.
+
+      \item Yes, most definitely. It is enough to have the single cluster center
+        equal to one of the data points. When the variance tends to zero, the
+        normal distribution transforms into the dirac delta function. Given that
+        the likelihood is not normalized, it will also approach infinity even
+        with $K = 1$.
+
+      \item The most simple idea would be to avoid variances of zero. This could
+        be predetermined and not changed during the EM-steps.
+    \end{enumerate}
+  % section problem_1_singularities_in_gaussian_mixture_models_ (end)
+
+  \section{Problem 2 (Identifiability)} % (fold)
+  \label{sec:problem_2_identifiability_}
+    \begin{enumerate}
+      \item Since the actual label of the cluster does not matter, there are
+        $K!$ equivalent solutions.
+      \item Since we usually do not care about the label of the cluster (just the
+        set of data points belonging to a given cluster) this is not a problem.
+    \end{enumerate}
+  % section problem_2_identifiability_ (end)
+\end{document}
