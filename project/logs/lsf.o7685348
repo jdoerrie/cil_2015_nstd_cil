@@ -1,0 +1,1373 @@
+Sender: LSF System <lsfadmin@e1042>
+Subject: Job 7685348: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler01> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e1042>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Fri Jun  5 19:32:23 2015
+Results reported on Fri Jun  5 20:15:13 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               2589.06 sec.
+    Max Memory :             820 MB
+    Average Memory :         649.48 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           204.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+iter: 1
+loss term: 1.387934
+iter: 2
+loss term: 1.172762
+iter: 3
+loss term: 1.099092
+iter: 4
+loss term: 1.063827
+iter: 5
+loss term: 1.044000
+iter: 6
+loss term: 1.031705
+iter: 7
+loss term: 1.023536
+iter: 8
+loss term: 1.017824
+iter: 9
+loss term: 1.013669
+iter: 10
+loss term: 1.010548
+iter: 11
+loss term: 1.008140
+iter: 12
+loss term: 1.006241
+iter: 13
+loss term: 1.004715
+iter: 14
+loss term: 1.003468
+iter: 15
+loss term: 1.002433
+iter: 16
+loss term: 1.001564
+iter: 17
+loss term: 1.000824
+iter: 18
+loss term: 1.000188
+iter: 19
+loss term: 0.999636
+iter: 20
+loss term: 0.999153
+iter: 21
+loss term: 0.998726
+iter: 22
+loss term: 0.998345
+iter: 23
+loss term: 0.998004
+iter: 24
+loss term: 0.997696
+iter: 25
+loss term: 0.997416
+iter: 26
+loss term: 0.997161
+iter: 27
+loss term: 0.996925
+iter: 28
+loss term: 0.996708
+iter: 29
+loss term: 0.996507
+iter: 30
+loss term: 0.996319
+iter: 31
+loss term: 0.996143
+iter: 32
+loss term: 0.995977
+iter: 33
+loss term: 0.995821
+iter: 34
+loss term: 0.995674
+iter: 35
+loss term: 0.995534
+iter: 36
+loss term: 0.995401
+iter: 37
+loss term: 0.995274
+iter: 38
+loss term: 0.995152
+iter: 39
+loss term: 0.995036
+iter: 40
+loss term: 0.994924
+iter: 41
+loss term: 0.994816
+iter: 42
+loss term: 0.994712
+iter: 43
+loss term: 0.994612
+iter: 44
+loss term: 0.994515
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 1; 0.994612; -
+iter: 1
+loss term: 1.297078
+iter: 2
+loss term: 1.133020
+iter: 3
+loss term: 1.074470
+iter: 4
+loss term: 1.046475
+iter: 5
+loss term: 1.031046
+iter: 6
+loss term: 1.021695
+iter: 7
+loss term: 1.015621
+iter: 8
+loss term: 1.011464
+iter: 9
+loss term: 1.008497
+iter: 10
+loss term: 1.006304
+iter: 11
+loss term: 1.004631
+iter: 12
+loss term: 1.003321
+iter: 13
+loss term: 1.002271
+iter: 14
+loss term: 1.001413
+iter: 15
+loss term: 1.000698
+iter: 16
+loss term: 1.000092
+iter: 17
+loss term: 0.999571
+iter: 18
+loss term: 0.999117
+iter: 19
+loss term: 0.998717
+iter: 20
+loss term: 0.998360
+iter: 21
+loss term: 0.998040
+iter: 22
+loss term: 0.997749
+iter: 23
+loss term: 0.997483
+iter: 24
+loss term: 0.997239
+iter: 25
+loss term: 0.997013
+iter: 26
+loss term: 0.996803
+iter: 27
+loss term: 0.996607
+iter: 28
+loss term: 0.996424
+iter: 29
+loss term: 0.996252
+iter: 30
+loss term: 0.996089
+iter: 31
+loss term: 0.995936
+iter: 32
+loss term: 0.995790
+iter: 33
+loss term: 0.995653
+iter: 34
+loss term: 0.995521
+iter: 35
+loss term: 0.995397
+iter: 36
+loss term: 0.995277
+iter: 37
+loss term: 0.995164
+iter: 38
+loss term: 0.995055
+iter: 39
+loss term: 0.994951
+iter: 40
+loss term: 0.994851
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 2; 0.994951; -
+iter: 1
+loss term: 1.238439
+iter: 2
+loss term: 1.106449
+iter: 3
+loss term: 1.058736
+iter: 4
+loss term: 1.036100
+iter: 5
+loss term: 1.023748
+iter: 6
+loss term: 1.016340
+iter: 7
+loss term: 1.011577
+iter: 8
+loss term: 1.008344
+iter: 9
+loss term: 1.006048
+iter: 10
+loss term: 1.004355
+iter: 11
+loss term: 1.003063
+iter: 12
+loss term: 1.002048
+iter: 13
+loss term: 1.001229
+iter: 14
+loss term: 1.000553
+iter: 15
+loss term: 0.999982
+iter: 16
+loss term: 0.999492
+iter: 17
+loss term: 0.999064
+iter: 18
+loss term: 0.998685
+iter: 19
+loss term: 0.998345
+iter: 20
+loss term: 0.998038
+iter: 21
+loss term: 0.997757
+iter: 22
+loss term: 0.997499
+iter: 23
+loss term: 0.997260
+iter: 24
+loss term: 0.997038
+iter: 25
+loss term: 0.996831
+iter: 26
+loss term: 0.996636
+iter: 27
+loss term: 0.996454
+iter: 28
+loss term: 0.996282
+iter: 29
+loss term: 0.996119
+iter: 30
+loss term: 0.995966
+iter: 31
+loss term: 0.995821
+iter: 32
+loss term: 0.995683
+iter: 33
+loss term: 0.995552
+iter: 34
+loss term: 0.995428
+iter: 35
+loss term: 0.995309
+iter: 36
+loss term: 0.995197
+iter: 37
+loss term: 0.995089
+iter: 38
+loss term: 0.994987
+iter: 39
+loss term: 0.994889
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 3; 0.994987; -
+iter: 1
+loss term: 1.200720
+iter: 2
+loss term: 1.091590
+iter: 3
+loss term: 1.050530
+iter: 4
+loss term: 1.030983
+iter: 5
+loss term: 1.020348
+iter: 6
+loss term: 1.013995
+iter: 7
+loss term: 1.009927
+iter: 8
+loss term: 1.007175
+iter: 9
+loss term: 1.005224
+iter: 10
+loss term: 1.003786
+iter: 11
+loss term: 1.002687
+iter: 12
+loss term: 1.001821
+iter: 13
+loss term: 1.001119
+iter: 14
+loss term: 1.000535
+iter: 15
+loss term: 1.000038
+iter: 16
+loss term: 0.999608
+iter: 17
+loss term: 0.999229
+iter: 18
+loss term: 0.998891
+iter: 19
+loss term: 0.998585
+iter: 20
+loss term: 0.998306
+iter: 21
+loss term: 0.998050
+iter: 22
+loss term: 0.997813
+iter: 23
+loss term: 0.997593
+iter: 24
+loss term: 0.997388
+iter: 25
+loss term: 0.997196
+iter: 26
+loss term: 0.997016
+iter: 27
+loss term: 0.996847
+iter: 28
+loss term: 0.996688
+iter: 29
+loss term: 0.996539
+iter: 30
+loss term: 0.996398
+iter: 31
+loss term: 0.996265
+iter: 32
+loss term: 0.996140
+iter: 33
+loss term: 0.996022
+iter: 34
+loss term: 0.995911
+iter: 35
+loss term: 0.995805
+iter: 36
+loss term: 0.995706
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 4; 0.995805; -
+iter: 1
+loss term: 1.171883
+iter: 2
+loss term: 1.080064
+iter: 3
+loss term: 1.044338
+iter: 4
+loss term: 1.027168
+iter: 5
+loss term: 1.017792
+iter: 6
+loss term: 1.012184
+iter: 7
+loss term: 1.008592
+iter: 8
+loss term: 1.006160
+iter: 9
+loss term: 1.004434
+iter: 10
+loss term: 1.003156
+iter: 11
+loss term: 1.002175
+iter: 12
+loss term: 1.001397
+iter: 13
+loss term: 1.000761
+iter: 14
+loss term: 1.000227
+iter: 15
+loss term: 0.999769
+iter: 16
+loss term: 0.999370
+iter: 17
+loss term: 0.999015
+iter: 18
+loss term: 0.998696
+iter: 19
+loss term: 0.998407
+iter: 20
+loss term: 0.998142
+iter: 21
+loss term: 0.997898
+iter: 22
+loss term: 0.997673
+iter: 23
+loss term: 0.997463
+iter: 24
+loss term: 0.997268
+iter: 25
+loss term: 0.997086
+iter: 26
+loss term: 0.996916
+iter: 27
+loss term: 0.996757
+iter: 28
+loss term: 0.996608
+iter: 29
+loss term: 0.996469
+iter: 30
+loss term: 0.996338
+iter: 31
+loss term: 0.996216
+iter: 32
+loss term: 0.996101
+iter: 33
+loss term: 0.995994
+iter: 34
+loss term: 0.995894
+iter: 35
+loss term: 0.995800
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 5; 0.995894; -
+iter: 1
+loss term: 1.149616
+iter: 2
+loss term: 1.071133
+iter: 3
+loss term: 1.040057
+iter: 4
+loss term: 1.024912
+iter: 5
+loss term: 1.016560
+iter: 6
+loss term: 1.011531
+iter: 7
+loss term: 1.008291
+iter: 8
+loss term: 1.006083
+iter: 9
+loss term: 1.004507
+iter: 10
+loss term: 1.003332
+iter: 11
+loss term: 1.002423
+iter: 12
+loss term: 1.001697
+iter: 13
+loss term: 1.001099
+iter: 14
+loss term: 1.000593
+iter: 15
+loss term: 1.000156
+iter: 16
+loss term: 0.999772
+iter: 17
+loss term: 0.999429
+iter: 18
+loss term: 0.999120
+iter: 19
+loss term: 0.998838
+iter: 20
+loss term: 0.998579
+iter: 21
+loss term: 0.998341
+iter: 22
+loss term: 0.998120
+iter: 23
+loss term: 0.997915
+iter: 24
+loss term: 0.997724
+iter: 25
+loss term: 0.997546
+iter: 26
+loss term: 0.997380
+iter: 27
+loss term: 0.997225
+iter: 28
+loss term: 0.997081
+iter: 29
+loss term: 0.996946
+iter: 30
+loss term: 0.996819
+iter: 31
+loss term: 0.996702
+iter: 32
+loss term: 0.996592
+iter: 33
+loss term: 0.996489
+iter: 34
+loss term: 0.996394
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 6; 0.996489; -
+iter: 1
+loss term: 1.131828
+iter: 2
+loss term: 1.064699
+iter: 3
+loss term: 1.037165
+iter: 4
+loss term: 1.023539
+iter: 5
+loss term: 1.015945
+iter: 6
+loss term: 1.011335
+iter: 7
+loss term: 1.008341
+iter: 8
+loss term: 1.006285
+iter: 9
+loss term: 1.004803
+iter: 10
+loss term: 1.003691
+iter: 11
+loss term: 1.002823
+iter: 12
+loss term: 1.002124
+iter: 13
+loss term: 1.001545
+iter: 14
+loss term: 1.001052
+iter: 15
+loss term: 1.000625
+iter: 16
+loss term: 1.000248
+iter: 17
+loss term: 0.999911
+iter: 18
+loss term: 0.999606
+iter: 19
+loss term: 0.999329
+iter: 20
+loss term: 0.999075
+iter: 21
+loss term: 0.998841
+iter: 22
+loss term: 0.998626
+iter: 23
+loss term: 0.998426
+iter: 24
+loss term: 0.998242
+iter: 25
+loss term: 0.998071
+iter: 26
+loss term: 0.997913
+iter: 27
+loss term: 0.997766
+iter: 28
+loss term: 0.997630
+iter: 29
+loss term: 0.997505
+iter: 30
+loss term: 0.997389
+iter: 31
+loss term: 0.997282
+iter: 32
+loss term: 0.997183
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 7; 0.997282; -
+iter: 1
+loss term: 1.120876
+iter: 2
+loss term: 1.059828
+iter: 3
+loss term: 1.034647
+iter: 4
+loss term: 1.022102
+iter: 5
+loss term: 1.015058
+iter: 6
+loss term: 1.010752
+iter: 7
+loss term: 1.007938
+iter: 8
+loss term: 1.005994
+iter: 9
+loss term: 1.004587
+iter: 10
+loss term: 1.003524
+iter: 11
+loss term: 1.002691
+iter: 12
+loss term: 1.002016
+iter: 13
+loss term: 1.001453
+iter: 14
+loss term: 1.000973
+iter: 15
+loss term: 1.000554
+iter: 16
+loss term: 1.000184
+iter: 17
+loss term: 0.999852
+iter: 18
+loss term: 0.999551
+iter: 19
+loss term: 0.999277
+iter: 20
+loss term: 0.999026
+iter: 21
+loss term: 0.998794
+iter: 22
+loss term: 0.998581
+iter: 23
+loss term: 0.998384
+iter: 24
+loss term: 0.998202
+iter: 25
+loss term: 0.998033
+iter: 26
+loss term: 0.997877
+iter: 27
+loss term: 0.997733
+iter: 28
+loss term: 0.997601
+iter: 29
+loss term: 0.997478
+iter: 30
+loss term: 0.997365
+iter: 31
+loss term: 0.997261
+iter: 32
+loss term: 0.997166
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 8; 0.997261; -
+iter: 1
+loss term: 1.110342
+iter: 2
+loss term: 1.057027
+iter: 3
+loss term: 1.034186
+iter: 4
+loss term: 1.022456
+iter: 5
+loss term: 1.015710
+iter: 6
+loss term: 1.011499
+iter: 7
+loss term: 1.008695
+iter: 8
+loss term: 1.006727
+iter: 9
+loss term: 1.005283
+iter: 10
+loss term: 1.004181
+iter: 11
+loss term: 1.003312
+iter: 12
+loss term: 1.002604
+iter: 13
+loss term: 1.002013
+iter: 14
+loss term: 1.001509
+iter: 15
+loss term: 1.001072
+iter: 16
+loss term: 1.000686
+iter: 17
+loss term: 1.000342
+iter: 18
+loss term: 1.000033
+iter: 19
+loss term: 0.999753
+iter: 20
+loss term: 0.999499
+iter: 21
+loss term: 0.999266
+iter: 22
+loss term: 0.999053
+iter: 23
+loss term: 0.998858
+iter: 24
+loss term: 0.998679
+iter: 25
+loss term: 0.998515
+iter: 26
+loss term: 0.998364
+iter: 27
+loss term: 0.998226
+iter: 28
+loss term: 0.998099
+iter: 29
+loss term: 0.997983
+iter: 30
+loss term: 0.997878
+iter: 31
+loss term: 0.997782
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 9; 0.997878; -
+iter: 1
+loss term: 1.106458
+iter: 2
+loss term: 1.056416
+iter: 3
+loss term: 1.034497
+iter: 4
+loss term: 1.023082
+iter: 5
+loss term: 1.016448
+iter: 6
+loss term: 1.012270
+iter: 7
+loss term: 1.009467
+iter: 8
+loss term: 1.007487
+iter: 9
+loss term: 1.006025
+iter: 10
+loss term: 1.004902
+iter: 11
+loss term: 1.004010
+iter: 12
+loss term: 1.003281
+iter: 13
+loss term: 1.002671
+iter: 14
+loss term: 1.002149
+iter: 15
+loss term: 1.001695
+iter: 16
+loss term: 1.001295
+iter: 17
+loss term: 1.000938
+iter: 18
+loss term: 1.000618
+iter: 19
+loss term: 1.000329
+iter: 20
+loss term: 1.000066
+iter: 21
+loss term: 0.999828
+iter: 22
+loss term: 0.999610
+iter: 23
+loss term: 0.999411
+iter: 24
+loss term: 0.999229
+iter: 25
+loss term: 0.999064
+iter: 26
+loss term: 0.998913
+iter: 27
+loss term: 0.998776
+iter: 28
+loss term: 0.998651
+iter: 29
+loss term: 0.998538
+iter: 30
+loss term: 0.998436
+iter: 31
+loss term: 0.998344
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 10; 0.998436; -
+iter: 1
+loss term: 1.099721
+iter: 2
+loss term: 1.054323
+iter: 3
+loss term: 1.034138
+iter: 4
+loss term: 1.023425
+iter: 5
+loss term: 1.017089
+iter: 6
+loss term: 1.013036
+iter: 7
+loss term: 1.010282
+iter: 8
+loss term: 1.008315
+iter: 9
+loss term: 1.006848
+iter: 10
+loss term: 1.005712
+iter: 11
+loss term: 1.004805
+iter: 12
+loss term: 1.004061
+iter: 13
+loss term: 1.003435
+iter: 14
+loss term: 1.002898
+iter: 15
+loss term: 1.002431
+iter: 16
+loss term: 1.002018
+iter: 17
+loss term: 1.001650
+iter: 18
+loss term: 1.001319
+iter: 19
+loss term: 1.001020
+iter: 20
+loss term: 1.000749
+iter: 21
+loss term: 1.000502
+iter: 22
+loss term: 1.000277
+iter: 23
+loss term: 1.000071
+iter: 24
+loss term: 0.999883
+iter: 25
+loss term: 0.999712
+iter: 26
+loss term: 0.999555
+iter: 27
+loss term: 0.999413
+iter: 28
+loss term: 0.999284
+iter: 29
+loss term: 0.999166
+iter: 30
+loss term: 0.999060
+iter: 31
+loss term: 0.998965
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 11; 0.999060; -
+iter: 1
+loss term: 1.100581
+iter: 2
+loss term: 1.056237
+iter: 3
+loss term: 1.035986
+iter: 4
+loss term: 1.025079
+iter: 5
+loss term: 1.018561
+iter: 6
+loss term: 1.014356
+iter: 7
+loss term: 1.011473
+iter: 8
+loss term: 1.009395
+iter: 9
+loss term: 1.007835
+iter: 10
+loss term: 1.006620
+iter: 11
+loss term: 1.005643
+iter: 12
+loss term: 1.004838
+iter: 13
+loss term: 1.004159
+iter: 14
+loss term: 1.003575
+iter: 15
+loss term: 1.003066
+iter: 16
+loss term: 1.002616
+iter: 17
+loss term: 1.002216
+iter: 18
+loss term: 1.001857
+iter: 19
+loss term: 1.001532
+iter: 20
+loss term: 1.001239
+iter: 21
+loss term: 1.000972
+iter: 22
+loss term: 1.000730
+iter: 23
+loss term: 1.000509
+iter: 24
+loss term: 1.000308
+iter: 25
+loss term: 1.000126
+iter: 26
+loss term: 0.999960
+iter: 27
+loss term: 0.999810
+iter: 28
+loss term: 0.999675
+iter: 29
+loss term: 0.999552
+iter: 30
+loss term: 0.999442
+iter: 31
+loss term: 0.999344
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 12; 0.999442; -
+iter: 1
+loss term: 1.099461
+iter: 2
+loss term: 1.056535
+iter: 3
+loss term: 1.036630
+iter: 4
+loss term: 1.025800
+iter: 5
+loss term: 1.019269
+iter: 6
+loss term: 1.015027
+iter: 7
+loss term: 1.012106
+iter: 8
+loss term: 1.009996
+iter: 9
+loss term: 1.008409
+iter: 10
+loss term: 1.007172
+iter: 11
+loss term: 1.006181
+iter: 12
+loss term: 1.005365
+iter: 13
+loss term: 1.004679
+iter: 14
+loss term: 1.004092
+iter: 15
+loss term: 1.003583
+iter: 16
+loss term: 1.003135
+iter: 17
+loss term: 1.002739
+iter: 18
+loss term: 1.002386
+iter: 19
+loss term: 1.002068
+iter: 20
+loss term: 1.001783
+iter: 21
+loss term: 1.001525
+iter: 22
+loss term: 1.001292
+iter: 23
+loss term: 1.001081
+iter: 24
+loss term: 1.000891
+iter: 25
+loss term: 1.000718
+iter: 26
+loss term: 1.000562
+iter: 27
+loss term: 1.000422
+iter: 28
+loss term: 1.000296
+iter: 29
+loss term: 1.000183
+iter: 30
+loss term: 1.000082
+iter: 31
+loss term: 0.999993
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 13; 1.000082; -
+iter: 1
+loss term: 1.100820
+iter: 2
+loss term: 1.057936
+iter: 3
+loss term: 1.037900
+iter: 4
+loss term: 1.026885
+iter: 5
+loss term: 1.020197
+iter: 6
+loss term: 1.015833
+iter: 7
+loss term: 1.012817
+iter: 8
+loss term: 1.010636
+iter: 9
+loss term: 1.008993
+iter: 10
+loss term: 1.007714
+iter: 11
+loss term: 1.006688
+iter: 12
+loss term: 1.005845
+iter: 13
+loss term: 1.005137
+iter: 14
+loss term: 1.004532
+iter: 15
+loss term: 1.004008
+iter: 16
+loss term: 1.003549
+iter: 17
+loss term: 1.003142
+iter: 18
+loss term: 1.002780
+iter: 19
+loss term: 1.002456
+iter: 20
+loss term: 1.002165
+iter: 21
+loss term: 1.001904
+iter: 22
+loss term: 1.001668
+iter: 23
+loss term: 1.001455
+iter: 24
+loss term: 1.001264
+iter: 25
+loss term: 1.001092
+iter: 26
+loss term: 1.000938
+iter: 27
+loss term: 1.000799
+iter: 28
+loss term: 1.000676
+iter: 29
+loss term: 1.000567
+iter: 30
+loss term: 1.000471
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 14; 1.000567; -
+iter: 1
+loss term: 1.104240
+iter: 2
+loss term: 1.059811
+iter: 3
+loss term: 1.039102
+iter: 4
+loss term: 1.027731
+iter: 5
+loss term: 1.020838
+iter: 6
+loss term: 1.016351
+iter: 7
+loss term: 1.013258
+iter: 8
+loss term: 1.011026
+iter: 9
+loss term: 1.009348
+iter: 10
+loss term: 1.008045
+iter: 11
+loss term: 1.007003
+iter: 12
+loss term: 1.006148
+iter: 13
+loss term: 1.005432
+iter: 14
+loss term: 1.004822
+iter: 15
+loss term: 1.004296
+iter: 16
+loss term: 1.003835
+iter: 17
+loss term: 1.003429
+iter: 18
+loss term: 1.003069
+iter: 19
+loss term: 1.002747
+iter: 20
+loss term: 1.002459
+iter: 21
+loss term: 1.002201
+iter: 22
+loss term: 1.001969
+iter: 23
+loss term: 1.001760
+iter: 24
+loss term: 1.001573
+iter: 25
+loss term: 1.001406
+iter: 26
+loss term: 1.001256
+iter: 27
+loss term: 1.001122
+iter: 28
+loss term: 1.001003
+iter: 29
+loss term: 1.000899
+iter: 30
+loss term: 1.000807
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 15; 1.000899; -
+iter: 1
+loss term: 1.108663
+iter: 2
+loss term: 1.063086
+iter: 3
+loss term: 1.041588
+iter: 4
+loss term: 1.029670
+iter: 5
+loss term: 1.022392
+iter: 6
+loss term: 1.017629
+iter: 7
+loss term: 1.014335
+iter: 8
+loss term: 1.011952
+iter: 9
+loss term: 1.010163
+iter: 10
+loss term: 1.008774
+iter: 11
+loss term: 1.007665
+iter: 12
+loss term: 1.006759
+iter: 13
+loss term: 1.006003
+iter: 14
+loss term: 1.005361
+iter: 15
+loss term: 1.004808
+iter: 16
+loss term: 1.004328
+iter: 17
+loss term: 1.003906
+iter: 18
+loss term: 1.003533
+iter: 19
+loss term: 1.003202
+iter: 20
+loss term: 1.002906
+iter: 21
+loss term: 1.002643
+iter: 22
+loss term: 1.002407
+iter: 23
+loss term: 1.002196
+iter: 24
+loss term: 1.002008
+iter: 25
+loss term: 1.001841
+iter: 26
+loss term: 1.001692
+iter: 27
+loss term: 1.001561
+iter: 28
+loss term: 1.001445
+iter: 29
+loss term: 1.001343
+iter: 30
+loss term: 1.001255
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 16; 1.001343; -
+iter: 1
+loss term: 1.110006
+iter: 2
+loss term: 1.064097
+iter: 3
+loss term: 1.042591
+iter: 4
+loss term: 1.030660
+iter: 5
+loss term: 1.023355
+iter: 6
+loss term: 1.018558
+iter: 7
+loss term: 1.015229
+iter: 8
+loss term: 1.012813
+iter: 9
+loss term: 1.010993
+iter: 10
+loss term: 1.009576
+iter: 11
+loss term: 1.008443
+iter: 12
+loss term: 1.007514
+iter: 13
+loss term: 1.006738
+iter: 14
+loss term: 1.006079
+iter: 15
+loss term: 1.005511
+iter: 16
+loss term: 1.005017
+iter: 17
+loss term: 1.004584
+iter: 18
+loss term: 1.004201
+iter: 19
+loss term: 1.003861
+iter: 20
+loss term: 1.003558
+iter: 21
+loss term: 1.003288
+iter: 22
+loss term: 1.003047
+iter: 23
+loss term: 1.002831
+iter: 24
+loss term: 1.002640
+iter: 25
+loss term: 1.002469
+iter: 26
+loss term: 1.002318
+iter: 27
+loss term: 1.002185
+iter: 28
+loss term: 1.002068
+iter: 29
+loss term: 1.001966
+iter: 30
+loss term: 1.001878
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 17; 1.001966; -
+iter: 1
+loss term: 1.116965
+iter: 2
+loss term: 1.068450
+iter: 3
+loss term: 1.045633
+iter: 4
+loss term: 1.032927
+iter: 5
+loss term: 1.025122
+iter: 6
+loss term: 1.019988
+iter: 7
+loss term: 1.016424
+iter: 8
+loss term: 1.013840
+iter: 9
+loss term: 1.011895
+iter: 10
+loss term: 1.010385
+iter: 11
+loss term: 1.009181
+iter: 12
+loss term: 1.008198
+iter: 13
+loss term: 1.007380
+iter: 14
+loss term: 1.006689
+iter: 15
+loss term: 1.006097
+iter: 16
+loss term: 1.005584
+iter: 17
+loss term: 1.005135
+iter: 18
+loss term: 1.004740
+iter: 19
+loss term: 1.004392
+iter: 20
+loss term: 1.004082
+iter: 21
+loss term: 1.003807
+iter: 22
+loss term: 1.003563
+iter: 23
+loss term: 1.003345
+iter: 24
+loss term: 1.003152
+iter: 25
+loss term: 1.002981
+iter: 26
+loss term: 1.002830
+iter: 27
+loss term: 1.002698
+iter: 28
+loss term: 1.002583
+iter: 29
+loss term: 1.002483
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 18; 1.002583; -
+iter: 1
+loss term: 1.122114
+iter: 2
+loss term: 1.071600
+iter: 3
+loss term: 1.047885
+iter: 4
+loss term: 1.034654
+iter: 5
+loss term: 1.026514
+iter: 6
+loss term: 1.021155
+iter: 7
+loss term: 1.017431
+iter: 8
+loss term: 1.014728
+iter: 9
+loss term: 1.012693
+iter: 10
+loss term: 1.011111
+iter: 11
+loss term: 1.009849
+iter: 12
+loss term: 1.008818
+iter: 13
+loss term: 1.007960
+iter: 14
+loss term: 1.007233
+iter: 15
+loss term: 1.006610
+iter: 16
+loss term: 1.006070
+iter: 17
+loss term: 1.005598
+iter: 18
+loss term: 1.005183
+iter: 19
+loss term: 1.004815
+iter: 20
+loss term: 1.004489
+iter: 21
+loss term: 1.004200
+iter: 22
+loss term: 1.003942
+iter: 23
+loss term: 1.003712
+iter: 24
+loss term: 1.003508
+iter: 25
+loss term: 1.003327
+iter: 26
+loss term: 1.003168
+iter: 27
+loss term: 1.003027
+iter: 28
+loss term: 1.002905
+iter: 29
+loss term: 1.002798
+iter: 30
+loss term: 1.002707
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 19; 1.002798; -
+iter: 1
+loss term: 1.130689
+iter: 2
+loss term: 1.076659
+iter: 3
+loss term: 1.051164
+iter: 4
+loss term: 1.036924
+iter: 5
+loss term: 1.028175
+iter: 6
+loss term: 1.022431
+iter: 7
+loss term: 1.018456
+iter: 8
+loss term: 1.015586
+iter: 9
+loss term: 1.013437
+iter: 10
+loss term: 1.011778
+iter: 11
+loss term: 1.010463
+iter: 12
+loss term: 1.009396
+iter: 13
+loss term: 1.008513
+iter: 14
+loss term: 1.007771
+iter: 15
+loss term: 1.007139
+iter: 16
+loss term: 1.006595
+iter: 17
+loss term: 1.006123
+iter: 18
+loss term: 1.005711
+iter: 19
+loss term: 1.005348
+iter: 20
+loss term: 1.005029
+iter: 21
+loss term: 1.004748
+iter: 22
+loss term: 1.004499
+iter: 23
+loss term: 1.004280
+iter: 24
+loss term: 1.004087
+iter: 25
+loss term: 1.003918
+iter: 26
+loss term: 1.003771
+iter: 27
+loss term: 1.003643
+iter: 28
+loss term: 1.003534
+iter: 29
+loss term: 1.003441
+RSVD w/ bias, auto iter, r = 0.001, l = 0.02, K = 20; 1.003534; -
+>> 

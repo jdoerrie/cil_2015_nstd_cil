@@ -1,0 +1,523 @@
+Sender: LSF System <lsfadmin@e2008>
+Subject: Job 7612173: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler01> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2008>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun  4 10:06:38 2015
+Results reported on Thu Jun  4 10:29:00 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               1376.12 sec.
+    Max Memory :             928 MB
+    Average Memory :         761.25 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           96.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+iter: 0
+sum loss: 946311.780099
+iter: 1000000
+sum loss: 686387.737733
+iter: 2000000
+sum loss: 677369.814123
+iter: 3000000
+sum loss: 675047.172900
+iter: 4000000
+sum loss: 673583.473227
+iter: 5000000
+sum loss: 672646.564840
+iter: 6000000
+sum loss: 671236.131642
+iter: 7000000
+sum loss: 669938.666638
+iter: 8000000
+sum loss: 668366.926883
+iter: 9000000
+sum loss: 666829.745101
+iter: 10000000
+sum loss: 664958.297549
+K = 1
+Root of Mean-squared error: 1.0016
+iter: 0
+sum loss: 1110186.273791
+iter: 1000000
+sum loss: 687625.807881
+iter: 2000000
+sum loss: 677003.621465
+iter: 3000000
+sum loss: 673836.755650
+iter: 4000000
+sum loss: 671396.526506
+iter: 5000000
+sum loss: 669184.878367
+iter: 6000000
+sum loss: 665997.845053
+iter: 7000000
+sum loss: 662399.407175
+iter: 8000000
+sum loss: 658523.971033
+iter: 9000000
+sum loss: 654394.649071
+iter: 10000000
+sum loss: 650601.518079
+K = 2
+Root of Mean-squared error: 1.0022
+iter: 0
+sum loss: 1366946.724283
+iter: 1000000
+sum loss: 689831.389158
+iter: 2000000
+sum loss: 677514.137389
+iter: 3000000
+sum loss: 673458.410239
+iter: 4000000
+sum loss: 670046.339933
+iter: 5000000
+sum loss: 666692.918970
+iter: 6000000
+sum loss: 661981.915121
+iter: 7000000
+sum loss: 656805.261664
+iter: 8000000
+sum loss: 650633.880466
+iter: 9000000
+sum loss: 644464.596987
+iter: 10000000
+sum loss: 638414.571048
+K = 3
+Root of Mean-squared error: 1.0022
+iter: 0
+sum loss: 1680913.763985
+iter: 1000000
+sum loss: 691876.251552
+iter: 2000000
+sum loss: 677599.497262
+iter: 3000000
+sum loss: 672844.019231
+iter: 4000000
+sum loss: 668838.003223
+iter: 5000000
+sum loss: 664937.880261
+iter: 6000000
+sum loss: 659532.774998
+iter: 7000000
+sum loss: 653516.476977
+iter: 8000000
+sum loss: 646537.031468
+iter: 9000000
+sum loss: 639345.247083
+iter: 10000000
+sum loss: 632231.789932
+K = 4
+Root of Mean-squared error: 1.0063
+iter: 0
+sum loss: 2122215.912008
+iter: 1000000
+sum loss: 694413.381608
+iter: 2000000
+sum loss: 678400.001907
+iter: 3000000
+sum loss: 672802.606883
+iter: 4000000
+sum loss: 668092.619700
+iter: 5000000
+sum loss: 663272.655708
+iter: 6000000
+sum loss: 656844.040683
+iter: 7000000
+sum loss: 649460.186407
+iter: 8000000
+sum loss: 641027.063621
+iter: 9000000
+sum loss: 632156.491841
+iter: 10000000
+sum loss: 623505.420787
+K = 5
+Root of Mean-squared error: 1.0086
+iter: 0
+sum loss: 2669462.193819
+iter: 1000000
+sum loss: 696709.726648
+iter: 2000000
+sum loss: 678364.553521
+iter: 3000000
+sum loss: 671671.165817
+iter: 4000000
+sum loss: 665643.203851
+iter: 5000000
+sum loss: 658962.445333
+iter: 6000000
+sum loss: 650110.126364
+iter: 7000000
+sum loss: 639724.022305
+iter: 8000000
+sum loss: 629140.147885
+iter: 9000000
+sum loss: 618933.046656
+iter: 10000000
+sum loss: 609843.489996
+K = 6
+Root of Mean-squared error: 1.0068
+iter: 0
+sum loss: 3356050.301310
+iter: 1000000
+sum loss: 700077.013281
+iter: 2000000
+sum loss: 679153.792425
+iter: 3000000
+sum loss: 671626.691850
+iter: 4000000
+sum loss: 665144.378729
+iter: 5000000
+sum loss: 658315.948271
+iter: 6000000
+sum loss: 649649.072703
+iter: 7000000
+sum loss: 639593.916015
+iter: 8000000
+sum loss: 629046.245490
+iter: 9000000
+sum loss: 618257.315387
+iter: 10000000
+sum loss: 608697.611132
+K = 7
+Root of Mean-squared error: 1.0157
+iter: 0
+sum loss: 3868352.701762
+iter: 1000000
+sum loss: 702135.268707
+iter: 2000000
+sum loss: 679994.594805
+iter: 3000000
+sum loss: 671902.677749
+iter: 4000000
+sum loss: 664858.957923
+iter: 5000000
+sum loss: 657469.011152
+iter: 6000000
+sum loss: 648042.438029
+iter: 7000000
+sum loss: 637186.926417
+iter: 8000000
+sum loss: 625459.872591
+iter: 9000000
+sum loss: 613448.072596
+iter: 10000000
+sum loss: 601887.364942
+K = 8
+Root of Mean-squared error: 1.0182
+iter: 0
+sum loss: 4737103.853568
+iter: 1000000
+sum loss: 705499.952919
+iter: 2000000
+sum loss: 680578.334312
+iter: 3000000
+sum loss: 671420.232222
+iter: 4000000
+sum loss: 662998.531167
+iter: 5000000
+sum loss: 654053.155158
+iter: 6000000
+sum loss: 642359.641214
+iter: 7000000
+sum loss: 629510.239811
+iter: 8000000
+sum loss: 616771.499959
+iter: 9000000
+sum loss: 604759.806913
+iter: 10000000
+sum loss: 593832.634756
+K = 9
+Root of Mean-squared error: 1.0206
+iter: 0
+sum loss: 5429767.831655
+iter: 1000000
+sum loss: 707641.383277
+iter: 2000000
+sum loss: 680851.058535
+iter: 3000000
+sum loss: 670846.119729
+iter: 4000000
+sum loss: 661967.102201
+iter: 5000000
+sum loss: 652211.080602
+iter: 6000000
+sum loss: 640124.381141
+iter: 7000000
+sum loss: 626427.831091
+iter: 8000000
+sum loss: 612761.800455
+iter: 9000000
+sum loss: 599766.860178
+iter: 10000000
+sum loss: 587865.828820
+K = 10
+Root of Mean-squared error: 1.0239
+iter: 0
+sum loss: 6512807.321026
+iter: 1000000
+sum loss: 711260.073495
+iter: 2000000
+sum loss: 681703.830691
+iter: 3000000
+sum loss: 670624.335368
+iter: 4000000
+sum loss: 660636.747290
+iter: 5000000
+sum loss: 649750.891851
+iter: 6000000
+sum loss: 636132.840950
+iter: 7000000
+sum loss: 621423.109555
+iter: 8000000
+sum loss: 607037.377048
+iter: 9000000
+sum loss: 593569.585915
+iter: 10000000
+sum loss: 581728.332139
+K = 11
+Root of Mean-squared error: 1.0276
+iter: 0
+sum loss: 7445081.821578
+iter: 1000000
+sum loss: 712862.989741
+iter: 2000000
+sum loss: 681689.879059
+iter: 3000000
+sum loss: 669880.326007
+iter: 4000000
+sum loss: 658963.474965
+iter: 5000000
+sum loss: 647098.396261
+iter: 6000000
+sum loss: 632263.327610
+iter: 7000000
+sum loss: 616603.695505
+iter: 8000000
+sum loss: 601286.676481
+iter: 9000000
+sum loss: 587255.786713
+iter: 10000000
+sum loss: 574546.518525
+K = 12
+Root of Mean-squared error: 1.0287
+iter: 0
+sum loss: 8676810.010409
+iter: 1000000
+sum loss: 715981.302784
+iter: 2000000
+sum loss: 681614.679097
+iter: 3000000
+sum loss: 668450.728202
+iter: 4000000
+sum loss: 656456.479951
+iter: 5000000
+sum loss: 643273.856201
+iter: 6000000
+sum loss: 627654.453495
+iter: 7000000
+sum loss: 611269.902096
+iter: 8000000
+sum loss: 595521.058775
+iter: 9000000
+sum loss: 581161.609756
+iter: 10000000
+sum loss: 567976.263522
+K = 13
+Root of Mean-squared error: 1.0334
+iter: 0
+sum loss: 9828160.456508
+iter: 1000000
+sum loss: 718470.866530
+iter: 2000000
+sum loss: 682803.088141
+iter: 3000000
+sum loss: 669623.155875
+iter: 4000000
+sum loss: 657945.677642
+iter: 5000000
+sum loss: 645535.549635
+iter: 6000000
+sum loss: 630262.889096
+iter: 7000000
+sum loss: 613363.137453
+iter: 8000000
+sum loss: 596079.805790
+iter: 9000000
+sum loss: 579854.704844
+iter: 10000000
+sum loss: 565235.199098
+K = 14
+Root of Mean-squared error: 1.0369
+iter: 0
+sum loss: 11070534.495747
+iter: 1000000
+sum loss: 720631.718163
+iter: 2000000
+sum loss: 683211.271792
+iter: 3000000
+sum loss: 669104.891041
+iter: 4000000
+sum loss: 656451.618114
+iter: 5000000
+sum loss: 642982.302130
+iter: 6000000
+sum loss: 626569.560063
+iter: 7000000
+sum loss: 609121.476755
+iter: 8000000
+sum loss: 591681.854601
+iter: 9000000
+sum loss: 575704.032337
+iter: 10000000
+sum loss: 561061.554441
+K = 15
+Root of Mean-squared error: 1.0404
+iter: 0
+sum loss: 12504427.353123
+iter: 1000000
+sum loss: 722631.774807
+iter: 2000000
+sum loss: 683828.464566
+iter: 3000000
+sum loss: 668876.846492
+iter: 4000000
+sum loss: 655810.461139
+iter: 5000000
+sum loss: 641450.625222
+iter: 6000000
+sum loss: 624422.271715
+iter: 7000000
+sum loss: 605920.306942
+iter: 8000000
+sum loss: 587691.814601
+iter: 9000000
+sum loss: 570860.479537
+iter: 10000000
+sum loss: 555605.191186
+K = 16
+Root of Mean-squared error: 1.0438
+iter: 0
+sum loss: 14059290.370276
+iter: 1000000
+sum loss: 726274.098036
+iter: 2000000
+sum loss: 684683.713530
+iter: 3000000
+sum loss: 668644.672861
+iter: 4000000
+sum loss: 654643.777208
+iter: 5000000
+sum loss: 639672.231610
+iter: 6000000
+sum loss: 621701.376969
+iter: 7000000
+sum loss: 602646.235154
+iter: 8000000
+sum loss: 583344.857169
+iter: 9000000
+sum loss: 565996.976353
+iter: 10000000
+sum loss: 550056.218398
+K = 17
+Root of Mean-squared error: 1.0482
+iter: 0
+sum loss: 15435978.836204
+iter: 1000000
+sum loss: 728544.719482
+iter: 2000000
+sum loss: 684483.203502
+iter: 3000000
+sum loss: 667886.857654
+iter: 4000000
+sum loss: 653486.057045
+iter: 5000000
+sum loss: 638264.075953
+iter: 6000000
+sum loss: 619979.248768
+iter: 7000000
+sum loss: 600552.576917
+iter: 8000000
+sum loss: 580728.797102
+iter: 9000000
+sum loss: 562529.445956
+iter: 10000000
+sum loss: 545944.911124
+K = 18
+Root of Mean-squared error: 1.0515
+iter: 0
+sum loss: 17140207.362237
+iter: 1000000
+sum loss: 731242.363790
+iter: 2000000
+sum loss: 684851.340840
+iter: 3000000
+sum loss: 667339.479402
+iter: 4000000
+sum loss: 651752.694134
+iter: 5000000
+sum loss: 635301.156568
+iter: 6000000
+sum loss: 615883.632098
+iter: 7000000
+sum loss: 595435.481293
+iter: 8000000
+sum loss: 575092.359175
+iter: 9000000
+sum loss: 556224.678633
+iter: 10000000
+sum loss: 539329.111211
+K = 19
+Root of Mean-squared error: 1.0549
+iter: 0
+sum loss: 18858542.338577
+iter: 1000000
+sum loss: 733336.721194
+iter: 2000000
+sum loss: 684489.311683
+iter: 3000000
+sum loss: 666018.528208
+iter: 4000000
+sum loss: 649605.980956
+iter: 5000000
+sum loss: 632030.122617
+iter: 6000000
+sum loss: 611651.090568
+iter: 7000000
+sum loss: 590191.106192
+iter: 8000000
+sum loss: 569110.473698
+iter: 9000000
+sum loss: 550066.237571
+iter: 10000000
+sum loss: 532816.535499
+K = 20
+Root of Mean-squared error: 1.0581
+>> 

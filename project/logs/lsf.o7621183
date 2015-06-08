@@ -1,0 +1,103 @@
+Sender: LSF System <lsfadmin@e2041>
+Subject: Job 7621183: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler05> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2041>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun  4 16:02:52 2015
+Results reported on Thu Jun  4 16:06:39 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               225.33 sec.
+    Max Memory :             811 MB
+    Average Memory :         691.00 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           213.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+nils = mu, SVD K = 41; 1.083213; -
+nils = mu, SVD K = 42; 1.083636; -
+nils = mu, SVD K = 43; 1.084052; -
+nils = mu, SVD K = 44; 1.084272; -
+nils = mu, SVD K = 45; 1.084748; -
+nils = mu, SVD K = 46; 1.085086; -
+nils = mu, SVD K = 47; 1.085379; -
+nils = mu, SVD K = 48; 1.085833; -
+nils = mu, SVD K = 49; 1.086228; -
+nils = mu, SVD K = 50; 1.086468; -
+nils = mu, SVD K = 51; 1.086770; -
+nils = mu, SVD K = 52; 1.087080; -
+nils = mu, SVD K = 53; 1.087468; -
+nils = mu, SVD K = 54; 1.087837; -
+nils = mu, SVD K = 55; 1.088203; -
+nils = mu, SVD K = 56; 1.088502; -
+nils = mu, SVD K = 57; 1.088767; -
+nils = mu, SVD K = 58; 1.089130; -
+nils = mu, SVD K = 59; 1.089345; -
+nils = mu, SVD K = 60; 1.089631; -
+nils = mu, SVD K = 61; 1.090082; -
+nils = mu, SVD K = 62; 1.090402; -
+nils = mu, SVD K = 63; 1.090701; -
+nils = mu, SVD K = 64; 1.090897; -
+nils = mu, SVD K = 65; 1.091226; -
+nils = mu, SVD K = 66; 1.091549; -
+nils = mu, SVD K = 67; 1.091824; -
+nils = mu, SVD K = 68; 1.092177; -
+nils = mu, SVD K = 69; 1.092369; -
+nils = mu, SVD K = 70; 1.092648; -
+nils = mu, SVD K = 71; 1.092979; -
+nils = mu, SVD K = 72; 1.093188; -
+nils = mu, SVD K = 73; 1.093514; -
+nils = mu, SVD K = 74; 1.093742; -
+nils = mu, SVD K = 75; 1.094046; -
+nils = mu, SVD K = 76; 1.094319; -
+nils = mu, SVD K = 77; 1.094551; -
+nils = mu, SVD K = 78; 1.094811; -
+nils = mu, SVD K = 79; 1.095005; -
+nils = mu, SVD K = 80; 1.095205; -
+nils = mu, SVD K = 81; 1.095331; -
+nils = mu, SVD K = 82; 1.095510; -
+nils = mu, SVD K = 83; 1.095717; -
+nils = mu, SVD K = 84; 1.095931; -
+nils = mu, SVD K = 85; 1.096076; -
+nils = mu, SVD K = 86; 1.096276; -
+nils = mu, SVD K = 87; 1.096442; -
+nils = mu, SVD K = 88; 1.096646; -
+nils = mu, SVD K = 89; 1.096794; -
+nils = mu, SVD K = 90; 1.097045; -
+nils = mu, SVD K = 91; 1.097178; -
+nils = mu, SVD K = 92; 1.097374; -
+nils = mu, SVD K = 93; 1.097565; -
+nils = mu, SVD K = 94; 1.097719; -
+nils = mu, SVD K = 95; 1.097938; -
+nils = mu, SVD K = 96; 1.098098; -
+nils = mu, SVD K = 97; 1.098151; -
+nils = mu, SVD K = 98; 1.098301; -
+nils = mu, SVD K = 99; 1.098469; -
+nils = mu, SVD K = 100; 1.098638; -
+>> 

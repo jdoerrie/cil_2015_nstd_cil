@@ -1,0 +1,863 @@
+Sender: LSF System <lsfadmin@e1192>
+Subject: Job 7667357: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler05> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e1192>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Fri Jun  5 15:10:03 2015
+Results reported on Fri Jun  5 15:48:18 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               2289.45 sec.
+    Max Memory :             695 MB
+    Average Memory :         526.29 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           329.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+iter: 1
+loss term: 2991267.004712
+iter: 2
+loss term: 1537237.506185
+iter: 3
+loss term: 1163183.867197
+iter: 4
+loss term: 1019485.289150
+iter: 5
+loss term: 950369.782605
+iter: 6
+loss term: 911960.918945
+iter: 7
+loss term: 888340.372461
+iter: 8
+loss term: 872666.963236
+iter: 9
+loss term: 861627.266772
+iter: 10
+loss term: 853466.834508
+iter: 11
+loss term: 847190.012942
+iter: 12
+loss term: 842199.359679
+iter: 13
+loss term: 838119.439666
+iter: 14
+loss term: 834704.918397
+iter: 15
+loss term: 831789.980322
+iter: 16
+loss term: 829259.205591
+iter: 17
+loss term: 827030.140167
+iter: 18
+loss term: 825042.506295
+iter: 19
+loss term: 823251.321454
+iter: 20
+loss term: 821622.391592
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 1; 1.002446; -
+iter: 1
+loss term: 2019715.203979
+iter: 2
+loss term: 1248889.498567
+iter: 3
+loss term: 1030333.711695
+iter: 4
+loss term: 942853.280141
+iter: 5
+loss term: 899575.106637
+iter: 6
+loss term: 874978.624727
+iter: 7
+loss term: 859563.970745
+iter: 8
+loss term: 849166.145864
+iter: 9
+loss term: 841734.841142
+iter: 10
+loss term: 836169.350174
+iter: 11
+loss term: 831837.318479
+iter: 12
+loss term: 828355.042172
+iter: 13
+loss term: 825478.943436
+iter: 14
+loss term: 823048.412181
+iter: 15
+loss term: 820954.050666
+iter: 16
+loss term: 819119.216374
+iter: 17
+loss term: 817488.871392
+iter: 18
+loss term: 816022.616784
+iter: 19
+loss term: 814690.212111
+iter: 20
+loss term: 813468.618031
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 2; 1.001852; -
+iter: 1
+loss term: 1624362.701907
+iter: 2
+loss term: 1114974.185962
+iter: 3
+loss term: 963253.493947
+iter: 4
+loss term: 901275.812890
+iter: 5
+loss term: 870263.612501
+iter: 6
+loss term: 852483.152487
+iter: 7
+loss term: 841253.178924
+iter: 8
+loss term: 833624.735156
+iter: 9
+loss term: 828137.713749
+iter: 10
+loss term: 824003.857768
+iter: 11
+loss term: 820767.976561
+iter: 12
+loss term: 818152.626266
+iter: 13
+loss term: 815981.013220
+iter: 14
+loss term: 814136.186435
+iter: 15
+loss term: 812538.263118
+iter: 16
+loss term: 811131.140238
+iter: 17
+loss term: 809874.440866
+iter: 18
+loss term: 808738.469752
+iter: 19
+loss term: 807700.961011
+iter: 20
+loss term: 806744.926633
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 3; 1.001483; -
+iter: 1
+loss term: 1411064.828843
+iter: 2
+loss term: 1041081.136672
+iter: 3
+loss term: 924158.060600
+iter: 4
+loss term: 875366.206626
+iter: 5
+loss term: 850841.994431
+iter: 6
+loss term: 836820.848077
+iter: 7
+loss term: 828011.057452
+iter: 8
+loss term: 822057.929972
+iter: 9
+loss term: 817794.333161
+iter: 10
+loss term: 814591.785204
+iter: 11
+loss term: 812088.890408
+iter: 12
+loss term: 810066.450049
+iter: 13
+loss term: 808385.497578
+iter: 14
+loss term: 806954.575525
+iter: 15
+loss term: 805711.530569
+iter: 16
+loss term: 804612.928414
+iter: 17
+loss term: 803627.661363
+iter: 18
+loss term: 802732.958536
+iter: 19
+loss term: 801911.822477
+iter: 20
+loss term: 801151.339323
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 4; 1.001511; -
+iter: 1
+loss term: 1274125.329521
+iter: 2
+loss term: 994735.998487
+iter: 3
+loss term: 900354.817015
+iter: 4
+loss term: 859594.457512
+iter: 5
+loss term: 838834.247193
+iter: 6
+loss term: 826927.136502
+iter: 7
+loss term: 819450.882176
+iter: 8
+loss term: 814406.724915
+iter: 9
+loss term: 810798.110081
+iter: 10
+loss term: 808088.307322
+iter: 11
+loss term: 805969.521503
+iter: 12
+loss term: 804255.769668
+iter: 13
+loss term: 802829.576397
+iter: 14
+loss term: 801613.854526
+iter: 15
+loss term: 800556.316089
+iter: 16
+loss term: 799620.450563
+iter: 17
+loss term: 798780.103572
+iter: 18
+loss term: 798016.108999
+iter: 19
+loss term: 797314.133817
+iter: 20
+loss term: 796663.261930
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 5; 1.001348; -
+iter: 1
+loss term: 1181719.950113
+iter: 2
+loss term: 962636.380068
+iter: 3
+loss term: 884611.811325
+iter: 4
+loss term: 849420.076453
+iter: 5
+loss term: 830972.356151
+iter: 6
+loss term: 820203.806178
+iter: 7
+loss term: 813378.536320
+iter: 8
+loss term: 808757.240929
+iter: 9
+loss term: 805452.809824
+iter: 10
+loss term: 802979.181310
+iter: 11
+loss term: 801054.038439
+iter: 12
+loss term: 799505.215612
+iter: 13
+loss term: 798223.273451
+iter: 14
+loss term: 797136.107901
+iter: 15
+loss term: 796194.703686
+iter: 16
+loss term: 795364.809667
+iter: 17
+loss term: 794621.898399
+iter: 18
+loss term: 793948.016655
+iter: 19
+loss term: 793329.761510
+iter: 20
+loss term: 792756.946583
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 6; 1.001607; -
+iter: 1
+loss term: 1111041.490272
+iter: 2
+loss term: 939984.624201
+iter: 3
+loss term: 873840.359195
+iter: 4
+loss term: 842501.625316
+iter: 5
+loss term: 825607.091033
+iter: 6
+loss term: 815584.527876
+iter: 7
+loss term: 809172.740141
+iter: 8
+loss term: 804808.744492
+iter: 9
+loss term: 801679.726921
+iter: 10
+loss term: 799334.543720
+iter: 11
+loss term: 797508.929178
+iter: 12
+loss term: 796040.828556
+iter: 13
+loss term: 794826.842173
+iter: 14
+loss term: 793798.657773
+iter: 15
+loss term: 792909.732261
+iter: 16
+loss term: 792127.473339
+iter: 17
+loss term: 791428.491805
+iter: 18
+loss term: 790795.629578
+iter: 19
+loss term: 790216.047571
+iter: 20
+loss term: 789679.964498
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 7; 1.002110; -
+iter: 1
+loss term: 1075472.983388
+iter: 2
+loss term: 927465.776040
+iter: 3
+loss term: 867903.030296
+iter: 4
+loss term: 838857.526252
+iter: 5
+loss term: 822864.172753
+iter: 6
+loss term: 813227.024248
+iter: 7
+loss term: 806991.173588
+iter: 8
+loss term: 802713.208988
+iter: 9
+loss term: 799630.641685
+iter: 10
+loss term: 797314.498688
+iter: 11
+loss term: 795510.500427
+iter: 12
+loss term: 794061.094557
+iter: 13
+loss term: 792864.862638
+iter: 14
+loss term: 791854.306948
+iter: 15
+loss term: 790983.163564
+iter: 16
+loss term: 790218.880732
+iter: 17
+loss term: 789538.010369
+iter: 18
+loss term: 788923.300508
+iter: 19
+loss term: 788361.812034
+iter: 20
+loss term: 787843.669562
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 8; 1.001953; -
+iter: 1
+loss term: 1038359.141759
+iter: 2
+loss term: 916592.123741
+iter: 3
+loss term: 864413.840617
+iter: 4
+loss term: 837589.964776
+iter: 5
+loss term: 822202.198455
+iter: 6
+loss term: 812631.473300
+iter: 7
+loss term: 806285.995924
+iter: 8
+loss term: 801852.240326
+iter: 9
+loss term: 798614.576962
+iter: 10
+loss term: 796159.738587
+iter: 11
+loss term: 794237.220303
+iter: 12
+loss term: 792688.779062
+iter: 13
+loss term: 791410.813054
+iter: 14
+loss term: 790333.329977
+iter: 15
+loss term: 789407.708405
+iter: 16
+loss term: 788599.321940
+iter: 17
+loss term: 787882.953910
+iter: 18
+loss term: 787239.866614
+iter: 19
+loss term: 786655.880554
+iter: 20
+loss term: 786120.086605
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 9; 1.002491; -
+iter: 1
+loss term: 1023238.426397
+iter: 2
+loss term: 913469.517797
+iter: 3
+loss term: 864043.498356
+iter: 4
+loss term: 837758.030551
+iter: 5
+loss term: 822315.159737
+iter: 6
+loss term: 812551.234315
+iter: 7
+loss term: 806006.849627
+iter: 8
+loss term: 801402.946911
+iter: 9
+loss term: 798028.151126
+iter: 10
+loss term: 795464.907468
+iter: 11
+loss term: 793456.883771
+iter: 12
+loss term: 791840.580000
+iter: 13
+loss term: 790508.176915
+iter: 14
+loss term: 789386.453161
+iter: 15
+loss term: 788424.362524
+iter: 16
+loss term: 787585.469265
+iter: 17
+loss term: 786843.205512
+iter: 18
+loss term: 786177.819286
+iter: 19
+loss term: 785574.363622
+iter: 20
+loss term: 785021.342867
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 10; 1.003156; -
+iter: 1
+loss term: 1006279.673016
+iter: 2
+loss term: 909894.471854
+iter: 3
+loss term: 864319.154622
+iter: 4
+loss term: 839171.930450
+iter: 5
+loss term: 823928.974563
+iter: 6
+loss term: 814028.443614
+iter: 7
+loss term: 807236.675220
+iter: 8
+loss term: 802363.392730
+iter: 9
+loss term: 798731.889046
+iter: 10
+loss term: 795936.785311
+iter: 11
+loss term: 793724.398093
+iter: 12
+loss term: 791929.935891
+iter: 13
+loss term: 790442.825926
+iter: 14
+loss term: 789186.735549
+iter: 15
+loss term: 788107.626505
+iter: 16
+loss term: 787166.375914
+iter: 17
+loss term: 786334.084349
+iter: 18
+loss term: 785589.014111
+iter: 19
+loss term: 784914.544035
+iter: 20
+loss term: 784297.774046
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 11; 1.003598; -
+iter: 1
+loss term: 1002268.788159
+iter: 2
+loss term: 911416.599551
+iter: 3
+loss term: 866623.932037
+iter: 4
+loss term: 841287.036697
+iter: 5
+loss term: 825676.489612
+iter: 6
+loss term: 815421.257960
+iter: 7
+loss term: 808328.709731
+iter: 8
+loss term: 803209.763837
+iter: 9
+loss term: 799379.223377
+iter: 10
+loss term: 796422.208041
+iter: 11
+loss term: 794076.848201
+iter: 12
+loss term: 792171.861376
+iter: 13
+loss term: 790591.692338
+iter: 14
+loss term: 789256.228197
+iter: 15
+loss term: 788108.566056
+iter: 16
+loss term: 787107.402003
+iter: 17
+loss term: 786222.162255
+iter: 18
+loss term: 785429.810207
+iter: 19
+loss term: 784712.705150
+iter: 20
+loss term: 784057.136819
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 12; 1.004264; -
+iter: 1
+loss term: 996833.557811
+iter: 2
+loss term: 911850.415164
+iter: 3
+loss term: 868673.510739
+iter: 4
+loss term: 843668.233546
+iter: 5
+loss term: 827951.470585
+iter: 6
+loss term: 817450.576748
+iter: 7
+loss term: 810083.794123
+iter: 8
+loss term: 804702.559161
+iter: 9
+loss term: 800634.729084
+iter: 10
+loss term: 797467.706445
+iter: 11
+loss term: 794937.867397
+iter: 12
+loss term: 792870.893749
+iter: 13
+loss term: 791148.024451
+iter: 14
+loss term: 789686.189960
+iter: 15
+loss term: 788425.907867
+iter: 16
+loss term: 787323.680660
+iter: 17
+loss term: 786347.090901
+iter: 18
+loss term: 785471.559453
+iter: 19
+loss term: 784678.155649
+iter: 20
+loss term: 783952.088446
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 13; 1.004643; -
+iter: 1
+loss term: 1000210.812944
+iter: 2
+loss term: 917020.074432
+iter: 3
+loss term: 873735.852441
+iter: 4
+loss term: 848108.614986
+iter: 5
+loss term: 831720.550953
+iter: 6
+loss term: 820629.208458
+iter: 7
+loss term: 812776.206046
+iter: 8
+loss term: 807004.056990
+iter: 9
+loss term: 802624.071651
+iter: 10
+loss term: 799207.468919
+iter: 11
+loss term: 796477.015383
+iter: 12
+loss term: 794247.595704
+iter: 13
+loss term: 792392.096138
+iter: 14
+loss term: 790821.051454
+iter: 15
+loss term: 789470.094658
+iter: 16
+loss term: 788291.991505
+iter: 17
+loss term: 787251.454178
+iter: 18
+loss term: 786321.686498
+iter: 19
+loss term: 785482.034665
+iter: 20
+loss term: 784716.359579
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 14; 1.005106; -
+iter: 1
+loss term: 1009591.561828
+iter: 2
+loss term: 924355.195510
+iter: 3
+loss term: 879616.744552
+iter: 4
+loss term: 852894.689944
+iter: 5
+loss term: 835694.853597
+iter: 6
+loss term: 823997.603018
+iter: 7
+loss term: 815683.704786
+iter: 8
+loss term: 809552.774241
+iter: 9
+loss term: 804886.986443
+iter: 10
+loss term: 801237.837113
+iter: 11
+loss term: 798314.568736
+iter: 12
+loss term: 795922.604546
+iter: 13
+loss term: 793928.060978
+iter: 14
+loss term: 792236.519454
+iter: 15
+loss term: 790779.912266
+iter: 16
+loss term: 789508.187610
+iter: 17
+loss term: 788383.876134
+iter: 18
+loss term: 787378.467279
+iter: 19
+loss term: 786469.942159
+iter: 20
+loss term: 785641.061957
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 15; 1.005442; -
+iter: 1
+loss term: 1017005.926421
+iter: 2
+loss term: 931075.988354
+iter: 3
+loss term: 885606.770171
+iter: 4
+loss term: 858117.870896
+iter: 5
+loss term: 840226.884439
+iter: 6
+loss term: 827946.616078
+iter: 7
+loss term: 819154.681740
+iter: 8
+loss term: 812635.466312
+iter: 9
+loss term: 807653.947481
+iter: 10
+loss term: 803746.210550
+iter: 11
+loss term: 800608.875470
+iter: 12
+loss term: 798037.452351
+iter: 13
+loss term: 795890.427708
+iter: 14
+loss term: 794067.559809
+iter: 15
+loss term: 792496.343905
+iter: 16
+loss term: 791123.338553
+iter: 17
+loss term: 789908.471247
+iter: 18
+loss term: 788821.218227
+iter: 19
+loss term: 787837.990960
+iter: 20
+loss term: 786940.315926
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 16; 1.006052; -
+iter: 1
+loss term: 1020563.267015
+iter: 2
+loss term: 934520.817852
+iter: 3
+loss term: 889007.205689
+iter: 4
+loss term: 861291.501399
+iter: 5
+loss term: 843118.202970
+iter: 6
+loss term: 830556.236776
+iter: 7
+loss term: 821504.714924
+iter: 8
+loss term: 814754.621447
+iter: 9
+loss term: 809571.137500
+iter: 10
+loss term: 805487.932737
+iter: 11
+loss term: 802198.323297
+iter: 12
+loss term: 799494.420940
+iter: 13
+loss term: 797231.565255
+iter: 14
+loss term: 795306.747299
+iter: 15
+loss term: 793645.098441
+iter: 16
+loss term: 792191.192456
+iter: 17
+loss term: 790903.307857
+iter: 18
+loss term: 789749.559611
+iter: 19
+loss term: 788705.239491
+iter: 20
+loss term: 787750.954566
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 17; 1.006652; -
+iter: 1
+loss term: 1036016.215568
+iter: 2
+loss term: 946063.033633
+iter: 3
+loss term: 898420.573300
+iter: 4
+loss term: 869183.191355
+iter: 5
+loss term: 849846.272994
+iter: 6
+loss term: 836369.283963
+iter: 7
+loss term: 826587.200268
+iter: 8
+loss term: 819247.671248
+iter: 9
+loss term: 813584.472416
+iter: 10
+loss term: 809107.688477
+iter: 11
+loss term: 805492.584732
+iter: 12
+loss term: 802517.308852
+iter: 13
+loss term: 800026.325862
+iter: 14
+loss term: 797908.117951
+iter: 15
+loss term: 796081.131998
+iter: 16
+loss term: 794484.670332
+iter: 17
+loss term: 793072.837890
+iter: 18
+loss term: 791810.431463
+iter: 19
+loss term: 790670.093039
+iter: 20
+loss term: 789630.303841
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 18; 1.007229; -
+iter: 1
+loss term: 1042687.091356
+iter: 2
+loss term: 950500.462265
+iter: 3
+loss term: 902224.904056
+iter: 4
+loss term: 872527.527250
+iter: 5
+loss term: 852822.279609
+iter: 6
+loss term: 839051.790838
+iter: 7
+loss term: 829034.660209
+iter: 8
+loss term: 821503.681968
+iter: 9
+loss term: 815680.973002
+iter: 10
+loss term: 811068.111322
+iter: 11
+loss term: 807334.347019
+iter: 12
+loss term: 804253.607875
+iter: 13
+loss term: 801667.379874
+iter: 14
+loss term: 799462.010019
+iter: 15
+loss term: 797554.383137
+iter: 16
+loss term: 795882.631976
+iter: 17
+loss term: 794399.964636
+iter: 18
+loss term: 793070.474218
+iter: 19
+loss term: 791866.238789
+iter: 20
+loss term: 790765.279078
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 19; 1.007660; -
+iter: 1
+loss term: 1063956.290649
+iter: 2
+loss term: 965260.863744
+iter: 3
+loss term: 913476.171736
+iter: 4
+loss term: 881427.097060
+iter: 5
+loss term: 860075.751431
+iter: 6
+loss term: 845119.107686
+iter: 7
+loss term: 834224.332881
+iter: 8
+loss term: 826028.287401
+iter: 9
+loss term: 819690.800535
+iter: 10
+loss term: 814671.907046
+iter: 11
+loss term: 810612.404323
+iter: 12
+loss term: 807266.249293
+iter: 13
+loss term: 804460.600509
+iter: 14
+loss term: 802071.327362
+iter: 15
+loss term: 800007.523608
+iter: 16
+loss term: 798201.443915
+iter: 17
+loss term: 796601.804886
+iter: 18
+loss term: 795169.228923
+iter: 19
+loss term: 793873.085214
+iter: 20
+loss term: 792689.261040
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 20; 1.008350; -
+>> 

@@ -1,0 +1,144 @@
+Sender: LSF System <lsfadmin@e2015>
+Subject: Job 7681262: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler01> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2015>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Fri Jun  5 19:08:58 2015
+Results reported on Fri Jun  5 19:14:28 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               326.20 sec.
+    Max Memory :             690 MB
+    Average Memory :         496.55 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           334.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+iter: 1
+loss term: 1.387934
+iter: 2
+loss term: 1.172762
+iter: 3
+loss term: 1.099092
+iter: 4
+loss term: 1.063827
+iter: 5
+loss term: 1.044000
+iter: 6
+loss term: 1.031705
+iter: 7
+loss term: 1.023536
+iter: 8
+loss term: 1.017824
+iter: 9
+loss term: 1.013669
+iter: 10
+loss term: 1.010548
+iter: 11
+loss term: 1.008140
+iter: 12
+loss term: 1.006241
+iter: 13
+loss term: 1.004715
+iter: 14
+loss term: 1.003468
+iter: 15
+loss term: 1.002433
+iter: 16
+loss term: 1.001564
+iter: 17
+loss term: 1.000824
+iter: 18
+loss term: 1.000188
+iter: 19
+loss term: 0.999636
+iter: 20
+loss term: 0.999153
+iter: 21
+loss term: 0.998726
+iter: 22
+loss term: 0.998345
+iter: 23
+loss term: 0.998004
+iter: 24
+loss term: 0.997696
+iter: 25
+loss term: 0.997416
+iter: 26
+loss term: 0.997161
+iter: 27
+loss term: 0.996925
+iter: 28
+loss term: 0.996708
+iter: 29
+loss term: 0.996507
+iter: 30
+loss term: 0.996319
+iter: 31
+loss term: 0.996143
+iter: 32
+loss term: 0.995977
+iter: 33
+loss term: 0.995821
+iter: 34
+loss term: 0.995674
+iter: 35
+loss term: 0.995534
+iter: 36
+loss term: 0.995401
+iter: 37
+loss term: 0.995274
+iter: 38
+loss term: 0.995152
+iter: 39
+loss term: 0.995036
+iter: 40
+loss term: 0.994924
+iter: 41
+loss term: 0.994816
+iter: 42
+loss term: 0.994712
+iter: 43
+loss term: 0.994612
+iter: 44
+loss term: 0.994515
+simple RSVD, 20 iter, r = 0.001, l = 0.02, K = 1; 2.885992; -
+{Error using *
+Inner matrix dimensions must agree.
+
+Error in LearnVectors (line 54)
+    P(u,:) = p_u + gamma * (e_ui * q_i - lambda_1 * p_u);
+
+Error in PredictMissingValues (line 24)
+[P, Q] = LearnVectors(X, k);
+
+Error in CollabFilteringEvaluation (line 40)
+  X_pred = PredictMissingValues(X_trn, nil, k);
+} 
+>> 

@@ -1,0 +1,124 @@
+Sender: LSF System <lsfadmin@e1147>
+Subject: Job 7670137: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Exited
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler05> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e1147>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Fri Jun  5 16:13:15 2015
+Results reported on Fri Jun  5 16:17:21 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+TERM_OWNER: job killed by owner.
+Exited with signal termination: Alarm clock.
+
+Resource usage summary:
+
+    CPU time :               242.62 sec.
+    Max Memory :             609 MB
+    Average Memory :         414.75 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           415.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+iter: 1
+loss term: 2.040207
+iter: 2
+loss term: 1.418984
+iter: 3
+loss term: 1.212078
+iter: 4
+loss term: 1.123291
+iter: 5
+loss term: 1.078612
+iter: 6
+loss term: 1.053517
+iter: 7
+loss term: 1.038244
+iter: 8
+loss term: 1.028365
+iter: 9
+loss term: 1.021660
+iter: 10
+loss term: 1.016930
+iter: 11
+loss term: 1.013485
+iter: 12
+loss term: 1.010909
+iter: 13
+loss term: 1.008939
+iter: 14
+loss term: 1.007404
+iter: 15
+loss term: 1.006188
+iter: 16
+loss term: 1.005211
+iter: 17
+loss term: 1.004416
+iter: 18
+loss term: 1.003762
+iter: 19
+loss term: 1.003220
+iter: 20
+loss term: 1.002765
+iter: 21
+loss term: 1.002382
+iter: 22
+loss term: 1.002056
+iter: 23
+loss term: 1.001777
+iter: 24
+loss term: 1.001537
+iter: 25
+loss term: 1.001330
+iter: 26
+loss term: 1.001150
+iter: 27
+loss term: 1.000993
+iter: 28
+loss term: 1.000855
+iter: 29
+loss term: 1.000733
+iter: 30
+loss term: 1.000626
+iter: 31
+loss term: 1.000531
+iter: 32
+loss term: 1.000446
+iter: 33
+loss term: 1.000371
+iter: 34
+loss term: 1.000303
+iter: 35
+loss term: 1.000242
+{Operation terminated by user during LearnVectors (line 48)
+
+
+In PredictMissingValues (line 24)
+[P, Q] = LearnVectors(X, k);
+
+In CollabFilteringEvaluation (line 40)
+  X_pred = PredictMissingValues(X_trn, nil, k);
+} 
+
+>> 

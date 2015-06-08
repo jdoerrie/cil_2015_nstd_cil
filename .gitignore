@@ -1,4 +1,11 @@
 #####################
+##  CIL  specific  ##
+#####################
+
+## Ignore Submission Zip File
+code.zip
+
+#####################
 ## Matlab specific ##
 #####################
 
