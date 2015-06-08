@@ -1,77 +1,92 @@
-function X_pred = regSVD(X, f, gamma, lambda)
+function X_pred = regSVD(X, K, gamma, lambda_1, lambda_2)
   % Implementation of regularized SVD as seen in "Factorization Meets the
   % Neighborhood: a Multifaceted Collaborative Filtering Model" Section 2.3
 
   % Hyperparameters and default values
-  if (nargin < 2)         f = 6; end % number of factors
-  if (nargin < 3) gamma = 0.001; end % learning rate
-  if (nargin < 4) lambda = 0.02; end % regularizer term
+  if (nargin < 2)         K = 6; end % number of factors
+  if (nargin < 3)  gamma = 0.01; end % learning rate
+  if (nargin < 4) lambda_1 = 0.02; end % regularizer term
+  if (nargin < 5) lambda_2 = 0.10; end % regularizer term for biases
 
   % Dimensions of the input
   [M, N] = size(X);
 
-  mu = nanmean(X(:)); % global mean
-  bu = zeros(M, 1);   % user biases
-  bi = zeros(N, 1);   % item biases
-  p  = zeros(M, f);   % user latent factors
-  q  = zeros(N, f);   % item latent factors
+  mu = zeros(1, K); % global bias per factor
+  bu = zeros(M, K); % user biases per factor
+  bi = zeros(N, K); % item biases per factor
+  P  = zeros(M, K); % user latent factors
+  Q  = zeros(N, K); % item latent factors
 
   % U and I contain indices into X where ratings are available
   [U, I] = find(~isnan(X));
 
   % initialize return value
-  X_pred = zeros(M, N);
-
-  % init error term
-  old_err = RMSE(X_pred);
+  X_pred = zeros(M,N);
 
   % stopping criterion
   delta = 1e-4;
 
-  % count epochs
-  epoch = 0;
+  for k=1:K
+    % init error term
+    old_err = Inf;
 
-  while (epoch < 15)
-    % Iterate over all known ratings
-    epoch = epoch + 1;
-    for idx=1 : length(U)
-      if mod(idx, 1e5) == 0
-        fprintf('epoch: %d, iter: %d\n', epoch, idx);
+    P(:,k) = ones(M, 1) * 0.1;
+    Q(:,k) = ones(N, 1) * 0.1;
+    fprintf('Training Feature %d\n', k);
+
+    mu(k) = nanmean(X(:));
+    for epoch=1:10
+      % Iterate over all known ratings
+      for idx=1 : length(U)
+        if mod(idx, 1e5) == 0
+          fprintf('epoch: %d, iter: %d\n', epoch, idx);
+        end
+
+        u = U(idx);             % current user
+        i = I(idx);             % current item
+        pu = P(u,k);            % current latent factors for user u
+        qi = Q(i,k);            % current latent factors for item i
+
+        % approximation and error term
+        r_hat = mu(k) + bu(u,k) + bi(i,k) + P(u,k) * Q(i,k);
+        e_ui = X(u,i) - r_hat;
+
+        % gradient updates
+        bu(u,k) = bu(u,k) + gamma * ( e_ui      - lambda_2 * bu(u,k) );
+        bi(i,k) = bi(i,k) + gamma * ( e_ui      - lambda_2 * bi(i,k) );
+        P(u,k)  = P(u,k)  + gamma * ( e_ui * qi - lambda_1 * P(u,k)  );
+        Q(i,k)  = Q(i,k)  + gamma * ( e_ui * pu - lambda_1 * Q(i,k)  );
       end
 
-      u = U(idx);             % current user
-      i = I(idx);             % current item
-      b = mu + bu(u) + bi(i); % baseline ratings for current user
-      pu = p(u,:);            % current latent factors for user u
-      qi = q(i,:);            % current latent factors for item i
+      % compute predictions
+      X_curr = getRatings(mu,bu,bi,P,Q);
+      new_err = RMSE(X_curr);
+      fprintf('Curr RMSE: %f\n', new_err);
+      if old_err < new_err
+        %break
+      end
 
-      % approximation and error term
-      r_hat = b + pu * qi';
-      e_ui = X(u,i) - r_hat;
+      X_pred = X_curr;
+      if abs(old_err - new_err) < delta
+        %break;
+      end
 
-      % gradient updates
-      bu(u)  = bu(u)  + gamma * ( e_ui      - lambda * bu(u)  );
-      bi(i)  = bi(i)  + gamma * ( e_ui      - lambda * bi(i)  );
-      p(u,:) = p(u,:) + gamma * ( e_ui * qi - lambda * p(u,:) );
-      q(i,:) = q(i,:) + gamma * ( e_ui * pu - lambda * q(i,:) );
+      old_err = new_err;
     end
 
-    % compute predictions
-    X_curr = mu + bsxfun(@plus, bu, bi') + p*q';
-    new_err = RMSE(X_curr);
-    fprintf('Curr RMSE: %f\n', new_err);
-    if old_err < new_err
-      break
-    end
-
-    X_pred = X_curr;
-    if abs(old_err - new_err) < delta
-      break;
-    end
-
-    new_err = old_err;
+    X = X - (mu(k) + bsxfun(@plus, bu(:,k), bi(:,k)') + P(:,k) * Q(:,k)');
+    fprintf('rSVD, K = %d, gamma = %f, lambda = %f, rmse = %f\n', ...
+      k, gamma, lambda_1, RMSE(X_pred));
   end
+end
 
-  fprintf('rSVD, f = %d, gamma = %f, lambda = %f, rmse = %f\n', ...
-      f, gamma, lambda, RMSE(X_pred));
+function X_pred = getRatings(mu, bu, bi, P, Q)
+  M = size(P, 1);
+  N = size(Q, 1);
+  K = size(P, 2);
+  X_pred = zeros(M,N);
+  for k=1:K
+    X_pred = X_pred + mu(k) + bsxfun(@plus, bu(:,k), bi(:,k)') + P(:,k) * Q(:,k)';
+    X_pred = min(max(X_pred, 1), 5);
+  end
 end

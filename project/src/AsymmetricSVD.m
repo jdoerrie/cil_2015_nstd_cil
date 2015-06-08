@@ -1,4 +1,4 @@
-function X_pred = AsymmetricSVD(X, f)
+function X_pred = AsymmetricSVD(X, K)
   % Implementation of Asymmetric SVD as seen in "Factorization Meets the
   % Neighborhood: a Multifaceted Collaborative Filtering Model" Section 4
 
@@ -9,12 +9,10 @@ function X_pred = AsymmetricSVD(X, f)
   % Dimensions of the input
   [M, N] = size(X);
 
-  mu = nanmean(X(:)); % global mean
-  bu = zeros(M, 1);   % user biases
-  bi = zeros(N, 1);   % item biases
-  q = rand(N, f);     % item latent factors
-  x = rand(N, f);     % explicit weight
-  y = rand(N, f);     % implicit weight
+  [~,~,~,B] = LearnBiases(X);
+  q = zeros(N, K);     % item latent factors
+  x = zeros(N, K);     % explicit weight
+  y = zeros(N, K);     % implicit weight
 
   % U and I contain indices into X where ratings are available
   [U, I] = find(~isnan(X));
@@ -35,15 +33,14 @@ function X_pred = AsymmetricSVD(X, f)
   end
 
   % initialize return value
-  X_pred = mu + bsxfun(@plus, bu, bi');
+  X_pred = B;
   old_err = RMSE(X_pred);
   fprintf('Base RMSE: %f\n', old_err);
   my_eps = 1e-4;
-  epoch = 0;
 
-  while true
+  for k=1:K
+  for epoch=1:10
     % Iterate over all known ratings
-    epoch = epoch + 1;
     for idx=1 : length(U)
       if mod(idx, 1e5) == 0
         fprintf('epoch: %d, iter: %d\n', epoch, idx);
