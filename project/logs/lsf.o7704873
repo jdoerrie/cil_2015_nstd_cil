@@ -1,0 +1,463 @@
+Sender: LSF System <lsfadmin@e2061>
+Subject: Job 7704873: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler02> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2061>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Sat Jun  6 16:36:18 2015
+Results reported on Sat Jun  6 17:11:43 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               2309.23 sec.
+    Max Memory :             904 MB
+    Average Memory :         756.42 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           120.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+lambda: 0.001000
+k = 1; err = 0.991835
+k = 2; err = 0.990352
+k = 3; err = 0.988118
+k = 4; err = 0.986760
+k = 5; err = 0.985903
+k = 6; err = 0.985610
+k = 7; err = 0.985658
+k = 8; err = 0.985850
+k = 9; err = 0.985906
+k = 10; err = 0.986110
+k = 11; err = 0.985940
+k = 12; err = 0.986009
+k = 13; err = 0.986036
+k = 14; err = 0.986148
+k = 15; err = 0.986316
+k = 16; err = 0.986510
+k = 17; err = 0.986681
+k = 18; err = 0.986669
+k = 19; err = 0.986924
+k = 20; err = 0.987182
+lambda: 0.002000
+k = 1; err = 0.991819
+k = 2; err = 0.990335
+k = 3; err = 0.988101
+k = 4; err = 0.986743
+k = 5; err = 0.985887
+k = 6; err = 0.985593
+k = 7; err = 0.985641
+k = 8; err = 0.985834
+k = 9; err = 0.985889
+k = 10; err = 0.986094
+k = 11; err = 0.985923
+k = 12; err = 0.985992
+k = 13; err = 0.986018
+k = 14; err = 0.986130
+k = 15; err = 0.986299
+k = 16; err = 0.986492
+k = 17; err = 0.986663
+k = 18; err = 0.986651
+k = 19; err = 0.986906
+k = 20; err = 0.987165
+lambda: 0.004000
+k = 1; err = 0.991792
+k = 2; err = 0.990306
+k = 3; err = 0.988072
+k = 4; err = 0.986713
+k = 5; err = 0.985857
+k = 6; err = 0.985563
+k = 7; err = 0.985610
+k = 8; err = 0.985803
+k = 9; err = 0.985858
+k = 10; err = 0.986064
+k = 11; err = 0.985893
+k = 12; err = 0.985961
+k = 13; err = 0.985986
+k = 14; err = 0.986098
+k = 15; err = 0.986267
+k = 16; err = 0.986460
+k = 17; err = 0.986632
+k = 18; err = 0.986617
+k = 19; err = 0.986874
+k = 20; err = 0.987133
+lambda: 0.008000
+k = 1; err = 0.991739
+k = 2; err = 0.990249
+k = 3; err = 0.988013
+k = 4; err = 0.986652
+k = 5; err = 0.985797
+k = 6; err = 0.985503
+k = 7; err = 0.985549
+k = 8; err = 0.985743
+k = 9; err = 0.985797
+k = 10; err = 0.986004
+k = 11; err = 0.985832
+k = 12; err = 0.985900
+k = 13; err = 0.985922
+k = 14; err = 0.986034
+k = 15; err = 0.986203
+k = 16; err = 0.986397
+k = 17; err = 0.986569
+k = 18; err = 0.986550
+k = 19; err = 0.986810
+k = 20; err = 0.987071
+lambda: 0.016000
+k = 1; err = 0.991647
+k = 2; err = 0.990150
+k = 3; err = 0.987907
+k = 4; err = 0.986542
+k = 5; err = 0.985690
+k = 6; err = 0.985394
+k = 7; err = 0.985438
+k = 8; err = 0.985633
+k = 9; err = 0.985687
+k = 10; err = 0.985896
+k = 11; err = 0.985723
+k = 12; err = 0.985790
+k = 13; err = 0.985807
+k = 14; err = 0.985918
+k = 15; err = 0.986088
+k = 16; err = 0.986281
+k = 17; err = 0.986454
+k = 18; err = 0.986429
+k = 19; err = 0.986694
+k = 20; err = 0.986957
+lambda: 0.032000
+k = 1; err = 0.991518
+k = 2; err = 0.990004
+k = 3; err = 0.987736
+k = 4; err = 0.986364
+k = 5; err = 0.985518
+k = 6; err = 0.985219
+k = 7; err = 0.985257
+k = 8; err = 0.985455
+k = 9; err = 0.985506
+k = 10; err = 0.985721
+k = 11; err = 0.985546
+k = 12; err = 0.985611
+k = 13; err = 0.985617
+k = 14; err = 0.985729
+k = 15; err = 0.985898
+k = 16; err = 0.986091
+k = 17; err = 0.986266
+k = 18; err = 0.986231
+k = 19; err = 0.986504
+k = 20; err = 0.986772
+lambda: 0.064000
+k = 1; err = 0.991463
+k = 2; err = 0.989905
+k = 3; err = 0.987554
+k = 4; err = 0.986167
+k = 5; err = 0.985332
+k = 6; err = 0.985027
+k = 7; err = 0.985049
+k = 8; err = 0.985255
+k = 9; err = 0.985298
+k = 10; err = 0.985524
+k = 11; err = 0.985347
+k = 12; err = 0.985408
+k = 13; err = 0.985396
+k = 14; err = 0.985507
+k = 15; err = 0.985673
+k = 16; err = 0.985867
+k = 17; err = 0.986041
+k = 18; err = 0.986001
+k = 19; err = 0.986286
+k = 20; err = 0.986561
+lambda: 0.128000
+k = 1; err = 0.992002
+k = 2; err = 0.990163
+k = 3; err = 0.987701
+k = 4; err = 0.986286
+k = 5; err = 0.985474
+k = 6; err = 0.985158
+k = 7; err = 0.985131
+k = 8; err = 0.985359
+k = 9; err = 0.985382
+k = 10; err = 0.985626
+k = 11; err = 0.985450
+k = 12; err = 0.985507
+k = 13; err = 0.985461
+k = 14; err = 0.985569
+k = 15; err = 0.985720
+k = 16; err = 0.985924
+k = 17; err = 0.986082
+k = 18; err = 0.986078
+k = 19; err = 0.986371
+k = 20; err = 0.986660
+lambda: 0.256000
+k = 1; err = 0.994770
+k = 2; err = 0.990859
+k = 3; err = 0.989377
+k = 4; err = 0.987903
+k = 5; err = 0.987133
+k = 6; err = 0.986784
+k = 7; err = 0.986620
+k = 8; err = 0.986896
+k = 9; err = 0.986878
+k = 10; err = 0.987148
+k = 11; err = 0.986987
+k = 12; err = 0.987048
+k = 13; err = 0.986932
+k = 14; err = 0.986998
+k = 15; err = 0.987124
+k = 16; err = 0.987358
+k = 17; err = 0.987573
+k = 18; err = 0.987661
+k = 19; err = 0.987950
+k = 20; err = 0.988267
+lambda: 0.512000
+k = 1; err = 1.002251
+k = 2; err = 0.996769
+k = 3; err = 0.995088
+k = 4; err = 0.993480
+k = 5; err = 0.992774
+k = 6; err = 0.992285
+k = 7; err = 0.991827
+k = 8; err = 0.992137
+k = 9; err = 0.992136
+k = 10; err = 0.992417
+k = 11; err = 0.992324
+k = 12; err = 0.992423
+k = 13; err = 0.992160
+k = 14; err = 0.992246
+k = 15; err = 0.992444
+k = 16; err = 0.992786
+k = 17; err = 0.993076
+k = 18; err = 0.993229
+k = 19; err = 0.993532
+k = 20; err = 0.993880
+lambda: 1.024000
+k = 1; err = 1.015241
+k = 2; err = 1.009089
+k = 3; err = 1.006939
+k = 4; err = 1.005056
+k = 5; err = 1.004423
+k = 6; err = 1.003286
+k = 7; err = 1.002915
+k = 8; err = 1.003125
+k = 9; err = 1.003262
+k = 10; err = 1.003353
+k = 11; err = 1.003590
+k = 12; err = 1.003630
+k = 13; err = 1.003758
+k = 14; err = 1.003804
+k = 15; err = 1.004155
+k = 16; err = 1.004376
+k = 17; err = 1.004619
+k = 18; err = 1.004891
+k = 19; err = 1.005320
+k = 20; err = 1.005698
+lambda: 2.048000
+k = 1; err = 1.033512
+k = 2; err = 1.026210
+k = 3; err = 1.022768
+k = 4; err = 1.020841
+k = 5; err = 1.019587
+k = 6; err = 1.018872
+k = 7; err = 1.018467
+k = 8; err = 1.018004
+k = 9; err = 1.018462
+k = 10; err = 1.018558
+k = 11; err = 1.018945
+k = 12; err = 1.019110
+k = 13; err = 1.018956
+k = 14; err = 1.018935
+k = 15; err = 1.019301
+k = 16; err = 1.019860
+k = 17; err = 1.020159
+k = 18; err = 1.020526
+k = 19; err = 1.020982
+k = 20; err = 1.021166
+lambda: 4.096000
+k = 1; err = 1.051766
+k = 2; err = 1.042871
+k = 3; err = 1.038457
+k = 4; err = 1.036165
+k = 5; err = 1.034877
+k = 6; err = 1.034174
+k = 7; err = 1.033147
+k = 8; err = 1.032811
+k = 9; err = 1.033259
+k = 10; err = 1.033503
+k = 11; err = 1.033992
+k = 12; err = 1.033903
+k = 13; err = 1.034164
+k = 14; err = 1.034621
+k = 15; err = 1.035386
+k = 16; err = 1.036019
+k = 17; err = 1.036646
+k = 18; err = 1.037099
+k = 19; err = 1.037328
+k = 20; err = 1.037976
+lambda: 8.192000
+k = 1; err = 1.065695
+k = 2; err = 1.055352
+k = 3; err = 1.050537
+k = 4; err = 1.047725
+k = 5; err = 1.046660
+k = 6; err = 1.045329
+k = 7; err = 1.044967
+k = 8; err = 1.044555
+k = 9; err = 1.044900
+k = 10; err = 1.045267
+k = 11; err = 1.045866
+k = 12; err = 1.046043
+k = 13; err = 1.046739
+k = 14; err = 1.047380
+k = 15; err = 1.048175
+k = 16; err = 1.049194
+k = 17; err = 1.049732
+k = 18; err = 1.050214
+k = 19; err = 1.050607
+k = 20; err = 1.051438
+lambda: 16.384000
+k = 1; err = 1.074540
+k = 2; err = 1.063215
+k = 3; err = 1.058227
+k = 4; err = 1.055086
+k = 5; err = 1.054196
+k = 6; err = 1.052860
+k = 7; err = 1.052594
+k = 8; err = 1.052136
+k = 9; err = 1.052578
+k = 10; err = 1.053124
+k = 11; err = 1.053633
+k = 12; err = 1.054017
+k = 13; err = 1.055151
+k = 14; err = 1.055755
+k = 15; err = 1.056538
+k = 16; err = 1.057517
+k = 17; err = 1.058115
+k = 18; err = 1.058643
+k = 19; err = 1.059250
+k = 20; err = 1.060089
+lambda: 32.768000
+k = 1; err = 1.079558
+k = 2; err = 1.067656
+k = 3; err = 1.062590
+k = 4; err = 1.059281
+k = 5; err = 1.058491
+k = 6; err = 1.057167
+k = 7; err = 1.056959
+k = 8; err = 1.056475
+k = 9; err = 1.057121
+k = 10; err = 1.057572
+k = 11; err = 1.058122
+k = 12; err = 1.058622
+k = 13; err = 1.059882
+k = 14; err = 1.060756
+k = 15; err = 1.061493
+k = 16; err = 1.062251
+k = 17; err = 1.062914
+k = 18; err = 1.063492
+k = 19; err = 1.064316
+k = 20; err = 1.065138
+lambda: 65.536000
+k = 1; err = 1.082221
+k = 2; err = 1.070004
+k = 3; err = 1.064902
+k = 4; err = 1.061511
+k = 5; err = 1.060773
+k = 6; err = 1.059460
+k = 7; err = 1.059284
+k = 8; err = 1.058788
+k = 9; err = 1.059582
+k = 10; err = 1.059954
+k = 11; err = 1.060526
+k = 12; err = 1.061109
+k = 13; err = 1.062387
+k = 14; err = 1.063357
+k = 15; err = 1.064126
+k = 16; err = 1.064777
+k = 17; err = 1.065479
+k = 18; err = 1.066108
+k = 19; err = 1.067012
+k = 20; err = 1.067872
+lambda: 131.072000
+k = 1; err = 1.083579
+k = 2; err = 1.071198
+k = 3; err = 1.066079
+k = 4; err = 1.062648
+k = 5; err = 1.061937
+k = 6; err = 1.060628
+k = 7; err = 1.060471
+k = 8; err = 1.059969
+k = 9; err = 1.060842
+k = 10; err = 1.061173
+k = 11; err = 1.061756
+k = 12; err = 1.062413
+k = 13; err = 1.063661
+k = 14; err = 1.064657
+k = 15; err = 1.065433
+k = 16; err = 1.066071
+k = 17; err = 1.066794
+k = 18; err = 1.067461
+k = 19; err = 1.068389
+k = 20; err = 1.069282
+lambda: 262.144000
+k = 1; err = 1.084251
+k = 2; err = 1.071789
+k = 3; err = 1.066661
+k = 4; err = 1.063212
+k = 5; err = 1.062515
+k = 6; err = 1.061209
+k = 7; err = 1.061062
+k = 8; err = 1.060557
+k = 9; err = 1.061470
+k = 10; err = 1.061782
+k = 11; err = 1.062369
+k = 12; err = 1.063080
+k = 13; err = 1.064296
+k = 14; err = 1.065302
+k = 15; err = 1.066078
+k = 16; err = 1.066720
+k = 17; err = 1.067457
+k = 18; err = 1.068148
+k = 19; err = 1.069081
+k = 20; err = 1.069995
+lambda: 524.288000
+k = 1; err = 1.084575
+k = 2; err = 1.072073
+k = 3; err = 1.066942
+k = 4; err = 1.063484
+k = 5; err = 1.062795
+k = 6; err = 1.061490
+k = 7; err = 1.061349
+k = 8; err = 1.060844
+k = 9; err = 1.061777
+k = 10; err = 1.062080
+k = 11; err = 1.062669
+k = 12; err = 1.063413
+k = 13; err = 1.064609
+k = 14; err = 1.065623
+k = 15; err = 1.066402
+k = 16; err = 1.067045
+k = 17; err = 1.067790
+k = 18; err = 1.068494
+k = 19; err = 1.069427
+k = 20; err = 1.070354
+>> 

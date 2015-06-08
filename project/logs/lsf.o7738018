@@ -1,0 +1,46 @@
+Sender: LSF System <lsfadmin@e1220>
+Subject: Job 7738018: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation.m> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation.m> was submitted from host <euler01> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e1220>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Sun Jun  7 21:23:49 2015
+Results reported on Sun Jun  7 21:23:54 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation.m
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               1.82 sec.
+    Max Memory :             84 MB
+    Average Memory :         84.00 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           940.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            8
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+{Undefined variable "CollabFilteringEvaluation" or function
+"CollabFilteringEvaluation.m".
+} 
+>> 
