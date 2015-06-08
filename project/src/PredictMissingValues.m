@@ -16,5 +16,6 @@ else
   X(nils) = NaN;
 end
 
-X_pred = regSVD(X);
+X_pred = CorNgbr(X);
+RMSE(X_pred)
 end
