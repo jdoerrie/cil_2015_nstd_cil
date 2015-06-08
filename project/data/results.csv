@@ -249,3 +249,12 @@ k = 19; err = 0.986942
 k = 20; err = 0.987200
 bias w/ l=0.1, d=1e2, SVD k = 7; err = 0.984563; -
 IterSVD: f = 5, rmse = 0.981973
+rSVD, K = 1, gamma = 0.010000, lambda = 0.020000, rmse = 0.988022
+rSVD, K = 2, gamma = 0.010000, lambda = 0.020000, rmse = 0.985529
+rSVD, K = 3, gamma = 0.010000, lambda = 0.020000, rmse = 0.983707
+rSVD, K = 4, gamma = 0.010000, lambda = 0.020000, rmse = 0.982219
+rSVD, K = 5, gamma = 0.010000, lambda = 0.020000, rmse = 0.980890
+rSVD, K = 6, gamma = 0.010000, lambda = 0.020000, rmse = 0.977883
+rSVD, K = 7, gamma = 0.010000, lambda = 0.020000, rmse = 0.976910
+rSVD, K = 8, gamma = 0.010000, lambda = 0.020000, rmse = 0.976297
+
