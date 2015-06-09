@@ -1,11 +1,11 @@
 % Evaluation script for the collaborative filtering problem. This is
-% essentially the same script as the evaluation server will run for your 
+% essentially the same script as the evaluation server will run for your
 % submission.
 %
-% It first loads an input data matrix from Data.mat, and splits the known 
-% values (ratings from 1 to 5 stars) into training and testing sets. 
-% It then passes the training data to your custom implementation of the 
-% function 
+% It first loads an input data matrix from Data.mat, and splits the known
+% values (ratings from 1 to 5 stars) into training and testing sets.
+% It then passes the training data to your custom implementation of the
+% function
 %      PredictMissingValues.m
 % in order to train, and obtain predictions for all unknown entries.
 % Finally, the script compares these prediced entries to the test set,
@@ -17,6 +17,7 @@ rand('seed', 1);  % fix random seed for reproducibility
 % Constants
 filename = 'Data.mat';
 prc_trn = 0.5;  % percentage of training data
+global nil;
 nil = 0;  % missing value indicator. could also use NaN or any other value instead
 
 % Load data
@@ -36,6 +37,7 @@ idx_tst = idx(rp(n_trn+1:end));
 X_trn = ones(size(X))*nil;
 X_trn(idx_trn) = X(idx_trn);  % add known training values
 
+global X_tst;
 X_tst = ones(size(X))*nil;
 X_tst(idx_tst) = X(idx_tst);  % add known testing values
 
