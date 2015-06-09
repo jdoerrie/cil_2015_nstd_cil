@@ -19,7 +19,6 @@ function X_pred = regSVD(X, K, gamma, lambda_1, lambda_2)
   % initialize predictions
   X_pred = zeros(M,N);
   for k=1:K
-    fprintf('Training Factor %d\n', k);
     mu = nanmean(X(:) - X_pred(:));
     bu = zeros(M,1);
     bi = zeros(N,1);
@@ -37,8 +36,7 @@ function X_pred = regSVD(X, K, gamma, lambda_1, lambda_2)
         qi = q(i);  % current latent factors for item i
 
         % approximation and error term
-        r_hat = X_pred(u,i) + mu + bu(u) + bi(i) + pu * qi;
-        e_ui = X(u,i) - r_hat;
+        e_ui = X(u,i) - (X_pred(u,i) + mu + bu(u) + bi(i) + pu*qi);
 
         % gradient updates
         bu(u) = bu(u) + gamma*( e_ui    - lambda_2*bu(u) );
@@ -46,17 +44,9 @@ function X_pred = regSVD(X, K, gamma, lambda_1, lambda_2)
         p(u)  = pu    + gamma*( e_ui*qi - lambda_1*pu    );
         q(i)  = qi    + gamma*( e_ui*pu - lambda_1*qi    );
       end
-
-      % compute predictions
-      X_curr = X_pred + mu + bsxfun(@plus, bu, bi') + p*q';
-      X_curr = min(max(X_curr, 1), 5);
-      fprintf('Epoch: %03d, Curr RMSE: %f\n', epoch, RMSE(X_curr));
     end
 
     X_pred = X_pred + mu + bsxfun(@plus, bu, bi') + p*q';
-    [~, X_pred] = pcares(X_pred, 30);
     X_pred = min(max(X_pred, 1), 5);
-    fprintf('rSVD, K = %d, gamma = %f, lambda = %f, rmse = %f\n', ...
-      k, gamma, lambda_1, RMSE(X_pred));
   end
 end
