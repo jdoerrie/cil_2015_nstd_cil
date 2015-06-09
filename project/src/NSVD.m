@@ -18,12 +18,12 @@ function X_pred = NSVD(X, K, gamma, lambda_1, lambda_2)
   % U and I contain indices into X where ratings are available
   [U, I] = find(~isnan(X));
 
-  % numRatings contains for every user the number of issued ratings
-  numRatings = sum(~isnan(X), 2);
+  % nRatings contains for every user the number of issued ratings
+  nRatings = sum(~isnan(X), 2);
 
-  % isqrt is the inverse sqrt of numRatings used for normalizing the sums
+  % isqrt is the inverse sqrt of nRatings used for normalizing the sums
   % during the update steps
-  isqrt = 1.0 ./ sqrt(numRatings + 1);
+  isqrt = 1.0 ./ sqrt(max(nRatings, 1));
 
   % R contain for every user the indices into X where ratings are available.
   % Since the numbers of these indices are different for every user, we store
@@ -52,18 +52,21 @@ function X_pred = NSVD(X, K, gamma, lambda_1, lambda_2)
         Ru = R{u};
         p(u) = sum(x(Ru)) * isqrt(u);
         err_sum = 0;
+        pu = p(u);
 
         for i=Ru
           r_hat = X_pred(u,i) + mu + bu(u) + bi(i) + p(u) * q(i);
           e_ui = X(u,i) - r_hat;
           err_sum = err_sum + e_ui;
 
+          puu = p(u);
+          p(u)  = p(u)  + gamma*( e_ui      - lambda_1*p(u)  );
           bu(u) = bu(u) + gamma*( e_ui      - lambda_2*bu(u) );
           bi(i) = bi(i) + gamma*( e_ui      - lambda_2*bi(i) );
-          q(i)  = q(i)  + gamma*( e_ui*p(u) - lambda_1*q(i)  );
+          q(i)  = q(i)  + gamma*( e_ui*puu  - lambda_1*q(i)  );
         end
 
-        x(Ru) = x(Ru) + gamma*( err_sum*isqrt(u) - lambda_1*x(Ru) );
+        x(Ru) = x(Ru) + isqrt(u)*(p(u) - pu);
       end
 
       for u=1:M

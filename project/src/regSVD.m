@@ -54,6 +54,7 @@ function X_pred = regSVD(X, K, gamma, lambda_1, lambda_2)
     end
 
     X_pred = X_pred + mu + bsxfun(@plus, bu, bi') + p*q';
+    [~, X_pred] = pcares(X_pred, 30);
     X_pred = min(max(X_pred, 1), 5);
     fprintf('rSVD, K = %d, gamma = %f, lambda = %f, rmse = %f\n', ...
       k, gamma, lambda_1, RMSE(X_pred));
