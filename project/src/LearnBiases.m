@@ -63,3 +63,7 @@ end
 function l = loss(X, b_u, b_i, lambda)
 l = norm2(X - bsxfun(@plus, b_u, b_i')) + lambda * (norm2(b_u) + norm2(b_i));
 end
+
+function n = norm2(X)
+  n = nansum(X(:).^2);
+end
