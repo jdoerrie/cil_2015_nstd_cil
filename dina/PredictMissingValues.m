@@ -1,58 +1,55 @@
 function X_pred = PredictMissingValues(X, nil)
+warning('off','all');
 X_pred = X;
 [u, it] = size(X_pred);
-X_pred(X_pred == nil) = NaN;
+nils = X_pred == nil;
+X_pred(nils) = NaN;
 XX = X_pred;
-biases = nanmean(X_pred);
-biases2 = nanmean(X_pred,2);
-for i = 1:u
-    for j = 1:it
-        if (isnan(X_pred(i, j)))
-            if (isnan(biases2(i)))
-                X_pred(i, j) = biases(j);
-            else
-                X_pred(i, j) = biases(j)*0.75 + biases2(i)*0.25;
-            end
-        end
-    end
-end
-%avg = mean(mean(X(X ~= nil)));  % BASELINE average over all values: 1.1211 MSE
-%X_pred(X_pred == nil) = avg; % dummy prediction, 4 stars always
+[mu, b_u, b_i, B] = ComputeBiases(X_pred);
+X_pred(nils) = B(nils);
+%X_pred = MyBiases(X_pred);
 
-for asdf = 1:1
-    k = 20;
-    kk = 5;
-    clusters = kmeans(X_pred, k, 'MaxIter', 10);
-    clusters2 = kmeans(X_pred.', kk, 'MaxIter', 50);
-    mean_vector = zeros(k, it);
-    mean_vector2 = zeros(k, u);
-    for i = 1:kk
-        cluster2 = XX(:, clusters2 == i).';
-        mean_vector2(i, :) = nanmean(cluster2);
-    end
-    for i = 1:k
-        cluster = XX(clusters == i, :);
-        mean_vector(i,:) = nanmean(cluster);
-        [users, items] = size(cluster);
-        for user = 1:u
-            if (clusters(user) == i)
-                for item = 1:it
-                    if (X(user, item) == nil)
-                        c = clusters2(item);
-                        if (~isnan(mean_vector(i, item)) && ~isnan(mean_vector2(c, user)))
-                            X_pred(user, item) = mean_vector(i, item)*0.7 + mean_vector2(c, user)*0.3;
-                        elseif (~isnan(mean_vector(i, item)))
-                            X_pred(user, item) = mean_vector(i, item);
-                        elseif (~isnan(mean_vector2(c, user)))
-                            X_pred(user, item) = mean_vector2(c, user);
-                        end
-                    end
+
+%{
+for i = 1:u
+    X_i = X_pred;
+    for j = 1:it
+        if (isnan(XX(i, j)))
+            X_i(:, j) = [];
+        else
+            [users, items] = size(X_i);
+            for k = 1:users
+                if (k ~= i && isnan(XX(k, j)))
+                    X_i(k, :) = [];
                 end
             end
         end
     end
+    knnsearch(X_i, X_i(i,:), 'K', 20);
 end
-    %}
+%}
+%avg = mean(mean(X(X ~= nil)));  % BASELINE average over all values: 1.1211 MSE
+%X_pred(X_pred == nil) = avg; % dummy prediction, 4 stars always
+
+for asdf = 1:3
+    %X_pred = MySVD(X_pred, XX);
+    %rmse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2))
+end
+
+%save('asdf.mat', 'X_pred');
+
+load('asdf.mat');
+[something, X_pred] = pcares(X_pred, 30);
+
+
+
+for asdf = 1:1
+    X_pred = MyKmeans(X_pred, XX, u, it);
+   % X_pred = NewKmeans(X_pred, XX);
+    %rmse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2));
+    %disp([num2str(asdf) ' RMSE: ' num2str(rmse)]);
+end
+        %}
     %{
     for user = 1:users
         this_cluster = cluster;
@@ -84,4 +81,5 @@ end
         end
     end
     %}
+
 end
