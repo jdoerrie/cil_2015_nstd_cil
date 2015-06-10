@@ -1,17 +1,9 @@
 function X_pred = SVDpp(X, K, gamma, lambda)
-<<<<<<< HEAD
   % Implementation of SVD++ as seen in "Factorization Meets the
   % Neighborhood: a Multifaceted Collaborative Filtering Model"
 
   % Hyperparameters and default values
   if (nargin < 2)         K = 10; end % number of factors
-=======
-  % Implementation of regularized SVD as seen in "Factorization Meets the
-  % Neighborhood: a Multifaceted Collaborative Filtering Model" Section 2.3
-
-  % Hyperparameters and default values
-  if (nargin < 2)         K = 64; end % number of factors
->>>>>>> ea2e6b24fc023ce29565a396ca6f7efd52647572
   if (nargin < 3)  gamma = 0.010; end % learning rate
   if (nargin < 4) lambda = 0.100; end % regularizer term
 
@@ -21,12 +13,6 @@ function X_pred = SVDpp(X, K, gamma, lambda)
   % Dimensions of the input
   [M, N] = size(X);
 
-<<<<<<< HEAD
-=======
-  % U and I contain indices into X where ratings are available
-  [U, I] = find(~isnan(X));
-
->>>>>>> ea2e6b24fc023ce29565a396ca6f7efd52647572
   % nRatings contains for every user the number of issued ratings
   nRatings = sum(~isnan(X), 2);
 
@@ -68,19 +54,11 @@ function X_pred = SVDpp(X, K, gamma, lambda)
           q(i)  = qi    + gamma*( e_ui*p2 - lambda*qi );
         end
 
-<<<<<<< HEAD
         p(u)  = pu    + gamma*( err_sum          - lambda*pu );
         y(Ru) = y(Ru) + gamma*( err_sum*isqrt(u) - lambda*y(Ru));
       end
 
       % gamma = gamma * 0.90;
-=======
-        p(u)  = p(u)  + gamma*( err_sum          - lambda*pu );
-        y(Ru) = y(Ru) + gamma*( err_sum*isqrt(u) - lambda*y(Ru));
-      end
-
-      % gamma = gamma * 0.98;
->>>>>>> ea2e6b24fc023ce29565a396ca6f7efd52647572
       % compute predictions
       p2 = zeros(M,1);
       for u=1:M
@@ -91,20 +69,13 @@ function X_pred = SVDpp(X, K, gamma, lambda)
       X_curr = X_pred + (p + p2)*q';
       X_curr = min(max(X_curr, 1), 5);
       fprintf('Epoch: %03d, Curr RMSE: %f, Gamma: %f\n', epoch, RMSE(X_curr), gamma);
-<<<<<<< HEAD
       if (RMSE(X_curr) > RMSE(X_prev) - 1e-6)
         break;
       end
-=======
-      % if (RMSE(X_curr) > RMSE(X_prev) - 1e-6)
-      %   break;
-      % end
->>>>>>> ea2e6b24fc023ce29565a396ca6f7efd52647572
 
       X_prev = X_curr;
     end
 
-<<<<<<< HEAD
     p2 = zeros(M,1);
     for u=1:M
       Ru = R{u};
@@ -113,9 +84,6 @@ function X_pred = SVDpp(X, K, gamma, lambda)
 
     X_pred = X_pred + (p + p2)*q';
     % X_pred = X_prev;
-=======
-    X_pred = X_prev;
->>>>>>> ea2e6b24fc023ce29565a396ca6f7efd52647572
     X_pred = min(max(X_pred, 1), 5);
     fprintf('SVD++, K = %d, gamma = %f, lambda = %f, rmse = %f\n', ...
       k, gamma, lambda, RMSE(X_pred));
