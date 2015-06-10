@@ -11,19 +11,19 @@ function X_pred = NSVD(X, K, gamma, lambda_1, lambda_2)
   if (nargin < 5) lambda_2 = 0.10; end % regularizer term for biases
 
   % number of iterations over all known ratings per factor
-  nEpochs = 5;
+  nEpochs = 15;
   % Dimensions of the input
   [M, N] = size(X);
 
   % U and I contain indices into X where ratings are available
   [U, I] = find(~isnan(X));
 
-  % numRatings contains for every user the number of issued ratings
-  numRatings = sum(~isnan(X), 2);
+  % nRatings contains for every user the number of issued ratings
+  nRatings = sum(~isnan(X), 2);
 
-  % isqrt is the inverse sqrt of numRatings used for normalizing the sums
+  % isqrt is the inverse sqrt of nRatings used for normalizing the sums
   % during the update steps
-  isqrt = 1.0 ./ sqrt(numRatings + 1);
+  isqrt = 1.0 ./ sqrt(max(nRatings, 1));
 
   % R contain for every user the indices into X where ratings are available.
   % Since the numbers of these indices are different for every user, we store
@@ -42,34 +42,33 @@ function X_pred = NSVD(X, K, gamma, lambda_1, lambda_2)
     bi = zeros(N,1);
 
     % 0.1 to initialize is inspired by Simon Funk
+    p = zeros(M,1);
     q = ones(N,1) * 0.1;
     x = zeros(N,1);
 
     for epoch=1:nEpochs
       % Iterate over all known ratings
-      for idx=1 : length(U)
-        if mod(idx, 1e5) == 0
-          fprintf('epoch: %d, iter: %d\n', epoch, idx);
-        end
-        u = U(idx); % current user
-        i = I(idx); % current item
-        qi = q(i);  % current latent factors for item i
-
+      for u=1:M
         Ru = R{u};
-        pu = sum(x(Ru)) * isqrt(u);
-        % approximation and error term
-        r_hat = X_pred(u,i) + mu + bu(u) + bi(i) + pu * qi;
-        e_ui = X(u,i) - r_hat;
+        p(u) = sum(x(Ru)) * isqrt(u);
+        err_sum = 0;
+        pu = p(u);
 
-        % gradient updates
-        bu(u) = bu(u) + gamma*( e_ui             - lambda_2*bu(u) );
-        bi(i) = bi(i) + gamma*( e_ui             - lambda_2*bi(i) );
-        x(Ru) = x(Ru) + gamma*( e_ui*qi*isqrt(u) - lambda_1*x(Ru) );
-        q(i)  = qi    + gamma*( e_ui*pu          - lambda_1*qi    );
+        for i=Ru
+          r_hat = X_pred(u,i) + mu + bu(u) + bi(i) + p(u) * q(i);
+          e_ui = X(u,i) - r_hat;
+          err_sum = err_sum + e_ui;
+
+          puu = p(u);
+          p(u)  = p(u)  + gamma*( e_ui      - lambda_1*p(u)  );
+          bu(u) = bu(u) + gamma*( e_ui      - lambda_2*bu(u) );
+          bi(i) = bi(i) + gamma*( e_ui      - lambda_2*bi(i) );
+          q(i)  = q(i)  + gamma*( e_ui*puu  - lambda_1*q(i)  );
+        end
+
+        x(Ru) = x(Ru) + isqrt(u)*(p(u) - pu);
       end
 
-      % compute predictions
-      p = zeros(M,1);
       for u=1:M
         p(u) = isqrt(u) * sum(x(R{u}));
       end
@@ -78,7 +77,6 @@ function X_pred = NSVD(X, K, gamma, lambda_1, lambda_2)
       fprintf('Epoch: %03d, Curr RMSE: %f\n', epoch, RMSE(X_curr));
     end
 
-    p = zeros(M,1);
     for u=1:M
       p(u) = isqrt(u) * sum(x(R{u}));
     end
