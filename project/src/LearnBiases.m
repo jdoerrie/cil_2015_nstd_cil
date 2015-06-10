@@ -1,8 +1,9 @@
-function [mu, b_u, b_i, B] = LearnBiases(X, gamma, lambda)
+function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda)
   % set default values of lambda
-  if (nargin < 2) gamma = 1e-3; end
-  if (nargin < 3) lambda = 0.1; end
+  if (nargin < 2) gamma  = 1e-3; end
+  if (nargin < 3) lambda = 1e-2; end
 
+  nEpochs = 40;
   % Learn Biases via Stochastic Gradient Descent.  Idea and notation are
   % inspired by "The BellKor Solution to the Netflix Grand Prize".
   [M, N] = size(X);
@@ -21,9 +22,7 @@ function [mu, b_u, b_i, B] = LearnBiases(X, gamma, lambda)
   nEntries = length(I);
 
   B = zeros(M,N);
-  epoch = 0;
-  while true
-    epoch = epoch + 1;
+  for iEpoch=1:nEpochs
     for idx=1:nEntries
       u = I(idx);
       i = J(idx);
@@ -35,19 +34,9 @@ function [mu, b_u, b_i, B] = LearnBiases(X, gamma, lambda)
       bu(u) = bu(u) + gamma * (err - lambda * bu(u));
       bi(i) = bi(i) + gamma * (err - lambda * bi(i));
     end
-
-    B_curr = mu + bsxfun(@plus, bu, bi');
-    if (RMSE(B) < RMSE(B_curr))
-      break;
-    end
-
-    b_u = bu;
-    b_i = bi;
-    B = B_curr;
   end
 
-  fprintf('LearnBiases: Gamma = %.3f, Lambda = %.3f, Epochs = %d, RMSE = %f\n', ...
-    gamma, lambda, epoch, RMSE(B));
+  B = mu + bsxfun(@plus, bu, bi');
 end
 
 % function l = loss(X, b_u, b_i, lambda)
