@@ -1,6 +1,6 @@
 function [mu, b_u, b_i, B] = ComputeBiases(X, l1, l2)
-  if (nargin < 2) l1 = 0; end % regularizer term
-  if (nargin < 3) l2 = 0; end % regularizer term for biases
+  if (nargin < 2) l1 =  0; end % regularizer term for item biases
+  if (nargin < 3) l2 = 12; end % regularizer term for user biases
 
   mu = nanmean(X(:));
   X = X - mu;
@@ -13,5 +13,5 @@ function [mu, b_u, b_i, B] = ComputeBiases(X, l1, l2)
   b_u(isnan(b_u)) = 0;
 
   B = mu + bsxfun(@plus, b_u, b_i');
-  fprintf('CompBias: l1 = %02d, l2 = %02d, RMSE: %f\n', l1, l2, RMSE(B));
+  % fprintf('CompBias: l1 = %02d, l2 = %02d, RMSE: %f\n', l1, l2, RMSE(B));
 end
