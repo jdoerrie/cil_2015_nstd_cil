@@ -9,6 +9,7 @@ if nargin < 3
   reg = eps;
 end
 
+reg = max(eps, reg);
 if nargin == 1 % let sum deal with figuring out which dimension to use
     n = sum(~nans) + reg;
     m = sum(x) ./ n;
