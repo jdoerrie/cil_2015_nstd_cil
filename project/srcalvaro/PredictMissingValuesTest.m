@@ -2,8 +2,8 @@ function X_pred = PredictMissingValues(X, nil)
 
 k = 20; % number of clusters
 d = 10; % dimensions to reduce to
-iter=5;
-seed=14;
+iter = 5; % maximum number of iterations for training the model
+seed = 14; % random seed
 
 rows = @(x) size(x,1);
 cols = @(x) size(x,2);
