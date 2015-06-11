@@ -1,0 +1,101 @@
+Sender: LSF System <lsfadmin@e2104>
+Subject: Job 7894580: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler04> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2104>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Wed Jun 10 12:48:14 2015
+Results reported on Wed Jun 10 12:52:49 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               305.14 sec.
+    Max Memory :             695 MB
+    Average Memory :         572.67 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           329.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+LearnBiases: Gamma = 0.001, Lambda = 0.001, Epochs = 38, RMSE = 0.995850
+LearnBiases: Gamma = 0.001, Lambda = 0.002, Epochs = 38, RMSE = 0.995846
+LearnBiases: Gamma = 0.001, Lambda = 0.005, Epochs = 38, RMSE = 0.995833
+LearnBiases: Gamma = 0.001, Lambda = 0.010, Epochs = 39, RMSE = 0.995816
+LearnBiases: Gamma = 0.001, Lambda = 0.020, Epochs = 40, RMSE = 0.995800
+LearnBiases: Gamma = 0.001, Lambda = 0.050, Epochs = 43, RMSE = 0.995882
+LearnBiases: Gamma = 0.001, Lambda = 0.100, Epochs = 49, RMSE = 0.996396
+LearnBiases: Gamma = 0.002, Lambda = 0.001, Epochs = 20, RMSE = 0.996123
+LearnBiases: Gamma = 0.002, Lambda = 0.002, Epochs = 20, RMSE = 0.996117
+LearnBiases: Gamma = 0.002, Lambda = 0.005, Epochs = 20, RMSE = 0.996101
+LearnBiases: Gamma = 0.002, Lambda = 0.010, Epochs = 20, RMSE = 0.996079
+LearnBiases: Gamma = 0.002, Lambda = 0.020, Epochs = 21, RMSE = 0.996055
+LearnBiases: Gamma = 0.002, Lambda = 0.050, Epochs = 22, RMSE = 0.996114
+LearnBiases: Gamma = 0.002, Lambda = 0.100, Epochs = 26, RMSE = 0.996598
+LearnBiases: Gamma = 0.005, Lambda = 0.001, Epochs = 8, RMSE = 0.997153
+LearnBiases: Gamma = 0.005, Lambda = 0.002, Epochs = 8, RMSE = 0.997147
+LearnBiases: Gamma = 0.005, Lambda = 0.005, Epochs = 9, RMSE = 0.997127
+LearnBiases: Gamma = 0.005, Lambda = 0.010, Epochs = 9, RMSE = 0.997097
+LearnBiases: Gamma = 0.005, Lambda = 0.020, Epochs = 9, RMSE = 0.997056
+LearnBiases: Gamma = 0.005, Lambda = 0.050, Epochs = 10, RMSE = 0.997078
+LearnBiases: Gamma = 0.005, Lambda = 0.100, Epochs = 11, RMSE = 0.997497
+LearnBiases: Gamma = 0.010, Lambda = 0.001, Epochs = 5, RMSE = 0.999018
+LearnBiases: Gamma = 0.010, Lambda = 0.002, Epochs = 5, RMSE = 0.999008
+LearnBiases: Gamma = 0.010, Lambda = 0.005, Epochs = 5, RMSE = 0.998982
+LearnBiases: Gamma = 0.010, Lambda = 0.010, Epochs = 5, RMSE = 0.998945
+LearnBiases: Gamma = 0.010, Lambda = 0.020, Epochs = 5, RMSE = 0.998889
+LearnBiases: Gamma = 0.010, Lambda = 0.050, Epochs = 5, RMSE = 0.998869
+LearnBiases: Gamma = 0.010, Lambda = 0.100, Epochs = 6, RMSE = 0.999228
+LearnBiases: Gamma = 0.020, Lambda = 0.001, Epochs = 3, RMSE = 1.002969
+LearnBiases: Gamma = 0.020, Lambda = 0.002, Epochs = 3, RMSE = 1.002956
+LearnBiases: Gamma = 0.020, Lambda = 0.005, Epochs = 3, RMSE = 1.002922
+LearnBiases: Gamma = 0.020, Lambda = 0.010, Epochs = 3, RMSE = 1.002869
+LearnBiases: Gamma = 0.020, Lambda = 0.020, Epochs = 3, RMSE = 1.002785
+LearnBiases: Gamma = 0.020, Lambda = 0.050, Epochs = 3, RMSE = 1.002681
+LearnBiases: Gamma = 0.020, Lambda = 0.100, Epochs = 3, RMSE = 1.002930
+LearnBiases: Gamma = 0.050, Lambda = 0.001, Epochs = 2, RMSE = 1.016976
+LearnBiases: Gamma = 0.050, Lambda = 0.002, Epochs = 2, RMSE = 1.016950
+LearnBiases: Gamma = 0.050, Lambda = 0.005, Epochs = 2, RMSE = 1.016874
+LearnBiases: Gamma = 0.050, Lambda = 0.010, Epochs = 2, RMSE = 1.016755
+LearnBiases: Gamma = 0.050, Lambda = 0.020, Epochs = 2, RMSE = 1.016542
+LearnBiases: Gamma = 0.050, Lambda = 0.050, Epochs = 2, RMSE = 1.016086
+LearnBiases: Gamma = 0.050, Lambda = 0.100, Epochs = 2, RMSE = 1.015831
+LearnBiases: Gamma = 0.100, Lambda = 0.001, Epochs = 2, RMSE = 1.044193
+LearnBiases: Gamma = 0.100, Lambda = 0.002, Epochs = 2, RMSE = 1.044138
+LearnBiases: Gamma = 0.100, Lambda = 0.005, Epochs = 2, RMSE = 1.043978
+LearnBiases: Gamma = 0.100, Lambda = 0.010, Epochs = 2, RMSE = 1.043723
+LearnBiases: Gamma = 0.100, Lambda = 0.020, Epochs = 2, RMSE = 1.043255
+LearnBiases: Gamma = 0.100, Lambda = 0.050, Epochs = 2, RMSE = 1.042130
+LearnBiases: Gamma = 0.100, Lambda = 0.100, Epochs = 2, RMSE = 1.040949
+Error in <a href="matlab:helpUtils.errorDocCallback('PredictMissingValues', '/cluster/home/dojan/cil/cil_2015_nstd_git/project/src/PredictMissingValues.m', 7)" style="font-weight:bold">PredictMissingValues</a> (<a href="matlab: opentoline('/cluster/home/dojan/cil/cil_2015_nstd_git/project/src/PredictMissingValues.m',7,0)">line 7</a>)
+if nargin < 2
+
+{Output argument "X_pred" (and maybe others) not assigned during call to
+"/cluster/home/dojan/cil/cil_2015_nstd_git/project/src/PredictMissingValues.m>PredictMissingValues".
+
+Error in CollabFilteringEvaluation (line 38)
+X_pred = PredictMissingValues(X_trn, nil);
+} 
+>> 
