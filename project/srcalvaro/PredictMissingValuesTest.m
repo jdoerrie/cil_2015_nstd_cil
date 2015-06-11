@@ -1,6 +1,12 @@
 function X_pred = PredictMissingValues(X, nil)
 
-[num_users, num_items] = size(X);
+k = 20; % number of clusters
+d = 10; % dimensions to reduce to
+iter=5;
+seed=14;
+
+rows = @(x) size(x,1);
+cols = @(x) size(x,2);
 
 if isnan(nil)
   nils = isnan(X);
@@ -9,37 +15,34 @@ else
   X(nils) = NaN;
 end
 
-% means = repmat((nanmean(X)), num_users, 1);
-%
-% X(nils) = means(nils);
-% X = X - means;
-
-[mu, b_u, b_i, B] = ComputeBiases(X);
+[~, ~, ~, B] = ComputeBiases(X);
 X = X - B;
 X(nils) = 0;
 
+fprintf('reducing dimensionality... ');
+[~,X] = pcares(X,d);
+fprintf('DONE\n');
 
-for seed = 1:10
-  for k = 5
-    fprintf('------------ training model ------------\n');
-    rand('seed', seed);
-    % the model with the lowest BIC is preferred
-    GMModel = fitgmdist(X, k, 'RegularizationValue',0.001);
+for d = 2:10
+  fprintf('--------------------------------\n');
+  rand('seed', seed);
+  fprintf('Fitting gaussian model... ');
+  options = statset('MaxIter',iter);
+  GMModel = gmdistribution.fit(X, k, 'Regularize',0.1, 'Options',options);
+  fprintf('DONE\n');
 
-    idx = cluster(GMModel, X);
+  idx = cluster(GMModel, X);
 
-    for clust = 1:k
-      clusterMatches = (idx == clust);
-      clusterMeans = mean(X(clusterMatches, :), 1);
-      fprintf('cluster %d has %d matches\n', clust, sum(clusterMatches));
-      %X(clusterMatches, X(nils)) = clusterMeans;
-      %nils(clusterMatches,:)
-      nils2 = nils;
-      nils2(~clusterMatches,:) = false;
-      replicatedClusterMeans = repmat(clusterMeans, num_users, 1);
-      X(nils2) = replicatedClusterMeans(nils2);
-    end
-    X_pred = X + B;
-    fprintf('seed=%d K=%d BIC=%f RMSE=%f\n', seed, k, GMModel.BIC, RMSE(X_pred));
+  for clust = 1:k
+    clusterMatches = (idx == clust);
+    clusterMeans = repmat(mean(X(clusterMatches, :), 1), rows(X), 1);
+
+    fprintf('cluster %d has %d matches\n', clust, sum(clusterMatches));
+
+    updatePositions = nils & repmat(clusterMatches, 1, cols(X));
+    X(updatePositions) = clusterMeans(updatePositions);
   end
+
+  X_pred = X + B;
+  fprintf('seed=%d K=%d BIC=%f RMSE=%f\n', seed, k, GMModel.BIC, RMSE(X_pred));
 end

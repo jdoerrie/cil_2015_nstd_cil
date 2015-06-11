@@ -1,9 +1,12 @@
 function X_pred = PredictMissingValues(X, nil)
 
-k = 5;
-seed = 6;
+k = 20; % number of clusters
+d = 10; % dimensions to reduce to
+iter = 5; % maximum number of iterations for training the model
+seed = 14; % random seed
 
-[num_users, num_items] = size(X);
+rows = @(x) size(x,1);
+cols = @(x) size(x,2);
 
 if isnan(nil)
   nils = isnan(X);
@@ -12,24 +15,33 @@ else
   X(nils) = NaN;
 end
 
-[mu, b_u, b_i, B] = ComputeBiases(X);
+[~, ~, ~, B] = ComputeBiases(X);
 X = X - B;
 X(nils) = 0;
 
+fprintf('reducing dimensionality... ');
+[~,X] = pcares(X,d);
+fprintf('DONE\n');
+
 rand('seed', seed);
-% the model with the lowest BIC is preferred
-GMModel = gmdistribution.fit(X, k, 'Regularize',0.001);
+% consider initialize the GM to the k-means clusters:
+% http://www.mathworks.com/matlabcentral/answers/90288-how-to-choose-initial-component-parameters-with-gmdistribution-fit
+% the model with the lowest BIC is preferred (GMModel.BIC)
+fprintf('Fitting gaussian model... ');
+options = statset('MaxIter',iter);
+GMModel = gmdistribution.fit(X, k, 'Regularize',0.1, 'Options',options);
+fprintf('DONE\n');
 
 idx = cluster(GMModel, X);
 
 for clust = 1:k
   clusterMatches = (idx == clust);
-  clusterMeans = mean(X(clusterMatches, :), 1);
+  clusterMeans = repmat(mean(X(clusterMatches, :), 1), rows(X), 1);
 
-  nils2 = nils;
-  nils2(~clusterMatches,:) = false;
-  replicatedClusterMeans = repmat(clusterMeans, num_users, 1);
-  X(nils2) = replicatedClusterMeans(nils2);
+  fprintf('cluster %d has %d matches\n', clust, sum(clusterMatches));
+
+  updatePositions = nils & repmat(clusterMatches, 1, cols(X));
+  X(updatePositions) = clusterMeans(updatePositions);
 end
 
 X_pred = X + B;
