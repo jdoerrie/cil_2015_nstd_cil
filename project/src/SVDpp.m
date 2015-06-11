@@ -3,7 +3,7 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
   % Neighborhood: a Multifaceted Collaborative Filtering Model"
 
   % Boolean to switch between local and judge mode
-  is_local = false;
+  is_local = true;
 
   % Hyperparameters and default values
   if (nargin < 2)         K = 64; end % number of factors
@@ -15,7 +15,7 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
   [~,~,~,B] = LearnBiases(X);
   X_n = (X - B);
   % number of iterations over all known ratings per factor
-  nEpochs = 5;
+  nEpochs = 25;
   % Dimensions of the input
   [M, N] = size(X);
 
