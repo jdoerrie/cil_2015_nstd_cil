@@ -182,9 +182,9 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
   % returned.
   if is_local
     X_pred = X_prev;
-    fprintf(
+    fprintf(...
       'SVD++, K = %d, gam = %f, lam = %f, shrink = %f, RMSE = %f\n', ...
-       K, orig_gamma, lambda, shrink, RMSE(X_pred)
+       K, orig_gamma, lambda, shrink, RMSE(X_pred) ...
     );
   else
     for u=1:M
