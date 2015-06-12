@@ -7,7 +7,7 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
   % $$ \^{r}_{ui} = \mu + b_i + b_u + q_i^T \left( p_u +
   % |R(u)|^{-\frac{1}{2}} \sum_{j \in R(u)} y_j \right ) $$
   %
-  % where \mu is the total average rating, b_i an item specific bias, b_u
+  % where \mu is the average rating, b_i an item specific bias, b_u
   % a user specific bias, q_i an item specific latent factor vector, p_u a
   % user specific latent factor vector and R(u) the index set of ratings
   % issued by a given user. y_j is an item specific factor vector, so that
@@ -18,7 +18,7 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
   % iteration through the data points.  Judge mode disables all of this,
   % resulting in a faster algorithm but no progress reporting during the
   % run.
-  is_local = true;
+  is_local = false;
 
   % Hyperparameters and default values optimized via cross validation.
   if nargin < 2; K      =    64; end % number of latent factors
@@ -31,8 +31,20 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
   % retrieve the original value otherwise.
   orig_gamma = gamma;
 
-  % Precompute biases. Biases are not learned due to performance reasons.
+  % Boolean flag indicating whether biases should be learned during the
+  % gradient descent or whether just precomputed values should be used.
+  % In either case biases are computed, since they will serve as initial
+  % values even when learned later on.
+  learn_biases = false;
+
   [mu, bu, bi, B] = ComputeBiases(X);
+
+  % X "normalized".  Stores the residuals after subtracting the biases from
+  % X.  The remaining code tries to approximate these residuals as good as
+  % possible.
+  if ~learn_biases
+    X_n = X - B;
+  end
 
   % Define the number of epochs.  An epoch in this context is a complete
   % iteration over all present ratings in X.
@@ -133,7 +145,7 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
 
     % if running in local mode, compute the prediction for the current
     % iteration. V contains the modifed user latent factors and gets
-    % multiplied with Q. The current prediction is then B + V'*Q and gets
+    % multiplied with Q. The current prediction is then B + Q'*P and gets
     % clamped to be within [1,5]. Then an RMSE score is computed and
     % printed to stdout every couple of iterations. If the score plus an
     % epsilon was worse than the previous iteration we stop the gradient
