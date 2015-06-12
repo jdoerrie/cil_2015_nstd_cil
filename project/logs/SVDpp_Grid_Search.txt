@@ -38,10 +38,10 @@ The output (if any) follows:
                     R2013b (8.2.0.701) 64-bit (glnxa64)
                               August 13, 2013
 
- 
+
 To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
- 
+
 Epoch: 005, Curr RMSE: 0.995728, Gamma: 0.000774
 Epoch: 010, Curr RMSE: 0.994839, Gamma: 0.000599
 Epoch: 015, Curr RMSE: 0.992475, Gamma: 0.000463
@@ -1258,3 +1258,476 @@ Epoch: 100, Curr RMSE: 0.964623, Gamma: 0.000030
 Epoch: 105, Curr RMSE: 0.964600, Gamma: 0.000023
 Epoch: 110, Curr RMSE: 0.964582, Gamma: 0.000018
 User defined signal 2
+Sender: LSF System <lsfadmin@e2066>
+Subject: Job 7981496: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation -o SVDpp_Grid_Search.txt> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation -o SVDpp_Grid_Search.txt> was submitted from host <euler04> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2066>, in queue <normal.24h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Fri Jun 12 16:57:22 2015
+Results reported on Fri Jun 12 17:30:01 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation -o SVDpp_Grid_Search.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               2075.69 sec.
+    Max Memory :             958 MB
+    Average Memory :         789.11 MB
+    Total Requested Memory : 2048.00 MB
+    Delta Memory :           1090.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+Unrecognized MATLAB option "o".
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Epoch: 005, Curr RMSE: 0.982399, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.972136, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.969618, Gamma: 0.002316
+SVD++, K = 64, gam = 0.005000, lam = 0.001000, shrink = 0.950000, RMSE = 0.969618
+Elapsed time is 31.945974 seconds.
+Epoch: 005, Curr RMSE: 0.981556, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.970798, Gamma: 0.003882
+Epoch: 012, Curr RMSE: 0.970170, Gamma: 0.003690
+SVD++, K = 64, gam = 0.005000, lam = 0.001000, shrink = 0.975000, RMSE = 0.970170
+Elapsed time is 25.887855 seconds.
+Epoch: 005, Curr RMSE: 0.980779, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.970152, Gamma: 0.005000
+Epoch: 011, Curr RMSE: 0.970152, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.001000, shrink = 1.000000, RMSE = 0.970152
+Elapsed time is 23.825501 seconds.
+Epoch: 005, Curr RMSE: 0.982310, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.972312, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.969625, Gamma: 0.002316
+SVD++, K = 64, gam = 0.005000, lam = 0.002000, shrink = 0.950000, RMSE = 0.969625
+Elapsed time is 32.160335 seconds.
+Epoch: 005, Curr RMSE: 0.981772, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.970705, Gamma: 0.003882
+Epoch: 013, Curr RMSE: 0.969641, Gamma: 0.003598
+SVD++, K = 64, gam = 0.005000, lam = 0.002000, shrink = 0.975000, RMSE = 0.969641
+Elapsed time is 28.084703 seconds.
+Epoch: 005, Curr RMSE: 0.980932, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.969829, Gamma: 0.005000
+Epoch: 011, Curr RMSE: 0.969829, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.002000, shrink = 1.000000, RMSE = 0.969829
+Elapsed time is 23.919372 seconds.
+Epoch: 005, Curr RMSE: 0.982646, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.972744, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.968348, Gamma: 0.002316
+Epoch: 017, Curr RMSE: 0.968295, Gamma: 0.002091
+SVD++, K = 64, gam = 0.005000, lam = 0.005000, shrink = 0.950000, RMSE = 0.968295
+Elapsed time is 36.349055 seconds.
+Epoch: 005, Curr RMSE: 0.981874, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.970612, Gamma: 0.003882
+Epoch: 014, Curr RMSE: 0.968214, Gamma: 0.003508
+SVD++, K = 64, gam = 0.005000, lam = 0.005000, shrink = 0.975000, RMSE = 0.968214
+Elapsed time is 29.944941 seconds.
+Epoch: 005, Curr RMSE: 0.981396, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.969379, Gamma: 0.005000
+Epoch: 012, Curr RMSE: 0.968701, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.005000, shrink = 1.000000, RMSE = 0.968701
+Elapsed time is 25.748572 seconds.
+Epoch: 005, Curr RMSE: 0.983252, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.973567, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.967853, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.966624, Gamma: 0.001792
+SVD++, K = 64, gam = 0.005000, lam = 0.010000, shrink = 0.950000, RMSE = 0.966624
+Elapsed time is 42.324158 seconds.
+Epoch: 005, Curr RMSE: 0.982629, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.971376, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.966742, Gamma: 0.003420
+Epoch: 016, Curr RMSE: 0.966742, Gamma: 0.003335
+SVD++, K = 64, gam = 0.005000, lam = 0.010000, shrink = 0.975000, RMSE = 0.966742
+Elapsed time is 34.098724 seconds.
+Epoch: 005, Curr RMSE: 0.981982, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.969472, Gamma: 0.005000
+Epoch: 014, Curr RMSE: 0.966925, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.010000, shrink = 1.000000, RMSE = 0.966925
+Elapsed time is 29.888778 seconds.
+Epoch: 005, Curr RMSE: 0.984346, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.975388, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.969347, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.965966, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.964519, Gamma: 0.001387
+SVD++, K = 64, gam = 0.005000, lam = 0.020000, shrink = 0.950000, RMSE = 0.964519
+Elapsed time is 52.706303 seconds.
+Epoch: 005, Curr RMSE: 0.983708, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.973711, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.966887, Gamma: 0.003420
+Epoch: 020, Curr RMSE: 0.964747, Gamma: 0.003013
+Epoch: 021, Curr RMSE: 0.964747, Gamma: 0.002938
+SVD++, K = 64, gam = 0.005000, lam = 0.020000, shrink = 0.975000, RMSE = 0.964747
+Elapsed time is 44.069740 seconds.
+Epoch: 005, Curr RMSE: 0.982977, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.971372, Gamma: 0.005000
+Epoch: 015, Curr RMSE: 0.964999, Gamma: 0.005000
+Epoch: 017, Curr RMSE: 0.964805, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.020000, shrink = 1.000000, RMSE = 0.964805
+Elapsed time is 35.788523 seconds.
+Epoch: 005, Curr RMSE: 0.987344, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.980141, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.975363, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.972182, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.969878, Gamma: 0.001387
+SVD++, K = 64, gam = 0.005000, lam = 0.050000, shrink = 0.950000, RMSE = 0.969878
+Elapsed time is 52.135556 seconds.
+Epoch: 005, Curr RMSE: 0.986667, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.978616, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.972943, Gamma: 0.003420
+Epoch: 020, Curr RMSE: 0.968663, Gamma: 0.003013
+Epoch: 025, Curr RMSE: 0.965662, Gamma: 0.002655
+SVD++, K = 64, gam = 0.005000, lam = 0.050000, shrink = 0.975000, RMSE = 0.965662
+Elapsed time is 52.188214 seconds.
+Epoch: 005, Curr RMSE: 0.986256, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.977331, Gamma: 0.005000
+Epoch: 015, Curr RMSE: 0.970476, Gamma: 0.005000
+Epoch: 020, Curr RMSE: 0.965534, Gamma: 0.005000
+Epoch: 025, Curr RMSE: 0.963188, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.050000, shrink = 1.000000, RMSE = 0.963188
+Elapsed time is 52.107813 seconds.
+Epoch: 005, Curr RMSE: 0.991149, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.985814, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.982765, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.980926, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.979400, Gamma: 0.001387
+SVD++, K = 64, gam = 0.005000, lam = 0.100000, shrink = 0.950000, RMSE = 0.979400
+Elapsed time is 52.204021 seconds.
+Epoch: 005, Curr RMSE: 0.990939, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.984764, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.981346, Gamma: 0.003420
+Epoch: 020, Curr RMSE: 0.978436, Gamma: 0.003013
+Epoch: 025, Curr RMSE: 0.975772, Gamma: 0.002655
+SVD++, K = 64, gam = 0.005000, lam = 0.100000, shrink = 0.975000, RMSE = 0.975772
+Elapsed time is 52.304184 seconds.
+Epoch: 005, Curr RMSE: 0.990615, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.983997, Gamma: 0.005000
+Epoch: 015, Curr RMSE: 0.979658, Gamma: 0.005000
+Epoch: 020, Curr RMSE: 0.975337, Gamma: 0.005000
+Epoch: 025, Curr RMSE: 0.971942, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.100000, shrink = 1.000000, RMSE = 0.971942
+Elapsed time is 52.235097 seconds.
+Epoch: 005, Curr RMSE: 0.972555, Gamma: 0.007738
+Epoch: 007, Curr RMSE: 0.971738, Gamma: 0.006983
+SVD++, K = 64, gam = 0.010000, lam = 0.001000, shrink = 0.950000, RMSE = 0.971738
+Elapsed time is 15.303988 seconds.
+Epoch: 005, Curr RMSE: 0.972052, Gamma: 0.008811
+Epoch: 006, Curr RMSE: 0.972052, Gamma: 0.008591
+SVD++, K = 64, gam = 0.010000, lam = 0.001000, shrink = 0.975000, RMSE = 0.972052
+Elapsed time is 13.247451 seconds.
+Epoch: 005, Curr RMSE: 0.971985, Gamma: 0.010000
+Epoch: 006, Curr RMSE: 0.971985, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.001000, shrink = 1.000000, RMSE = 0.971985
+Elapsed time is 13.327253 seconds.
+Epoch: 005, Curr RMSE: 0.972448, Gamma: 0.007738
+Epoch: 007, Curr RMSE: 0.971083, Gamma: 0.006983
+SVD++, K = 64, gam = 0.010000, lam = 0.002000, shrink = 0.950000, RMSE = 0.971083
+Elapsed time is 15.308943 seconds.
+Epoch: 005, Curr RMSE: 0.972117, Gamma: 0.008811
+Epoch: 007, Curr RMSE: 0.971765, Gamma: 0.008376
+SVD++, K = 64, gam = 0.010000, lam = 0.002000, shrink = 0.975000, RMSE = 0.971765
+Elapsed time is 15.372122 seconds.
+Epoch: 005, Curr RMSE: 0.972118, Gamma: 0.010000
+Epoch: 006, Curr RMSE: 0.972118, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.002000, shrink = 1.000000, RMSE = 0.972118
+Elapsed time is 13.441175 seconds.
+Epoch: 005, Curr RMSE: 0.972599, Gamma: 0.007738
+Epoch: 008, Curr RMSE: 0.970083, Gamma: 0.006634
+SVD++, K = 64, gam = 0.010000, lam = 0.005000, shrink = 0.950000, RMSE = 0.970083
+Elapsed time is 17.466698 seconds.
+Epoch: 005, Curr RMSE: 0.972240, Gamma: 0.008811
+Epoch: 007, Curr RMSE: 0.970623, Gamma: 0.008376
+SVD++, K = 64, gam = 0.010000, lam = 0.005000, shrink = 0.975000, RMSE = 0.970623
+Elapsed time is 15.410285 seconds.
+Epoch: 005, Curr RMSE: 0.971679, Gamma: 0.010000
+Epoch: 007, Curr RMSE: 0.970754, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.005000, shrink = 1.000000, RMSE = 0.970754
+Elapsed time is 15.416503 seconds.
+Epoch: 005, Curr RMSE: 0.973246, Gamma: 0.007738
+Epoch: 009, Curr RMSE: 0.968590, Gamma: 0.006302
+SVD++, K = 64, gam = 0.010000, lam = 0.010000, shrink = 0.950000, RMSE = 0.968590
+Elapsed time is 19.535263 seconds.
+Epoch: 005, Curr RMSE: 0.972396, Gamma: 0.008811
+Epoch: 008, Curr RMSE: 0.968519, Gamma: 0.008167
+SVD++, K = 64, gam = 0.010000, lam = 0.010000, shrink = 0.975000, RMSE = 0.968519
+Elapsed time is 17.412466 seconds.
+Epoch: 005, Curr RMSE: 0.971896, Gamma: 0.010000
+Epoch: 008, Curr RMSE: 0.969470, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.010000, shrink = 1.000000, RMSE = 0.969470
+Elapsed time is 17.575308 seconds.
+Epoch: 005, Curr RMSE: 0.974710, Gamma: 0.007738
+Epoch: 010, Curr RMSE: 0.966185, Gamma: 0.005987
+Epoch: 011, Curr RMSE: 0.966185, Gamma: 0.005688
+SVD++, K = 64, gam = 0.010000, lam = 0.020000, shrink = 0.950000, RMSE = 0.966185
+Elapsed time is 23.848352 seconds.
+Epoch: 005, Curr RMSE: 0.974069, Gamma: 0.008811
+Epoch: 010, Curr RMSE: 0.966400, Gamma: 0.007763
+SVD++, K = 64, gam = 0.010000, lam = 0.020000, shrink = 0.975000, RMSE = 0.966400
+Elapsed time is 21.799863 seconds.
+Epoch: 005, Curr RMSE: 0.973526, Gamma: 0.010000
+Epoch: 009, Curr RMSE: 0.967303, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.020000, shrink = 1.000000, RMSE = 0.967303
+Elapsed time is 19.738927 seconds.
+Epoch: 005, Curr RMSE: 0.979902, Gamma: 0.007738
+Epoch: 010, Curr RMSE: 0.970095, Gamma: 0.005987
+Epoch: 015, Curr RMSE: 0.965263, Gamma: 0.004633
+Epoch: 020, Curr RMSE: 0.963364, Gamma: 0.003585
+Epoch: 025, Curr RMSE: 0.962855, Gamma: 0.002774
+SVD++, K = 64, gam = 0.010000, lam = 0.050000, shrink = 0.950000, RMSE = 0.962855
+Elapsed time is 53.172761 seconds.
+Epoch: 005, Curr RMSE: 0.979143, Gamma: 0.008811
+Epoch: 010, Curr RMSE: 0.968836, Gamma: 0.007763
+Epoch: 015, Curr RMSE: 0.964712, Gamma: 0.006840
+Epoch: 019, Curr RMSE: 0.964265, Gamma: 0.006181
+SVD++, K = 64, gam = 0.010000, lam = 0.050000, shrink = 0.975000, RMSE = 0.964265
+Elapsed time is 40.620894 seconds.
+Epoch: 005, Curr RMSE: 0.978710, Gamma: 0.010000
+Epoch: 010, Curr RMSE: 0.968079, Gamma: 0.010000
+Epoch: 015, Curr RMSE: 0.965541, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.050000, shrink = 1.000000, RMSE = 0.965541
+Elapsed time is 32.419422 seconds.
+Epoch: 005, Curr RMSE: 0.985506, Gamma: 0.007738
+Epoch: 010, Curr RMSE: 0.979244, Gamma: 0.005987
+Epoch: 015, Curr RMSE: 0.974573, Gamma: 0.004633
+Epoch: 020, Curr RMSE: 0.971646, Gamma: 0.003585
+Epoch: 025, Curr RMSE: 0.969787, Gamma: 0.002774
+SVD++, K = 64, gam = 0.010000, lam = 0.100000, shrink = 0.950000, RMSE = 0.969787
+Elapsed time is 53.587847 seconds.
+Epoch: 005, Curr RMSE: 0.985106, Gamma: 0.008811
+Epoch: 010, Curr RMSE: 0.978110, Gamma: 0.007763
+Epoch: 015, Curr RMSE: 0.972740, Gamma: 0.006840
+Epoch: 020, Curr RMSE: 0.969595, Gamma: 0.006027
+Epoch: 025, Curr RMSE: 0.967599, Gamma: 0.005310
+SVD++, K = 64, gam = 0.010000, lam = 0.100000, shrink = 0.975000, RMSE = 0.967599
+Elapsed time is 53.636130 seconds.
+Epoch: 005, Curr RMSE: 0.984781, Gamma: 0.010000
+Epoch: 010, Curr RMSE: 0.976981, Gamma: 0.010000
+Epoch: 015, Curr RMSE: 0.971433, Gamma: 0.010000
+Epoch: 020, Curr RMSE: 0.968483, Gamma: 0.010000
+Epoch: 025, Curr RMSE: 0.967329, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.100000, shrink = 1.000000, RMSE = 0.967329
+Elapsed time is 53.755680 seconds.
+Epoch: 004, Curr RMSE: 0.974926, Gamma: 0.016290
+SVD++, K = 64, gam = 0.020000, lam = 0.001000, shrink = 0.950000, RMSE = 0.974926
+Elapsed time is 9.435661 seconds.
+Epoch: 004, Curr RMSE: 0.975308, Gamma: 0.018074
+SVD++, K = 64, gam = 0.020000, lam = 0.001000, shrink = 0.975000, RMSE = 0.975308
+Elapsed time is 9.343304 seconds.
+Epoch: 004, Curr RMSE: 0.975797, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.001000, shrink = 1.000000, RMSE = 0.975797
+Elapsed time is 9.427749 seconds.
+Epoch: 004, Curr RMSE: 0.974136, Gamma: 0.016290
+SVD++, K = 64, gam = 0.020000, lam = 0.002000, shrink = 0.950000, RMSE = 0.974136
+Elapsed time is 9.456112 seconds.
+Epoch: 004, Curr RMSE: 0.974627, Gamma: 0.018074
+SVD++, K = 64, gam = 0.020000, lam = 0.002000, shrink = 0.975000, RMSE = 0.974627
+Elapsed time is 9.374777 seconds.
+Epoch: 004, Curr RMSE: 0.975050, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.002000, shrink = 1.000000, RMSE = 0.975050
+Elapsed time is 9.480243 seconds.
+Epoch: 004, Curr RMSE: 0.973547, Gamma: 0.016290
+SVD++, K = 64, gam = 0.020000, lam = 0.005000, shrink = 0.950000, RMSE = 0.973547
+Elapsed time is 9.485361 seconds.
+Epoch: 004, Curr RMSE: 0.973696, Gamma: 0.018074
+SVD++, K = 64, gam = 0.020000, lam = 0.005000, shrink = 0.975000, RMSE = 0.973696
+Elapsed time is 9.443031 seconds.
+Epoch: 004, Curr RMSE: 0.973947, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.005000, shrink = 1.000000, RMSE = 0.973947
+Elapsed time is 9.379893 seconds.
+Epoch: 005, Curr RMSE: 0.972620, Gamma: 0.015476
+SVD++, K = 64, gam = 0.020000, lam = 0.010000, shrink = 0.950000, RMSE = 0.972620
+Elapsed time is 11.596133 seconds.
+Epoch: 005, Curr RMSE: 0.972904, Gamma: 0.017622
+SVD++, K = 64, gam = 0.020000, lam = 0.010000, shrink = 0.975000, RMSE = 0.972904
+Elapsed time is 11.659448 seconds.
+Epoch: 004, Curr RMSE: 0.973205, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.010000, shrink = 1.000000, RMSE = 0.973205
+Elapsed time is 9.483927 seconds.
+Epoch: 005, Curr RMSE: 0.970383, Gamma: 0.015476
+Epoch: 006, Curr RMSE: 0.970383, Gamma: 0.014702
+SVD++, K = 64, gam = 0.020000, lam = 0.020000, shrink = 0.950000, RMSE = 0.970383
+Elapsed time is 13.802828 seconds.
+Epoch: 005, Curr RMSE: 0.970610, Gamma: 0.017622
+SVD++, K = 64, gam = 0.020000, lam = 0.020000, shrink = 0.975000, RMSE = 0.970610
+Elapsed time is 11.515173 seconds.
+Epoch: 005, Curr RMSE: 0.971115, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.020000, shrink = 1.000000, RMSE = 0.971115
+Elapsed time is 11.673847 seconds.
+Epoch: 005, Curr RMSE: 0.971975, Gamma: 0.015476
+Epoch: 010, Curr RMSE: 0.967841, Gamma: 0.011975
+SVD++, K = 64, gam = 0.020000, lam = 0.050000, shrink = 0.950000, RMSE = 0.967841
+Elapsed time is 22.348057 seconds.
+Epoch: 005, Curr RMSE: 0.971704, Gamma: 0.017622
+Epoch: 009, Curr RMSE: 0.968735, Gamma: 0.015925
+SVD++, K = 64, gam = 0.020000, lam = 0.050000, shrink = 0.975000, RMSE = 0.968735
+Elapsed time is 20.267023 seconds.
+Epoch: 005, Curr RMSE: 0.971723, Gamma: 0.020000
+Epoch: 008, Curr RMSE: 0.969640, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.050000, shrink = 1.000000, RMSE = 0.969640
+Elapsed time is 18.307787 seconds.
+Epoch: 005, Curr RMSE: 0.979883, Gamma: 0.015476
+Epoch: 010, Curr RMSE: 0.972410, Gamma: 0.011975
+Epoch: 015, Curr RMSE: 0.969291, Gamma: 0.009266
+Epoch: 020, Curr RMSE: 0.967870, Gamma: 0.007170
+Epoch: 025, Curr RMSE: 0.967493, Gamma: 0.005548
+SVD++, K = 64, gam = 0.020000, lam = 0.100000, shrink = 0.950000, RMSE = 0.967493
+Elapsed time is 54.470509 seconds.
+Epoch: 005, Curr RMSE: 0.979577, Gamma: 0.017622
+Epoch: 010, Curr RMSE: 0.972148, Gamma: 0.015527
+Epoch: 015, Curr RMSE: 0.970366, Gamma: 0.013680
+Epoch: 017, Curr RMSE: 0.970319, Gamma: 0.013005
+SVD++, K = 64, gam = 0.020000, lam = 0.100000, shrink = 0.975000, RMSE = 0.970319
+Elapsed time is 37.749215 seconds.
+Epoch: 005, Curr RMSE: 0.979110, Gamma: 0.020000
+Epoch: 010, Curr RMSE: 0.972445, Gamma: 0.020000
+Epoch: 013, Curr RMSE: 0.972040, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.100000, shrink = 1.000000, RMSE = 0.972040
+Elapsed time is 29.065814 seconds.
+Epoch: 002, Curr RMSE: 0.987236, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.001000, shrink = 0.950000, RMSE = 0.987236
+Elapsed time is 5.446883 seconds.
+Epoch: 002, Curr RMSE: 0.987174, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.001000, shrink = 0.975000, RMSE = 0.987174
+Elapsed time is 5.417703 seconds.
+Epoch: 002, Curr RMSE: 0.987459, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.001000, shrink = 1.000000, RMSE = 0.987459
+Elapsed time is 5.416592 seconds.
+Epoch: 002, Curr RMSE: 0.987114, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.002000, shrink = 0.950000, RMSE = 0.987114
+Elapsed time is 5.430102 seconds.
+Epoch: 002, Curr RMSE: 0.986899, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.002000, shrink = 0.975000, RMSE = 0.986899
+Elapsed time is 5.429724 seconds.
+Epoch: 002, Curr RMSE: 0.986804, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.002000, shrink = 1.000000, RMSE = 0.986804
+Elapsed time is 5.433841 seconds.
+Epoch: 002, Curr RMSE: 0.986258, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.005000, shrink = 0.950000, RMSE = 0.986258
+Elapsed time is 5.440437 seconds.
+Epoch: 002, Curr RMSE: 0.986195, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.005000, shrink = 0.975000, RMSE = 0.986195
+Elapsed time is 5.427653 seconds.
+Epoch: 002, Curr RMSE: 0.986177, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.005000, shrink = 1.000000, RMSE = 0.986177
+Elapsed time is 5.436150 seconds.
+Epoch: 002, Curr RMSE: 0.985231, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.010000, shrink = 0.950000, RMSE = 0.985231
+Elapsed time is 5.430789 seconds.
+Epoch: 002, Curr RMSE: 0.985282, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.010000, shrink = 0.975000, RMSE = 0.985282
+Elapsed time is 5.389861 seconds.
+Epoch: 002, Curr RMSE: 0.985390, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.010000, shrink = 1.000000, RMSE = 0.985390
+Elapsed time is 5.405315 seconds.
+Epoch: 003, Curr RMSE: 0.984859, Gamma: 0.042869
+SVD++, K = 64, gam = 0.050000, lam = 0.020000, shrink = 0.950000, RMSE = 0.984859
+Elapsed time is 7.522655 seconds.
+Epoch: 002, Curr RMSE: 0.984799, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.020000, shrink = 0.975000, RMSE = 0.984799
+Elapsed time is 5.431532 seconds.
+Epoch: 002, Curr RMSE: 0.984766, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.020000, shrink = 1.000000, RMSE = 0.984766
+Elapsed time is 5.412244 seconds.
+Epoch: 004, Curr RMSE: 0.979253, Gamma: 0.040725
+SVD++, K = 64, gam = 0.050000, lam = 0.050000, shrink = 0.950000, RMSE = 0.979253
+Elapsed time is 9.678406 seconds.
+Epoch: 004, Curr RMSE: 0.980000, Gamma: 0.045184
+SVD++, K = 64, gam = 0.050000, lam = 0.050000, shrink = 0.975000, RMSE = 0.980000
+Elapsed time is 9.684403 seconds.
+Epoch: 003, Curr RMSE: 0.980872, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.050000, shrink = 1.000000, RMSE = 0.980872
+Elapsed time is 7.544567 seconds.
+Epoch: 005, Curr RMSE: 0.978806, Gamma: 0.038689
+Epoch: 006, Curr RMSE: 0.978806, Gamma: 0.036755
+SVD++, K = 64, gam = 0.050000, lam = 0.100000, shrink = 0.950000, RMSE = 0.978806
+Elapsed time is 14.083466 seconds.
+Epoch: 005, Curr RMSE: 0.979862, Gamma: 0.044055
+SVD++, K = 64, gam = 0.050000, lam = 0.100000, shrink = 0.975000, RMSE = 0.979862
+Elapsed time is 11.762931 seconds.
+Epoch: 005, Curr RMSE: 0.980637, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.100000, shrink = 1.000000, RMSE = 0.980637
+Elapsed time is 11.716757 seconds.
+Epoch: 002, Curr RMSE: 1.194868, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.001000, shrink = 0.950000, RMSE = 1.194868
+Elapsed time is 5.433614 seconds.
+Epoch: 002, Curr RMSE: 1.182141, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.001000, shrink = 0.975000, RMSE = 1.182141
+Elapsed time is 5.441236 seconds.
+Epoch: 002, Curr RMSE: 1.186099, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.001000, shrink = 1.000000, RMSE = 1.186099
+Elapsed time is 5.441385 seconds.
+Epoch: 002, Curr RMSE: 1.171070, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.002000, shrink = 0.950000, RMSE = 1.171070
+Elapsed time is 5.441362 seconds.
+Epoch: 002, Curr RMSE: 1.171648, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.002000, shrink = 0.975000, RMSE = 1.171648
+Elapsed time is 5.438065 seconds.
+Epoch: 002, Curr RMSE: 1.170220, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.002000, shrink = 1.000000, RMSE = 1.170220
+Elapsed time is 5.443701 seconds.
+Epoch: 002, Curr RMSE: 1.130298, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.005000, shrink = 0.950000, RMSE = 1.130298
+Elapsed time is 5.452893 seconds.
+Epoch: 002, Curr RMSE: 1.129687, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.005000, shrink = 0.975000, RMSE = 1.129687
+Elapsed time is 5.449086 seconds.
+Epoch: 002, Curr RMSE: 1.135722, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.005000, shrink = 1.000000, RMSE = 1.135722
+Elapsed time is 5.449915 seconds.
+Epoch: 002, Curr RMSE: 1.084374, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.010000, shrink = 0.950000, RMSE = 1.084374
+Elapsed time is 5.400069 seconds.
+Epoch: 002, Curr RMSE: 1.084093, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.010000, shrink = 0.975000, RMSE = 1.084093
+Elapsed time is 5.435481 seconds.
+Epoch: 002, Curr RMSE: 1.086054, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.010000, shrink = 1.000000, RMSE = 1.086054
+Elapsed time is 5.426961 seconds.
+Epoch: 002, Curr RMSE: 1.030964, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.020000, shrink = 0.950000, RMSE = 1.030964
+Elapsed time is 5.439649 seconds.
+Epoch: 002, Curr RMSE: 1.031288, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.020000, shrink = 0.975000, RMSE = 1.031288
+Elapsed time is 5.451825 seconds.
+Epoch: 002, Curr RMSE: 1.031601, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.020000, shrink = 1.000000, RMSE = 1.031601
+Elapsed time is 5.449086 seconds.
+Epoch: 002, Curr RMSE: 0.995988, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.050000, shrink = 0.950000, RMSE = 0.995988
+Elapsed time is 5.443200 seconds.
+Epoch: 002, Curr RMSE: 0.995913, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.050000, shrink = 0.975000, RMSE = 0.995913
+Elapsed time is 5.282213 seconds.
+Epoch: 002, Curr RMSE: 0.996047, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.050000, shrink = 1.000000, RMSE = 0.996047
+Elapsed time is 5.283403 seconds.
+Epoch: 003, Curr RMSE: 0.991641, Gamma: 0.085737
+SVD++, K = 64, gam = 0.100000, lam = 0.100000, shrink = 0.950000, RMSE = 0.991641
+Elapsed time is 7.332372 seconds.
+Epoch: 002, Curr RMSE: 0.991636, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.100000, shrink = 0.975000, RMSE = 0.991636
+Elapsed time is 5.278596 seconds.
+Epoch: 002, Curr RMSE: 0.991618, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.100000, shrink = 1.000000, RMSE = 0.991618
+Elapsed time is 5.244082 seconds.
+Root of Mean-squared error: 0.99162
+>> 
