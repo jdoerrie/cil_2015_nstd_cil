@@ -19,6 +19,7 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   % resulting in a faster algorithm but no progress reporting during the
   % run.
   is_local = true;
+  rng('default');
 
   % Hyperparameters and default values optimized via cross validation.
   if nargin < 2; K      =    64; end % number of latent factors
@@ -49,8 +50,8 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   % Precompute for each user the inverse square root of the number of
   % ratings issued. This will be used to normalize sums in the gradient
   % update steps.
-  % $$ isqrt \in R^M $$
-  isqrt = 1.0 ./ sqrt(max(nRatings, 1));
+  % $$ iSqrt \in R^M $$
+  iSqrt = 1.0 ./ sqrt(max(nRatings, 1));
 
   % For each user determine the indices into X where ratings are available.
   % This allows for fast batch processing of all issued ratings.  The
@@ -101,31 +102,38 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
       % indices of the ratings of user u
       Ru = R{u};
 
+      % Store the current values of Q and Y to avoid repeated lookups.
+      % size({Q,Y}Ru) = [K,R]
+      QRu = Q(:,Ru);
+      YRu = Y(:,Ru);
+
       % modified p(u) vector that takes the normalized sum of the y weights
       % into account
-      pu = P(:,u) + isqrt(u) * sum(Y(:,Ru), 2);
+      pu = P(:,u) + iSqrt(u)*sum(YRu, 2);
 
       % user u's known ratings
       r_u = X(u,Ru);
 
       % current aproximation including baseline estimators and modified
       % latent vectors
-      rhat_u = B(u,Ru) + pu' * Q(:,Ru);
+      rhat_u = B(u,Ru) + pu'*QRu;
 
       % current error terms, size(e_u) = [R, 1]
       e_u = (r_u - rhat_u)';
 
+      % current error terms multiplied with QRu, size(Qe_u) = [K,1]
+      Qe_u = QRu*e_u;
+
       % update current user latent vector, size(P(:,u)) = [K, 1]
-      P(:,u)  = P(:,u)  + gamma*( Q(:,Ru)*e_u - lambda*P(:,u) );
+      P(:,u)  = P(:,u) + gamma*( Qe_u - lambda*P(:,u) );
+
+      % update latent item factor vectors, size(Q(:,Ru)) = [K, R]
+      Q(:,Ru) = QRu + gamma*( pu*e_u' - lambda*QRu );
 
       % update current items factor vectors, size(Y(:,Ru)) = [K, R].
       % bsxfun is necessary, because size(Q(:,Ru) * e_u) = [K, 1] and we
       % want to subtract the regularizer term for every item in R(u).
-      Y(:,Ru) = Y(:,Ru) + gamma* ...
-        ( bsxfun(@minus, isqrt(u)*Q(:,Ru)*e_u, lambda*Y(:,Ru)) );
-
-      % update latent item factor vectors, size(Q(:,Ru)) = [K, R]
-      Q(:,Ru) = Q(:,Ru) + gamma*(pu*e_u' - lambda * Q(:,Ru));
+      Y(:,Ru) = YRu + gamma*( bsxfun(@minus, iSqrt(u)*Qe_u, lambda*YRu) );
     end
 
     % shrink gamma according to the specified factor
@@ -142,7 +150,7 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
       V = zeros(K,M);
       for u=1:M
         Ru = R{u};
-        V(:,u) = P(:,u) + isqrt(u) * sum(Y(:,Ru),2);
+        V(:,u) = P(:,u) + iSqrt(u) * sum(Y(:,Ru),2);
       end
 
       X_curr = B + V'*Q;
@@ -154,7 +162,7 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
        break;
       end
 
-      if (mod(iEpoch, 5) == 0)
+      if (mod(iEpoch, 1) == 0)
         fprintf('Epoch: %03d, Curr RMSE: %f, Gamma: %f\n', iEpoch, ...
                 RMSE(X_curr), gamma);
       end
@@ -179,7 +187,7 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   else
     for u=1:M
       Ru = R{u};
-      P(:,u) = P(:,u) + isqrt(u)*sum(Y(:,Ru), 2);
+      P(:,u) = P(:,u) + iSqrt(u)*sum(Y(:,Ru), 2);
     end
 
     X_pred = B + P'*Q;
