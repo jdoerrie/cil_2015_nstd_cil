@@ -1,4 +1,4 @@
-function X_pred = SVDpp(X, K, gamma, lambda, shrink)
+function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   % Matlab optimized implementation of SVD++ as seen in "Factorization
   % Meets the Neighborhood: a Multifaceted Collaborative Filtering Model".
   % An approximation of the ratings is achieved through the following
@@ -160,6 +160,8 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
       end
 
       X_prev = X_curr;
+      P_pred = [ones(M,1)*sqrt(mu), bu,  ones(M,1), V'];
+      Q_pred = [ones(1,N)*sqrt(mu); ones(1,N); bi'; Q ];
     end
   end
 
@@ -182,5 +184,7 @@ function X_pred = SVDpp(X, K, gamma, lambda, shrink)
 
     X_pred = B + P'*Q;
     X_pred = min(max(X_pred, 1), 5);
+    P_pred = [ones(M,1)*sqrt(mu), bu,  ones(M,1), P'];
+    Q_pred = [ones(1,N)*sqrt(mu); ones(1,N); bi'; Q ];
   end
 end
