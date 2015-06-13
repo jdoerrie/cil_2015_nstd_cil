@@ -18,7 +18,8 @@ function X_pred = FactNgbr(X, K, gamma, lambda, shrink)
   % iteration through the data points.  Judge mode disables all of this,
   % resulting in a faster algorithm but no progress reporting during the
   % run.
-  is_local = true;
+  is_local = false;
+  rng('default');
 
   % Hyperparameters and default values.
   if nargin < 2; K      =    64; end % number of latent factors
@@ -36,7 +37,7 @@ function X_pred = FactNgbr(X, K, gamma, lambda, shrink)
 
   % Define the number of epochs.  An epoch in this context is a complete
   % iteration over all present ratings in X.
-  nEpochs = 30;
+  nEpochs = 10;
 
   % Determine the size of the input.  M is the number of users, N the
   % number of items.
@@ -106,29 +107,35 @@ function X_pred = FactNgbr(X, K, gamma, lambda, shrink)
       % the base line estimators for user u, size(B_u) = [1,R]
       B_u = B(u,Ru);
 
+      QRu = Q(:,Ru);
+      YRu = Y(:,Ru);
+      ZRu = Z(:,Ru);
+
       % implied p(u) vector that is the normalized weighted sum of relevant
       % x and y weights. size(pu) = [K,1]
-      pu = isqrt(u)*(Y(:,Ru)*(r_u - B_u)' + sum(Z(:,Ru), 2));
+      pu = isqrt(u)*(YRu*(r_u - B_u)' + sum(ZRu, 2));
 
       % current approximation including baseline estimators and modified
       % latent vectors, size(rhat_u) = [1, R]
-      rhat_u = B_u + pu'*Q(:,Ru);
+      rhat_u = B_u + pu'*QRu;
 
       % current error terms, size(e_u) = [R, 1]
       e_u = (r_u - rhat_u)';
 
-      % update item factor weighted vectors, size(Y(:,Ru) = [K, R]
-      Y(:,Ru) = Y(:,Ru) + gamma*( isqrt(u)*Q(:,Ru)*e_u*(r_u - B_u) ...
-                                - lambda*Y(:,Ru) );
-
-      % update current items factor vectors, size(Z(:,Ru)) = [K, R].
-      % bsxfun is necessary, because size(Q(:,Ru) * e_u) = [K, 1] and we
-      % want to subtract the regularizer term for every item in R(u).
-      Z(:,Ru) = Z(:,Ru) + gamma* ...
-        ( bsxfun(@minus, isqrt(u)*Q(:,Ru)*e_u, lambda*Z(:,Ru)) );
+      % Normalized error term multiplied with QRu used in updated of Y and
+      % Z. size(Qe_u) = [K,1]
+      Qe_u = isqrt(u)*QRu*e_u;
 
       % update latent item factor vectors, size(Q(:,Ru)) = [K, R]
-      Q(:,Ru) = Q(:,Ru) + gamma*(pu*e_u' - lambda * Q(:,Ru));
+      Q(:,Ru) = QRu + gamma*(pu*e_u' - lambda*QRu);
+
+      % update item factor weighted vectors, size(Y(:,Ru) = [K, R]
+      Y(:,Ru) = YRu + gamma*( Qe_u*(r_u - B_u) - lambda*YRu );
+
+      % update current items factor vectors, size(Z(:,Ru)) = [K, R].
+      % bsxfun is necessary, because size(Qe_u) = [K, 1] and we
+      % want to subtract the regularizer term for every item in R(u).
+      Z(:,Ru) = ZRu + gamma*( bsxfun(@minus, Qe_u, lambda*ZRu) );
     end
 
     % shrink gamma according to the specified factor
