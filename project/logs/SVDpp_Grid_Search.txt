@@ -1,0 +1,1733 @@
+Sender: LSF System <lsfadmin@e1031>
+Subject: Job 7943971: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> in cluster <euler> Exited
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation> was submitted from host <euler02> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e1031>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun 11 13:03:28 2015
+Results reported on Thu Jun 11 17:03:47 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :               14944.84 sec.
+    Max Memory :             1301 MB
+    Average Memory :         1055.14 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           -277.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               2 MB
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+
+Epoch: 005, Curr RMSE: 0.995728, Gamma: 0.000774
+Epoch: 010, Curr RMSE: 0.994839, Gamma: 0.000599
+Epoch: 015, Curr RMSE: 0.992475, Gamma: 0.000463
+Epoch: 020, Curr RMSE: 0.990366, Gamma: 0.000358
+Epoch: 025, Curr RMSE: 0.988701, Gamma: 0.000277
+Epoch: 030, Curr RMSE: 0.987519, Gamma: 0.000215
+Epoch: 035, Curr RMSE: 0.986677, Gamma: 0.000166
+Epoch: 040, Curr RMSE: 0.986052, Gamma: 0.000129
+Epoch: 045, Curr RMSE: 0.985579, Gamma: 0.000099
+Epoch: 050, Curr RMSE: 0.985217, Gamma: 0.000077
+Epoch: 055, Curr RMSE: 0.984940, Gamma: 0.000060
+Epoch: 060, Curr RMSE: 0.984728, Gamma: 0.000046
+Epoch: 065, Curr RMSE: 0.984564, Gamma: 0.000036
+Epoch: 070, Curr RMSE: 0.984439, Gamma: 0.000028
+Epoch: 075, Curr RMSE: 0.984342, Gamma: 0.000021
+Epoch: 080, Curr RMSE: 0.984267, Gamma: 0.000017
+Epoch: 085, Curr RMSE: 0.984209, Gamma: 0.000013
+Epoch: 090, Curr RMSE: 0.984165, Gamma: 0.000010
+Epoch: 095, Curr RMSE: 0.984130, Gamma: 0.000008
+Epoch: 100, Curr RMSE: 0.984104, Gamma: 0.000006
+Epoch: 105, Curr RMSE: 0.984083, Gamma: 0.000005
+Epoch: 110, Curr RMSE: 0.984067, Gamma: 0.000004
+Epoch: 115, Curr RMSE: 0.984055, Gamma: 0.000003
+Epoch: 120, Curr RMSE: 0.984045, Gamma: 0.000002
+Epoch: 125, Curr RMSE: 0.984038, Gamma: 0.000002
+Epoch: 130, Curr RMSE: 0.984032, Gamma: 0.000001
+Epoch: 131, Curr RMSE: 0.984032, Gamma: 0.000001
+SVD++, K = 64, gamma = 0.001000, lambda = 0.001000, shrinkage = 0.950000, rmse = 0.984032
+Epoch: 005, Curr RMSE: 0.995676, Gamma: 0.000881
+Epoch: 010, Curr RMSE: 0.993790, Gamma: 0.000776
+Epoch: 015, Curr RMSE: 0.990025, Gamma: 0.000684
+Epoch: 020, Curr RMSE: 0.987013, Gamma: 0.000603
+Epoch: 025, Curr RMSE: 0.984788, Gamma: 0.000531
+Epoch: 030, Curr RMSE: 0.982946, Gamma: 0.000468
+Epoch: 035, Curr RMSE: 0.981390, Gamma: 0.000412
+Epoch: 040, Curr RMSE: 0.980065, Gamma: 0.000363
+Epoch: 045, Curr RMSE: 0.978941, Gamma: 0.000320
+Epoch: 050, Curr RMSE: 0.977982, Gamma: 0.000282
+Epoch: 055, Curr RMSE: 0.977154, Gamma: 0.000248
+Epoch: 060, Curr RMSE: 0.976434, Gamma: 0.000219
+Epoch: 065, Curr RMSE: 0.975805, Gamma: 0.000193
+Epoch: 070, Curr RMSE: 0.975256, Gamma: 0.000170
+Epoch: 075, Curr RMSE: 0.974778, Gamma: 0.000150
+Epoch: 080, Curr RMSE: 0.974363, Gamma: 0.000132
+Epoch: 085, Curr RMSE: 0.974003, Gamma: 0.000116
+Epoch: 090, Curr RMSE: 0.973691, Gamma: 0.000102
+Epoch: 095, Curr RMSE: 0.973422, Gamma: 0.000090
+Epoch: 100, Curr RMSE: 0.973189, Gamma: 0.000080
+Epoch: 105, Curr RMSE: 0.972987, Gamma: 0.000070
+Epoch: 110, Curr RMSE: 0.972811, Gamma: 0.000062
+Epoch: 115, Curr RMSE: 0.972660, Gamma: 0.000054
+Epoch: 120, Curr RMSE: 0.972528, Gamma: 0.000048
+Epoch: 125, Curr RMSE: 0.972413, Gamma: 0.000042
+Epoch: 130, Curr RMSE: 0.972313, Gamma: 0.000037
+Epoch: 135, Curr RMSE: 0.972226, Gamma: 0.000033
+Epoch: 140, Curr RMSE: 0.972151, Gamma: 0.000029
+Epoch: 145, Curr RMSE: 0.972085, Gamma: 0.000025
+Epoch: 150, Curr RMSE: 0.972027, Gamma: 0.000022
+Epoch: 155, Curr RMSE: 0.971976, Gamma: 0.000020
+Epoch: 160, Curr RMSE: 0.971932, Gamma: 0.000017
+Epoch: 165, Curr RMSE: 0.971894, Gamma: 0.000015
+Epoch: 170, Curr RMSE: 0.971860, Gamma: 0.000014
+Epoch: 175, Curr RMSE: 0.971830, Gamma: 0.000012
+Epoch: 180, Curr RMSE: 0.971804, Gamma: 0.000010
+Epoch: 185, Curr RMSE: 0.971781, Gamma: 0.000009
+Epoch: 190, Curr RMSE: 0.971761, Gamma: 0.000008
+Epoch: 195, Curr RMSE: 0.971744, Gamma: 0.000007
+Epoch: 200, Curr RMSE: 0.971728, Gamma: 0.000006
+Epoch: 205, Curr RMSE: 0.971715, Gamma: 0.000006
+Epoch: 210, Curr RMSE: 0.971703, Gamma: 0.000005
+Epoch: 215, Curr RMSE: 0.971693, Gamma: 0.000004
+Epoch: 220, Curr RMSE: 0.971683, Gamma: 0.000004
+Epoch: 225, Curr RMSE: 0.971675, Gamma: 0.000003
+Epoch: 230, Curr RMSE: 0.971668, Gamma: 0.000003
+Epoch: 235, Curr RMSE: 0.971662, Gamma: 0.000003
+Epoch: 240, Curr RMSE: 0.971656, Gamma: 0.000002
+Epoch: 242, Curr RMSE: 0.971655, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.001000, lambda = 0.001000, shrinkage = 0.975000, rmse = 0.971655
+Epoch: 005, Curr RMSE: 0.995651, Gamma: 0.001000
+Epoch: 010, Curr RMSE: 0.992763, Gamma: 0.001000
+Epoch: 015, Curr RMSE: 0.987850, Gamma: 0.001000
+Epoch: 020, Curr RMSE: 0.983873, Gamma: 0.001000
+Epoch: 025, Curr RMSE: 0.980307, Gamma: 0.001000
+Epoch: 030, Curr RMSE: 0.977296, Gamma: 0.001000
+Epoch: 035, Curr RMSE: 0.974523, Gamma: 0.001000
+Epoch: 040, Curr RMSE: 0.972119, Gamma: 0.001000
+Epoch: 045, Curr RMSE: 0.970609, Gamma: 0.001000
+Epoch: 049, Curr RMSE: 0.970313, Gamma: 0.001000
+SVD++, K = 64, gamma = 0.001000, lambda = 0.001000, shrinkage = 1.000000, rmse = 0.970313
+Epoch: 005, Curr RMSE: 0.995684, Gamma: 0.000774
+Epoch: 010, Curr RMSE: 0.994444, Gamma: 0.000599
+Epoch: 015, Curr RMSE: 0.991946, Gamma: 0.000463
+Epoch: 020, Curr RMSE: 0.989904, Gamma: 0.000358
+Epoch: 025, Curr RMSE: 0.988366, Gamma: 0.000277
+Epoch: 030, Curr RMSE: 0.987312, Gamma: 0.000215
+Epoch: 035, Curr RMSE: 0.986549, Gamma: 0.000166
+Epoch: 040, Curr RMSE: 0.985967, Gamma: 0.000129
+Epoch: 045, Curr RMSE: 0.985515, Gamma: 0.000099
+Epoch: 050, Curr RMSE: 0.985163, Gamma: 0.000077
+Epoch: 055, Curr RMSE: 0.984890, Gamma: 0.000060
+Epoch: 060, Curr RMSE: 0.984678, Gamma: 0.000046
+Epoch: 065, Curr RMSE: 0.984515, Gamma: 0.000036
+Epoch: 070, Curr RMSE: 0.984388, Gamma: 0.000028
+Epoch: 075, Curr RMSE: 0.984291, Gamma: 0.000021
+Epoch: 080, Curr RMSE: 0.984215, Gamma: 0.000017
+Epoch: 085, Curr RMSE: 0.984157, Gamma: 0.000013
+Epoch: 090, Curr RMSE: 0.984111, Gamma: 0.000010
+Epoch: 095, Curr RMSE: 0.984077, Gamma: 0.000008
+Epoch: 100, Curr RMSE: 0.984050, Gamma: 0.000006
+Epoch: 105, Curr RMSE: 0.984029, Gamma: 0.000005
+Epoch: 110, Curr RMSE: 0.984013, Gamma: 0.000004
+Epoch: 115, Curr RMSE: 0.984000, Gamma: 0.000003
+Epoch: 120, Curr RMSE: 0.983990, Gamma: 0.000002
+Epoch: 125, Curr RMSE: 0.983983, Gamma: 0.000002
+Epoch: 130, Curr RMSE: 0.983977, Gamma: 0.000001
+Epoch: 131, Curr RMSE: 0.983977, Gamma: 0.000001
+SVD++, K = 64, gamma = 0.001000, lambda = 0.002000, shrinkage = 0.950000, rmse = 0.983977
+Epoch: 005, Curr RMSE: 0.995708, Gamma: 0.000881
+Epoch: 010, Curr RMSE: 0.994162, Gamma: 0.000776
+Epoch: 015, Curr RMSE: 0.990746, Gamma: 0.000684
+Epoch: 020, Curr RMSE: 0.987522, Gamma: 0.000603
+Epoch: 025, Curr RMSE: 0.985045, Gamma: 0.000531
+Epoch: 030, Curr RMSE: 0.983117, Gamma: 0.000468
+Epoch: 035, Curr RMSE: 0.981532, Gamma: 0.000412
+Epoch: 040, Curr RMSE: 0.980193, Gamma: 0.000363
+Epoch: 045, Curr RMSE: 0.979051, Gamma: 0.000320
+Epoch: 050, Curr RMSE: 0.978068, Gamma: 0.000282
+Epoch: 055, Curr RMSE: 0.977215, Gamma: 0.000248
+Epoch: 060, Curr RMSE: 0.976473, Gamma: 0.000219
+Epoch: 065, Curr RMSE: 0.975826, Gamma: 0.000193
+Epoch: 070, Curr RMSE: 0.975263, Gamma: 0.000170
+Epoch: 075, Curr RMSE: 0.974774, Gamma: 0.000150
+Epoch: 080, Curr RMSE: 0.974349, Gamma: 0.000132
+Epoch: 085, Curr RMSE: 0.973980, Gamma: 0.000116
+Epoch: 090, Curr RMSE: 0.973660, Gamma: 0.000102
+Epoch: 095, Curr RMSE: 0.973383, Gamma: 0.000090
+Epoch: 100, Curr RMSE: 0.973141, Gamma: 0.000080
+Epoch: 105, Curr RMSE: 0.972932, Gamma: 0.000070
+Epoch: 110, Curr RMSE: 0.972750, Gamma: 0.000062
+Epoch: 115, Curr RMSE: 0.972591, Gamma: 0.000054
+Epoch: 120, Curr RMSE: 0.972453, Gamma: 0.000048
+Epoch: 125, Curr RMSE: 0.972333, Gamma: 0.000042
+Epoch: 130, Curr RMSE: 0.972228, Gamma: 0.000037
+Epoch: 135, Curr RMSE: 0.972136, Gamma: 0.000033
+Epoch: 140, Curr RMSE: 0.972056, Gamma: 0.000029
+Epoch: 145, Curr RMSE: 0.971986, Gamma: 0.000025
+Epoch: 150, Curr RMSE: 0.971925, Gamma: 0.000022
+Epoch: 155, Curr RMSE: 0.971871, Gamma: 0.000020
+Epoch: 160, Curr RMSE: 0.971825, Gamma: 0.000017
+Epoch: 165, Curr RMSE: 0.971783, Gamma: 0.000015
+Epoch: 170, Curr RMSE: 0.971747, Gamma: 0.000014
+Epoch: 175, Curr RMSE: 0.971716, Gamma: 0.000012
+Epoch: 180, Curr RMSE: 0.971688, Gamma: 0.000010
+Epoch: 185, Curr RMSE: 0.971663, Gamma: 0.000009
+Epoch: 190, Curr RMSE: 0.971642, Gamma: 0.000008
+Epoch: 195, Curr RMSE: 0.971623, Gamma: 0.000007
+Epoch: 200, Curr RMSE: 0.971607, Gamma: 0.000006
+Epoch: 205, Curr RMSE: 0.971592, Gamma: 0.000006
+Epoch: 210, Curr RMSE: 0.971579, Gamma: 0.000005
+Epoch: 215, Curr RMSE: 0.971568, Gamma: 0.000004
+Epoch: 220, Curr RMSE: 0.971558, Gamma: 0.000004
+Epoch: 225, Curr RMSE: 0.971549, Gamma: 0.000003
+Epoch: 230, Curr RMSE: 0.971542, Gamma: 0.000003
+Epoch: 235, Curr RMSE: 0.971535, Gamma: 0.000003
+Epoch: 240, Curr RMSE: 0.971529, Gamma: 0.000002
+Epoch: 245, Curr RMSE: 0.971525, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.001000, lambda = 0.002000, shrinkage = 0.975000, rmse = 0.971525
+Epoch: 005, Curr RMSE: 0.995674, Gamma: 0.001000
+Epoch: 010, Curr RMSE: 0.992974, Gamma: 0.001000
+Epoch: 015, Curr RMSE: 0.988028, Gamma: 0.001000
+Epoch: 020, Curr RMSE: 0.984058, Gamma: 0.001000
+Epoch: 025, Curr RMSE: 0.980476, Gamma: 0.001000
+Epoch: 030, Curr RMSE: 0.977418, Gamma: 0.001000
+Epoch: 035, Curr RMSE: 0.974592, Gamma: 0.001000
+Epoch: 040, Curr RMSE: 0.972052, Gamma: 0.001000
+Epoch: 045, Curr RMSE: 0.970331, Gamma: 0.001000
+Epoch: 050, Curr RMSE: 0.969824, Gamma: 0.001000
+SVD++, K = 64, gamma = 0.001000, lambda = 0.002000, shrinkage = 1.000000, rmse = 0.969824
+Epoch: 005, Curr RMSE: 0.995722, Gamma: 0.000774
+Epoch: 010, Curr RMSE: 0.994812, Gamma: 0.000599
+Epoch: 015, Curr RMSE: 0.992541, Gamma: 0.000463
+Epoch: 020, Curr RMSE: 0.990575, Gamma: 0.000358
+Epoch: 025, Curr RMSE: 0.988931, Gamma: 0.000277
+Epoch: 030, Curr RMSE: 0.987709, Gamma: 0.000215
+Epoch: 035, Curr RMSE: 0.986836, Gamma: 0.000166
+Epoch: 040, Curr RMSE: 0.986199, Gamma: 0.000129
+Epoch: 045, Curr RMSE: 0.985724, Gamma: 0.000099
+Epoch: 050, Curr RMSE: 0.985366, Gamma: 0.000077
+Epoch: 055, Curr RMSE: 0.985094, Gamma: 0.000060
+Epoch: 060, Curr RMSE: 0.984887, Gamma: 0.000046
+Epoch: 065, Curr RMSE: 0.984728, Gamma: 0.000036
+Epoch: 070, Curr RMSE: 0.984606, Gamma: 0.000028
+Epoch: 075, Curr RMSE: 0.984512, Gamma: 0.000021
+Epoch: 080, Curr RMSE: 0.984440, Gamma: 0.000017
+Epoch: 085, Curr RMSE: 0.984385, Gamma: 0.000013
+Epoch: 090, Curr RMSE: 0.984342, Gamma: 0.000010
+Epoch: 095, Curr RMSE: 0.984309, Gamma: 0.000008
+Epoch: 100, Curr RMSE: 0.984283, Gamma: 0.000006
+Epoch: 105, Curr RMSE: 0.984263, Gamma: 0.000005
+Epoch: 110, Curr RMSE: 0.984248, Gamma: 0.000004
+Epoch: 115, Curr RMSE: 0.984236, Gamma: 0.000003
+Epoch: 120, Curr RMSE: 0.984227, Gamma: 0.000002
+Epoch: 125, Curr RMSE: 0.984220, Gamma: 0.000002
+Epoch: 130, Curr RMSE: 0.984215, Gamma: 0.000001
+SVD++, K = 64, gamma = 0.001000, lambda = 0.005000, shrinkage = 0.950000, rmse = 0.984215
+Epoch: 005, Curr RMSE: 0.995706, Gamma: 0.000881
+Epoch: 010, Curr RMSE: 0.994193, Gamma: 0.000776
+Epoch: 015, Curr RMSE: 0.990460, Gamma: 0.000684
+Epoch: 020, Curr RMSE: 0.987346, Gamma: 0.000603
+Epoch: 025, Curr RMSE: 0.985077, Gamma: 0.000531
+Epoch: 030, Curr RMSE: 0.983229, Gamma: 0.000468
+Epoch: 035, Curr RMSE: 0.981676, Gamma: 0.000412
+Epoch: 040, Curr RMSE: 0.980354, Gamma: 0.000363
+Epoch: 045, Curr RMSE: 0.979241, Gamma: 0.000320
+Epoch: 050, Curr RMSE: 0.978302, Gamma: 0.000282
+Epoch: 055, Curr RMSE: 0.977500, Gamma: 0.000248
+Epoch: 060, Curr RMSE: 0.976803, Gamma: 0.000219
+Epoch: 065, Curr RMSE: 0.976191, Gamma: 0.000193
+Epoch: 070, Curr RMSE: 0.975651, Gamma: 0.000170
+Epoch: 075, Curr RMSE: 0.975174, Gamma: 0.000150
+Epoch: 080, Curr RMSE: 0.974753, Gamma: 0.000132
+Epoch: 085, Curr RMSE: 0.974381, Gamma: 0.000116
+Epoch: 090, Curr RMSE: 0.974054, Gamma: 0.000102
+Epoch: 095, Curr RMSE: 0.973767, Gamma: 0.000090
+Epoch: 100, Curr RMSE: 0.973516, Gamma: 0.000080
+Epoch: 105, Curr RMSE: 0.973295, Gamma: 0.000070
+Epoch: 110, Curr RMSE: 0.973101, Gamma: 0.000062
+Epoch: 115, Curr RMSE: 0.972932, Gamma: 0.000054
+Epoch: 120, Curr RMSE: 0.972783, Gamma: 0.000048
+Epoch: 125, Curr RMSE: 0.972653, Gamma: 0.000042
+Epoch: 130, Curr RMSE: 0.972539, Gamma: 0.000037
+Epoch: 135, Curr RMSE: 0.972439, Gamma: 0.000033
+Epoch: 140, Curr RMSE: 0.972352, Gamma: 0.000029
+Epoch: 145, Curr RMSE: 0.972275, Gamma: 0.000025
+Epoch: 150, Curr RMSE: 0.972208, Gamma: 0.000022
+Epoch: 155, Curr RMSE: 0.972149, Gamma: 0.000020
+Epoch: 160, Curr RMSE: 0.972097, Gamma: 0.000017
+Epoch: 165, Curr RMSE: 0.972051, Gamma: 0.000015
+Epoch: 170, Curr RMSE: 0.972011, Gamma: 0.000014
+Epoch: 175, Curr RMSE: 0.971976, Gamma: 0.000012
+Epoch: 180, Curr RMSE: 0.971945, Gamma: 0.000010
+Epoch: 185, Curr RMSE: 0.971918, Gamma: 0.000009
+Epoch: 190, Curr RMSE: 0.971894, Gamma: 0.000008
+Epoch: 195, Curr RMSE: 0.971873, Gamma: 0.000007
+Epoch: 200, Curr RMSE: 0.971854, Gamma: 0.000006
+Epoch: 205, Curr RMSE: 0.971838, Gamma: 0.000006
+Epoch: 210, Curr RMSE: 0.971824, Gamma: 0.000005
+Epoch: 215, Curr RMSE: 0.971811, Gamma: 0.000004
+Epoch: 220, Curr RMSE: 0.971800, Gamma: 0.000004
+Epoch: 225, Curr RMSE: 0.971790, Gamma: 0.000003
+Epoch: 230, Curr RMSE: 0.971782, Gamma: 0.000003
+Epoch: 235, Curr RMSE: 0.971774, Gamma: 0.000003
+Epoch: 240, Curr RMSE: 0.971767, Gamma: 0.000002
+Epoch: 245, Curr RMSE: 0.971761, Gamma: 0.000002
+Epoch: 250, Curr RMSE: 0.971757, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.001000, lambda = 0.005000, shrinkage = 0.975000, rmse = 0.971757
+Epoch: 005, Curr RMSE: 0.995668, Gamma: 0.001000
+Epoch: 010, Curr RMSE: 0.992992, Gamma: 0.001000
+Epoch: 015, Curr RMSE: 0.988190, Gamma: 0.001000
+Epoch: 020, Curr RMSE: 0.984410, Gamma: 0.001000
+Epoch: 025, Curr RMSE: 0.981081, Gamma: 0.001000
+Epoch: 030, Curr RMSE: 0.977940, Gamma: 0.001000
+Epoch: 035, Curr RMSE: 0.975044, Gamma: 0.001000
+Epoch: 040, Curr RMSE: 0.972355, Gamma: 0.001000
+Epoch: 045, Curr RMSE: 0.970191, Gamma: 0.001000
+Epoch: 050, Curr RMSE: 0.968863, Gamma: 0.001000
+Epoch: 055, Curr RMSE: 0.968559, Gamma: 0.001000
+SVD++, K = 64, gamma = 0.001000, lambda = 0.005000, shrinkage = 1.000000, rmse = 0.968559
+Epoch: 005, Curr RMSE: 0.995730, Gamma: 0.000774
+Epoch: 010, Curr RMSE: 0.994975, Gamma: 0.000599
+Epoch: 015, Curr RMSE: 0.992756, Gamma: 0.000463
+Epoch: 020, Curr RMSE: 0.990640, Gamma: 0.000358
+Epoch: 025, Curr RMSE: 0.989053, Gamma: 0.000277
+Epoch: 030, Curr RMSE: 0.987927, Gamma: 0.000215
+Epoch: 035, Curr RMSE: 0.987128, Gamma: 0.000166
+Epoch: 040, Curr RMSE: 0.986540, Gamma: 0.000129
+Epoch: 045, Curr RMSE: 0.986098, Gamma: 0.000099
+Epoch: 050, Curr RMSE: 0.985763, Gamma: 0.000077
+Epoch: 055, Curr RMSE: 0.985506, Gamma: 0.000060
+Epoch: 060, Curr RMSE: 0.985310, Gamma: 0.000046
+Epoch: 065, Curr RMSE: 0.985159, Gamma: 0.000036
+Epoch: 070, Curr RMSE: 0.985043, Gamma: 0.000028
+Epoch: 075, Curr RMSE: 0.984954, Gamma: 0.000021
+Epoch: 080, Curr RMSE: 0.984885, Gamma: 0.000017
+Epoch: 085, Curr RMSE: 0.984832, Gamma: 0.000013
+Epoch: 090, Curr RMSE: 0.984791, Gamma: 0.000010
+Epoch: 095, Curr RMSE: 0.984759, Gamma: 0.000008
+Epoch: 100, Curr RMSE: 0.984735, Gamma: 0.000006
+Epoch: 105, Curr RMSE: 0.984716, Gamma: 0.000005
+Epoch: 110, Curr RMSE: 0.984702, Gamma: 0.000004
+Epoch: 115, Curr RMSE: 0.984690, Gamma: 0.000003
+Epoch: 120, Curr RMSE: 0.984682, Gamma: 0.000002
+Epoch: 125, Curr RMSE: 0.984675, Gamma: 0.000002
+Epoch: 129, Curr RMSE: 0.984672, Gamma: 0.000001
+SVD++, K = 64, gamma = 0.001000, lambda = 0.010000, shrinkage = 0.950000, rmse = 0.984672
+Epoch: 005, Curr RMSE: 0.995715, Gamma: 0.000881
+Epoch: 010, Curr RMSE: 0.994357, Gamma: 0.000776
+Epoch: 015, Curr RMSE: 0.991106, Gamma: 0.000684
+Epoch: 020, Curr RMSE: 0.988097, Gamma: 0.000603
+Epoch: 025, Curr RMSE: 0.985813, Gamma: 0.000531
+Epoch: 030, Curr RMSE: 0.984011, Gamma: 0.000468
+Epoch: 035, Curr RMSE: 0.982523, Gamma: 0.000412
+Epoch: 040, Curr RMSE: 0.981242, Gamma: 0.000363
+Epoch: 045, Curr RMSE: 0.980132, Gamma: 0.000320
+Epoch: 050, Curr RMSE: 0.979181, Gamma: 0.000282
+Epoch: 055, Curr RMSE: 0.978367, Gamma: 0.000248
+Epoch: 060, Curr RMSE: 0.977667, Gamma: 0.000219
+Epoch: 065, Curr RMSE: 0.977061, Gamma: 0.000193
+Epoch: 070, Curr RMSE: 0.976532, Gamma: 0.000170
+Epoch: 075, Curr RMSE: 0.976070, Gamma: 0.000150
+Epoch: 080, Curr RMSE: 0.975664, Gamma: 0.000132
+Epoch: 085, Curr RMSE: 0.975308, Gamma: 0.000116
+Epoch: 090, Curr RMSE: 0.974994, Gamma: 0.000102
+Epoch: 095, Curr RMSE: 0.974719, Gamma: 0.000090
+Epoch: 100, Curr RMSE: 0.974477, Gamma: 0.000080
+Epoch: 105, Curr RMSE: 0.974264, Gamma: 0.000070
+Epoch: 110, Curr RMSE: 0.974076, Gamma: 0.000062
+Epoch: 115, Curr RMSE: 0.973912, Gamma: 0.000054
+Epoch: 120, Curr RMSE: 0.973768, Gamma: 0.000048
+Epoch: 125, Curr RMSE: 0.973641, Gamma: 0.000042
+Epoch: 130, Curr RMSE: 0.973529, Gamma: 0.000037
+Epoch: 135, Curr RMSE: 0.973431, Gamma: 0.000033
+Epoch: 140, Curr RMSE: 0.973345, Gamma: 0.000029
+Epoch: 145, Curr RMSE: 0.973269, Gamma: 0.000025
+Epoch: 150, Curr RMSE: 0.973202, Gamma: 0.000022
+Epoch: 155, Curr RMSE: 0.973144, Gamma: 0.000020
+Epoch: 160, Curr RMSE: 0.973092, Gamma: 0.000017
+Epoch: 165, Curr RMSE: 0.973047, Gamma: 0.000015
+Epoch: 170, Curr RMSE: 0.973007, Gamma: 0.000014
+Epoch: 175, Curr RMSE: 0.972972, Gamma: 0.000012
+Epoch: 180, Curr RMSE: 0.972941, Gamma: 0.000010
+Epoch: 185, Curr RMSE: 0.972914, Gamma: 0.000009
+Epoch: 190, Curr RMSE: 0.972890, Gamma: 0.000008
+Epoch: 195, Curr RMSE: 0.972869, Gamma: 0.000007
+Epoch: 200, Curr RMSE: 0.972851, Gamma: 0.000006
+Epoch: 205, Curr RMSE: 0.972834, Gamma: 0.000006
+Epoch: 210, Curr RMSE: 0.972820, Gamma: 0.000005
+Epoch: 215, Curr RMSE: 0.972807, Gamma: 0.000004
+Epoch: 220, Curr RMSE: 0.972796, Gamma: 0.000004
+Epoch: 225, Curr RMSE: 0.972786, Gamma: 0.000003
+Epoch: 230, Curr RMSE: 0.972778, Gamma: 0.000003
+Epoch: 235, Curr RMSE: 0.972770, Gamma: 0.000003
+Epoch: 240, Curr RMSE: 0.972763, Gamma: 0.000002
+Epoch: 245, Curr RMSE: 0.972758, Gamma: 0.000002
+Epoch: 250, Curr RMSE: 0.972753, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.001000, lambda = 0.010000, shrinkage = 0.975000, rmse = 0.972753
+Epoch: 005, Curr RMSE: 0.995717, Gamma: 0.001000
+Epoch: 010, Curr RMSE: 0.993764, Gamma: 0.001000
+Epoch: 015, Curr RMSE: 0.989265, Gamma: 0.001000
+Epoch: 020, Curr RMSE: 0.985088, Gamma: 0.001000
+Epoch: 025, Curr RMSE: 0.981599, Gamma: 0.001000
+Epoch: 030, Curr RMSE: 0.978551, Gamma: 0.001000
+Epoch: 035, Curr RMSE: 0.975791, Gamma: 0.001000
+Epoch: 040, Curr RMSE: 0.973057, Gamma: 0.001000
+Epoch: 045, Curr RMSE: 0.970526, Gamma: 0.001000
+Epoch: 050, Curr RMSE: 0.968497, Gamma: 0.001000
+Epoch: 055, Curr RMSE: 0.967150, Gamma: 0.001000
+Epoch: 060, Curr RMSE: 0.966589, Gamma: 0.001000
+Epoch: 062, Curr RMSE: 0.966576, Gamma: 0.001000
+SVD++, K = 64, gamma = 0.001000, lambda = 0.010000, shrinkage = 1.000000, rmse = 0.966576
+Epoch: 005, Curr RMSE: 0.995747, Gamma: 0.000774
+Epoch: 010, Curr RMSE: 0.995139, Gamma: 0.000599
+Epoch: 015, Curr RMSE: 0.993316, Gamma: 0.000463
+Epoch: 020, Curr RMSE: 0.991556, Gamma: 0.000358
+Epoch: 025, Curr RMSE: 0.990172, Gamma: 0.000277
+Epoch: 030, Curr RMSE: 0.989070, Gamma: 0.000215
+Epoch: 035, Curr RMSE: 0.988250, Gamma: 0.000166
+Epoch: 040, Curr RMSE: 0.987648, Gamma: 0.000129
+Epoch: 045, Curr RMSE: 0.987203, Gamma: 0.000099
+Epoch: 050, Curr RMSE: 0.986869, Gamma: 0.000077
+Epoch: 055, Curr RMSE: 0.986615, Gamma: 0.000060
+Epoch: 060, Curr RMSE: 0.986422, Gamma: 0.000046
+Epoch: 065, Curr RMSE: 0.986274, Gamma: 0.000036
+Epoch: 070, Curr RMSE: 0.986161, Gamma: 0.000028
+Epoch: 075, Curr RMSE: 0.986073, Gamma: 0.000021
+Epoch: 080, Curr RMSE: 0.986006, Gamma: 0.000017
+Epoch: 085, Curr RMSE: 0.985954, Gamma: 0.000013
+Epoch: 090, Curr RMSE: 0.985914, Gamma: 0.000010
+Epoch: 095, Curr RMSE: 0.985883, Gamma: 0.000008
+Epoch: 100, Curr RMSE: 0.985859, Gamma: 0.000006
+Epoch: 105, Curr RMSE: 0.985840, Gamma: 0.000005
+Epoch: 110, Curr RMSE: 0.985826, Gamma: 0.000004
+Epoch: 115, Curr RMSE: 0.985815, Gamma: 0.000003
+Epoch: 120, Curr RMSE: 0.985806, Gamma: 0.000002
+Epoch: 125, Curr RMSE: 0.985800, Gamma: 0.000002
+Epoch: 129, Curr RMSE: 0.985797, Gamma: 0.000001
+SVD++, K = 64, gamma = 0.001000, lambda = 0.020000, shrinkage = 0.950000, rmse = 0.985797
+Epoch: 005, Curr RMSE: 0.995748, Gamma: 0.000881
+Epoch: 010, Curr RMSE: 0.994887, Gamma: 0.000776
+Epoch: 015, Curr RMSE: 0.992003, Gamma: 0.000684
+Epoch: 020, Curr RMSE: 0.989120, Gamma: 0.000603
+Epoch: 025, Curr RMSE: 0.986699, Gamma: 0.000531
+Epoch: 030, Curr RMSE: 0.984900, Gamma: 0.000468
+Epoch: 035, Curr RMSE: 0.983505, Gamma: 0.000412
+Epoch: 040, Curr RMSE: 0.982363, Gamma: 0.000363
+Epoch: 045, Curr RMSE: 0.981387, Gamma: 0.000320
+Epoch: 050, Curr RMSE: 0.980542, Gamma: 0.000282
+Epoch: 055, Curr RMSE: 0.979814, Gamma: 0.000248
+Epoch: 060, Curr RMSE: 0.979187, Gamma: 0.000219
+Epoch: 065, Curr RMSE: 0.978648, Gamma: 0.000193
+Epoch: 070, Curr RMSE: 0.978184, Gamma: 0.000170
+Epoch: 075, Curr RMSE: 0.977781, Gamma: 0.000150
+Epoch: 080, Curr RMSE: 0.977432, Gamma: 0.000132
+Epoch: 085, Curr RMSE: 0.977128, Gamma: 0.000116
+Epoch: 090, Curr RMSE: 0.976862, Gamma: 0.000102
+Epoch: 095, Curr RMSE: 0.976630, Gamma: 0.000090
+Epoch: 100, Curr RMSE: 0.976426, Gamma: 0.000080
+Epoch: 105, Curr RMSE: 0.976248, Gamma: 0.000070
+Epoch: 110, Curr RMSE: 0.976091, Gamma: 0.000062
+Epoch: 115, Curr RMSE: 0.975953, Gamma: 0.000054
+Epoch: 120, Curr RMSE: 0.975831, Gamma: 0.000048
+Epoch: 125, Curr RMSE: 0.975724, Gamma: 0.000042
+Epoch: 130, Curr RMSE: 0.975630, Gamma: 0.000037
+Epoch: 135, Curr RMSE: 0.975547, Gamma: 0.000033
+Epoch: 140, Curr RMSE: 0.975474, Gamma: 0.000029
+Epoch: 145, Curr RMSE: 0.975410, Gamma: 0.000025
+Epoch: 150, Curr RMSE: 0.975353, Gamma: 0.000022
+Epoch: 155, Curr RMSE: 0.975304, Gamma: 0.000020
+Epoch: 160, Curr RMSE: 0.975260, Gamma: 0.000017
+Epoch: 165, Curr RMSE: 0.975221, Gamma: 0.000015
+Epoch: 170, Curr RMSE: 0.975187, Gamma: 0.000014
+Epoch: 175, Curr RMSE: 0.975157, Gamma: 0.000012
+Epoch: 180, Curr RMSE: 0.975130, Gamma: 0.000010
+Epoch: 185, Curr RMSE: 0.975107, Gamma: 0.000009
+Epoch: 190, Curr RMSE: 0.975087, Gamma: 0.000008
+Epoch: 195, Curr RMSE: 0.975069, Gamma: 0.000007
+Epoch: 200, Curr RMSE: 0.975053, Gamma: 0.000006
+Epoch: 205, Curr RMSE: 0.975039, Gamma: 0.000006
+Epoch: 210, Curr RMSE: 0.975026, Gamma: 0.000005
+Epoch: 215, Curr RMSE: 0.975015, Gamma: 0.000004
+Epoch: 220, Curr RMSE: 0.975006, Gamma: 0.000004
+Epoch: 225, Curr RMSE: 0.974997, Gamma: 0.000003
+Epoch: 230, Curr RMSE: 0.974990, Gamma: 0.000003
+Epoch: 235, Curr RMSE: 0.974983, Gamma: 0.000003
+Epoch: 240, Curr RMSE: 0.974977, Gamma: 0.000002
+Epoch: 244, Curr RMSE: 0.974974, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.001000, lambda = 0.020000, shrinkage = 0.975000, rmse = 0.974974
+Epoch: 005, Curr RMSE: 0.995686, Gamma: 0.001000
+Epoch: 010, Curr RMSE: 0.993587, Gamma: 0.001000
+Epoch: 015, Curr RMSE: 0.989599, Gamma: 0.001000
+Epoch: 020, Curr RMSE: 0.985849, Gamma: 0.001000
+Epoch: 025, Curr RMSE: 0.982650, Gamma: 0.001000
+Epoch: 030, Curr RMSE: 0.979856, Gamma: 0.001000
+Epoch: 035, Curr RMSE: 0.977338, Gamma: 0.001000
+Epoch: 040, Curr RMSE: 0.974964, Gamma: 0.001000
+Epoch: 045, Curr RMSE: 0.972575, Gamma: 0.001000
+Epoch: 050, Curr RMSE: 0.970267, Gamma: 0.001000
+Epoch: 055, Curr RMSE: 0.968246, Gamma: 0.001000
+Epoch: 060, Curr RMSE: 0.966609, Gamma: 0.001000
+Epoch: 065, Curr RMSE: 0.965378, Gamma: 0.001000
+Epoch: 070, Curr RMSE: 0.964566, Gamma: 0.001000
+Epoch: 075, Curr RMSE: 0.964189, Gamma: 0.001000
+Epoch: 078, Curr RMSE: 0.964166, Gamma: 0.001000
+SVD++, K = 64, gamma = 0.001000, lambda = 0.020000, shrinkage = 1.000000, rmse = 0.964166
+Epoch: 005, Curr RMSE: 0.995771, Gamma: 0.000774
+Epoch: 010, Curr RMSE: 0.995479, Gamma: 0.000599
+Epoch: 015, Curr RMSE: 0.994525, Gamma: 0.000463
+Epoch: 020, Curr RMSE: 0.993249, Gamma: 0.000358
+Epoch: 025, Curr RMSE: 0.992302, Gamma: 0.000277
+Epoch: 030, Curr RMSE: 0.991621, Gamma: 0.000215
+Epoch: 035, Curr RMSE: 0.991077, Gamma: 0.000166
+Epoch: 040, Curr RMSE: 0.990629, Gamma: 0.000129
+Epoch: 045, Curr RMSE: 0.990265, Gamma: 0.000099
+Epoch: 050, Curr RMSE: 0.989975, Gamma: 0.000077
+Epoch: 055, Curr RMSE: 0.989746, Gamma: 0.000060
+Epoch: 060, Curr RMSE: 0.989568, Gamma: 0.000046
+Epoch: 065, Curr RMSE: 0.989429, Gamma: 0.000036
+Epoch: 070, Curr RMSE: 0.989321, Gamma: 0.000028
+Epoch: 075, Curr RMSE: 0.989238, Gamma: 0.000021
+Epoch: 080, Curr RMSE: 0.989174, Gamma: 0.000017
+Epoch: 085, Curr RMSE: 0.989124, Gamma: 0.000013
+Epoch: 090, Curr RMSE: 0.989085, Gamma: 0.000010
+Epoch: 095, Curr RMSE: 0.989055, Gamma: 0.000008
+Epoch: 100, Curr RMSE: 0.989032, Gamma: 0.000006
+Epoch: 105, Curr RMSE: 0.989014, Gamma: 0.000005
+Epoch: 110, Curr RMSE: 0.989001, Gamma: 0.000004
+Epoch: 115, Curr RMSE: 0.988990, Gamma: 0.000003
+Epoch: 120, Curr RMSE: 0.988982, Gamma: 0.000002
+Epoch: 125, Curr RMSE: 0.988975, Gamma: 0.000002
+Epoch: 128, Curr RMSE: 0.988973, Gamma: 0.000001
+SVD++, K = 64, gamma = 0.001000, lambda = 0.050000, shrinkage = 0.950000, rmse = 0.988973
+Epoch: 005, Curr RMSE: 0.995759, Gamma: 0.000881
+Epoch: 010, Curr RMSE: 0.995233, Gamma: 0.000776
+Epoch: 015, Curr RMSE: 0.993308, Gamma: 0.000684
+Epoch: 020, Curr RMSE: 0.991418, Gamma: 0.000603
+Epoch: 025, Curr RMSE: 0.989647, Gamma: 0.000531
+Epoch: 030, Curr RMSE: 0.987992, Gamma: 0.000468
+Epoch: 035, Curr RMSE: 0.986653, Gamma: 0.000412
+Epoch: 040, Curr RMSE: 0.985591, Gamma: 0.000363
+Epoch: 045, Curr RMSE: 0.984742, Gamma: 0.000320
+Epoch: 050, Curr RMSE: 0.984059, Gamma: 0.000282
+Epoch: 055, Curr RMSE: 0.983499, Gamma: 0.000248
+Epoch: 060, Curr RMSE: 0.983030, Gamma: 0.000219
+Epoch: 065, Curr RMSE: 0.982628, Gamma: 0.000193
+Epoch: 070, Curr RMSE: 0.982279, Gamma: 0.000170
+Epoch: 075, Curr RMSE: 0.981972, Gamma: 0.000150
+Epoch: 080, Curr RMSE: 0.981702, Gamma: 0.000132
+Epoch: 085, Curr RMSE: 0.981463, Gamma: 0.000116
+Epoch: 090, Curr RMSE: 0.981252, Gamma: 0.000102
+Epoch: 095, Curr RMSE: 0.981066, Gamma: 0.000090
+Epoch: 100, Curr RMSE: 0.980901, Gamma: 0.000080
+Epoch: 105, Curr RMSE: 0.980755, Gamma: 0.000070
+Epoch: 110, Curr RMSE: 0.980627, Gamma: 0.000062
+Epoch: 115, Curr RMSE: 0.980513, Gamma: 0.000054
+Epoch: 120, Curr RMSE: 0.980413, Gamma: 0.000048
+Epoch: 125, Curr RMSE: 0.980325, Gamma: 0.000042
+Epoch: 130, Curr RMSE: 0.980248, Gamma: 0.000037
+Epoch: 135, Curr RMSE: 0.980179, Gamma: 0.000033
+Epoch: 140, Curr RMSE: 0.980119, Gamma: 0.000029
+Epoch: 145, Curr RMSE: 0.980066, Gamma: 0.000025
+Epoch: 150, Curr RMSE: 0.980019, Gamma: 0.000022
+Epoch: 155, Curr RMSE: 0.979978, Gamma: 0.000020
+Epoch: 160, Curr RMSE: 0.979942, Gamma: 0.000017
+Epoch: 165, Curr RMSE: 0.979910, Gamma: 0.000015
+Epoch: 170, Curr RMSE: 0.979882, Gamma: 0.000014
+Epoch: 175, Curr RMSE: 0.979857, Gamma: 0.000012
+Epoch: 180, Curr RMSE: 0.979835, Gamma: 0.000010
+Epoch: 185, Curr RMSE: 0.979816, Gamma: 0.000009
+Epoch: 190, Curr RMSE: 0.979799, Gamma: 0.000008
+Epoch: 195, Curr RMSE: 0.979784, Gamma: 0.000007
+Epoch: 200, Curr RMSE: 0.979771, Gamma: 0.000006
+Epoch: 205, Curr RMSE: 0.979759, Gamma: 0.000006
+Epoch: 210, Curr RMSE: 0.979749, Gamma: 0.000005
+Epoch: 215, Curr RMSE: 0.979740, Gamma: 0.000004
+Epoch: 220, Curr RMSE: 0.979732, Gamma: 0.000004
+Epoch: 225, Curr RMSE: 0.979725, Gamma: 0.000003
+Epoch: 230, Curr RMSE: 0.979719, Gamma: 0.000003
+Epoch: 235, Curr RMSE: 0.979714, Gamma: 0.000003
+Epoch: 237, Curr RMSE: 0.979713, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.001000, lambda = 0.050000, shrinkage = 0.975000, rmse = 0.979713
+Epoch: 005, Curr RMSE: 0.995761, Gamma: 0.001000
+Epoch: 010, Curr RMSE: 0.994952, Gamma: 0.001000
+Epoch: 015, Curr RMSE: 0.992152, Gamma: 0.001000
+Epoch: 020, Curr RMSE: 0.989221, Gamma: 0.001000
+Epoch: 025, Curr RMSE: 0.986139, Gamma: 0.001000
+Epoch: 030, Curr RMSE: 0.983869, Gamma: 0.001000
+Epoch: 035, Curr RMSE: 0.982052, Gamma: 0.001000
+Epoch: 040, Curr RMSE: 0.980232, Gamma: 0.001000
+Epoch: 045, Curr RMSE: 0.978408, Gamma: 0.001000
+Epoch: 050, Curr RMSE: 0.976735, Gamma: 0.001000
+Epoch: 055, Curr RMSE: 0.975226, Gamma: 0.001000
+Epoch: 060, Curr RMSE: 0.973796, Gamma: 0.001000
+Epoch: 065, Curr RMSE: 0.972379, Gamma: 0.001000
+Epoch: 070, Curr RMSE: 0.970970, Gamma: 0.001000
+Epoch: 075, Curr RMSE: 0.969604, Gamma: 0.001000
+Epoch: 080, Curr RMSE: 0.968321, Gamma: 0.001000
+Epoch: 085, Curr RMSE: 0.967153, Gamma: 0.001000
+Epoch: 090, Curr RMSE: 0.966112, Gamma: 0.001000
+Epoch: 095, Curr RMSE: 0.965203, Gamma: 0.001000
+Epoch: 100, Curr RMSE: 0.964422, Gamma: 0.001000
+Epoch: 105, Curr RMSE: 0.963761, Gamma: 0.001000
+Epoch: 110, Curr RMSE: 0.963214, Gamma: 0.001000
+Epoch: 115, Curr RMSE: 0.962776, Gamma: 0.001000
+Epoch: 120, Curr RMSE: 0.962444, Gamma: 0.001000
+Epoch: 125, Curr RMSE: 0.962218, Gamma: 0.001000
+Epoch: 130, Curr RMSE: 0.962101, Gamma: 0.001000
+Epoch: 134, Curr RMSE: 0.962083, Gamma: 0.001000
+SVD++, K = 64, gamma = 0.001000, lambda = 0.050000, shrinkage = 1.000000, rmse = 0.962083
+Epoch: 005, Curr RMSE: 0.995792, Gamma: 0.000774
+Epoch: 010, Curr RMSE: 0.995686, Gamma: 0.000599
+Epoch: 015, Curr RMSE: 0.995386, Gamma: 0.000463
+Epoch: 020, Curr RMSE: 0.994865, Gamma: 0.000358
+Epoch: 025, Curr RMSE: 0.994272, Gamma: 0.000277
+Epoch: 030, Curr RMSE: 0.993765, Gamma: 0.000215
+Epoch: 035, Curr RMSE: 0.993391, Gamma: 0.000166
+Epoch: 040, Curr RMSE: 0.993125, Gamma: 0.000129
+Epoch: 045, Curr RMSE: 0.992936, Gamma: 0.000099
+Epoch: 050, Curr RMSE: 0.992799, Gamma: 0.000077
+Epoch: 055, Curr RMSE: 0.992698, Gamma: 0.000060
+Epoch: 060, Curr RMSE: 0.992622, Gamma: 0.000046
+Epoch: 065, Curr RMSE: 0.992565, Gamma: 0.000036
+Epoch: 070, Curr RMSE: 0.992522, Gamma: 0.000028
+Epoch: 075, Curr RMSE: 0.992488, Gamma: 0.000021
+Epoch: 080, Curr RMSE: 0.992463, Gamma: 0.000017
+Epoch: 085, Curr RMSE: 0.992443, Gamma: 0.000013
+Epoch: 090, Curr RMSE: 0.992428, Gamma: 0.000010
+Epoch: 095, Curr RMSE: 0.992416, Gamma: 0.000008
+Epoch: 100, Curr RMSE: 0.992407, Gamma: 0.000006
+Epoch: 105, Curr RMSE: 0.992400, Gamma: 0.000005
+Epoch: 110, Curr RMSE: 0.992396, Gamma: 0.000004
+SVD++, K = 64, gamma = 0.001000, lambda = 0.100000, shrinkage = 0.950000, rmse = 0.992396
+Epoch: 005, Curr RMSE: 0.995796, Gamma: 0.000881
+Epoch: 010, Curr RMSE: 0.995668, Gamma: 0.000776
+Epoch: 015, Curr RMSE: 0.995117, Gamma: 0.000684
+Epoch: 020, Curr RMSE: 0.993974, Gamma: 0.000603
+Epoch: 025, Curr RMSE: 0.992930, Gamma: 0.000531
+Epoch: 030, Curr RMSE: 0.992235, Gamma: 0.000468
+Epoch: 035, Curr RMSE: 0.991664, Gamma: 0.000412
+Epoch: 040, Curr RMSE: 0.991098, Gamma: 0.000363
+Epoch: 045, Curr RMSE: 0.990519, Gamma: 0.000320
+Epoch: 050, Curr RMSE: 0.989948, Gamma: 0.000282
+Epoch: 055, Curr RMSE: 0.989412, Gamma: 0.000248
+Epoch: 060, Curr RMSE: 0.988928, Gamma: 0.000219
+Epoch: 065, Curr RMSE: 0.988501, Gamma: 0.000193
+Epoch: 070, Curr RMSE: 0.988129, Gamma: 0.000170
+Epoch: 075, Curr RMSE: 0.987807, Gamma: 0.000150
+Epoch: 080, Curr RMSE: 0.987530, Gamma: 0.000132
+Epoch: 085, Curr RMSE: 0.987290, Gamma: 0.000116
+Epoch: 090, Curr RMSE: 0.987084, Gamma: 0.000102
+Epoch: 095, Curr RMSE: 0.986907, Gamma: 0.000090
+Epoch: 100, Curr RMSE: 0.986753, Gamma: 0.000080
+Epoch: 105, Curr RMSE: 0.986621, Gamma: 0.000070
+Epoch: 110, Curr RMSE: 0.986506, Gamma: 0.000062
+Epoch: 115, Curr RMSE: 0.986407, Gamma: 0.000054
+Epoch: 120, Curr RMSE: 0.986320, Gamma: 0.000048
+Epoch: 125, Curr RMSE: 0.986245, Gamma: 0.000042
+Epoch: 130, Curr RMSE: 0.986180, Gamma: 0.000037
+Epoch: 135, Curr RMSE: 0.986123, Gamma: 0.000033
+Epoch: 140, Curr RMSE: 0.986073, Gamma: 0.000029
+Epoch: 145, Curr RMSE: 0.986030, Gamma: 0.000025
+Epoch: 150, Curr RMSE: 0.985991, Gamma: 0.000022
+Epoch: 155, Curr RMSE: 0.985958, Gamma: 0.000020
+Epoch: 160, Curr RMSE: 0.985929, Gamma: 0.000017
+Epoch: 165, Curr RMSE: 0.985903, Gamma: 0.000015
+Epoch: 170, Curr RMSE: 0.985881, Gamma: 0.000014
+Epoch: 175, Curr RMSE: 0.985861, Gamma: 0.000012
+Epoch: 180, Curr RMSE: 0.985844, Gamma: 0.000010
+Epoch: 185, Curr RMSE: 0.985829, Gamma: 0.000009
+Epoch: 190, Curr RMSE: 0.985815, Gamma: 0.000008
+Epoch: 195, Curr RMSE: 0.985804, Gamma: 0.000007
+Epoch: 200, Curr RMSE: 0.985793, Gamma: 0.000006
+Epoch: 205, Curr RMSE: 0.985784, Gamma: 0.000006
+Epoch: 210, Curr RMSE: 0.985776, Gamma: 0.000005
+Epoch: 215, Curr RMSE: 0.985769, Gamma: 0.000004
+Epoch: 220, Curr RMSE: 0.985763, Gamma: 0.000004
+Epoch: 225, Curr RMSE: 0.985758, Gamma: 0.000003
+Epoch: 227, Curr RMSE: 0.985757, Gamma: 0.000003
+SVD++, K = 64, gamma = 0.001000, lambda = 0.100000, shrinkage = 0.975000, rmse = 0.985757
+Epoch: 005, Curr RMSE: 0.995789, Gamma: 0.001000
+Epoch: 010, Curr RMSE: 0.995544, Gamma: 0.001000
+Epoch: 015, Curr RMSE: 0.994221, Gamma: 0.001000
+Epoch: 020, Curr RMSE: 0.992524, Gamma: 0.001000
+Epoch: 025, Curr RMSE: 0.991232, Gamma: 0.001000
+Epoch: 030, Curr RMSE: 0.989539, Gamma: 0.001000
+Epoch: 035, Curr RMSE: 0.987733, Gamma: 0.001000
+Epoch: 040, Curr RMSE: 0.986138, Gamma: 0.001000
+Epoch: 045, Curr RMSE: 0.984828, Gamma: 0.001000
+Epoch: 050, Curr RMSE: 0.983790, Gamma: 0.001000
+Epoch: 055, Curr RMSE: 0.982914, Gamma: 0.001000
+Epoch: 060, Curr RMSE: 0.982094, Gamma: 0.001000
+Epoch: 065, Curr RMSE: 0.981260, Gamma: 0.001000
+Epoch: 070, Curr RMSE: 0.980377, Gamma: 0.001000
+Epoch: 075, Curr RMSE: 0.979442, Gamma: 0.001000
+Epoch: 080, Curr RMSE: 0.978479, Gamma: 0.001000
+Epoch: 085, Curr RMSE: 0.977524, Gamma: 0.001000
+Epoch: 090, Curr RMSE: 0.976605, Gamma: 0.001000
+Epoch: 095, Curr RMSE: 0.975736, Gamma: 0.001000
+Epoch: 100, Curr RMSE: 0.974917, Gamma: 0.001000
+Epoch: 105, Curr RMSE: 0.974141, Gamma: 0.001000
+Epoch: 110, Curr RMSE: 0.973402, Gamma: 0.001000
+Epoch: 115, Curr RMSE: 0.972697, Gamma: 0.001000
+Epoch: 120, Curr RMSE: 0.972024, Gamma: 0.001000
+Epoch: 125, Curr RMSE: 0.971384, Gamma: 0.001000
+Epoch: 130, Curr RMSE: 0.970777, Gamma: 0.001000
+Epoch: 135, Curr RMSE: 0.970201, Gamma: 0.001000
+Epoch: 140, Curr RMSE: 0.969655, Gamma: 0.001000
+Epoch: 145, Curr RMSE: 0.969136, Gamma: 0.001000
+Epoch: 150, Curr RMSE: 0.968641, Gamma: 0.001000
+Epoch: 155, Curr RMSE: 0.968171, Gamma: 0.001000
+Epoch: 160, Curr RMSE: 0.967725, Gamma: 0.001000
+Epoch: 165, Curr RMSE: 0.967303, Gamma: 0.001000
+Epoch: 170, Curr RMSE: 0.966906, Gamma: 0.001000
+Epoch: 175, Curr RMSE: 0.966535, Gamma: 0.001000
+Epoch: 180, Curr RMSE: 0.966190, Gamma: 0.001000
+Epoch: 185, Curr RMSE: 0.965872, Gamma: 0.001000
+Epoch: 190, Curr RMSE: 0.965582, Gamma: 0.001000
+Epoch: 195, Curr RMSE: 0.965320, Gamma: 0.001000
+Epoch: 200, Curr RMSE: 0.965084, Gamma: 0.001000
+Epoch: 205, Curr RMSE: 0.964876, Gamma: 0.001000
+Epoch: 210, Curr RMSE: 0.964695, Gamma: 0.001000
+Epoch: 215, Curr RMSE: 0.964541, Gamma: 0.001000
+Epoch: 220, Curr RMSE: 0.964414, Gamma: 0.001000
+Epoch: 225, Curr RMSE: 0.964313, Gamma: 0.001000
+Epoch: 230, Curr RMSE: 0.964239, Gamma: 0.001000
+Epoch: 235, Curr RMSE: 0.964193, Gamma: 0.001000
+Epoch: 240, Curr RMSE: 0.964174, Gamma: 0.001000
+Epoch: 241, Curr RMSE: 0.964174, Gamma: 0.001000
+SVD++, K = 64, gamma = 0.001000, lambda = 0.100000, shrinkage = 1.000000, rmse = 0.964174
+Epoch: 005, Curr RMSE: 0.993847, Gamma: 0.001548
+Epoch: 010, Curr RMSE: 0.987061, Gamma: 0.001197
+Epoch: 015, Curr RMSE: 0.982704, Gamma: 0.000927
+Epoch: 020, Curr RMSE: 0.979840, Gamma: 0.000717
+Epoch: 025, Curr RMSE: 0.977839, Gamma: 0.000555
+Epoch: 030, Curr RMSE: 0.976344, Gamma: 0.000429
+Epoch: 035, Curr RMSE: 0.975206, Gamma: 0.000332
+Epoch: 040, Curr RMSE: 0.974349, Gamma: 0.000257
+Epoch: 045, Curr RMSE: 0.973707, Gamma: 0.000199
+Epoch: 050, Curr RMSE: 0.973227, Gamma: 0.000154
+Epoch: 055, Curr RMSE: 0.972866, Gamma: 0.000119
+Epoch: 060, Curr RMSE: 0.972592, Gamma: 0.000092
+Epoch: 065, Curr RMSE: 0.972382, Gamma: 0.000071
+Epoch: 070, Curr RMSE: 0.972222, Gamma: 0.000055
+Epoch: 075, Curr RMSE: 0.972099, Gamma: 0.000043
+Epoch: 080, Curr RMSE: 0.972004, Gamma: 0.000033
+Epoch: 085, Curr RMSE: 0.971932, Gamma: 0.000026
+Epoch: 090, Curr RMSE: 0.971876, Gamma: 0.000020
+Epoch: 095, Curr RMSE: 0.971834, Gamma: 0.000015
+Epoch: 100, Curr RMSE: 0.971801, Gamma: 0.000012
+Epoch: 105, Curr RMSE: 0.971776, Gamma: 0.000009
+Epoch: 110, Curr RMSE: 0.971756, Gamma: 0.000007
+Epoch: 115, Curr RMSE: 0.971741, Gamma: 0.000005
+Epoch: 120, Curr RMSE: 0.971730, Gamma: 0.000004
+Epoch: 125, Curr RMSE: 0.971721, Gamma: 0.000003
+Epoch: 130, Curr RMSE: 0.971714, Gamma: 0.000003
+Epoch: 135, Curr RMSE: 0.971710, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.002000, lambda = 0.001000, shrinkage = 0.950000, rmse = 0.971710
+Epoch: 005, Curr RMSE: 0.993667, Gamma: 0.001762
+Epoch: 010, Curr RMSE: 0.985802, Gamma: 0.001553
+Epoch: 015, Curr RMSE: 0.980366, Gamma: 0.001368
+Epoch: 020, Curr RMSE: 0.976338, Gamma: 0.001205
+Epoch: 025, Curr RMSE: 0.973166, Gamma: 0.001062
+Epoch: 030, Curr RMSE: 0.971106, Gamma: 0.000936
+Epoch: 035, Curr RMSE: 0.970290, Gamma: 0.000825
+Epoch: 037, Curr RMSE: 0.970262, Gamma: 0.000784
+SVD++, K = 64, gamma = 0.002000, lambda = 0.001000, shrinkage = 0.975000, rmse = 0.970262
+Epoch: 005, Curr RMSE: 0.993205, Gamma: 0.002000
+Epoch: 010, Curr RMSE: 0.984219, Gamma: 0.002000
+Epoch: 015, Curr RMSE: 0.977735, Gamma: 0.002000
+Epoch: 020, Curr RMSE: 0.972503, Gamma: 0.002000
+Epoch: 025, Curr RMSE: 0.970487, Gamma: 0.002000
+SVD++, K = 64, gamma = 0.002000, lambda = 0.001000, shrinkage = 1.000000, rmse = 0.970487
+Epoch: 005, Curr RMSE: 0.994019, Gamma: 0.001548
+Epoch: 010, Curr RMSE: 0.987207, Gamma: 0.001197
+Epoch: 015, Curr RMSE: 0.983102, Gamma: 0.000927
+Epoch: 020, Curr RMSE: 0.980327, Gamma: 0.000717
+Epoch: 025, Curr RMSE: 0.978278, Gamma: 0.000555
+Epoch: 030, Curr RMSE: 0.976702, Gamma: 0.000429
+Epoch: 035, Curr RMSE: 0.975500, Gamma: 0.000332
+Epoch: 040, Curr RMSE: 0.974593, Gamma: 0.000257
+Epoch: 045, Curr RMSE: 0.973910, Gamma: 0.000199
+Epoch: 050, Curr RMSE: 0.973396, Gamma: 0.000154
+Epoch: 055, Curr RMSE: 0.973006, Gamma: 0.000119
+Epoch: 060, Curr RMSE: 0.972710, Gamma: 0.000092
+Epoch: 065, Curr RMSE: 0.972484, Gamma: 0.000071
+Epoch: 070, Curr RMSE: 0.972310, Gamma: 0.000055
+Epoch: 075, Curr RMSE: 0.972178, Gamma: 0.000043
+Epoch: 080, Curr RMSE: 0.972076, Gamma: 0.000033
+Epoch: 085, Curr RMSE: 0.971998, Gamma: 0.000026
+Epoch: 090, Curr RMSE: 0.971938, Gamma: 0.000020
+Epoch: 095, Curr RMSE: 0.971892, Gamma: 0.000015
+Epoch: 100, Curr RMSE: 0.971856, Gamma: 0.000012
+Epoch: 105, Curr RMSE: 0.971829, Gamma: 0.000009
+Epoch: 110, Curr RMSE: 0.971808, Gamma: 0.000007
+Epoch: 115, Curr RMSE: 0.971792, Gamma: 0.000005
+Epoch: 120, Curr RMSE: 0.971780, Gamma: 0.000004
+Epoch: 125, Curr RMSE: 0.971770, Gamma: 0.000003
+Epoch: 130, Curr RMSE: 0.971763, Gamma: 0.000003
+Epoch: 135, Curr RMSE: 0.971757, Gamma: 0.000002
+Epoch: 136, Curr RMSE: 0.971757, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.002000, lambda = 0.002000, shrinkage = 0.950000, rmse = 0.971757
+Epoch: 005, Curr RMSE: 0.993460, Gamma: 0.001762
+Epoch: 010, Curr RMSE: 0.985751, Gamma: 0.001553
+Epoch: 015, Curr RMSE: 0.980504, Gamma: 0.001368
+Epoch: 020, Curr RMSE: 0.976614, Gamma: 0.001205
+Epoch: 025, Curr RMSE: 0.973409, Gamma: 0.001062
+Epoch: 030, Curr RMSE: 0.971190, Gamma: 0.000936
+Epoch: 035, Curr RMSE: 0.970133, Gamma: 0.000825
+Epoch: 039, Curr RMSE: 0.969985, Gamma: 0.000745
+SVD++, K = 64, gamma = 0.002000, lambda = 0.002000, shrinkage = 0.975000, rmse = 0.969985
+Epoch: 005, Curr RMSE: 0.993160, Gamma: 0.002000
+Epoch: 010, Curr RMSE: 0.984468, Gamma: 0.002000
+Epoch: 015, Curr RMSE: 0.977975, Gamma: 0.002000
+Epoch: 020, Curr RMSE: 0.972798, Gamma: 0.002000
+Epoch: 025, Curr RMSE: 0.970476, Gamma: 0.002000
+Epoch: 026, Curr RMSE: 0.970476, Gamma: 0.002000
+SVD++, K = 64, gamma = 0.002000, lambda = 0.002000, shrinkage = 1.000000, rmse = 0.970476
+Epoch: 005, Curr RMSE: 0.993938, Gamma: 0.001548
+Epoch: 010, Curr RMSE: 0.987496, Gamma: 0.001197
+Epoch: 015, Curr RMSE: 0.983535, Gamma: 0.000927
+Epoch: 020, Curr RMSE: 0.980759, Gamma: 0.000717
+Epoch: 025, Curr RMSE: 0.978756, Gamma: 0.000555
+Epoch: 030, Curr RMSE: 0.977234, Gamma: 0.000429
+Epoch: 035, Curr RMSE: 0.976064, Gamma: 0.000332
+Epoch: 040, Curr RMSE: 0.975162, Gamma: 0.000257
+Epoch: 045, Curr RMSE: 0.974468, Gamma: 0.000199
+Epoch: 050, Curr RMSE: 0.973935, Gamma: 0.000154
+Epoch: 055, Curr RMSE: 0.973526, Gamma: 0.000119
+Epoch: 060, Curr RMSE: 0.973212, Gamma: 0.000092
+Epoch: 065, Curr RMSE: 0.972970, Gamma: 0.000071
+Epoch: 070, Curr RMSE: 0.972785, Gamma: 0.000055
+Epoch: 075, Curr RMSE: 0.972643, Gamma: 0.000043
+Epoch: 080, Curr RMSE: 0.972533, Gamma: 0.000033
+Epoch: 085, Curr RMSE: 0.972450, Gamma: 0.000026
+Epoch: 090, Curr RMSE: 0.972385, Gamma: 0.000020
+Epoch: 095, Curr RMSE: 0.972336, Gamma: 0.000015
+Epoch: 100, Curr RMSE: 0.972297, Gamma: 0.000012
+Epoch: 105, Curr RMSE: 0.972268, Gamma: 0.000009
+Epoch: 110, Curr RMSE: 0.972245, Gamma: 0.000007
+Epoch: 115, Curr RMSE: 0.972228, Gamma: 0.000005
+Epoch: 120, Curr RMSE: 0.972214, Gamma: 0.000004
+Epoch: 125, Curr RMSE: 0.972204, Gamma: 0.000003
+Epoch: 130, Curr RMSE: 0.972196, Gamma: 0.000003
+Epoch: 135, Curr RMSE: 0.972190, Gamma: 0.000002
+Epoch: 138, Curr RMSE: 0.972188, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.002000, lambda = 0.005000, shrinkage = 0.950000, rmse = 0.972188
+Epoch: 005, Curr RMSE: 0.994019, Gamma: 0.001762
+Epoch: 010, Curr RMSE: 0.986280, Gamma: 0.001553
+Epoch: 015, Curr RMSE: 0.981135, Gamma: 0.001368
+Epoch: 020, Curr RMSE: 0.977101, Gamma: 0.001205
+Epoch: 025, Curr RMSE: 0.973906, Gamma: 0.001062
+Epoch: 030, Curr RMSE: 0.971391, Gamma: 0.000936
+Epoch: 035, Curr RMSE: 0.969715, Gamma: 0.000825
+Epoch: 040, Curr RMSE: 0.968840, Gamma: 0.000726
+Epoch: 045, Curr RMSE: 0.968619, Gamma: 0.000640
+SVD++, K = 64, gamma = 0.002000, lambda = 0.005000, shrinkage = 0.975000, rmse = 0.968619
+Epoch: 005, Curr RMSE: 0.993416, Gamma: 0.002000
+Epoch: 010, Curr RMSE: 0.984902, Gamma: 0.002000
+Epoch: 015, Curr RMSE: 0.978196, Gamma: 0.002000
+Epoch: 020, Curr RMSE: 0.972717, Gamma: 0.002000
+Epoch: 025, Curr RMSE: 0.969127, Gamma: 0.002000
+Epoch: 028, Curr RMSE: 0.968734, Gamma: 0.002000
+SVD++, K = 64, gamma = 0.002000, lambda = 0.005000, shrinkage = 1.000000, rmse = 0.968734
+Epoch: 005, Curr RMSE: 0.994284, Gamma: 0.001548
+Epoch: 010, Curr RMSE: 0.988089, Gamma: 0.001197
+Epoch: 015, Curr RMSE: 0.983986, Gamma: 0.000927
+Epoch: 020, Curr RMSE: 0.981322, Gamma: 0.000717
+Epoch: 025, Curr RMSE: 0.979342, Gamma: 0.000555
+Epoch: 030, Curr RMSE: 0.977882, Gamma: 0.000429
+Epoch: 035, Curr RMSE: 0.976789, Gamma: 0.000332
+Epoch: 040, Curr RMSE: 0.975954, Gamma: 0.000257
+Epoch: 045, Curr RMSE: 0.975310, Gamma: 0.000199
+Epoch: 050, Curr RMSE: 0.974810, Gamma: 0.000154
+Epoch: 055, Curr RMSE: 0.974424, Gamma: 0.000119
+Epoch: 060, Curr RMSE: 0.974125, Gamma: 0.000092
+Epoch: 065, Curr RMSE: 0.973894, Gamma: 0.000071
+Epoch: 070, Curr RMSE: 0.973716, Gamma: 0.000055
+Epoch: 075, Curr RMSE: 0.973579, Gamma: 0.000043
+Epoch: 080, Curr RMSE: 0.973473, Gamma: 0.000033
+Epoch: 085, Curr RMSE: 0.973392, Gamma: 0.000026
+Epoch: 090, Curr RMSE: 0.973329, Gamma: 0.000020
+Epoch: 095, Curr RMSE: 0.973281, Gamma: 0.000015
+Epoch: 100, Curr RMSE: 0.973244, Gamma: 0.000012
+Epoch: 105, Curr RMSE: 0.973215, Gamma: 0.000009
+Epoch: 110, Curr RMSE: 0.973193, Gamma: 0.000007
+Epoch: 115, Curr RMSE: 0.973176, Gamma: 0.000005
+Epoch: 120, Curr RMSE: 0.973162, Gamma: 0.000004
+Epoch: 125, Curr RMSE: 0.973152, Gamma: 0.000003
+Epoch: 130, Curr RMSE: 0.973144, Gamma: 0.000003
+Epoch: 135, Curr RMSE: 0.973138, Gamma: 0.000002
+Epoch: 137, Curr RMSE: 0.973137, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.002000, lambda = 0.010000, shrinkage = 0.950000, rmse = 0.973137
+Epoch: 005, Curr RMSE: 0.993746, Gamma: 0.001762
+Epoch: 010, Curr RMSE: 0.986537, Gamma: 0.001553
+Epoch: 015, Curr RMSE: 0.981524, Gamma: 0.001368
+Epoch: 020, Curr RMSE: 0.977706, Gamma: 0.001205
+Epoch: 025, Curr RMSE: 0.974578, Gamma: 0.001062
+Epoch: 030, Curr RMSE: 0.971863, Gamma: 0.000936
+Epoch: 035, Curr RMSE: 0.969718, Gamma: 0.000825
+Epoch: 040, Curr RMSE: 0.968189, Gamma: 0.000726
+Epoch: 045, Curr RMSE: 0.967199, Gamma: 0.000640
+Epoch: 050, Curr RMSE: 0.966638, Gamma: 0.000564
+Epoch: 055, Curr RMSE: 0.966396, Gamma: 0.000497
+Epoch: 059, Curr RMSE: 0.966368, Gamma: 0.000449
+SVD++, K = 64, gamma = 0.002000, lambda = 0.010000, shrinkage = 0.975000, rmse = 0.966368
+Epoch: 005, Curr RMSE: 0.993463, Gamma: 0.002000
+Epoch: 010, Curr RMSE: 0.985142, Gamma: 0.002000
+Epoch: 015, Curr RMSE: 0.978990, Gamma: 0.002000
+Epoch: 020, Curr RMSE: 0.973726, Gamma: 0.002000
+Epoch: 025, Curr RMSE: 0.969317, Gamma: 0.002000
+Epoch: 030, Curr RMSE: 0.967350, Gamma: 0.002000
+Epoch: 032, Curr RMSE: 0.967331, Gamma: 0.002000
+SVD++, K = 64, gamma = 0.002000, lambda = 0.010000, shrinkage = 1.000000, rmse = 0.967331
+Epoch: 005, Curr RMSE: 0.994352, Gamma: 0.001548
+Epoch: 010, Curr RMSE: 0.989159, Gamma: 0.001197
+Epoch: 015, Curr RMSE: 0.985142, Gamma: 0.000927
+Epoch: 020, Curr RMSE: 0.982514, Gamma: 0.000717
+Epoch: 025, Curr RMSE: 0.980592, Gamma: 0.000555
+Epoch: 030, Curr RMSE: 0.979160, Gamma: 0.000429
+Epoch: 035, Curr RMSE: 0.978113, Gamma: 0.000332
+Epoch: 040, Curr RMSE: 0.977339, Gamma: 0.000257
+Epoch: 045, Curr RMSE: 0.976755, Gamma: 0.000199
+Epoch: 050, Curr RMSE: 0.976311, Gamma: 0.000154
+Epoch: 055, Curr RMSE: 0.975969, Gamma: 0.000119
+Epoch: 060, Curr RMSE: 0.975706, Gamma: 0.000092
+Epoch: 065, Curr RMSE: 0.975503, Gamma: 0.000071
+Epoch: 070, Curr RMSE: 0.975346, Gamma: 0.000055
+Epoch: 075, Curr RMSE: 0.975225, Gamma: 0.000043
+Epoch: 080, Curr RMSE: 0.975132, Gamma: 0.000033
+Epoch: 085, Curr RMSE: 0.975060, Gamma: 0.000026
+Epoch: 090, Curr RMSE: 0.975004, Gamma: 0.000020
+Epoch: 095, Curr RMSE: 0.974961, Gamma: 0.000015
+Epoch: 100, Curr RMSE: 0.974928, Gamma: 0.000012
+Epoch: 105, Curr RMSE: 0.974902, Gamma: 0.000009
+Epoch: 110, Curr RMSE: 0.974882, Gamma: 0.000007
+Epoch: 115, Curr RMSE: 0.974867, Gamma: 0.000005
+Epoch: 120, Curr RMSE: 0.974855, Gamma: 0.000004
+Epoch: 125, Curr RMSE: 0.974846, Gamma: 0.000003
+Epoch: 130, Curr RMSE: 0.974839, Gamma: 0.000003
+Epoch: 135, Curr RMSE: 0.974834, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.002000, lambda = 0.020000, shrinkage = 0.950000, rmse = 0.974834
+Epoch: 005, Curr RMSE: 0.994389, Gamma: 0.001762
+Epoch: 010, Curr RMSE: 0.987641, Gamma: 0.001553
+Epoch: 015, Curr RMSE: 0.982803, Gamma: 0.001368
+Epoch: 020, Curr RMSE: 0.979154, Gamma: 0.001205
+Epoch: 025, Curr RMSE: 0.976285, Gamma: 0.001062
+Epoch: 030, Curr RMSE: 0.973870, Gamma: 0.000936
+Epoch: 035, Curr RMSE: 0.971757, Gamma: 0.000825
+Epoch: 040, Curr RMSE: 0.969996, Gamma: 0.000726
+Epoch: 045, Curr RMSE: 0.968588, Gamma: 0.000640
+Epoch: 050, Curr RMSE: 0.967481, Gamma: 0.000564
+Epoch: 055, Curr RMSE: 0.966620, Gamma: 0.000497
+Epoch: 060, Curr RMSE: 0.965955, Gamma: 0.000438
+Epoch: 065, Curr RMSE: 0.965444, Gamma: 0.000386
+Epoch: 070, Curr RMSE: 0.965054, Gamma: 0.000340
+Epoch: 075, Curr RMSE: 0.964757, Gamma: 0.000299
+Epoch: 080, Curr RMSE: 0.964533, Gamma: 0.000264
+Epoch: 085, Curr RMSE: 0.964366, Gamma: 0.000232
+Epoch: 090, Curr RMSE: 0.964241, Gamma: 0.000205
+Epoch: 095, Curr RMSE: 0.964149, Gamma: 0.000180
+Epoch: 100, Curr RMSE: 0.964081, Gamma: 0.000159
+Epoch: 105, Curr RMSE: 0.964031, Gamma: 0.000140
+Epoch: 110, Curr RMSE: 0.963995, Gamma: 0.000123
+Epoch: 115, Curr RMSE: 0.963969, Gamma: 0.000109
+Epoch: 120, Curr RMSE: 0.963950, Gamma: 0.000096
+Epoch: 125, Curr RMSE: 0.963937, Gamma: 0.000084
+Epoch: 130, Curr RMSE: 0.963928, Gamma: 0.000074
+Epoch: 134, Curr RMSE: 0.963925, Gamma: 0.000067
+SVD++, K = 64, gamma = 0.002000, lambda = 0.020000, shrinkage = 0.975000, rmse = 0.963925
+Epoch: 005, Curr RMSE: 0.993943, Gamma: 0.002000
+Epoch: 010, Curr RMSE: 0.986257, Gamma: 0.002000
+Epoch: 015, Curr RMSE: 0.980312, Gamma: 0.002000
+Epoch: 020, Curr RMSE: 0.975388, Gamma: 0.002000
+Epoch: 025, Curr RMSE: 0.970845, Gamma: 0.002000
+Epoch: 030, Curr RMSE: 0.967254, Gamma: 0.002000
+Epoch: 035, Curr RMSE: 0.965155, Gamma: 0.002000
+Epoch: 040, Curr RMSE: 0.964673, Gamma: 0.002000
+SVD++, K = 64, gamma = 0.002000, lambda = 0.020000, shrinkage = 1.000000, rmse = 0.964673
+Epoch: 005, Curr RMSE: 0.995363, Gamma: 0.001548
+Epoch: 010, Curr RMSE: 0.991595, Gamma: 0.001197
+Epoch: 015, Curr RMSE: 0.988261, Gamma: 0.000927
+Epoch: 020, Curr RMSE: 0.985874, Gamma: 0.000717
+Epoch: 025, Curr RMSE: 0.984309, Gamma: 0.000555
+Epoch: 030, Curr RMSE: 0.983262, Gamma: 0.000429
+Epoch: 035, Curr RMSE: 0.982511, Gamma: 0.000332
+Epoch: 040, Curr RMSE: 0.981943, Gamma: 0.000257
+Epoch: 045, Curr RMSE: 0.981505, Gamma: 0.000199
+Epoch: 050, Curr RMSE: 0.981165, Gamma: 0.000154
+Epoch: 055, Curr RMSE: 0.980901, Gamma: 0.000119
+Epoch: 060, Curr RMSE: 0.980696, Gamma: 0.000092
+Epoch: 065, Curr RMSE: 0.980538, Gamma: 0.000071
+Epoch: 070, Curr RMSE: 0.980415, Gamma: 0.000055
+Epoch: 075, Curr RMSE: 0.980320, Gamma: 0.000043
+Epoch: 080, Curr RMSE: 0.980247, Gamma: 0.000033
+Epoch: 085, Curr RMSE: 0.980190, Gamma: 0.000026
+Epoch: 090, Curr RMSE: 0.980146, Gamma: 0.000020
+Epoch: 095, Curr RMSE: 0.980112, Gamma: 0.000015
+Epoch: 100, Curr RMSE: 0.980086, Gamma: 0.000012
+Epoch: 105, Curr RMSE: 0.980066, Gamma: 0.000009
+Epoch: 110, Curr RMSE: 0.980050, Gamma: 0.000007
+Epoch: 115, Curr RMSE: 0.980038, Gamma: 0.000005
+Epoch: 120, Curr RMSE: 0.980028, Gamma: 0.000004
+Epoch: 125, Curr RMSE: 0.980021, Gamma: 0.000003
+Epoch: 130, Curr RMSE: 0.980016, Gamma: 0.000003
+Epoch: 131, Curr RMSE: 0.980016, Gamma: 0.000002
+SVD++, K = 64, gamma = 0.002000, lambda = 0.050000, shrinkage = 0.950000, rmse = 0.980016
+Epoch: 005, Curr RMSE: 0.995109, Gamma: 0.001762
+Epoch: 010, Curr RMSE: 0.990518, Gamma: 0.001553
+Epoch: 015, Curr RMSE: 0.986272, Gamma: 0.001368
+Epoch: 020, Curr RMSE: 0.983343, Gamma: 0.001205
+Epoch: 025, Curr RMSE: 0.981176, Gamma: 0.001062
+Epoch: 030, Curr RMSE: 0.979258, Gamma: 0.000936
+Epoch: 035, Curr RMSE: 0.977641, Gamma: 0.000825
+Epoch: 040, Curr RMSE: 0.976330, Gamma: 0.000726
+Epoch: 045, Curr RMSE: 0.975246, Gamma: 0.000640
+Epoch: 050, Curr RMSE: 0.974320, Gamma: 0.000564
+Epoch: 055, Curr RMSE: 0.973512, Gamma: 0.000497
+Epoch: 060, Curr RMSE: 0.972803, Gamma: 0.000438
+Epoch: 065, Curr RMSE: 0.972181, Gamma: 0.000386
+Epoch: 070, Curr RMSE: 0.971635, Gamma: 0.000340
+Epoch: 075, Curr RMSE: 0.971157, Gamma: 0.000299
+Epoch: 080, Curr RMSE: 0.970740, Gamma: 0.000264
+Epoch: 085, Curr RMSE: 0.970375, Gamma: 0.000232
+Epoch: 090, Curr RMSE: 0.970057, Gamma: 0.000205
+Epoch: 095, Curr RMSE: 0.969780, Gamma: 0.000180
+Epoch: 100, Curr RMSE: 0.969537, Gamma: 0.000159
+Epoch: 105, Curr RMSE: 0.969326, Gamma: 0.000140
+Epoch: 110, Curr RMSE: 0.969142, Gamma: 0.000123
+Epoch: 115, Curr RMSE: 0.968980, Gamma: 0.000109
+Epoch: 120, Curr RMSE: 0.968840, Gamma: 0.000096
+Epoch: 125, Curr RMSE: 0.968717, Gamma: 0.000084
+Epoch: 130, Curr RMSE: 0.968609, Gamma: 0.000074
+Epoch: 135, Curr RMSE: 0.968515, Gamma: 0.000066
+Epoch: 140, Curr RMSE: 0.968433, Gamma: 0.000058
+Epoch: 145, Curr RMSE: 0.968360, Gamma: 0.000051
+Epoch: 150, Curr RMSE: 0.968297, Gamma: 0.000045
+Epoch: 155, Curr RMSE: 0.968242, Gamma: 0.000040
+Epoch: 160, Curr RMSE: 0.968193, Gamma: 0.000035
+Epoch: 165, Curr RMSE: 0.968151, Gamma: 0.000031
+Epoch: 170, Curr RMSE: 0.968113, Gamma: 0.000027
+Epoch: 175, Curr RMSE: 0.968080, Gamma: 0.000024
+Epoch: 180, Curr RMSE: 0.968051, Gamma: 0.000021
+Epoch: 185, Curr RMSE: 0.968026, Gamma: 0.000018
+Epoch: 190, Curr RMSE: 0.968004, Gamma: 0.000016
+Epoch: 195, Curr RMSE: 0.967984, Gamma: 0.000014
+Epoch: 200, Curr RMSE: 0.967967, Gamma: 0.000013
+Epoch: 205, Curr RMSE: 0.967952, Gamma: 0.000011
+Epoch: 210, Curr RMSE: 0.967938, Gamma: 0.000010
+Epoch: 215, Curr RMSE: 0.967927, Gamma: 0.000009
+Epoch: 220, Curr RMSE: 0.967916, Gamma: 0.000008
+Epoch: 225, Curr RMSE: 0.967907, Gamma: 0.000007
+Epoch: 230, Curr RMSE: 0.967899, Gamma: 0.000006
+Epoch: 235, Curr RMSE: 0.967892, Gamma: 0.000005
+Epoch: 240, Curr RMSE: 0.967886, Gamma: 0.000005
+Epoch: 245, Curr RMSE: 0.967881, Gamma: 0.000004
+Epoch: 247, Curr RMSE: 0.967880, Gamma: 0.000004
+SVD++, K = 64, gamma = 0.002000, lambda = 0.050000, shrinkage = 0.975000, rmse = 0.967880
+Epoch: 005, Curr RMSE: 0.994897, Gamma: 0.002000
+Epoch: 010, Curr RMSE: 0.989751, Gamma: 0.002000
+Epoch: 015, Curr RMSE: 0.984414, Gamma: 0.002000
+Epoch: 020, Curr RMSE: 0.980591, Gamma: 0.002000
+Epoch: 025, Curr RMSE: 0.977120, Gamma: 0.002000
+Epoch: 030, Curr RMSE: 0.974187, Gamma: 0.002000
+Epoch: 035, Curr RMSE: 0.971356, Gamma: 0.002000
+Epoch: 040, Curr RMSE: 0.968683, Gamma: 0.002000
+Epoch: 045, Curr RMSE: 0.966460, Gamma: 0.002000
+Epoch: 050, Curr RMSE: 0.964758, Gamma: 0.002000
+Epoch: 055, Curr RMSE: 0.963534, Gamma: 0.002000
+Epoch: 060, Curr RMSE: 0.962746, Gamma: 0.002000
+Epoch: 065, Curr RMSE: 0.962377, Gamma: 0.002000
+Epoch: 068, Curr RMSE: 0.962349, Gamma: 0.002000
+SVD++, K = 64, gamma = 0.002000, lambda = 0.050000, shrinkage = 1.000000, rmse = 0.962349
+Epoch: 005, Curr RMSE: 0.995666, Gamma: 0.001548
+Epoch: 010, Curr RMSE: 0.993972, Gamma: 0.001197
+Epoch: 015, Curr RMSE: 0.992107, Gamma: 0.000927
+Epoch: 020, Curr RMSE: 0.990833, Gamma: 0.000717
+Epoch: 025, Curr RMSE: 0.989646, Gamma: 0.000555
+Epoch: 030, Curr RMSE: 0.988675, Gamma: 0.000429
+Epoch: 035, Curr RMSE: 0.987936, Gamma: 0.000332
+Epoch: 040, Curr RMSE: 0.987384, Gamma: 0.000257
+Epoch: 045, Curr RMSE: 0.986970, Gamma: 0.000199
+Epoch: 050, Curr RMSE: 0.986661, Gamma: 0.000154
+Epoch: 055, Curr RMSE: 0.986428, Gamma: 0.000119
+Epoch: 060, Curr RMSE: 0.986251, Gamma: 0.000092
+Epoch: 065, Curr RMSE: 0.986118, Gamma: 0.000071
+Epoch: 070, Curr RMSE: 0.986016, Gamma: 0.000055
+Epoch: 075, Curr RMSE: 0.985938, Gamma: 0.000043
+Epoch: 080, Curr RMSE: 0.985879, Gamma: 0.000033
+Epoch: 085, Curr RMSE: 0.985833, Gamma: 0.000026
+Epoch: 090, Curr RMSE: 0.985798, Gamma: 0.000020
+Epoch: 095, Curr RMSE: 0.985771, Gamma: 0.000015
+Epoch: 100, Curr RMSE: 0.985750, Gamma: 0.000012
+Epoch: 105, Curr RMSE: 0.985734, Gamma: 0.000009
+Epoch: 110, Curr RMSE: 0.985721, Gamma: 0.000007
+Epoch: 115, Curr RMSE: 0.985712, Gamma: 0.000005
+Epoch: 120, Curr RMSE: 0.985704, Gamma: 0.000004
+Epoch: 125, Curr RMSE: 0.985698, Gamma: 0.000003
+Epoch: 126, Curr RMSE: 0.985698, Gamma: 0.000003
+SVD++, K = 64, gamma = 0.002000, lambda = 0.100000, shrinkage = 0.950000, rmse = 0.985698
+Epoch: 005, Curr RMSE: 0.995635, Gamma: 0.001762
+Epoch: 010, Curr RMSE: 0.993288, Gamma: 0.001553
+Epoch: 015, Curr RMSE: 0.991130, Gamma: 0.001368
+Epoch: 020, Curr RMSE: 0.988779, Gamma: 0.001205
+Epoch: 025, Curr RMSE: 0.986740, Gamma: 0.001062
+Epoch: 030, Curr RMSE: 0.985271, Gamma: 0.000936
+Epoch: 035, Curr RMSE: 0.984253, Gamma: 0.000825
+Epoch: 040, Curr RMSE: 0.983504, Gamma: 0.000726
+Epoch: 045, Curr RMSE: 0.982907, Gamma: 0.000640
+Epoch: 050, Curr RMSE: 0.982402, Gamma: 0.000564
+Epoch: 055, Curr RMSE: 0.981960, Gamma: 0.000497
+Epoch: 060, Curr RMSE: 0.981564, Gamma: 0.000438
+Epoch: 065, Curr RMSE: 0.981208, Gamma: 0.000386
+Epoch: 070, Curr RMSE: 0.980887, Gamma: 0.000340
+Epoch: 075, Curr RMSE: 0.980597, Gamma: 0.000299
+Epoch: 080, Curr RMSE: 0.980336, Gamma: 0.000264
+Epoch: 085, Curr RMSE: 0.980103, Gamma: 0.000232
+Epoch: 090, Curr RMSE: 0.979894, Gamma: 0.000205
+Epoch: 095, Curr RMSE: 0.979707, Gamma: 0.000180
+Epoch: 100, Curr RMSE: 0.979542, Gamma: 0.000159
+Epoch: 105, Curr RMSE: 0.979395, Gamma: 0.000140
+Epoch: 110, Curr RMSE: 0.979265, Gamma: 0.000123
+Epoch: 115, Curr RMSE: 0.979149, Gamma: 0.000109
+Epoch: 120, Curr RMSE: 0.979047, Gamma: 0.000096
+Epoch: 125, Curr RMSE: 0.978957, Gamma: 0.000084
+Epoch: 130, Curr RMSE: 0.978878, Gamma: 0.000074
+Epoch: 135, Curr RMSE: 0.978807, Gamma: 0.000066
+Epoch: 140, Curr RMSE: 0.978745, Gamma: 0.000058
+Epoch: 145, Curr RMSE: 0.978691, Gamma: 0.000051
+Epoch: 150, Curr RMSE: 0.978643, Gamma: 0.000045
+Epoch: 155, Curr RMSE: 0.978600, Gamma: 0.000040
+Epoch: 160, Curr RMSE: 0.978563, Gamma: 0.000035
+Epoch: 165, Curr RMSE: 0.978530, Gamma: 0.000031
+Epoch: 170, Curr RMSE: 0.978501, Gamma: 0.000027
+Epoch: 175, Curr RMSE: 0.978475, Gamma: 0.000024
+Epoch: 180, Curr RMSE: 0.978452, Gamma: 0.000021
+Epoch: 185, Curr RMSE: 0.978432, Gamma: 0.000018
+Epoch: 190, Curr RMSE: 0.978415, Gamma: 0.000016
+Epoch: 195, Curr RMSE: 0.978399, Gamma: 0.000014
+Epoch: 200, Curr RMSE: 0.978386, Gamma: 0.000013
+Epoch: 205, Curr RMSE: 0.978374, Gamma: 0.000011
+Epoch: 210, Curr RMSE: 0.978363, Gamma: 0.000010
+Epoch: 215, Curr RMSE: 0.978354, Gamma: 0.000009
+Epoch: 220, Curr RMSE: 0.978346, Gamma: 0.000008
+Epoch: 225, Curr RMSE: 0.978339, Gamma: 0.000007
+Epoch: 230, Curr RMSE: 0.978332, Gamma: 0.000006
+Epoch: 235, Curr RMSE: 0.978327, Gamma: 0.000005
+Epoch: 238, Curr RMSE: 0.978324, Gamma: 0.000005
+SVD++, K = 64, gamma = 0.002000, lambda = 0.100000, shrinkage = 0.975000, rmse = 0.978324
+Epoch: 005, Curr RMSE: 0.995620, Gamma: 0.002000
+Epoch: 010, Curr RMSE: 0.992710, Gamma: 0.002000
+Epoch: 015, Curr RMSE: 0.989621, Gamma: 0.002000
+Epoch: 020, Curr RMSE: 0.986236, Gamma: 0.002000
+Epoch: 025, Curr RMSE: 0.983986, Gamma: 0.002000
+Epoch: 030, Curr RMSE: 0.982323, Gamma: 0.002000
+Epoch: 035, Curr RMSE: 0.980651, Gamma: 0.002000
+Epoch: 040, Curr RMSE: 0.978830, Gamma: 0.002000
+Epoch: 045, Curr RMSE: 0.977002, Gamma: 0.002000
+Epoch: 050, Curr RMSE: 0.975327, Gamma: 0.002000
+Epoch: 055, Curr RMSE: 0.973829, Gamma: 0.002000
+Epoch: 060, Curr RMSE: 0.972466, Gamma: 0.002000
+Epoch: 065, Curr RMSE: 0.971220, Gamma: 0.002000
+Epoch: 070, Curr RMSE: 0.970093, Gamma: 0.002000
+Epoch: 075, Curr RMSE: 0.969084, Gamma: 0.002000
+Epoch: 080, Curr RMSE: 0.968185, Gamma: 0.002000
+Epoch: 085, Curr RMSE: 0.967387, Gamma: 0.002000
+Epoch: 090, Curr RMSE: 0.966686, Gamma: 0.002000
+Epoch: 095, Curr RMSE: 0.966081, Gamma: 0.002000
+Epoch: 100, Curr RMSE: 0.965572, Gamma: 0.002000
+Epoch: 105, Curr RMSE: 0.965159, Gamma: 0.002000
+Epoch: 110, Curr RMSE: 0.964843, Gamma: 0.002000
+Epoch: 115, Curr RMSE: 0.964626, Gamma: 0.002000
+Epoch: 120, Curr RMSE: 0.964515, Gamma: 0.002000
+Epoch: 123, Curr RMSE: 0.964501, Gamma: 0.002000
+SVD++, K = 64, gamma = 0.002000, lambda = 0.100000, shrinkage = 1.000000, rmse = 0.964501
+Epoch: 005, Curr RMSE: 0.983152, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.973208, Gamma: 0.002994
+Epoch: 014, Curr RMSE: 0.971051, Gamma: 0.002438
+SVD++, K = 64, gamma = 0.005000, lambda = 0.001000, shrinkage = 0.950000, rmse = 0.971051
+Epoch: 005, Curr RMSE: 0.982669, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.972121, Gamma: 0.003882
+Epoch: 012, Curr RMSE: 0.971548, Gamma: 0.003690
+SVD++, K = 64, gamma = 0.005000, lambda = 0.001000, shrinkage = 0.975000, rmse = 0.971548
+Epoch: 005, Curr RMSE: 0.981952, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.971666, Gamma: 0.005000
+Epoch: 011, Curr RMSE: 0.971666, Gamma: 0.005000
+SVD++, K = 64, gamma = 0.005000, lambda = 0.001000, shrinkage = 1.000000, rmse = 0.971666
+Epoch: 005, Curr RMSE: 0.983176, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.973158, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.970532, Gamma: 0.002316
+SVD++, K = 64, gamma = 0.005000, lambda = 0.002000, shrinkage = 0.950000, rmse = 0.970532
+Epoch: 005, Curr RMSE: 0.982545, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.971803, Gamma: 0.003882
+Epoch: 013, Curr RMSE: 0.970770, Gamma: 0.003598
+SVD++, K = 64, gamma = 0.005000, lambda = 0.002000, shrinkage = 0.975000, rmse = 0.970770
+Epoch: 005, Curr RMSE: 0.981621, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.970892, Gamma: 0.005000
+Epoch: 011, Curr RMSE: 0.970892, Gamma: 0.005000
+SVD++, K = 64, gamma = 0.005000, lambda = 0.002000, shrinkage = 1.000000, rmse = 0.970892
+Epoch: 005, Curr RMSE: 0.983653, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.973555, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.969326, Gamma: 0.002316
+Epoch: 017, Curr RMSE: 0.969284, Gamma: 0.002091
+SVD++, K = 64, gamma = 0.005000, lambda = 0.005000, shrinkage = 0.950000, rmse = 0.969284
+Epoch: 005, Curr RMSE: 0.982912, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.971970, Gamma: 0.003882
+Epoch: 014, Curr RMSE: 0.969733, Gamma: 0.003508
+SVD++, K = 64, gamma = 0.005000, lambda = 0.005000, shrinkage = 0.975000, rmse = 0.969733
+Epoch: 005, Curr RMSE: 0.982123, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.970593, Gamma: 0.005000
+Epoch: 012, Curr RMSE: 0.969993, Gamma: 0.005000
+SVD++, K = 64, gamma = 0.005000, lambda = 0.005000, shrinkage = 1.000000, rmse = 0.969993
+Epoch: 005, Curr RMSE: 0.984106, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.974336, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.968667, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.967396, Gamma: 0.001792
+SVD++, K = 64, gamma = 0.005000, lambda = 0.010000, shrinkage = 0.950000, rmse = 0.967396
+Epoch: 005, Curr RMSE: 0.983645, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.972365, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.967685, Gamma: 0.003420
+Epoch: 016, Curr RMSE: 0.967685, Gamma: 0.003335
+SVD++, K = 64, gamma = 0.005000, lambda = 0.010000, shrinkage = 0.975000, rmse = 0.967685
+Epoch: 005, Curr RMSE: 0.982975, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.970487, Gamma: 0.005000
+Epoch: 014, Curr RMSE: 0.968191, Gamma: 0.005000
+SVD++, K = 64, gamma = 0.005000, lambda = 0.010000, shrinkage = 1.000000, rmse = 0.968191
+Epoch: 005, Curr RMSE: 0.985104, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.976146, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.970172, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.966716, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.965232, Gamma: 0.001387
+Epoch: 030, Curr RMSE: 0.964848, Gamma: 0.001073
+Epoch: 031, Curr RMSE: 0.964848, Gamma: 0.001020
+SVD++, K = 64, gamma = 0.005000, lambda = 0.020000, shrinkage = 0.950000, rmse = 0.964848
+Epoch: 005, Curr RMSE: 0.984884, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.974287, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.967201, Gamma: 0.003420
+Epoch: 020, Curr RMSE: 0.964932, Gamma: 0.003013
+Epoch: 021, Curr RMSE: 0.964932, Gamma: 0.002938
+SVD++, K = 64, gamma = 0.005000, lambda = 0.020000, shrinkage = 0.975000, rmse = 0.964932
+Epoch: 005, Curr RMSE: 0.984090, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.972502, Gamma: 0.005000
+Epoch: 015, Curr RMSE: 0.965950, Gamma: 0.005000
+Epoch: 017, Curr RMSE: 0.965705, Gamma: 0.005000
+SVD++, K = 64, gamma = 0.005000, lambda = 0.020000, shrinkage = 1.000000, rmse = 0.965705
+Epoch: 005, Curr RMSE: 0.988340, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.981164, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.976446, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.973351, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.971031, Gamma: 0.001387
+Epoch: 030, Curr RMSE: 0.969304, Gamma: 0.001073
+Epoch: 035, Curr RMSE: 0.968052, Gamma: 0.000830
+Epoch: 040, Curr RMSE: 0.967150, Gamma: 0.000643
+Epoch: 045, Curr RMSE: 0.966495, Gamma: 0.000497
+Epoch: 050, Curr RMSE: 0.966014, Gamma: 0.000385
+Epoch: 055, Curr RMSE: 0.965656, Gamma: 0.000298
+Epoch: 060, Curr RMSE: 0.965385, Gamma: 0.000230
+Epoch: 065, Curr RMSE: 0.965180, Gamma: 0.000178
+Epoch: 070, Curr RMSE: 0.965024, Gamma: 0.000138
+Epoch: 075, Curr RMSE: 0.964904, Gamma: 0.000107
+Epoch: 080, Curr RMSE: 0.964814, Gamma: 0.000083
+Epoch: 085, Curr RMSE: 0.964745, Gamma: 0.000064
+Epoch: 090, Curr RMSE: 0.964693, Gamma: 0.000049
+Epoch: 095, Curr RMSE: 0.964653, Gamma: 0.000038
+Epoch: 100, Curr RMSE: 0.964623, Gamma: 0.000030
+Epoch: 105, Curr RMSE: 0.964600, Gamma: 0.000023
+Epoch: 110, Curr RMSE: 0.964582, Gamma: 0.000018
+User defined signal 2
+Sender: LSF System <lsfadmin@e2066>
+Subject: Job 7981496: <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation -o SVDpp_Grid_Search.txt> in cluster <euler> Done
+
+Job <matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation -o SVDpp_Grid_Search.txt> was submitted from host <euler04> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2066>, in queue <normal.24h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Fri Jun 12 16:57:22 2015
+Results reported on Fri Jun 12 17:30:01 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -nojvm -singleCompThread -r CollabFilteringEvaluation -o SVDpp_Grid_Search.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               2075.69 sec.
+    Max Memory :             958 MB
+    Average Memory :         789.11 MB
+    Total Requested Memory : 2048.00 MB
+    Delta Memory :           1090.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+Unrecognized MATLAB option "o".
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Epoch: 005, Curr RMSE: 0.982399, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.972136, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.969618, Gamma: 0.002316
+SVD++, K = 64, gam = 0.005000, lam = 0.001000, shrink = 0.950000, RMSE = 0.969618
+Elapsed time is 31.945974 seconds.
+Epoch: 005, Curr RMSE: 0.981556, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.970798, Gamma: 0.003882
+Epoch: 012, Curr RMSE: 0.970170, Gamma: 0.003690
+SVD++, K = 64, gam = 0.005000, lam = 0.001000, shrink = 0.975000, RMSE = 0.970170
+Elapsed time is 25.887855 seconds.
+Epoch: 005, Curr RMSE: 0.980779, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.970152, Gamma: 0.005000
+Epoch: 011, Curr RMSE: 0.970152, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.001000, shrink = 1.000000, RMSE = 0.970152
+Elapsed time is 23.825501 seconds.
+Epoch: 005, Curr RMSE: 0.982310, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.972312, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.969625, Gamma: 0.002316
+SVD++, K = 64, gam = 0.005000, lam = 0.002000, shrink = 0.950000, RMSE = 0.969625
+Elapsed time is 32.160335 seconds.
+Epoch: 005, Curr RMSE: 0.981772, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.970705, Gamma: 0.003882
+Epoch: 013, Curr RMSE: 0.969641, Gamma: 0.003598
+SVD++, K = 64, gam = 0.005000, lam = 0.002000, shrink = 0.975000, RMSE = 0.969641
+Elapsed time is 28.084703 seconds.
+Epoch: 005, Curr RMSE: 0.980932, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.969829, Gamma: 0.005000
+Epoch: 011, Curr RMSE: 0.969829, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.002000, shrink = 1.000000, RMSE = 0.969829
+Elapsed time is 23.919372 seconds.
+Epoch: 005, Curr RMSE: 0.982646, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.972744, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.968348, Gamma: 0.002316
+Epoch: 017, Curr RMSE: 0.968295, Gamma: 0.002091
+SVD++, K = 64, gam = 0.005000, lam = 0.005000, shrink = 0.950000, RMSE = 0.968295
+Elapsed time is 36.349055 seconds.
+Epoch: 005, Curr RMSE: 0.981874, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.970612, Gamma: 0.003882
+Epoch: 014, Curr RMSE: 0.968214, Gamma: 0.003508
+SVD++, K = 64, gam = 0.005000, lam = 0.005000, shrink = 0.975000, RMSE = 0.968214
+Elapsed time is 29.944941 seconds.
+Epoch: 005, Curr RMSE: 0.981396, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.969379, Gamma: 0.005000
+Epoch: 012, Curr RMSE: 0.968701, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.005000, shrink = 1.000000, RMSE = 0.968701
+Elapsed time is 25.748572 seconds.
+Epoch: 005, Curr RMSE: 0.983252, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.973567, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.967853, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.966624, Gamma: 0.001792
+SVD++, K = 64, gam = 0.005000, lam = 0.010000, shrink = 0.950000, RMSE = 0.966624
+Elapsed time is 42.324158 seconds.
+Epoch: 005, Curr RMSE: 0.982629, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.971376, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.966742, Gamma: 0.003420
+Epoch: 016, Curr RMSE: 0.966742, Gamma: 0.003335
+SVD++, K = 64, gam = 0.005000, lam = 0.010000, shrink = 0.975000, RMSE = 0.966742
+Elapsed time is 34.098724 seconds.
+Epoch: 005, Curr RMSE: 0.981982, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.969472, Gamma: 0.005000
+Epoch: 014, Curr RMSE: 0.966925, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.010000, shrink = 1.000000, RMSE = 0.966925
+Elapsed time is 29.888778 seconds.
+Epoch: 005, Curr RMSE: 0.984346, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.975388, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.969347, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.965966, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.964519, Gamma: 0.001387
+SVD++, K = 64, gam = 0.005000, lam = 0.020000, shrink = 0.950000, RMSE = 0.964519
+Elapsed time is 52.706303 seconds.
+Epoch: 005, Curr RMSE: 0.983708, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.973711, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.966887, Gamma: 0.003420
+Epoch: 020, Curr RMSE: 0.964747, Gamma: 0.003013
+Epoch: 021, Curr RMSE: 0.964747, Gamma: 0.002938
+SVD++, K = 64, gam = 0.005000, lam = 0.020000, shrink = 0.975000, RMSE = 0.964747
+Elapsed time is 44.069740 seconds.
+Epoch: 005, Curr RMSE: 0.982977, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.971372, Gamma: 0.005000
+Epoch: 015, Curr RMSE: 0.964999, Gamma: 0.005000
+Epoch: 017, Curr RMSE: 0.964805, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.020000, shrink = 1.000000, RMSE = 0.964805
+Elapsed time is 35.788523 seconds.
+Epoch: 005, Curr RMSE: 0.987344, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.980141, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.975363, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.972182, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.969878, Gamma: 0.001387
+SVD++, K = 64, gam = 0.005000, lam = 0.050000, shrink = 0.950000, RMSE = 0.969878
+Elapsed time is 52.135556 seconds.
+Epoch: 005, Curr RMSE: 0.986667, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.978616, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.972943, Gamma: 0.003420
+Epoch: 020, Curr RMSE: 0.968663, Gamma: 0.003013
+Epoch: 025, Curr RMSE: 0.965662, Gamma: 0.002655
+SVD++, K = 64, gam = 0.005000, lam = 0.050000, shrink = 0.975000, RMSE = 0.965662
+Elapsed time is 52.188214 seconds.
+Epoch: 005, Curr RMSE: 0.986256, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.977331, Gamma: 0.005000
+Epoch: 015, Curr RMSE: 0.970476, Gamma: 0.005000
+Epoch: 020, Curr RMSE: 0.965534, Gamma: 0.005000
+Epoch: 025, Curr RMSE: 0.963188, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.050000, shrink = 1.000000, RMSE = 0.963188
+Elapsed time is 52.107813 seconds.
+Epoch: 005, Curr RMSE: 0.991149, Gamma: 0.003869
+Epoch: 010, Curr RMSE: 0.985814, Gamma: 0.002994
+Epoch: 015, Curr RMSE: 0.982765, Gamma: 0.002316
+Epoch: 020, Curr RMSE: 0.980926, Gamma: 0.001792
+Epoch: 025, Curr RMSE: 0.979400, Gamma: 0.001387
+SVD++, K = 64, gam = 0.005000, lam = 0.100000, shrink = 0.950000, RMSE = 0.979400
+Elapsed time is 52.204021 seconds.
+Epoch: 005, Curr RMSE: 0.990939, Gamma: 0.004405
+Epoch: 010, Curr RMSE: 0.984764, Gamma: 0.003882
+Epoch: 015, Curr RMSE: 0.981346, Gamma: 0.003420
+Epoch: 020, Curr RMSE: 0.978436, Gamma: 0.003013
+Epoch: 025, Curr RMSE: 0.975772, Gamma: 0.002655
+SVD++, K = 64, gam = 0.005000, lam = 0.100000, shrink = 0.975000, RMSE = 0.975772
+Elapsed time is 52.304184 seconds.
+Epoch: 005, Curr RMSE: 0.990615, Gamma: 0.005000
+Epoch: 010, Curr RMSE: 0.983997, Gamma: 0.005000
+Epoch: 015, Curr RMSE: 0.979658, Gamma: 0.005000
+Epoch: 020, Curr RMSE: 0.975337, Gamma: 0.005000
+Epoch: 025, Curr RMSE: 0.971942, Gamma: 0.005000
+SVD++, K = 64, gam = 0.005000, lam = 0.100000, shrink = 1.000000, RMSE = 0.971942
+Elapsed time is 52.235097 seconds.
+Epoch: 005, Curr RMSE: 0.972555, Gamma: 0.007738
+Epoch: 007, Curr RMSE: 0.971738, Gamma: 0.006983
+SVD++, K = 64, gam = 0.010000, lam = 0.001000, shrink = 0.950000, RMSE = 0.971738
+Elapsed time is 15.303988 seconds.
+Epoch: 005, Curr RMSE: 0.972052, Gamma: 0.008811
+Epoch: 006, Curr RMSE: 0.972052, Gamma: 0.008591
+SVD++, K = 64, gam = 0.010000, lam = 0.001000, shrink = 0.975000, RMSE = 0.972052
+Elapsed time is 13.247451 seconds.
+Epoch: 005, Curr RMSE: 0.971985, Gamma: 0.010000
+Epoch: 006, Curr RMSE: 0.971985, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.001000, shrink = 1.000000, RMSE = 0.971985
+Elapsed time is 13.327253 seconds.
+Epoch: 005, Curr RMSE: 0.972448, Gamma: 0.007738
+Epoch: 007, Curr RMSE: 0.971083, Gamma: 0.006983
+SVD++, K = 64, gam = 0.010000, lam = 0.002000, shrink = 0.950000, RMSE = 0.971083
+Elapsed time is 15.308943 seconds.
+Epoch: 005, Curr RMSE: 0.972117, Gamma: 0.008811
+Epoch: 007, Curr RMSE: 0.971765, Gamma: 0.008376
+SVD++, K = 64, gam = 0.010000, lam = 0.002000, shrink = 0.975000, RMSE = 0.971765
+Elapsed time is 15.372122 seconds.
+Epoch: 005, Curr RMSE: 0.972118, Gamma: 0.010000
+Epoch: 006, Curr RMSE: 0.972118, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.002000, shrink = 1.000000, RMSE = 0.972118
+Elapsed time is 13.441175 seconds.
+Epoch: 005, Curr RMSE: 0.972599, Gamma: 0.007738
+Epoch: 008, Curr RMSE: 0.970083, Gamma: 0.006634
+SVD++, K = 64, gam = 0.010000, lam = 0.005000, shrink = 0.950000, RMSE = 0.970083
+Elapsed time is 17.466698 seconds.
+Epoch: 005, Curr RMSE: 0.972240, Gamma: 0.008811
+Epoch: 007, Curr RMSE: 0.970623, Gamma: 0.008376
+SVD++, K = 64, gam = 0.010000, lam = 0.005000, shrink = 0.975000, RMSE = 0.970623
+Elapsed time is 15.410285 seconds.
+Epoch: 005, Curr RMSE: 0.971679, Gamma: 0.010000
+Epoch: 007, Curr RMSE: 0.970754, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.005000, shrink = 1.000000, RMSE = 0.970754
+Elapsed time is 15.416503 seconds.
+Epoch: 005, Curr RMSE: 0.973246, Gamma: 0.007738
+Epoch: 009, Curr RMSE: 0.968590, Gamma: 0.006302
+SVD++, K = 64, gam = 0.010000, lam = 0.010000, shrink = 0.950000, RMSE = 0.968590
+Elapsed time is 19.535263 seconds.
+Epoch: 005, Curr RMSE: 0.972396, Gamma: 0.008811
+Epoch: 008, Curr RMSE: 0.968519, Gamma: 0.008167
+SVD++, K = 64, gam = 0.010000, lam = 0.010000, shrink = 0.975000, RMSE = 0.968519
+Elapsed time is 17.412466 seconds.
+Epoch: 005, Curr RMSE: 0.971896, Gamma: 0.010000
+Epoch: 008, Curr RMSE: 0.969470, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.010000, shrink = 1.000000, RMSE = 0.969470
+Elapsed time is 17.575308 seconds.
+Epoch: 005, Curr RMSE: 0.974710, Gamma: 0.007738
+Epoch: 010, Curr RMSE: 0.966185, Gamma: 0.005987
+Epoch: 011, Curr RMSE: 0.966185, Gamma: 0.005688
+SVD++, K = 64, gam = 0.010000, lam = 0.020000, shrink = 0.950000, RMSE = 0.966185
+Elapsed time is 23.848352 seconds.
+Epoch: 005, Curr RMSE: 0.974069, Gamma: 0.008811
+Epoch: 010, Curr RMSE: 0.966400, Gamma: 0.007763
+SVD++, K = 64, gam = 0.010000, lam = 0.020000, shrink = 0.975000, RMSE = 0.966400
+Elapsed time is 21.799863 seconds.
+Epoch: 005, Curr RMSE: 0.973526, Gamma: 0.010000
+Epoch: 009, Curr RMSE: 0.967303, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.020000, shrink = 1.000000, RMSE = 0.967303
+Elapsed time is 19.738927 seconds.
+Epoch: 005, Curr RMSE: 0.979902, Gamma: 0.007738
+Epoch: 010, Curr RMSE: 0.970095, Gamma: 0.005987
+Epoch: 015, Curr RMSE: 0.965263, Gamma: 0.004633
+Epoch: 020, Curr RMSE: 0.963364, Gamma: 0.003585
+Epoch: 025, Curr RMSE: 0.962855, Gamma: 0.002774
+SVD++, K = 64, gam = 0.010000, lam = 0.050000, shrink = 0.950000, RMSE = 0.962855
+Elapsed time is 53.172761 seconds.
+Epoch: 005, Curr RMSE: 0.979143, Gamma: 0.008811
+Epoch: 010, Curr RMSE: 0.968836, Gamma: 0.007763
+Epoch: 015, Curr RMSE: 0.964712, Gamma: 0.006840
+Epoch: 019, Curr RMSE: 0.964265, Gamma: 0.006181
+SVD++, K = 64, gam = 0.010000, lam = 0.050000, shrink = 0.975000, RMSE = 0.964265
+Elapsed time is 40.620894 seconds.
+Epoch: 005, Curr RMSE: 0.978710, Gamma: 0.010000
+Epoch: 010, Curr RMSE: 0.968079, Gamma: 0.010000
+Epoch: 015, Curr RMSE: 0.965541, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.050000, shrink = 1.000000, RMSE = 0.965541
+Elapsed time is 32.419422 seconds.
+Epoch: 005, Curr RMSE: 0.985506, Gamma: 0.007738
+Epoch: 010, Curr RMSE: 0.979244, Gamma: 0.005987
+Epoch: 015, Curr RMSE: 0.974573, Gamma: 0.004633
+Epoch: 020, Curr RMSE: 0.971646, Gamma: 0.003585
+Epoch: 025, Curr RMSE: 0.969787, Gamma: 0.002774
+SVD++, K = 64, gam = 0.010000, lam = 0.100000, shrink = 0.950000, RMSE = 0.969787
+Elapsed time is 53.587847 seconds.
+Epoch: 005, Curr RMSE: 0.985106, Gamma: 0.008811
+Epoch: 010, Curr RMSE: 0.978110, Gamma: 0.007763
+Epoch: 015, Curr RMSE: 0.972740, Gamma: 0.006840
+Epoch: 020, Curr RMSE: 0.969595, Gamma: 0.006027
+Epoch: 025, Curr RMSE: 0.967599, Gamma: 0.005310
+SVD++, K = 64, gam = 0.010000, lam = 0.100000, shrink = 0.975000, RMSE = 0.967599
+Elapsed time is 53.636130 seconds.
+Epoch: 005, Curr RMSE: 0.984781, Gamma: 0.010000
+Epoch: 010, Curr RMSE: 0.976981, Gamma: 0.010000
+Epoch: 015, Curr RMSE: 0.971433, Gamma: 0.010000
+Epoch: 020, Curr RMSE: 0.968483, Gamma: 0.010000
+Epoch: 025, Curr RMSE: 0.967329, Gamma: 0.010000
+SVD++, K = 64, gam = 0.010000, lam = 0.100000, shrink = 1.000000, RMSE = 0.967329
+Elapsed time is 53.755680 seconds.
+Epoch: 004, Curr RMSE: 0.974926, Gamma: 0.016290
+SVD++, K = 64, gam = 0.020000, lam = 0.001000, shrink = 0.950000, RMSE = 0.974926
+Elapsed time is 9.435661 seconds.
+Epoch: 004, Curr RMSE: 0.975308, Gamma: 0.018074
+SVD++, K = 64, gam = 0.020000, lam = 0.001000, shrink = 0.975000, RMSE = 0.975308
+Elapsed time is 9.343304 seconds.
+Epoch: 004, Curr RMSE: 0.975797, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.001000, shrink = 1.000000, RMSE = 0.975797
+Elapsed time is 9.427749 seconds.
+Epoch: 004, Curr RMSE: 0.974136, Gamma: 0.016290
+SVD++, K = 64, gam = 0.020000, lam = 0.002000, shrink = 0.950000, RMSE = 0.974136
+Elapsed time is 9.456112 seconds.
+Epoch: 004, Curr RMSE: 0.974627, Gamma: 0.018074
+SVD++, K = 64, gam = 0.020000, lam = 0.002000, shrink = 0.975000, RMSE = 0.974627
+Elapsed time is 9.374777 seconds.
+Epoch: 004, Curr RMSE: 0.975050, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.002000, shrink = 1.000000, RMSE = 0.975050
+Elapsed time is 9.480243 seconds.
+Epoch: 004, Curr RMSE: 0.973547, Gamma: 0.016290
+SVD++, K = 64, gam = 0.020000, lam = 0.005000, shrink = 0.950000, RMSE = 0.973547
+Elapsed time is 9.485361 seconds.
+Epoch: 004, Curr RMSE: 0.973696, Gamma: 0.018074
+SVD++, K = 64, gam = 0.020000, lam = 0.005000, shrink = 0.975000, RMSE = 0.973696
+Elapsed time is 9.443031 seconds.
+Epoch: 004, Curr RMSE: 0.973947, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.005000, shrink = 1.000000, RMSE = 0.973947
+Elapsed time is 9.379893 seconds.
+Epoch: 005, Curr RMSE: 0.972620, Gamma: 0.015476
+SVD++, K = 64, gam = 0.020000, lam = 0.010000, shrink = 0.950000, RMSE = 0.972620
+Elapsed time is 11.596133 seconds.
+Epoch: 005, Curr RMSE: 0.972904, Gamma: 0.017622
+SVD++, K = 64, gam = 0.020000, lam = 0.010000, shrink = 0.975000, RMSE = 0.972904
+Elapsed time is 11.659448 seconds.
+Epoch: 004, Curr RMSE: 0.973205, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.010000, shrink = 1.000000, RMSE = 0.973205
+Elapsed time is 9.483927 seconds.
+Epoch: 005, Curr RMSE: 0.970383, Gamma: 0.015476
+Epoch: 006, Curr RMSE: 0.970383, Gamma: 0.014702
+SVD++, K = 64, gam = 0.020000, lam = 0.020000, shrink = 0.950000, RMSE = 0.970383
+Elapsed time is 13.802828 seconds.
+Epoch: 005, Curr RMSE: 0.970610, Gamma: 0.017622
+SVD++, K = 64, gam = 0.020000, lam = 0.020000, shrink = 0.975000, RMSE = 0.970610
+Elapsed time is 11.515173 seconds.
+Epoch: 005, Curr RMSE: 0.971115, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.020000, shrink = 1.000000, RMSE = 0.971115
+Elapsed time is 11.673847 seconds.
+Epoch: 005, Curr RMSE: 0.971975, Gamma: 0.015476
+Epoch: 010, Curr RMSE: 0.967841, Gamma: 0.011975
+SVD++, K = 64, gam = 0.020000, lam = 0.050000, shrink = 0.950000, RMSE = 0.967841
+Elapsed time is 22.348057 seconds.
+Epoch: 005, Curr RMSE: 0.971704, Gamma: 0.017622
+Epoch: 009, Curr RMSE: 0.968735, Gamma: 0.015925
+SVD++, K = 64, gam = 0.020000, lam = 0.050000, shrink = 0.975000, RMSE = 0.968735
+Elapsed time is 20.267023 seconds.
+Epoch: 005, Curr RMSE: 0.971723, Gamma: 0.020000
+Epoch: 008, Curr RMSE: 0.969640, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.050000, shrink = 1.000000, RMSE = 0.969640
+Elapsed time is 18.307787 seconds.
+Epoch: 005, Curr RMSE: 0.979883, Gamma: 0.015476
+Epoch: 010, Curr RMSE: 0.972410, Gamma: 0.011975
+Epoch: 015, Curr RMSE: 0.969291, Gamma: 0.009266
+Epoch: 020, Curr RMSE: 0.967870, Gamma: 0.007170
+Epoch: 025, Curr RMSE: 0.967493, Gamma: 0.005548
+SVD++, K = 64, gam = 0.020000, lam = 0.100000, shrink = 0.950000, RMSE = 0.967493
+Elapsed time is 54.470509 seconds.
+Epoch: 005, Curr RMSE: 0.979577, Gamma: 0.017622
+Epoch: 010, Curr RMSE: 0.972148, Gamma: 0.015527
+Epoch: 015, Curr RMSE: 0.970366, Gamma: 0.013680
+Epoch: 017, Curr RMSE: 0.970319, Gamma: 0.013005
+SVD++, K = 64, gam = 0.020000, lam = 0.100000, shrink = 0.975000, RMSE = 0.970319
+Elapsed time is 37.749215 seconds.
+Epoch: 005, Curr RMSE: 0.979110, Gamma: 0.020000
+Epoch: 010, Curr RMSE: 0.972445, Gamma: 0.020000
+Epoch: 013, Curr RMSE: 0.972040, Gamma: 0.020000
+SVD++, K = 64, gam = 0.020000, lam = 0.100000, shrink = 1.000000, RMSE = 0.972040
+Elapsed time is 29.065814 seconds.
+Epoch: 002, Curr RMSE: 0.987236, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.001000, shrink = 0.950000, RMSE = 0.987236
+Elapsed time is 5.446883 seconds.
+Epoch: 002, Curr RMSE: 0.987174, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.001000, shrink = 0.975000, RMSE = 0.987174
+Elapsed time is 5.417703 seconds.
+Epoch: 002, Curr RMSE: 0.987459, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.001000, shrink = 1.000000, RMSE = 0.987459
+Elapsed time is 5.416592 seconds.
+Epoch: 002, Curr RMSE: 0.987114, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.002000, shrink = 0.950000, RMSE = 0.987114
+Elapsed time is 5.430102 seconds.
+Epoch: 002, Curr RMSE: 0.986899, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.002000, shrink = 0.975000, RMSE = 0.986899
+Elapsed time is 5.429724 seconds.
+Epoch: 002, Curr RMSE: 0.986804, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.002000, shrink = 1.000000, RMSE = 0.986804
+Elapsed time is 5.433841 seconds.
+Epoch: 002, Curr RMSE: 0.986258, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.005000, shrink = 0.950000, RMSE = 0.986258
+Elapsed time is 5.440437 seconds.
+Epoch: 002, Curr RMSE: 0.986195, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.005000, shrink = 0.975000, RMSE = 0.986195
+Elapsed time is 5.427653 seconds.
+Epoch: 002, Curr RMSE: 0.986177, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.005000, shrink = 1.000000, RMSE = 0.986177
+Elapsed time is 5.436150 seconds.
+Epoch: 002, Curr RMSE: 0.985231, Gamma: 0.045125
+SVD++, K = 64, gam = 0.050000, lam = 0.010000, shrink = 0.950000, RMSE = 0.985231
+Elapsed time is 5.430789 seconds.
+Epoch: 002, Curr RMSE: 0.985282, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.010000, shrink = 0.975000, RMSE = 0.985282
+Elapsed time is 5.389861 seconds.
+Epoch: 002, Curr RMSE: 0.985390, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.010000, shrink = 1.000000, RMSE = 0.985390
+Elapsed time is 5.405315 seconds.
+Epoch: 003, Curr RMSE: 0.984859, Gamma: 0.042869
+SVD++, K = 64, gam = 0.050000, lam = 0.020000, shrink = 0.950000, RMSE = 0.984859
+Elapsed time is 7.522655 seconds.
+Epoch: 002, Curr RMSE: 0.984799, Gamma: 0.047531
+SVD++, K = 64, gam = 0.050000, lam = 0.020000, shrink = 0.975000, RMSE = 0.984799
+Elapsed time is 5.431532 seconds.
+Epoch: 002, Curr RMSE: 0.984766, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.020000, shrink = 1.000000, RMSE = 0.984766
+Elapsed time is 5.412244 seconds.
+Epoch: 004, Curr RMSE: 0.979253, Gamma: 0.040725
+SVD++, K = 64, gam = 0.050000, lam = 0.050000, shrink = 0.950000, RMSE = 0.979253
+Elapsed time is 9.678406 seconds.
+Epoch: 004, Curr RMSE: 0.980000, Gamma: 0.045184
+SVD++, K = 64, gam = 0.050000, lam = 0.050000, shrink = 0.975000, RMSE = 0.980000
+Elapsed time is 9.684403 seconds.
+Epoch: 003, Curr RMSE: 0.980872, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.050000, shrink = 1.000000, RMSE = 0.980872
+Elapsed time is 7.544567 seconds.
+Epoch: 005, Curr RMSE: 0.978806, Gamma: 0.038689
+Epoch: 006, Curr RMSE: 0.978806, Gamma: 0.036755
+SVD++, K = 64, gam = 0.050000, lam = 0.100000, shrink = 0.950000, RMSE = 0.978806
+Elapsed time is 14.083466 seconds.
+Epoch: 005, Curr RMSE: 0.979862, Gamma: 0.044055
+SVD++, K = 64, gam = 0.050000, lam = 0.100000, shrink = 0.975000, RMSE = 0.979862
+Elapsed time is 11.762931 seconds.
+Epoch: 005, Curr RMSE: 0.980637, Gamma: 0.050000
+SVD++, K = 64, gam = 0.050000, lam = 0.100000, shrink = 1.000000, RMSE = 0.980637
+Elapsed time is 11.716757 seconds.
+Epoch: 002, Curr RMSE: 1.194868, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.001000, shrink = 0.950000, RMSE = 1.194868
+Elapsed time is 5.433614 seconds.
+Epoch: 002, Curr RMSE: 1.182141, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.001000, shrink = 0.975000, RMSE = 1.182141
+Elapsed time is 5.441236 seconds.
+Epoch: 002, Curr RMSE: 1.186099, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.001000, shrink = 1.000000, RMSE = 1.186099
+Elapsed time is 5.441385 seconds.
+Epoch: 002, Curr RMSE: 1.171070, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.002000, shrink = 0.950000, RMSE = 1.171070
+Elapsed time is 5.441362 seconds.
+Epoch: 002, Curr RMSE: 1.171648, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.002000, shrink = 0.975000, RMSE = 1.171648
+Elapsed time is 5.438065 seconds.
+Epoch: 002, Curr RMSE: 1.170220, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.002000, shrink = 1.000000, RMSE = 1.170220
+Elapsed time is 5.443701 seconds.
+Epoch: 002, Curr RMSE: 1.130298, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.005000, shrink = 0.950000, RMSE = 1.130298
+Elapsed time is 5.452893 seconds.
+Epoch: 002, Curr RMSE: 1.129687, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.005000, shrink = 0.975000, RMSE = 1.129687
+Elapsed time is 5.449086 seconds.
+Epoch: 002, Curr RMSE: 1.135722, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.005000, shrink = 1.000000, RMSE = 1.135722
+Elapsed time is 5.449915 seconds.
+Epoch: 002, Curr RMSE: 1.084374, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.010000, shrink = 0.950000, RMSE = 1.084374
+Elapsed time is 5.400069 seconds.
+Epoch: 002, Curr RMSE: 1.084093, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.010000, shrink = 0.975000, RMSE = 1.084093
+Elapsed time is 5.435481 seconds.
+Epoch: 002, Curr RMSE: 1.086054, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.010000, shrink = 1.000000, RMSE = 1.086054
+Elapsed time is 5.426961 seconds.
+Epoch: 002, Curr RMSE: 1.030964, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.020000, shrink = 0.950000, RMSE = 1.030964
+Elapsed time is 5.439649 seconds.
+Epoch: 002, Curr RMSE: 1.031288, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.020000, shrink = 0.975000, RMSE = 1.031288
+Elapsed time is 5.451825 seconds.
+Epoch: 002, Curr RMSE: 1.031601, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.020000, shrink = 1.000000, RMSE = 1.031601
+Elapsed time is 5.449086 seconds.
+Epoch: 002, Curr RMSE: 0.995988, Gamma: 0.090250
+SVD++, K = 64, gam = 0.100000, lam = 0.050000, shrink = 0.950000, RMSE = 0.995988
+Elapsed time is 5.443200 seconds.
+Epoch: 002, Curr RMSE: 0.995913, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.050000, shrink = 0.975000, RMSE = 0.995913
+Elapsed time is 5.282213 seconds.
+Epoch: 002, Curr RMSE: 0.996047, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.050000, shrink = 1.000000, RMSE = 0.996047
+Elapsed time is 5.283403 seconds.
+Epoch: 003, Curr RMSE: 0.991641, Gamma: 0.085737
+SVD++, K = 64, gam = 0.100000, lam = 0.100000, shrink = 0.950000, RMSE = 0.991641
+Elapsed time is 7.332372 seconds.
+Epoch: 002, Curr RMSE: 0.991636, Gamma: 0.095062
+SVD++, K = 64, gam = 0.100000, lam = 0.100000, shrink = 0.975000, RMSE = 0.991636
+Elapsed time is 5.278596 seconds.
+Epoch: 002, Curr RMSE: 0.991618, Gamma: 0.100000
+SVD++, K = 64, gam = 0.100000, lam = 0.100000, shrink = 1.000000, RMSE = 0.991618
+Elapsed time is 5.244082 seconds.
+Root of Mean-squared error: 0.99162
+>> 

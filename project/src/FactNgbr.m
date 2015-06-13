@@ -1,17 +1,17 @@
-function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
-  % Matlab optimized implementation of SVD++ as seen in "Factorization
-  % Meets the Neighborhood: a Multifaceted Collaborative Filtering Model".
-  % An approximation of the ratings is achieved through the following
-  % formula:
+function X_pred = FactNgbr(X, K, gamma, lambda, shrink)
+  % Matlab optimized implementation of a Factorized Neighborhood Model as
+  % seen in "Factorization Meets the Neighborhood: a Multifaceted
+  % Collaborative Filtering Model".  An approximation of the ratings is
+  % achieved through the following formula:
   %
-  % $$ \^{r}_{ui} = \mu + b_i + b_u + q_i^T \left( p_u +
-  % |R(u)|^{-\frac{1}{2}} \sum_{j \in R(u)} y_j \right ) $$
+  % $$ \^{r}_{ui} = \mu + b_i + b_u + q_i^T \left( |R(u)|^{-\frac{1}{2}}
+  % \sum_{j \in R(u)} (r_{uj} - b_{uj})y_j + z_j \right ) $$
   %
-  % where \mu is the total average rating, b_i an item specific bias, b_u
-  % a user specific bias, q_i an item specific latent factor vector, p_u a
-  % user specific latent factor vector and R(u) the index set of ratings
-  % issued by a given user. y_j is an item specific factor vector, so that
-  % users are also specified by the set of items they rate.
+  % where \mu is the total average rating, b_i an item specific bias, b_u a
+  % user specific bias, q_i an item specific latent factor vector and R(u)
+  % the index set of ratings issued by a given user. y_j and z_j are item
+  % specific factor vectors, so that users are also specified by the set of
+  % items they rate.
 
   % Boolean to switch between local and judge mode. Local mode will print
   % debug statements and compute the current RMSE score after every
@@ -20,7 +20,7 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   % run.
   is_local = true;
 
-  % Hyperparameters and default values optimized via cross validation.
+  % Hyperparameters and default values.
   if nargin < 2; K      =    64; end % number of latent factors
   if nargin < 3; gamma  = 0.005; end % learning rate
   if nargin < 4; lambda = 0.020; end % regularizer term
@@ -52,23 +52,22 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   % $$ isqrt \in R^M $$
   isqrt = 1.0 ./ sqrt(max(nRatings, 1));
 
-  % For each user determine the indices into X where ratings are available.
+  % For each user determine the indexes into X where ratings are available.
   % This allows for fast batch processing of all issued ratings.  The
-  % indices need to be stored in a cell array because the number for each
-  % user is different.
-  % $$ R{i} \in R^{R_i} $$
+  % indexes need to be stored in a cell array because the number for each
+  % user is different. size(R{i}) = [1,R]
   R = cell(M, 1);
   for i=1:M
     R{i} = find(~isnan(X(i,:)));
   end
 
-  % P(:,u), Q(:,i) and Y(:,i) are user latent, item latent and item factor
-  % vectors. All of them are learned through a gradient descent algorithm
-  % and initialized with a gaussian distribution with mean 0 and standard
-  % deviation 0.01.
-  P = randn(K,M) * 0.01;
+  % Q(:,i), Y(:,i) and Z(:,i) are item latent and item factor vectors that
+  % try to represent the item-item relations present in the date. All of
+  % them are learned through a gradient descent algorithm and initialized
+  % with a Gaussian distribution with mean 0 and standard deviation 0.01.
   Q = randn(K,N) * 0.01;
   Y = randn(K,N) * 0.01;
+  Z = randn(K,N) * 0.01;
 
   % If local mode is enabled we keep track of the previous iteration's
   % ratings approximation to be able to measure the difference in RMSE
@@ -101,28 +100,32 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
       % indices of the ratings of user u
       Ru = R{u};
 
-      % modified p(u) vector that takes the normalized sum of the y weights
-      % into account
-      pu = P(:,u) + isqrt(u) * sum(Y(:,Ru), 2);
-
-      % user u's known ratings
+      % user u's known ratings, size(r_u) = [1,R]
       r_u = X(u,Ru);
 
-      % current aproximation including baseline estimators and modified
-      % latent vectors
-      rhat_u = B(u,Ru) + pu' * Q(:,Ru);
+      % the base line estimators for user u, size(B_u) = [1,R]
+      B_u = B(u,Ru);
+
+      % implied p(u) vector that is the normalized weighted sum of relevant
+      % x and y weights. size(pu) = [K,1]
+      pu = isqrt(u)*(Y(:,Ru)*(r_u - B_u)' + sum(Z(:,Ru), 2));
+
+      % current approximation including baseline estimators and modified
+      % latent vectors, size(rhat_u) = [1, R]
+      rhat_u = B_u + pu'*Q(:,Ru);
 
       % current error terms, size(e_u) = [R, 1]
       e_u = (r_u - rhat_u)';
 
-      % update current user latent vector, size(P(:,u)) = [K, 1]
-      P(:,u)  = P(:,u)  + gamma*( Q(:,Ru)*e_u - lambda*P(:,u) );
+      % update item factor weighted vectors, size(Y(:,Ru) = [K, R]
+      Y(:,Ru) = Y(:,Ru) + gamma*( isqrt(u)*Q(:,Ru)*e_u*(r_u - B_u) ...
+                                - lambda*Y(:,Ru) );
 
-      % update current items factor vectors, size(Y(:,Ru)) = [K, R].
+      % update current items factor vectors, size(Z(:,Ru)) = [K, R].
       % bsxfun is necessary, because size(Q(:,Ru) * e_u) = [K, 1] and we
       % want to subtract the regularizer term for every item in R(u).
-      Y(:,Ru) = Y(:,Ru) + gamma* ...
-        ( bsxfun(@minus, isqrt(u)*Q(:,Ru)*e_u, lambda*Y(:,Ru)) );
+      Z(:,Ru) = Z(:,Ru) + gamma* ...
+        ( bsxfun(@minus, isqrt(u)*Q(:,Ru)*e_u, lambda*Z(:,Ru)) );
 
       % update latent item factor vectors, size(Q(:,Ru)) = [K, R]
       Q(:,Ru) = Q(:,Ru) + gamma*(pu*e_u' - lambda * Q(:,Ru));
@@ -132,36 +135,35 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
     gamma = gamma * shrink;
 
     % if running in local mode, compute the prediction for the current
-    % iteration. V contains the modifed user latent factors and gets
-    % multiplied with Q. The current prediction is then B + V'*Q and gets
+    % iteration. P contains the modified user latent factors and gets
+    % multiplied with Q. The current prediction is then B + P'*Q and gets
     % clamped to be within [1,5]. Then an RMSE score is computed and
     % printed to stdout every couple of iterations. If the score plus an
     % epsilon was worse than the previous iteration we stop the gradient
     % descent.
     if is_local
-      V = zeros(K,M);
+      P = zeros(K,M);
       for u=1:M
         Ru = R{u};
-        V(:,u) = P(:,u) + isqrt(u) * sum(Y(:,Ru),2);
+        res_u = X(u,Ru) - B(u,Ru);
+        P(:,u) = isqrt(u)*( Y(:,Ru)*res_u' + sum(Z(:,Ru), 2) );
       end
 
-      X_curr = B + V'*Q;
+      X_curr = B + P'*Q;
       X_curr = min(max(X_curr, 1), 5);
 
       if (RMSE(X_curr) + 1e-6 > RMSE(X_prev))
         fprintf('Epoch: %03d, Curr RMSE: %f, Gamma: %f\n', iEpoch, ...
                 RMSE(X_prev), gamma);
-       break;
+        break;
       end
 
-      if (mod(iEpoch, 5) == 0)
+      if (mod(iEpoch, 1) == 0)
         fprintf('Epoch: %03d, Curr RMSE: %f, Gamma: %f\n', iEpoch, ...
                 RMSE(X_curr), gamma);
       end
 
       X_prev = X_curr;
-      P_pred = [ones(M,1)*sqrt(mu), bu,  ones(M,1), V'];
-      Q_pred = [ones(1,N)*sqrt(mu); ones(1,N); bi'; Q ];
     end
   end
 
@@ -173,18 +175,18 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   if is_local
     X_pred = X_prev;
     fprintf(...
-      'SVD++, K = %d, gam = %f, lam = %f, shrink = %f, RMSE = %f\n', ...
+      'FactNgbr, K = %d, gam = %f, lam = %f, shrink = %f, RMSE = %f\n', ...
        K, orig_gamma, lambda, shrink, RMSE(X_pred) ...
     );
   else
+    P = zeros(K,M);
     for u=1:M
       Ru = R{u};
-      P(:,u) = P(:,u) + isqrt(u)*sum(Y(:,Ru), 2);
+      res_u = X(u,Ru) - B(u,Ru);
+      P(:,u) = isqrt(u)*( Y(:,Ru)*res_u' + sum(Z(:,Ru), 2) );
     end
 
     X_pred = B + P'*Q;
     X_pred = min(max(X_pred, 1), 5);
-    P_pred = [ones(M,1)*sqrt(mu), bu,  ones(M,1), P'];
-    Q_pred = [ones(1,N)*sqrt(mu); ones(1,N); bi'; Q ];
   end
 end
