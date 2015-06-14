@@ -1,4 +1,4 @@
-function [ X, X_mean, X_std ] = UserNormalization( X, XX )
+function [ X, X_mean, X_std ] = UserNormalization( X )
 
 [users, items] = size(X);
 q = 5;
@@ -23,10 +23,10 @@ X_mean(isnan(X_mean)) = mu;
 X_std(isnan(X_std)) = sqrt(sigma_sq);
 X_std(X_std == 0) = sqrt(sigma_sq);
 
-X(isnan(X)) = 0;
-
 X_diff = X - X_mean;
-X = X_diff ./ X_std;
+X_res = X_diff ./ X_std;
+
+X(~isnan(X)) = X_res(~isnan(X));
 
 end
 
