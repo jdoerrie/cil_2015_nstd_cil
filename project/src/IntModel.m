@@ -158,7 +158,7 @@ function [X_pred, P_pred, Q_pred] = IntModel(X, K, gamma, lambda, shrink)
       V = zeros(K,M);
       for u=1:M
         Ru = R{u};
-        V(:,u) = P(:,u) + iSqrt(u)*( W(:,Ru)*(X(u,Ru) - B(u,Ru))' +
+        V(:,u) = P(:,u) + iSqrt(u)*( W(:,Ru)*(X(u,Ru) - B(u,Ru))' + ...
                                      sum(Y(:,Ru), 2) );
       end
 
@@ -190,13 +190,13 @@ function [X_pred, P_pred, Q_pred] = IntModel(X, K, gamma, lambda, shrink)
   if is_local
     X_pred = X_prev;
     fprintf(...
-      'SVD++, K = %d, gam = %f, lam = %f, shrink = %f, RMSE = %f\n', ...
-       K, orig_gamma, lambda, shrink, RMSE(X_pred) ...
+      '%s, K = %d, gam = %f, lam = %f, shrink = %f, RMSE = %f\n', ...
+       'IntModel', K, orig_gamma, lambda, shrink, RMSE(X_pred) ...
     );
   else
     for u=1:M
       Ru = R{u};
-      P(:,u) = P(:,u) + iSqrt(u)*( W(:,Ru)*(X(u,Ru) - B(u,Ru))' +
+      P(:,u) = P(:,u) + iSqrt(u)*( W(:,Ru)*(X(u,Ru) - B(u,Ru))' + ...
                                    sum(Y(:,Ru), 2) );
     end
 
