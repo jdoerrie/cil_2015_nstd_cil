@@ -1,0 +1,511 @@
+sevendays                     | Jun 14, 2015 09:20 | simple svd                                                | 1.902277    | 0.99038
+Ligabueichnium                | Jun 14, 2015 01:24 | 53f771c6d22715676dac699ee3596d7a2a022c7d                  | 1261.545319 | 0.94587
+Ligabueichnium                | Jun 14, 2015 00:17 | f4ea59525032257458e26a7ee8058954e0704c7d                  | 23.217429   | 0.94614
+WWZ                           | Jun 13, 2015 20:39 |                                                           | 127.946715  | 0.97889
+WWZ                           | Jun 13, 2015 20:34 |                                                           | 107.234553  | 0.97271
+Legend17                      | Jun 13, 2015 18:34 |                                                           | 161.143885  | 1.8808
+Legend17                      | Jun 13, 2015 18:29 |                                                           | 165.249166  | 1.4255
+Legend17                      | Jun 13, 2015 17:43 |                                                           | 163.14985   | 1.5956
+Legend17                      | Jun 13, 2015 16:59 |                                                           | 186.568084  | 1.5035
+WWZ                           | Jun 13, 2015 15:07 |                                                           | 120.437993  | 0.97347
+WWZ                           | Jun 13, 2015 15:03 |                                                           | 121.327008  | 0.97197
+WWZ                           | Jun 13, 2015 14:58 |                                                           | 122.486831  | 0.97137
+WWZ                           | Jun 13, 2015 14:13 |                                                           | 124.246657  | 0.97167
+Ligabueichnium                | Jun 13, 2015 14:12 |                                                           | 82.941882   | 0.94358
+svs                           | Jun 13, 2015 13:27 | {5, true, 'item_based', 'default', true, 'allbutone'}     | 60.490041   | 0.97586
+Cloud                         | Jun 13, 2015 09:42 | Combo                                                     | 516.901978  | 0.95655
+sevendays                     | Jun 13, 2015 08:27 | ALS_test_2                                                | 152.97625   | 1.098
+sevendays                     | Jun 13, 2015 08:23 | ALS_test                                                  | 25.887655   | 3.8618
+sevendays                     | Jun 13, 2015 03:22 | baseline                                                  | 24.300346   | 0.99353
+buf0v_cfym                    | Jun 12, 2015 23:28 | const3                                                    | 150.410054  | 0.96018
+buf0v_cfym                    | Jun 12, 2015 23:18 | const2                                                    | 118.948452  | 0.9554
+buf0v_cfym                    | Jun 12, 2015 23:00 | const                                                     | 109.706284  | 0.95635
+svs                           | Jun 12, 2015 22:51 | 5, true, 'item_based', 'data_specific', true, 'allbutone' | 76.954758   | 0.97598
+Ligabueichnium                | Jun 12, 2015 21:53 | 6187f77e0aec8fd434c2189c3ba6cd291f397f23                  | 62.633006   | 0.9434
+WWZ                           | Jun 12, 2015 21:18 |                                                           | 120.229576  | 0.97543
+buf0v_cfym                    | Jun 12, 2015 20:33 | p_testplay2                                               | 16.973196   | 0.95594
+Legend17                      | Jun 12, 2015 20:29 |                                                           | 649.341779  | 3.8618
+Legend17                      | Jun 12, 2015 20:09 |                                                           | 646.715701  | 3.8618
+buf0v_cfym                    | Jun 12, 2015 19:51 | dyn5.1                                                    | 84.198193   | 0.95707
+buf0v_cfym                    | Jun 12, 2015 19:37 | dyn5                                                      | 85.211677   | 0.96163
+buf0v_cfym                    | Jun 12, 2015 19:37 | dyn8                                                      | 128.552181  | 0.96272
+Legend17                      | Jun 12, 2015 19:17 |                                                           | 5.983379    | 2.842
+Legend17                      | Jun 12, 2015 19:00 |                                                           | 661.173901  | 3.8618
+Legend17                      | Jun 12, 2015 18:53 |                                                           | 156.448975  | 3.0819
+Cloud                         | Jun 12, 2015 17:51 | rounds = 3                                                | 33.748934   | 0.99835
+TheNonstandardDeviations      | Jun 12, 2015 16:38 | test test                                                 | 51.059683   | 0.94582
+SpaceButterfly                | Jun 12, 2015 15:30 |                                                           | 29.180851   | 0.94752
+svs                           | Jun 12, 2015 14:40 | minimal matlab version test 0                             | 0.497289    | 3.8618
+BallmerPeak                   | Jun 12, 2015 14:32 | ballmer9                                                  | 18.599335   | 0.96985
+svs                           | Jun 12, 2015 14:31 | minimal matlab version test 3b                            | 0.485389    | 3.8618
+SpaceButterfly                | Jun 12, 2015 14:26 | yammmi!                                                   | 29.374888   | 0.94904
+BallmerPeak                   | Jun 12, 2015 14:14 | ballmer19 [7 9 10 12 18] 50 40 40                         | 181.273862  | 0.96392
+svs                           | Jun 12, 2015 14:10 | minimal matlab version test 3                             | 0.471134    | 3.8618
+SpaceButterfly                | Jun 12, 2015 14:09 | faster?                                                   | 25.932134   | 0.94942
+svs                           | Jun 12, 2015 14:07 | minimal matlab version test                               | 0.486093    | 3.8618
+buf0v_cfym                    | Jun 12, 2015 14:05 | p_testplay                                                | 16.629202   | 0.95697
+SpaceButterfly                | Jun 12, 2015 13:55 |                                                           | 28.97144    | 0.94919
+SpaceButterfly                | Jun 12, 2015 13:47 | w                                                         | 36.448803   | 0.94905
+SpaceButterfly                | Jun 12, 2015 13:43 |                                                           | 36.776207   | 0.94905
+BallmerPeak                   | Jun 12, 2015 13:41 | ballmer19 [7 9 11 12] 50 40 40                            | 478.672035  | 0.96398
+SpaceButterfly                | Jun 12, 2015 13:35 |                                                           | 37.060213   | 0.94914
+SpaceButterfly                | Jun 12, 2015 13:33 |                                                           | 61.320942   | 0.94909
+null                          | Jun 12, 2015 13:20 |                                                           | 22.96411    | 0.94839
+Ligabueichnium                | Jun 12, 2015 13:16 | test                                                      | 26.780646   | 0.95448
+buf0v_cfym                    | Jun 12, 2015 12:30 | p_fastv2                                                  | 10.711915   | 0.95878
+SpaceButterfly                | Jun 12, 2015 11:34 |                                                           | 22.093257   | 0.95095
+SpaceButterfly                | Jun 12, 2015 11:31 |                                                           | 28.382231   | 0.95156
+SpaceButterfly                | Jun 12, 2015 11:03 |                                                           | 24.141287   | 0.95095
+magrdh                        | Jun 12, 2015 10:01 | 0.055 15 no bias                                          | 21.325362   | 0.96707
+magrdh                        | Jun 12, 2015 09:56 | 0.3 50 no bias update                                     | 64.45353    | 0.96119
+magrdh                        | Jun 12, 2015 09:21 | 50 0.05 with biases                                       | 61.31181    | 0.99053
+magrdh                        | Jun 12, 2015 09:20 | 50 0.05                                                   | 66.30379    | 0.96638
+magrdh                        | Jun 12, 2015 01:42 | no implicit no bias update 0.04 30                        | 38.835606   | 0.96307
+magrdh                        | Jun 12, 2015 01:40 | combo 35 0.03 with bias update                            | 683.238091  | 0.9607
+magrdh                        | Jun 12, 2015 01:38 | combo 40 0.02                                             | 732.168813  | 0.95929
+Ligabueichnium                | Jun 11, 2015 20:54 | complex                                                   | 778.810779  | 0.94404
+Legend17                      | Jun 11, 2015 19:17 |                                                           | 12.070461   | 2.8706
+Legend17                      | Jun 11, 2015 18:18 |                                                           | 11.42221    | 2.7461
+Legend17                      | Jun 11, 2015 17:52 |                                                           | 27.259475   | 0.96643
+Legend17                      | Jun 11, 2015 17:40 |                                                           | 18.132743   | 0.96447
+Cloud                         | Jun 11, 2015 16:24 | svii                                                      | 43.444736   | 0.95781
+WWZ                           | Jun 11, 2015 15:11 | kmsvd                                                     | 114.720185  | 0.97852
+Wuhrstrasse2                  | Jun 11, 2015 15:03 | mkomsev7                                                  | 43.605087   | 0.93844
+Ligabueichnium                | Jun 11, 2015 15:01 |                                                           | 64.674261   | 0.94451
+TheNonstandardDeviations      | Jun 11, 2015 14:42 | Boom Shakalaka                                            | 50.774546   | 0.94441
+WWZ                           | Jun 11, 2015 14:24 | kmsvd                                                     | 114.843724  | 0.97277
+WWZ                           | Jun 11, 2015 14:18 |                                                           | 94.634804   | 0.98188
+WWZ                           | Jun 11, 2015 14:11 | svdk                                                      | 140.281617  | 0.99006
+TheNonstandardDeviations      | Jun 11, 2015 14:00 | NSTD'); DROP TABLE collaborative_filtering;--             | 30.983624   | 0.94498
+Ligabueichnium                | Jun 11, 2015 12:20 | B                                                         | 16.349993   | 0.94653
+Ligabueichnium                | Jun 11, 2015 12:20 | C                                                         | 16.63827    | 0.94639
+Ligabueichnium                | Jun 11, 2015 12:20 | D                                                         | 26.889311   | 0.95448
+Ligabueichnium                | Jun 11, 2015 12:19 | A                                                         | 17.445402   | 0.94607
+Ligabueichnium                | Jun 11, 2015 12:15 | tt22                                                      | 65.778727   | 0.94368
+TheNonstandardDeviations      | Jun 11, 2015 11:39 | Are we there yet?                                         | 36.955594   | 0.94824
+TheNonstandardDeviations      | Jun 11, 2015 11:15 | bf                                                        | 36.63724    | 0.9604
+TheNonstandardDeviations      | Jun 11, 2015 11:05 | How do you like me now?                                   | 36.346895   | 0.96104
+TheNonstandardDeviations      | Jun 11, 2015 11:00 | Speedy Gonzales                                           | 10.674079   | 0.96345
+buf0v_cfym                    | Jun 10, 2015 23:08 | sar                                                       | 94.187297   | 0.96073
+TheNonstandardDeviations      | Jun 10, 2015 21:30 | Hier kommt die Maus                                       | 151.987338  | 0.96131
+magrdh                        | Jun 10, 2015 21:24 | avaria2                                                   | 82.655089   | 0.95935
+magrdh                        | Jun 10, 2015 21:18 | avaria                                                    | 87.771373   | 0.96482
+magrdh                        | Jun 10, 2015 21:12 | 1006                                                      | 172.010433  | 0.9652
+Wuhrstrasse2                  | Jun 10, 2015 20:48 | mkomsev6                                                  | 53.846867   | 0.9386
+buf0v_cfym                    | Jun 10, 2015 20:20 | p_fastv1                                                  | 32.603007   | 0.96077
+Legend17                      | Jun 10, 2015 19:52 |                                                           | 5.269686    | 2.7589
+TheNonstandardDeviations      | Jun 10, 2015 19:21 | Who you gonna call?                                       | 262.302939  | 0.95135
+magrdh                        | Jun 10, 2015 16:56 | 50                                                        | 90.802245   | 0.96731
+magrdh                        | Jun 10, 2015 16:54 | 10                                                        | 69.408901   | 0.97322
+magrdh                        | Jun 10, 2015 16:51 | lat4                                                      | 52.903319   | 0.96256
+magrdh                        | Jun 10, 2015 16:49 | 123123                                                    | 64.241706   | 0.95999
+magrdh                        | Jun 10, 2015 16:43 | 123123123                                                 | 57.214359   | 0.96675
+_elite_toenail_computing_clan | Jun 10, 2015 16:38 | so complex!                                               | 55.118262   | 0.95067
+BallmerPeak                   | Jun 10, 2015 16:33 | ballmer16                                                 | 62.636834   | 0.95792
+null                          | Jun 10, 2015 16:26 |                                                           | 22.701627   | 0.94732
+magrdh                        | Jun 10, 2015 16:19 | test123                                                   | 11.5377     | 0.96482
+BallmerPeak                   | Jun 10, 2015 16:13 | ballmer16                                                 | 57.321604   | 0.95792
+BallmerPeak                   | Jun 10, 2015 16:11 | ballmer16                                                 | 56.762001   | 0.95792
+BallmerPeak                   | Jun 10, 2015 16:02 | ballmer16                                                 | 57.564531   | 0.95792
+magrdh                        | Jun 10, 2015 15:58 | test1231231w                                              | 59.717687   | 0.95837
+BallmerPeak                   | Jun 10, 2015 15:36 | ballmer16                                                 | 35.189028   | 0.96055
+BallmerPeak                   | Jun 10, 2015 15:35 | ballmer16                                                 | 35.127195   | 0.96055
+BallmerPeak                   | Jun 10, 2015 15:32 | ballmer16                                                 | 13.332703   | 0.96543
+magrdh                        | Jun 10, 2015 15:25 | 1006newTest                                               | 51.758824   | 0.95977
+SpaceButterfly                | Jun 10, 2015 15:24 | var                                                       | 22.17144    | 0.95135
+BallmerPeak                   | Jun 10, 2015 15:07 | 13+9                                                      | 21.036814   | 0.96347
+BallmerPeak                   | Jun 10, 2015 15:03 | 13+9                                                      | 23.655743   | 0.97448
+KRASSifier                    | Jun 10, 2015 14:04 |                                                           | 36.215317   | 0.95472
+SpaceButterfly                | Jun 10, 2015 13:44 |                                                           | 22.215401   | 0.95155
+Cloud                         | Jun 10, 2015 13:41 | svir                                                      | 51.522535   | 0.9574
+magrdh                        | Jun 10, 2015 13:27 | 1006                                                      | 37.710655   | 0.96082
+Cloud                         | Jun 10, 2015 13:02 | svinew                                                    | 21.340973   | 0.96159
+magrdh                        | Jun 10, 2015 12:23 | 1006newnewnew                                             | 38.186494   | 0.96307
+magrdh                        | Jun 10, 2015 12:21 | 1006newnew                                                | 34.502493   | 0.95976
+magrdh                        | Jun 10, 2015 12:11 | 1006new                                                   | 90.389415   | 0.96965
+magrdh                        | Jun 10, 2015 12:09 | 1006                                                      | 42.277008   | 0.96757
+SpaceButterfly                | Jun 10, 2015 11:25 | bla                                                       | 46.000642   | 0.95116
+TheNonstandardDeviations      | Jun 10, 2015 11:23 | agm                                                       | 263.435213  | 0.97178
+Cloud                         | Jun 10, 2015 10:30 | Corrected?                                                | 7.344031    | 0.95792
+Cloud                         | Jun 10, 2015 10:16 | test                                                      | 20.537157   | 0.96269
+BATLAB                        | Jun 10, 2015 06:36 | lasersharks                                               | 96.06422    | 1.0079
+Wuhrstrasse2                  | Jun 10, 2015 02:19 | mkomsev4_25                                               | 34.773417   | 0.93976
+Wuhrstrasse2                  | Jun 10, 2015 02:16 | mkomsev5                                                  | 39.712967   | 0.9395
+Wuhrstrasse2                  | Jun 10, 2015 00:03 | mkomsev4                                                  | 44.740485   | 0.93974
+Wuhrstrasse2                  | Jun 09, 2015 23:54 | mkomsev3                                                  | 41.02261    | 0.94007
+Cloud                         | Jun 09, 2015 23:32 | new                                                       | 7.071424    | 0.96131
+Wuhrstrasse2                  | Jun 09, 2015 21:53 | mkomsev2                                                  | 37.234174   | 0.94055
+Wuhrstrasse2                  | Jun 09, 2015 21:13 | mkomsev1                                                  | 45.691802   | 0.94043
+Wuhrstrasse2                  | Jun 09, 2015 19:24 | mkomse                                                    | 35.004086   | 0.94076
+TheNonstandardDeviations      | Jun 09, 2015 18:48 | dspk                                                      | 84.072099   | 0.95986
+TheNonstandardDeviations      | Jun 09, 2015 18:40 | k10                                                       | 716.427289  | 0.97334
+TheNonstandardDeviations      | Jun 09, 2015 18:19 | d25                                                       | 283.503312  | 0.97375
+TheNonstandardDeviations      | Jun 09, 2015 16:34 | s=6 2                                                     | 209.31917   | 0.97418
+Wuhrstrasse2                  | Jun 09, 2015 16:14 | with GBv1                                                 | 74.651844   | 0.94145
+TheNonstandardDeviations      | Jun 09, 2015 15:35 | s=6                                                       | 1207.969346 | 0.97428
+Wuhrstrasse2                  | Jun 09, 2015 15:26 | 10                                                        | 23.745968   | 0.94391
+Wuhrstrasse2                  | Jun 09, 2015 15:23 | 30                                                        | 30.127486   | 0.94184
+Wuhrstrasse2                  | Jun 09, 2015 15:17 | 20                                                        | 25.78409    | 0.94225
+Wuhrstrasse2                  | Jun 09, 2015 15:15 | 25                                                        | 27.223954   | 0.94199
+Wuhrstrasse2                  | Jun 09, 2015 15:12 | 1                                                         | 41.244926   | 0.94166
+TheNonstandardDeviations      | Jun 09, 2015 15:07 | super_fun                                                 | 48.800846   | 0.95147
+BallmerPeak                   | Jun 09, 2015 14:54 | 13                                                        | 2.105419    | 0.97465
+null                          | Jun 09, 2015 14:19 |                                                           | 41.240097   | 0.94877
+null                          | Jun 09, 2015 13:57 |                                                           | 35.60839    | 0.94772
+TheNonstandardDeviations      | Jun 09, 2015 13:35 | dsk                                                       | 66.197569   | 0.96263
+TheNonstandardDeviations      | Jun 09, 2015 12:26 | ds                                                        | 60.433667   | 0.96451
+Cloud                         | Jun 09, 2015 12:08 | better?                                                   | 20.266632   | 0.95944
+_elite_toenail_computing_clan | Jun 09, 2015 11:51 | tinkering                                                 | 73.891659   | 0.95163
+BallmerPeak                   | Jun 09, 2015 11:47 | 0                                                         | 107.525068  | 0.96552
+BallmerPeak                   | Jun 09, 2015 11:41 | 5 with random                                             | 3.848364    | 0.99951
+Cloud                         | Jun 09, 2015 10:50 | Yes, it's slow.                                           | 501.324343  | 0.95492
+WWZ                           | Jun 08, 2015 16:51 | rsvd                                                      | 163.067819  | 1.9533
+Cloud                         | Jun 08, 2015 16:42 | svi2                                                      | 14.328285   | 0.95792
+null                          | Jun 08, 2015 16:35 | combo                                                     | 38.042252   | 0.94858
+null                          | Jun 08, 2015 16:28 | combo                                                     | 37.983048   | 0.94825
+null                          | Jun 08, 2015 16:19 | combo                                                     | 38.367882   | 0.94815
+magrdh                        | Jun 08, 2015 16:08 | means and stuff                                           | 1.481765    | 0.97267
+SpaceButterfly                | Jun 08, 2015 16:06 | more features!!!                                          | 27.65951    | 0.95253
+Cloud                         | Jun 08, 2015 15:31 | Corrected                                                 | 6.189033    | 0.95792
+SpaceButterfly                | Jun 08, 2015 15:14 |                                                           | 17.955667   | 0.95195
+SpaceButterfly                | Jun 08, 2015 15:12 | yay                                                       | 21.624981   | 0.95245
+SpaceButterfly                | Jun 08, 2015 14:57 | random                                                    | 18.80078    | 0.95195
+null                          | Jun 08, 2015 14:55 | combo                                                     | 37.625701   | 0.94829
+null                          | Jun 08, 2015 14:49 |                                                           | 31.053478   | 0.9488
+SpaceButterfly                | Jun 08, 2015 14:49 | time...                                                   | 20.619281   | 0.95195
+null                          | Jun 08, 2015 14:33 | combo                                                     | 43.001996   | 0.94826
+null                          | Jun 08, 2015 14:28 | combo                                                     | 42.545224   | 0.94837
+TheNonstandardDeviations      | Jun 08, 2015 14:25 | wrsae                                                     | 43.430852   | 0.95864
+null                          | Jun 08, 2015 14:24 | combo                                                     | 54.012676   | 0.94863
+SpaceButterfly                | Jun 08, 2015 14:19 | why?                                                      | 51.190754   | 0.95223
+SpaceButterfly                | Jun 08, 2015 14:14 |                                                           | 90.565922   | 0.95205
+magrdh                        | Jun 08, 2015 13:41 | 0806                                                      | 91.113168   | 0.97593
+null                          | Jun 08, 2015 12:19 | combo                                                     | 37.581939   | 0.94745
+null                          | Jun 08, 2015 11:54 | combo again                                               | 37.952436   | 0.94754
+null                          | Jun 08, 2015 11:46 | combo                                                     | 42.474184   | 0.95038
+null                          | Jun 08, 2015 11:42 | combo                                                     | 44.405318   | 0.95029
+null                          | Jun 08, 2015 11:29 | combo                                                     | 34.848482   | 0.9493
+null                          | Jun 08, 2015 11:14 |                                                           | 19.862139   | 0.95547
+TheNonstandardDeviations      | Jun 08, 2015 10:59 | FYeah                                                     | 74.736177   | 0.95891
+_elite_toenail_computing_clan | Jun 08, 2015 00:44 | who is a good boy?                                        | 45.840319   | 0.95208
+TheNonstandardDeviations      | Jun 07, 2015 23:59 | dk5                                                       | 139.622038  | 0.96691
+Ligabueichnium                | Jun 07, 2015 22:18 | parallel                                                  | 63.921124   | 0.94337
+null                          | Jun 07, 2015 22:14 | combo                                                     | 19.467369   | 0.95213
+TheNonstandardDeviations      | Jun 07, 2015 20:54 | justmean                                                  | 1.035625    | 1.0155
+TheNonstandardDeviations      | Jun 07, 2015 20:49 | ttt                                                       | 1.012753    | 1.0504
+TheNonstandardDeviations      | Jun 07, 2015 20:44 | test                                                      | 1.121358    | 1.0504
+_elite_toenail_computing_clan | Jun 07, 2015 19:37 | small steps                                               | 42.238418   | 0.95247
+TheNonstandardDeviations      | Jun 07, 2015 19:22 | FunFunFun                                                 | 56.822443   | 0.96364
+magrdh                        | Jun 07, 2015 17:19 | 0706Regular30                                             | 67.376581   | 0.96422
+magrdh                        | Jun 07, 2015 17:15 | 0706Alternative30                                         | 57.765863   | 0.96371
+_elite_toenail_computing_clan | Jun 07, 2015 14:19 | Switch555-No                                              | 50.3611     | 0.95347
+_elite_toenail_computing_clan | Jun 07, 2015 14:12 | Switch555                                                 | 69.636021   | 0.95582
+Cloud                         | Jun 07, 2015 13:45 | fast                                                      | 4.97105     | 0.96211
+magrdh                        | Jun 07, 2015 11:12 | 0706NewNew                                                | 55.189871   | 0.96679
+magrdh                        | Jun 07, 2015 11:02 | 0706New                                                   | 38.418588   | 0.97193
+magrdh                        | Jun 07, 2015 10:59 | 0706                                                      | 57.768609   | 0.96682
+TheNonstandardDeviations      | Jun 07, 2015 10:45 | dk4                                                       | 18.35175    | 0.97618
+TheNonstandardDeviations      | Jun 07, 2015 09:42 | dk3                                                       | 13.614982   | 0.9774
+TheNonstandardDeviations      | Jun 06, 2015 23:39 | dk2                                                       | 16.322399   | 0.99433
+magrdh                        | Jun 06, 2015 22:59 | 0606Test                                                  | 59.166349   | 0.96971
+magrdh                        | Jun 06, 2015 21:51 | 0606NewNew                                                | 52.931243   | 0.98188
+magrdh                        | Jun 06, 2015 21:24 | 0606New                                                   | 44.136382   | 1.0054
+magrdh                        | Jun 06, 2015 20:54 | 0606                                                      | 36.224503   | 0.98724
+TheNonstandardDeviations      | Jun 06, 2015 17:37 | BFF                                                       | 21.594143   | 0.96447
+TheNonstandardDeviations      | Jun 06, 2015 17:22 | BF                                                        | 72.630274   | 0.96489
+TheNonstandardDeviations      | Jun 06, 2015 17:02 | dk1                                                       | 7.1346      | 1.0096
+TheNonstandardDeviations      | Jun 06, 2015 17:00 | dk                                                        | 2.821965    | 1.0155
+null                          | Jun 06, 2015 16:17 |                                                           | 12.511099   | 0.96029
+buf0v_cfym                    | Jun 06, 2015 03:15 | c2                                                        | 0.515268    | 3.8618
+buf0v_cfym                    | Jun 06, 2015 03:03 | qb                                                        | 0.444141    | 3.6048
+buf0v_cfym                    | Jun 06, 2015 02:53 | slfd3                                                     | 51.510255   | 0.96215
+_elite_toenail_computing_clan | Jun 05, 2015 20:58 | fkt                                                       | 166.377094  | 0.95754
+BallmerPeak                   | Jun 05, 2015 17:37 | 13                                                        | 4.170803    | 0.9672
+magrdh                        | Jun 05, 2015 16:50 | bellissimaaa                                              | 165.748371  | 0.98954
+magrdh                        | Jun 05, 2015 16:46 |                                                           | 72.423228   | 0.97974
+SpaceButterfly                | Jun 05, 2015 16:45 |                                                           | 64.28557    | 0.95206
+magrdh                        | Jun 05, 2015 16:43 | newtesttest12312321                                       | 48.575135   | 0.98189
+magrdh                        | Jun 05, 2015 16:40 | test1231231                                               | 21.984372   | 0.99204
+null                          | Jun 05, 2015 16:06 | fast svd                                                  | 7.447899    | 0.96028
+SpaceButterfly                | Jun 05, 2015 14:44 | bias                                                      | 66.429023   | 0.95226
+_elite_toenail_computing_clan | Jun 05, 2015 13:54 | OnceMathiasInitLorenzByElias                              | 161.675208  | 0.9542
+WWZ                           | Jun 05, 2015 13:29 | svd_n                                                     | 55.658715   | 0.97694
+magrdh                        | Jun 05, 2015 11:51 | bellissimaaa                                              | 96.044569   | 0.97694
+SpaceButterfly                | Jun 05, 2015 11:38 | new baseline 2015-05-05                                   | 39.741674   | 0.95293
+SpaceButterfly                | Jun 05, 2015 11:36 |                                                           | 40.889995   | 0.95293
+WWZ                           | Jun 05, 2015 11:20 | svd baseline                                              | 52.320387   | 0.98225
+magrdh                        | Jun 05, 2015 11:20 | bellaaaa                                                  | 3.625387    | 0.98405
+magrdh                        | Jun 05, 2015 11:17 |                                                           | 5.032952    | 0.98405
+buf0v_cfym                    | Jun 05, 2015 03:34 | sfl6                                                      | 34.504236   | 0.96325
+Wuhrstrasse2                  | Jun 04, 2015 18:38 | new                                                       | 37.033324   | 0.9417
+SpaceButterfly                | Jun 04, 2015 18:10 |                                                           | 40.163176   | 0.95293
+SpaceButterfly                | Jun 04, 2015 17:35 |                                                           | 33.503364   | 0.95382
+SpaceButterfly                | Jun 04, 2015 17:32 | ....                                                      | 44.421062   | 0.95246
+BallmerPeak                   | Jun 04, 2015 16:44 | 5                                                         | 13.007478   | 0.96962
+SpaceButterfly                | Jun 04, 2015 16:09 | hohohoho?                                                 | 31.467062   | 0.95415
+SpaceButterfly                | Jun 04, 2015 16:02 | hohoho                                                    | 55.922389   | 0.95251
+magrdh                        | Jun 04, 2015 15:32 | 332                                                       | 60.220191   | 0.98025
+magrdh                        | Jun 04, 2015 15:30 | 33004062015                                               | 29.28295    | 0.99021
+Cloud                         | Jun 04, 2015 15:10 | svi                                                       | 13.989595   | 0.95954
+BallmerPeak                   | Jun 04, 2015 15:03 | 5                                                         | 22.829052   | 0.96952
+_elite_toenail_computing_clan | Jun 04, 2015 14:46 | Fast?                                                     | 34.10742    | 0.96328
+BallmerPeak                   | Jun 04, 2015 12:03 | kmeans test 2                                             | 8.40115     | 0.98568
+BallmerPeak                   | Jun 04, 2015 11:38 | kmeans test                                               | 8.363515    | 0.98568
+SpaceButterfly                | Jun 04, 2015 10:49 |                                                           | 82.901806   | 0.95217
+TheNonstandardDeviations      | Jun 03, 2015 21:57 | Test #4                                                   | 76.142506   | 0.99441
+TheNonstandardDeviations      | Jun 03, 2015 21:17 | Test #3                                                   | 62.84645    | 1.0031
+SpaceButterfly                | Jun 03, 2015 18:15 |                                                           | 86.071872   | 0.95296
+SpaceButterfly                | Jun 03, 2015 18:10 |                                                           | 81.956794   | 0.95301
+SpaceButterfly                | Jun 03, 2015 18:08 |                                                           | 25.275239   | 0.9588
+SpaceButterfly                | Jun 03, 2015 17:52 |                                                           | 84.014443   | 0.95274
+SpaceButterfly                | Jun 03, 2015 17:52 |                                                           | 83.614523   | 0.95274
+SpaceButterfly                | Jun 03, 2015 17:32 |                                                           | 97.041328   | 0.95274
+SpaceButterfly                | Jun 03, 2015 17:17 |                                                           | 97.999488   | 0.95274
+BallmerPeak                   | Jun 03, 2015 17:05 | 7                                                         | 55.38151    | 0.96613
+SpaceButterfly                | Jun 03, 2015 16:36 |                                                           | 44.286898   | 0.96331
+BallmerPeak                   | Jun 03, 2015 15:44 | 0                                                         | 0.590506    | 1.0999
+BallmerPeak                   | Jun 03, 2015 15:29 | 7                                                         | 26.150364   | 0.97006
+BallmerPeak                   | Jun 03, 2015 15:24 | 7                                                         | 27.169133   | 0.97006
+BallmerPeak                   | Jun 03, 2015 15:09 | 7                                                         | 93.110893   | 0.96985
+TheNonstandardDeviations      | Jun 03, 2015 15:04 | Test #2                                                   | 10.538186   | 0.96673
+null                          | Jun 03, 2015 14:56 |                                                           | 95.808207   | 0.96032
+SpaceButterfly                | Jun 03, 2015 14:48 |                                                           | 108.356699  | 0.95985
+BallmerPeak                   | Jun 03, 2015 14:38 | 7                                                         | 25.454983   | 0.97002
+SpaceButterfly                | Jun 03, 2015 14:32 |                                                           | 60.039122   | 0.96233
+BallmerPeak                   | Jun 03, 2015 14:23 | 7                                                         | 36.506882   | 0.97002
+BallmerPeak                   | Jun 03, 2015 14:17 | 7                                                         | 57.328901   | 0.97002
+BallmerPeak                   | Jun 03, 2015 14:17 | 7                                                         | 56.39422    | 0.9698
+BallmerPeak                   | Jun 03, 2015 14:13 | 7                                                         | 57.172914   | 0.9698
+SpaceButterfly                | Jun 03, 2015 13:49 |                                                           | 34.243549   | 0.96532
+BallmerPeak                   | Jun 03, 2015 13:38 | 7                                                         | 24.537214   | 0.97002
+BallmerPeak                   | Jun 03, 2015 13:31 | 7                                                         | 25.838938   | 0.9698
+BallmerPeak                   | Jun 03, 2015 13:24 | 7                                                         | 26.527445   | 0.97006
+BallmerPeak                   | Jun 03, 2015 13:16 | 7                                                         | 28.934426   | 0.96985
+BallmerPeak                   | Jun 03, 2015 13:16 | 7                                                         | 26.557589   | 0.96985
+null                          | Jun 03, 2015 13:11 |                                                           | 58.891666   | 0.96063
+BallmerPeak                   | Jun 03, 2015 13:03 | 3                                                         | 0.709763    | 1.0027
+BallmerPeak                   | Jun 03, 2015 11:38 | 8                                                         | 73.517888   | 0.9677
+SpaceButterfly                | Jun 03, 2015 11:24 |                                                           | 56.746401   | 0.96279
+BallmerPeak                   | Jun 03, 2015 11:19 | 7                                                         | 25.338153   | 0.96968
+BallmerPeak                   | Jun 03, 2015 11:17 | 6                                                         | 1.883026    | 2.9171
+BallmerPeak                   | Jun 03, 2015 11:15 | 5                                                         | 38.528172   | 1.0025
+null                          | Jun 03, 2015 11:09 | combi                                                     | 58.03714    | 0.96429
+BallmerPeak                   | Jun 03, 2015 11:02 | 4                                                         | 0.713258    | 1.0271
+BallmerPeak                   | Jun 03, 2015 11:00 | 3                                                         | 0.573269    | 1.0027
+BallmerPeak                   | Jun 03, 2015 10:46 | 1                                                         | 0.453219    | 1.0594
+BallmerPeak                   | Jun 03, 2015 10:45 | 2                                                         | 0.496316    | 1.0155
+BallmerPeak                   | Jun 03, 2015 10:41 | 0                                                         | 0.689468    | 1.0999
+SpaceButterfly                | Jun 03, 2015 10:35 |                                                           | 58.018129   | 0.96233
+SpaceButterfly                | Jun 02, 2015 23:16 |                                                           | 54.424691   | 0.9624
+SpaceButterfly                | Jun 02, 2015 23:13 |                                                           | 66.151327   | 0.96414
+SpaceButterfly                | Jun 02, 2015 23:10 |                                                           | 66.48699    | 0.96403
+SpaceButterfly                | Jun 02, 2015 19:14 |                                                           | 57.617217   | 0.9624
+SpaceButterfly                | Jun 02, 2015 19:11 |                                                           | 41.105665   | 0.96384
+buf0v_cfym                    | Jun 02, 2015 18:53 | psm                                                       | 9.2701      | 0.96499
+SpaceButterfly                | Jun 02, 2015 18:51 |                                                           | 32.75457    | 0.96414
+SpaceButterfly                | Jun 02, 2015 18:50 |                                                           | 17.088519   | 0.96638
+SpaceButterfly                | Jun 02, 2015 18:33 |                                                           | 33.075397   | 0.96513
+SpaceButterfly                | Jun 02, 2015 18:31 |                                                           | 17.172784   | 0.96768
+null                          | Jun 02, 2015 17:31 |                                                           | 37.051135   | 0.96687
+SpaceButterfly                | Jun 02, 2015 17:13 |                                                           | 24.034553   | 0.97341
+SpaceButterfly                | Jun 02, 2015 17:09 |                                                           | 8.692322    | 0.98162
+null                          | Jun 02, 2015 16:53 | svd2                                                      | 16.985859   | 0.96626
+SpaceButterfly                | Jun 02, 2015 16:43 |                                                           | 61.243      | 0.97727
+null                          | Jun 02, 2015 16:34 |                                                           | 14.158167   | 0.97153
+null                          | Jun 02, 2015 16:22 | svd2                                                      | 8.588137    | 0.97153
+null                          | Jun 02, 2015 16:07 |                                                           | 19.27809    | 0.98081
+null                          | Jun 02, 2015 15:57 |                                                           | 9.392721    | 0.97153
+SpaceButterfly                | Jun 02, 2015 14:06 |                                                           | 25.051679   | 0.97698
+SpaceButterfly                | Jun 02, 2015 13:10 |                                                           | 26.153325   | 0.978
+SpaceButterfly                | Jun 02, 2015 11:04 |                                                           | 12.409866   | 0.98238
+dummmyCF                      | Jun 01, 2015 18:57 | GD                                                        | 35.072994   | 0.97722
+SpaceButterfly                | Jun 01, 2015 18:04 |                                                           | 25.287761   | 1.034
+buf0v_cfym                    | Jun 01, 2015 17:05 | ss2                                                       | 86.624866   | 0.9649
+buf0v_cfym                    | Jun 01, 2015 16:58 | ss2                                                       | 85.964038   | 0.9649
+Cloud                         | Jun 01, 2015 16:34 | try                                                       | 37.553922   | 1.001
+null                          | Jun 01, 2015 16:07 | svd                                                       | 10.966932   | 0.98147
+han                           | Jun 01, 2015 14:58 | tt                                                        | 107.044583  | 0.96558
+han                           | Jun 01, 2015 14:46 |                                                           | 18.958745   | 0.97437
+Cloud                         | Jun 01, 2015 10:16 | abias                                                     | 156.962562  | 0.97649
+_elite_toenail_computing_clan | Jun 01, 2015 03:50 | OnlyMathiasInitLorenzByElias2                             | 155.053035  | 0.95648
+_elite_toenail_computing_clan | Jun 01, 2015 03:34 | OnlyMathiasInitLorenzByElias                              | 64.279266   | 0.96728
+_elite_toenail_computing_clan | Jun 01, 2015 03:16 | C1: only 2 but all at once, take 2                        | 22.83699    | 0.96328
+_elite_toenail_computing_clan | Jun 01, 2015 03:08 | C1: only 2 but all at once                                | 26.430154   | 0.96418
+_elite_toenail_computing_clan | Jun 01, 2015 02:02 | 2,4                                                       | 126.036006  | 0.96678
+Ligabueichnium                | May 31, 2015 21:11 | test22                                                    | 87.959476   | 0.94501
+Ligabueichnium                | May 31, 2015 20:07 | missing                                                   | 76.668285   | 0.94303
+_elite_toenail_computing_clan | May 31, 2015 19:14 | wunschpunsch 2                                            | 87.764667   | 0.9639
+_elite_toenail_computing_clan | May 31, 2015 16:01 | satanarchäolügenialkohöllische Wunschpunsch               | 84.160511   | 0.9639
+magrdh                        | May 29, 2015 11:25 |                                                           | 93.232806   | 1.2113
+happycode                     | May 29, 2015 10:53 |                                                           | 15.959317   | 2.9407
+happycode                     | May 29, 2015 10:51 |                                                           | 7.908462    | 2.945
+magrdh                        | May 29, 2015 10:27 |                                                           | 62.709338   | 1.0069
+magrdh                        | May 29, 2015 10:15 |                                                           | 52.081168   | 0.98513
+Wuhrstrasse2                  | May 28, 2015 15:34 | b                                                         | 29.839715   | 0.98509
+Legend17                      | May 27, 2015 16:28 | ALS bias 2                                                | 19.361347   | 0.96447
+Legend17                      | May 27, 2015 15:21 | EMNMF3                                                    | 56.847826   | 1.0057
+Legend17                      | May 27, 2015 15:14 | EMNMF2                                                    | 21.679108   | 2.1165
+Legend17                      | May 27, 2015 15:11 | EMNMF2                                                    | 22.985309   | 2.7679
+Legend17                      | May 27, 2015 14:26 | EMNMF                                                     | 10.059521   | 1.2439
+Wuhrstrasse2                  | May 27, 2015 14:07 | lu                                                        | 53.690731   | 0.94271
+Ligabueichnium                | May 25, 2015 21:23 | test                                                      | 48.203428   | 0.9634
+Legend17                      | May 25, 2015 20:29 | ALS bias                                                  | 36.180057   | 1.0272
+Legend17                      | May 25, 2015 17:00 | ALS                                                       | 10.202475   | 0.98867
+Legend17                      | May 25, 2015 16:51 |                                                           | 39.381131   | 1.0238
+Ligabueichnium                | May 25, 2015 16:24 | exit                                                      | 150.093204  | 0.94458
+Ligabueichnium                | May 25, 2015 16:24 | exit                                                      | 140.974155  | 0.94458
+Legend17                      | May 24, 2015 18:18 | svd test                                                  | 54.269851   | 2.7589
+_elite_toenail_computing_clan | May 23, 2015 01:02 | PMVZ2N                                                    | 128.623252  | 0.96697
+_elite_toenail_computing_clan | May 22, 2015 14:11 | Medians 4 take 2                                          | 149.55639   | 0.96689
+_elite_toenail_computing_clan | May 22, 2015 14:03 | Medians 4                                                 | 92.139167   | 0.96816
+_elite_toenail_computing_clan | May 21, 2015 20:51 | Medians 2                                                 | 148.038355  | 0.96696
+_elite_toenail_computing_clan | May 21, 2015 17:28 | Medians                                                   | 115.587791  | 0.9669
+_elite_toenail_computing_clan | May 21, 2015 17:17 |                                                           | 56.440981   | 0.97147
+Legend17                      | May 20, 2015 16:35 | test 0                                                    | 0.655227    | 1.3047
+Ligabueichnium                | May 19, 2015 21:46 | tt                                                        | 73.915183   | 0.94303
+Ligabueichnium                | May 19, 2015 20:28 | FAS                                                       | 60.480996   | 0.94319
+Ligabueichnium                | May 19, 2015 20:28 | FAS                                                       | 59.692055   | 0.94319
+Ligabueichnium                | May 19, 2015 19:51 | fix                                                       | 61.083099   | 0.94354
+Lena                          | May 19, 2015 16:45 | ae974aa                                                   | 0.622672    | 1.4016
+Ligabueichnium                | May 18, 2015 00:35 | combo3                                                    | 68.928829   | 0.94331
+Ligabueichnium                | May 18, 2015 00:21 | combo2                                                    | 55.325054   | 0.94335
+Ligabueichnium                | May 17, 2015 23:40 | combo                                                     | 53.185589   | 0.94369
+Ligabueichnium                | May 17, 2015 23:31 | n                                                         | 15.909036   | 0.94579
+Wuhrstrasse2                  | May 17, 2015 20:12 | randsa2                                                   | 24.103388   | 0.94459
+Wuhrstrasse2                  | May 17, 2015 20:08 | randsa                                                    | 22.333218   | 0.94599
+Wuhrstrasse2                  | May 17, 2015 20:02 | dsa                                                       | 41.304954   | 0.94401
+Wuhrstrasse2                  | May 17, 2015 19:57 | asd                                                       | 27.886939   | 0.95415
+_elite_toenail_computing_clan | May 17, 2015 18:52 | 17,05 FAF                                                 | 60.709473   | 0.98411
+_elite_toenail_computing_clan | May 17, 2015 18:48 | 17,05 InitMean                                            | 54.927498   | 0.97779
+_elite_toenail_computing_clan | May 17, 2015 18:43 | 17,05                                                     | 72.875215   | 0.97298
+Cloud                         | May 17, 2015 15:41 | bias                                                      | 37.073326   | 0.98266
+Ligabueichnium                | May 17, 2015 04:12 | goodnight                                                 | 26.56267    | 0.94469
+Ligabueichnium                | May 17, 2015 03:34 | bettt                                                     | 23.913478   | 0.94643
+Ligabueichnium                | May 17, 2015 03:17 | ssssssssssssssssss                                        | 46.78641    | 0.94756
+Ligabueichnium                | May 17, 2015 02:59 | nnnnn3                                                    | 43.179037   | 0.94825
+Ligabueichnium                | May 17, 2015 02:58 | neeee                                                     | 173.750617  | 0.94825
+Ligabueichnium                | May 16, 2015 20:07 | work                                                      | 67.886455   | 0.94966
+Ligabueichnium                | May 16, 2015 15:51 |                                                           | 54.456222   | 0.95598
+Ligabueichnium                | May 16, 2015 12:48 | tt                                                        | 52.539623   | 0.95697
+magrdh                        | May 16, 2015 09:45 | k means                                                   | 51.145134   | 0.98547
+Ligabueichnium                | May 15, 2015 20:12 | tester                                                    | 22.052104   | 0.95748
+Ligabueichnium                | May 15, 2015 17:51 | mammut                                                    | 22.988793   | 0.9574
+Ligabueichnium                | May 15, 2015 17:19 | big panda                                                 | 39.885769   | 0.95778
+Ligabueichnium                | May 15, 2015 16:42 | panda                                                     | 33.743417   | 0.95786
+Ligabueichnium                | May 15, 2015 15:43 | jabba                                                     | 16.690704   | 0.95968
+Ligabueichnium                | May 15, 2015 10:50 | cool                                                      | 78.355275   | 0.9606
+Ligabueichnium                | May 15, 2015 09:54 | exper                                                     | 97.159233   | 0.98658
+Ligabueichnium                | May 15, 2015 01:00 | bias                                                      | 172.274979  | 0.97477
+Ligabueichnium                | May 14, 2015 23:55 | collab_factor                                             | 119.079173  | 0.96804
+Ligabueichnium                | May 14, 2015 23:44 | cl                                                        | 3.238432    | 0.96609
+Ligabueichnium                | May 14, 2015 23:19 | mean                                                      | 1.547577    | 0.97464
+Ligabueichnium                | May 14, 2015 23:08 | iter2                                                     | 124.846782  | 0.97739
+Ligabueichnium                | May 14, 2015 23:03 | iter                                                      | 24.574587   | 0.97989
+Ligabueichnium                | May 14, 2015 23:03 | iter                                                      | 25.416519   | 0.97989
+Ligabueichnium                | May 14, 2015 14:44 | blubfast                                                  | 2.477465    | 0.96621
+Ligabueichnium                | May 14, 2015 14:38 | blub                                                      | 27.18386    | 0.96785
+Ligabueichnium                | May 14, 2015 13:19 | yyy                                                       | 8.759108    | 0.99151
+AJA                           | May 13, 2015 17:48 | init, k=8                                                 | 8.981978    | 0.98225
+Ligabueichnium                | May 13, 2015 09:31 | iter3                                                     | 24.738244   | 0.98598
+Ligabueichnium                | May 13, 2015 08:17 | iter                                                      | 28.075863   | 0.98598
+Ligabueichnium                | May 13, 2015 08:17 | iter                                                      | 24.227585   | 0.98598
+Ligabueichnium                | May 13, 2015 00:10 | tts                                                       | 5.48623     | 0.99478
+AJA                           | May 12, 2015 10:51 | same, k=25                                                | 36.666552   | 0.99225
+TheNonstandardDeviations      | May 11, 2015 18:17 | test                                                      | 20.330878   | 0.96588
+TheNonstandardDeviations      | May 11, 2015 18:11 | dummy                                                     | 0.498776    | 1.1396
+MTB                           | May 11, 2015 15:15 |                                                           | 52.127665   | 1.0046
+MTB                           | May 11, 2015 14:02 | Mean                                                      | 1.016766    | 1.0155
+magrdh                        | May 09, 2015 12:48 |                                                           | 65.871408   | 0.98547
+IntelligenceBros              | May 07, 2015 11:10 | svd test                                                  | 6.47337     | 1.0155
+_elite_toenail_computing_clan | May 07, 2015 01:11 |                                                           | 35.433393   | 0.97884
+_elite_toenail_computing_clan | May 06, 2015 22:08 | l1                                                        | 28.45819    | 1.0332
+Cloud                         | May 05, 2015 20:12 | svd_bias                                                  | 4.475765    | 1.0326
+Wuhrstrasse2                  | May 04, 2015 21:55 | mb                                                        | 63.566205   | 0.94474
+Cloud                         | May 04, 2015 12:06 | Baseline                                                  | 29.931434   | 0.99599
+Cloud                         | May 04, 2015 12:06 | Week3                                                     | 11.233616   | 2.4366
+Cloud                         | May 04, 2015 12:02 | Baseline                                                  | 7.940135    | 1.0723
+null                          | May 02, 2015 17:38 |                                                           | 1.166089    | 1.0155
+Wuhrstrasse2                  | Apr 30, 2015 17:49 | wb2                                                       | 26.646605   | 0.96283
+Wuhrstrasse2                  | Apr 30, 2015 17:30 | wb11                                                      | 53.592917   | 0.95641
+Wuhrstrasse2                  | Apr 30, 2015 17:29 | wb1                                                       | 52.781057   | 0.95641
+Wuhrstrasse2                  | Apr 29, 2015 03:43 | isgdo2                                                    | 27.5364     | 0.96339
+Wuhrstrasse2                  | Apr 29, 2015 03:38 | isgdo1                                                    | 61.344207   | 0.95753
+Wuhrstrasse2                  | Apr 29, 2015 03:29 | svdo1                                                     | 78.464896   | 0.95755
+Wuhrstrasse2                  | Apr 29, 2015 03:25 | combv1                                                    | 91.566177   | 0.95376
+Wuhrstrasse2                  | Apr 28, 2015 18:25 | ISGDv3                                                    | 87.409937   | 0.95776
+Wuhrstrasse2                  | Apr 28, 2015 15:39 | ISGDv2                                                    | 30.760383   | 0.96356
+Wuhrstrasse2                  | Apr 28, 2015 04:53 | ISGDv1                                                    | 44.52839    | 0.96142
+AJA                           | Apr 27, 2015 16:34 | same but k=10                                             | 30.293317   | 0.99047
+AJA                           | Apr 27, 2015 16:28 |                                                           | 30.410604   | 0.99659
+AJA                           | Apr 27, 2015 16:14 |                                                           | 41.45599    | 1.0016
+Wuhrstrasse2                  | Apr 27, 2015 14:12 | LESGD1                                                    | 31.934869   | 0.96946
+Wuhrstrasse2                  | Apr 27, 2015 14:00 | ARSGD2                                                    | 28.626493   | 0.9647
+Wuhrstrasse2                  | Apr 27, 2015 13:57 | ARSGD1                                                    | 29.695567   | 0.96544
+happycode                     | Apr 26, 2015 16:17 | k-means                                                   | 13.406274   | 0.98611
+Wuhrstrasse2                  | Apr 25, 2015 22:56 | SVD_4I_EX_DECK_GD1                                        | 94.540607   | 0.96018
+Wuhrstrasse2                  | Apr 25, 2015 22:36 | SVD_4I_EX_DECK_NGD                                        | 75.387773   | 0.9666
+Wuhrstrasse2                  | Apr 25, 2015 22:31 | SVD_4I_EX_DECK_GD                                         | 79.220619   | 0.96282
+BATLAB                        | Apr 25, 2015 14:29 | new averaging                                             | 11.258564   | 0.98681
+BATLAB                        | Apr 25, 2015 12:14 | bugfiiiiix                                                | 11.300592   | 0.98383
+BATLAB                        | Apr 25, 2015 10:55 | first submissioooooon                                     | 22.294797   | 2.7925
+Wuhrstrasse2                  | Apr 23, 2015 13:37 | SVDK_v2                                                   | 135.450733  | 0.96791
+Wuhrstrasse2                  | Apr 23, 2015 13:35 | SVDK_v1                                                   | 138.880803  | 0.96791
+Wuhrstrasse2                  | Apr 23, 2015 11:53 | SVD_4I_EX_DECK1_MB                                        | 67.302715   | 0.95863
+Wuhrstrasse2                  | Apr 23, 2015 01:15 | SVD_1I_EX_DECK1                                           | 19.473263   | 0.98124
+Wuhrstrasse2                  | Apr 23, 2015 01:10 | SVD_4I_EX_DECK1                                           | 67.116735   | 0.96478
+Wuhrstrasse2                  | Apr 23, 2015 01:01 | SVD_4I_EX_INCK5                                           | 58.392417   | 0.97074
+Wuhrstrasse2                  | Apr 22, 2015 15:45 | SVD_4I_EX_INCK4                                           | 82.011693   | 0.97516
+Wuhrstrasse2                  | Apr 22, 2015 15:36 | SVD_4I_EX_INCK3                                           | 81.270572   | 0.98598
+Wuhrstrasse2                  | Apr 22, 2015 15:33 | SVD_4I_EX_EQK                                             | 76.03555    | 0.9784
+Wuhrstrasse2                  | Apr 22, 2015 15:10 | SVD_4I_EX_INCK2                                           | 78.990172   | 0.97677
+Wuhrstrasse2                  | Apr 22, 2015 15:08 | SVD_4I_EX_DECK                                            | 72.926053   | 0.96532
+Wuhrstrasse2                  | Apr 22, 2015 15:01 | SVD_4I_EX_INCK                                            | 76.29632    | 0.96973
+Wuhrstrasse2                  | Apr 22, 2015 14:39 | SVD_1I_EX                                                 | 19.255906   | 0.98247
+Wuhrstrasse2                  | Apr 22, 2015 01:55 | SVD_4I_EXX                                                | 80.668467   | 0.96547
+Wuhrstrasse2                  | Apr 22, 2015 01:47 | SVD_4I_EX                                                 | 84.222307   | 0.96532
+Wuhrstrasse2                  | Apr 22, 2015 01:42 | SVD_4I_NF                                                 | 80.068045   | 0.98235
+Wuhrstrasse2                  | Apr 22, 2015 01:35 | k_means_very_basic                                        | 65.029247   | 0.98547
+BIG                           | Apr 10, 2015 10:47 | svd                                                       | 61.346952   | 0.99038
+BIG                           | Apr 10, 2015 10:42 | probabilistic                                             | 165.708765  | 0.99062
+BIG                           | Apr 09, 2015 13:06 | test                                                      | 55.322257   | 0.98546
+Lena                          | Apr 08, 2015 21:43 | 5cae36e                                                   | 13.149862   | 0.99584
+Legend17                      | Apr 02, 2015 17:57 | v1                                                        | 51.651846   | 2.7589
+TheNonstandardDeviations      | Mar 31, 2015 17:23 | SVD                                                       | 19.039089   | 0.96632
+TwoAndAHalfMen                | Mar 31, 2015 10:22 | K-means                                                   | 36.047538   | 0.98602
+TwoAndAHalfMen                | Mar 31, 2015 09:48 | K-means                                                   | 72.724949   | 0.98602
+TwoAndAHalfMen                | Mar 31, 2015 09:43 | Only 10 iterations                                        | 40.028308   | 0.98602
+Lena                          | Mar 30, 2015 21:39 | 714ffab                                                   | 49.328212   | 1.0046
+Lena                          | Mar 30, 2015 17:30 | 9481791                                                   | 0.806532    | 1.0155
+BallmerPeak                   | Mar 29, 2015 00:22 | v3                                                        | 87.755699   | 0.9663
+chuchichaeschtli              | Mar 27, 2015 16:25 |                                                           | 57.93312    | 0.97375
+Flagship                      | Mar 27, 2015 15:53 |                                                           | 24.478297   | 2.6345
+Flagship                      | Mar 27, 2015 15:39 |                                                           | 6.972837    | 3.1484
+Flagship                      | Mar 27, 2015 15:34 |                                                           | 15.934372   | 3.1484
+BallmerPeak                   | Mar 27, 2015 14:43 | kmeans v1                                                 | 10.371296   | 0.98569
+BallmerPeak                   | Mar 27, 2015 14:41 | kmeans v1                                                 | 43.758296   | 0.96969
+BallmerPeak                   | Mar 27, 2015 14:27 | v2                                                        | 44.800451   | 0.96969
+GMV                           | Mar 27, 2015 14:26 | k-means third                                             | 14.932347   | 0.98487
+GMV                           | Mar 27, 2015 14:13 | k-means second                                            | 19.226499   | 0.98511
+GMV                           | Mar 27, 2015 13:56 | k-means                                                   | 110.570737  | 0.98665
+BallmerPeak                   | Mar 27, 2015 13:45 | v1                                                        | 44.617596   | 0.97002
+MTB                           | Mar 27, 2015 12:58 | Baseline                                                  | 29.46721    | 0.98547
+Wuhrstrasse2                  | Mar 27, 2015 01:12 | BasicSVDv1t2                                              | 71.463801   | 0.98235
+Wuhrstrasse2                  | Mar 27, 2015 01:08 | BasicSVDv1                                                | 73.203144   | 0.98235
+chuchichaeschtli              | Mar 26, 2015 22:57 | k-means                                                   | 5.588805    | 1.0153
+chuchichaeschtli              | Mar 26, 2015 17:42 |                                                           | 8.684148    | 0.9906
+chuchichaeschtli              | Mar 26, 2015 17:36 |                                                           | 8.877137    | 0.99039
+chuchichaeschtli              | Mar 26, 2015 17:34 |                                                           | 50.576947   | 0.99039
+Colonies                      | Mar 26, 2015 17:26 |                                                           | 11.734614   | 0.98487
+Colonies                      | Mar 26, 2015 17:23 |                                                           | 20.355869   | 0.98534
+Lena                          | Mar 26, 2015 15:32 | SVD - model selection                                     | 8.921068    | 1.0046
+Flagship                      | Mar 26, 2015 13:47 |                                                           | 9.812361    | 3.0954
+mj_test                       | Mar 26, 2015 13:40 | user and movie means (official data)                      | 1.272909    | 1.0025
+mj_test                       | Mar 26, 2015 13:36 | just the global mean value                                | 0.660495    | 1.0999
+Lena                          | Mar 26, 2015 12:08 | Baseline - faster                                         | 0.659326    | 1.0155
+Lena                          | Mar 26, 2015 12:00 | Baseline                                                  | 0.654587    | 1.0155
+test_dl                       | Mar 26, 2015 10:21 | all ones 2                                                | 0.479697    | 2.9171
+Ligabueichnium                | Mar 26, 2015 10:18 |                                                           | 7.157161    | 1.0394
+mj_test                       | Mar 25, 2015 20:02 | asgs asdaf                                                | 0.595872    | 1.1239
+mj_test                       | Mar 25, 2015 19:59 | user and movie means                                      | 1.294572    | 1.0556
+Jama                          | Mar 25, 2015 18:46 | series04 submission01                                     | 7.32511     | 1.0558
+test_dl                       | Mar 25, 2015 17:41 | all ones                                                  | 0.651887    | 3.1251
