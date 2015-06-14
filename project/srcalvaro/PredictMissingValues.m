@@ -1,9 +1,7 @@
 function X_pred = PredictMissingValues(X, nil)
 
-k = 5;
-seed = 6;
-
-[num_users, num_items] = size(X);
+k = 25; % number of neighbours
+betaParam = 500; % TODO fit parameter
 
 if isnan(nil)
   nils = isnan(X);
@@ -12,24 +10,32 @@ else
   X(nils) = NaN;
 end
 
-[mu, b_u, b_i, B] = ComputeBiases(X);
+[~, ~, ~, B] = LearnBiases(X);
 X = X - B;
 X(nils) = 0;
 
-rand('seed', seed);
-% the model with the lowest BIC is preferred
-GMModel = gmdistribution.fit(X, k, 'Regularize',0.001);
+[S, U] = ComputeSimilarity(X, nils); % TODO fit parameter lambda8
 
-idx = cluster(GMModel, X);
+[S,I] = sort(S, 'descend'); % greater similarity -> more resemblance
+I = I(1:k, :); % keep the top k neighbour positions
 
-for clust = 1:k
-  clusterMatches = (idx == clust);
-  clusterMeans = mean(X(clusterMatches, :), 1);
+Abar = (X' * X) ./ U; % 5.24
 
-  nils2 = nils;
-  nils2(~clusterMatches,:) = false;
-  replicatedClusterMeans = repmat(clusterMeans, num_users, 1);
-  X(nils2) = replicatedClusterMeans(nils2);
+avg = sum(sum(Abar - diag(diag(Abar)))) / (size(Abar, 1) * size(Abar, 2) - size(Abar, 1));
+avgDiag = mean(diag(Abar));
+Ahat = Abar .* U + betaParam * avg; % start 5.26
+Ahat = Ahat - diag(repmat(betaParam * avg, size(Abar, 1), 1)); % substract betaParam*avg to diagonal
+Ahat = Ahat + diag(repmat(betaParam * avgDiag, size(Abar, 1), 1)); % add proper value to diagonal
+Ahat = Ahat ./ (U + betaParam); % finish 5.26
+
+bhat = diag(Ahat); % 5.27
+
+X_pred = zeros(size(X));
+for j = 1:size(X, 2)
+  A = Ahat(I(:,j), I(:,j)); % kxk
+  b = bhat(I(:,j)); % kx1
+
+  theta = linsolve(A, b);
+
+  X_pred(:, j) = B(:, j) + X(:, I(:,j)) * theta; % 5.19
 end
-
-X_pred = X + B;
