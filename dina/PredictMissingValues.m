@@ -1,13 +1,19 @@
-function X_pred = PredictMissingValues(X, nil)
+function X_pred = PredictMissingValues(X, nil, p)
 warning('off','all');
 X_pred = X;
 [u, it] = size(X_pred);
 nils = X_pred == nil;
 X_pred(nils) = NaN;
-XX = X_pred;
-[mu, b_u, b_i, B] = ComputeBiases(X_pred);
+
+[X_pred, X_mean, X_std] = UserNormalization(X_pred);
+X_pred(nils) = NaN;
+
+[mu, b_u, b_i, B] = LearnBiases(X_pred);
 X_pred(nils) = B(nils);
 %X_pred = MyBiases(X_pred);
+
+
+%X_pred = MyKmeans(X_pred, XX, u, it);
 
 
 %{
@@ -31,20 +37,28 @@ end
 %avg = mean(mean(X(X ~= nil)));  % BASELINE average over all values: 1.1211 MSE
 %X_pred(X_pred == nil) = avg; % dummy prediction, 4 stars always
 
-for asdf = 1:3
-    %X_pred = MySVD(X_pred, XX);
+for asdf = 1:1
+    %X_pred = regSVD2(X_pred);
     %rmse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2))
 end
 
-%save('asdf.mat', 'X_pred');
 
-load('asdf.mat');
-[something, X_pred] = pcares(X_pred, 30);
+[something, X_pred] = pcares(X_pred, 8);
+%X_pred = SKmeans(X_pred, XX, p);
+%[something, X_pred] = pcares(X_pred, 30);
 
+X_pred = X_pred .* X_std;
+X_pred = X_pred + X_mean;
 
+%X_round = round(X_pred);
+%X_diff = abs(X_round - X_pred);
+%X_pred(X_diff < 0.4) = X_round(X_diff < 0.4);
+%X_pred(X_pred < 1) = 1;
+%X_pred(X_pred > 5) = 5;
 
 for asdf = 1:1
-    X_pred = MyKmeans(X_pred, XX, u, it);
+    %X_pred = SVDKmeans(XX, X_pred);
+    %X_pred = MyKmeans(X_pred, XX, u, it);
    % X_pred = NewKmeans(X_pred, XX);
     %rmse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2));
     %disp([num2str(asdf) ' RMSE: ' num2str(rmse)]);

@@ -17,6 +17,7 @@ rand('seed', 1);  % fix random seed for reproducibility
 % Constants
 filename = 'Data.mat';
 prc_trn = 0.5;  % percentage of training data
+global nil;
 nil = 0;  % missing value indicator. could also use NaN or any other value instead
 
 % Load data
@@ -30,12 +31,13 @@ n = numel(idx);
 n_trn = round(n*prc_trn);
 rp = randperm(n);
 idx_trn = idx(rp(1:n_trn));
-idx_tst = idx(rp(n_trn+1:end));
+idx_tst = idx(rp(n_trn+1:end)); 
 
 % Build training and testing matrices
 X_trn = ones(size(X))*nil;
 X_trn(idx_trn) = X(idx_trn);  % add known training values
 
+global X_tst;
 X_tst = ones(size(X))*nil;
 X_tst(idx_tst) = X(idx_tst);  % add known testing values
 
@@ -44,7 +46,11 @@ X_tst(idx_tst) = X(idx_tst);  % add known testing values
 X_pred = PredictMissingValues(X_trn, nil);
 
 % Compute MSE on the test set
-me = mean(X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil))
+%sum(sum(X_tst ~= nil))
+%me = mean(abs(X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)))
+%X_diff = X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil);
+%sum(X_diff > 0)
+%sum(X_diff < 0)
 rmse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2));  % error on known test values
 
 disp(['Root of Mean-squared error on test set: ' num2str(rmse)]);

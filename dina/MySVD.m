@@ -9,7 +9,9 @@ sqrt_D1 = sqrt_D(:, 1:k);
 sqrt_D2 = sqrt_D(1:k, :);
 U_prime = U * sqrt_D2;
 V_prime = sqrt_D1 * V.';
-res = U_prime * V_prime;
+size(U_prime)
+size(V_prime)
+res = U_prime * V_prime';
 
 for i = 1 : size(XX,1)
     for j = 1 : size(XX,2)
