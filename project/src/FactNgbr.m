@@ -18,7 +18,7 @@ function X_pred = FactNgbr(X, K, gamma, lambda, shrink)
   % iteration through the data points.  Judge mode disables all of this,
   % resulting in a faster algorithm but no progress reporting during the
   % run.
-  is_local = false;
+  is_local = true;
   rng('default');
 
   % Hyperparameters and default values.
@@ -37,7 +37,7 @@ function X_pred = FactNgbr(X, K, gamma, lambda, shrink)
 
   % Define the number of epochs.  An epoch in this context is a complete
   % iteration over all present ratings in X.
-  nEpochs = 10;
+  nEpochs = 25;
 
   % Determine the size of the input.  M is the number of users, N the
   % number of items.

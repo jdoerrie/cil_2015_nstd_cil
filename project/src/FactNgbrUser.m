@@ -37,7 +37,7 @@ function X_pred = FactNgbrUser(X, K, gamma, lambda, shrink)
 
   % Define the number of epochs.  An epoch in this context is a complete
   % iteration over all present ratings in X.
-  nEpochs = 10;
+  nEpochs = 5;
 
   % Determine the size of the input.  M is the number of users, N the
   % number of items.
