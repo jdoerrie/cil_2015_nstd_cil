@@ -25,7 +25,7 @@ function X_pred = PredictMissingValues(X, nil)
 %   X_pred = X_pred + 0.05 * FactNgbrUser(X, 64, 0.01, 0.1, 0.975);
 
   [M, N] = size(X);
-  X_preds = zeros(M, N, 6);
+  X_preds = zeros(M, N, 7);
 
   % best params for 10 epochs
   % X_preds(:,:,1) = SVDpp(       X, 64, 0.02, 0.02, 0.775); 
@@ -40,14 +40,17 @@ function X_pred = PredictMissingValues(X, nil)
   % best params for 25 epochs
   X_preds(:,:,3) = FactNgbrUser(X, 64, 0.02, 0.1, 0.975);
   
-  X_preds(:,:,4) = DinaPCA(X);
-  X_preds(:,:,5) = AlvaroGMM(X, NaN);
-  X_preds(:,:,6) = 1;
+  % best params for 30 epochs
+  X_preds(:,:,4) = IntModel(    X, 64, 0.005, 0.05, 0.975);
+  
+  X_preds(:,:,5) = DinaPCA(X);
+  X_preds(:,:,6) = AlvaroGMM(X, NaN);
+  X_preds(:,:,7) = 1;
 
-  range = [1 2 5]' * power(10, 0);
+  range = [1 2 5]' * power(10, 0:9);
   range = reshape(range, 1, numel(range));
 
-  bins = [1 2 5]' * power(10, 3:5);
+  bins = [1 2 5]' * power(10, 0:5);
   bins = reshape(bins, 1, numel(bins));
   
   for bin = bins
