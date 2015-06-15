@@ -25,6 +25,10 @@ function X_pred = RidgeRegression(X_orig, X_preds, lambda)
   % Y contains the "ground truth".
   Y = X_orig(~NaNs);
 
+  % Force Y to be a column vector, this would not be the case if
+  % size(X,1) == 1.
+  Y = reshape(Y, numel(Y), 1);
+
   % Closed Formula for Ridge Regression, finds W that minimizes
   % the difference between X*W and Y while penalizing large values in W
   W = ((X'*X + lambda*eye(nPreds)) \ X')*Y;
