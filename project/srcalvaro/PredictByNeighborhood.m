@@ -17,11 +17,16 @@ X_pred = P_pred * Q_pred;
 for i = 1:size(X,2)
   validSimilarities = bsxfun(@times, rated, S(i,:));
   [sortedSimilarities,I] = sort(validSimilarities, 'descend');
-  I = I(1:k, :);
+  I = I(1:k, :); % kxn
   sortedSimilarities = sortedSimilarities(1:k, :);
 
-  X_pred(:,) - X(I(:,j), I(:,j));
+  % loop on the neighbours
+    sortedSimilarities' * (X_pred(:,) - X(I(:,j), I(:,j)));
   % take the proper elements from the matrix and perform the multiplicaton
 
-  sum(sortedSimilarities);
+  sumOfSimilarities = sum(sortedSimilarities); % 1xm
+
+  %./ sumOfSimilarities;
 end
+
+X_pred = X_pred + ;
