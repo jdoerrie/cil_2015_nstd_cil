@@ -1,4 +1,4 @@
-function X_pred = RidgeRegression(X_orig, X_preds, lambda)
+function [X_pred, W] = RidgeRegression(X_orig, X_preds, lambda)
   % Simple Implementation of Ridge Regression to blend several predictions
   % into a single one. X_orig is the original rating matrix, while X_preds
   % in a three dimensional array that contains the individual prediction
