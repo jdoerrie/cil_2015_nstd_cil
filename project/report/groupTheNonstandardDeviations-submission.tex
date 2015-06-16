@@ -1,11 +1,16 @@
 \documentclass[10pt,conference,compsocconf]{IEEEtran}
 \usepackage{booktabs}
 \usepackage[T1]{fontenc}
+\usepackage[group-separator = {\,}]{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
 \usepackage[backend=biber,style=ieee]{biblatex}
 \bibliography{groupTheNonstandardDeviations-literature}
-\usepackage{graphicx}
 \usepackage{hyperref}
 
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
 \begin{document}
 \title{Computational Intelligence Laboratory Project: Collaborative Filtering}
@@ -39,7 +44,7 @@
   eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
   voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
   kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-  amet.\cite{funk2006netflix}
+  amet.
 \end{abstract}
 
 \section{Introduction}
@@ -92,11 +97,112 @@ no sea takimata sanctus est Lorem ipsum dolor sit amet.
 %   Do not reproduce the full source code in the paper, but explain the key
 %   steps.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsection{Dataset}
+\label{sub:dataset}
 
+The dataset which was used throughout the development of our algorithm was made
+available on the project course webpage~\cite{lab2015collaborative}. It contains
+the ratings of \num{10000} users on \num{1000} movies on a scale between $1$ and
+$5$. Naturally, not every user rated every movie, in fact only \num{1388107} of
+the \num{10000000} possible ratings were present leading to a data sparsity of
+$86\%$.
+
+\subsection{Evaluation of Results}
+\label{sub:evaluation_of_results}
+
+In order to train and test the developed algorithm the present ratings were
+randomly split in two disjoint sets of equal size. The first set then formed
+the training set, i.e.\ data that was trained on, and the second set was used
+for testing the algorithm. The chosen metric is ``Root Mean Squared Error''
+(RMSE) which is defined in the following way~\cite{koren2008factorization,
+  koren2010factor, koren2011advances}:
+
+\begin{equation}
+  \sqrt{\sum_{(u,i) \in \mathrm{TestSet}}
+    \frac{{(r_{ui} - \hat{r}_{ui})}^2}{\abs{\mathrm{TestSet}}}}
+\end{equation}
+
+Here $r_{ui}$ denotes the real rating while $\hat{r}_{ui}$ is the approximation
+through the algorithm. With ratings restricted to the interval $[1,5]$ valid
+RMSE values range between $0$ and $4$, with lower scores being better. In
+addition, the raw CPU time was evaluated for the project grade. This favors
+solutions that are efficient with regard to time.
+
+\subsection{Data Imputation and Baseline Estimators}
+\label{sub:data_imputation_and_baseline_estimators}
+
+Given that standard Collaborative Filtering algorithms such as K-Means and
+Singular Value Decomposition (SVD) require dense instead of sparse matrices
+different strategies exist to fill in the missing values. The most simple one is
+to replace all missing values with a constant zero value. Accuracy can be
+improved by considering other constants such as the global mean $\mu$ of all
+existing entries.  More advanced techniques try to approximate a given missing
+value for a user $u$ and item $i$ by taking a combination the global mean and
+the specific user and item means $b_u$ and $b_i$~\cite{koren2008factorization,
+  koren2009matrix, koren2010factor, koren2011advances}:
+
+\begin{equation}
+  b_{ui} = \mu + b_u + b_i.
+\end{equation}
+
+$b_u$ and $b_i$ can be directly computed from the data, however it is advisable
+to introduce regularize terms to overcome over-fitting when only very few
+ratings are available. This leads to the following equations, where $R(u)$ and
+$R(i)$ denote the sets of all ratings by user $u$ and item $i$
+respectively~\cite{koren2008factorization, koren2009matrix, koren2010factor,
+  koren2011advances}:
+
+\begin{equation}
+  b_i = \frac{\sum_{u \in R(i)} (r_{ui} - \mu)}{\lambda_i + \abs{R(i)}}\qquad
+  b_u = \frac{\sum_{i \in R(u)} (r_{ui} - \mu - b_i)}{\lambda_u + \abs{R(u)}}
+\end{equation}
+
+$\lambda_i$ and $\lambda_u$ are regularize parameters that should be found via
+cross-validation. Finally it is also possible to estimate $b_u$ and $b_i$ by
+solving the regularized least squares problem~\cite{koren2008factorization,
+  koren2009matrix, koren2010factor, koren2011advances}
+
+\begin{equation}
+  \min_{b_*} \sum_{(u,i) \in \mathcal K} {(r_{ui} - \mu - b_u - b_i)}^2 +
+  \lambda \left( \sum_u b_u^2 + \sum_i b_i^2 \right ).
+\end{equation}
+
+Possible solution approaches include Alternating Least Squares (ALS) or
+Stochastic Gradient Descent (SGD). The baseline estimators are able to capture a
+lot of signal present in the data so that it is advisable to make this
+preprocessing step part of every more involved algorithm. For example, the RMSE
+score for a simple SVD solution improved drastically when missing data was
+imputed with optimized baseline estimators.
+
+\subsection{Factorized Models}
+\label{sub:factorized_models}
+
+Motivated by the progress a simple SVD approach could make we investigated more
+sophisticated approaches.
+
+\subsubsection{Regularized SVD}
+\label{ssub:regularized_svd}
+
+Shortly after the Netflix Challenge started in 2006 Simon Funk proposed the idea
+of a ``regularized SVD''~\cite{funk2006netflix}. In contrast to an ordinary
+Singular Value Decomposition this approach does not rely on the imputation of
+missing values, but only considers actual present ratings for training. The
+algorithm tries to find two matrices $P$ and $Q$ that accurately represent
+user-item interactions. Both users and items get transformed to the same latent
+factor space of a fixed dimension where their dot product is taken to measure
+their compatibility. A rating $r_{ui}$ is then approximated by $\hat{r}_{ui} =
+b_{ui} + q_i^{T}p_u$. In order to avoid over-fitting to the data a regularize
+term is added that penalizes large magnitudes of $p_u$ and $q_i$. The
+associated least squares problem is the following:
+
+\begin{equation}
+  \min_{q_*,p_*} \sum_{(u,i) \in \mathcal K} {(r_{ui} - b_{ui} + q_i^T p_u)}^2 +
+  \lambda (\norm{q_i} + \norm{p_u})
+\end{equation}
+
+This problem again can be solved using either ALS or SGD\@. Here we assume that
+the biases have been estimated in a preprocessing step, however it is also
+possible to learn them at the same time as $P$ and $Q$.
 
 \section{Results}
 \label{sec:results}
@@ -139,5 +245,6 @@ tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
 vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
 no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
+\renewcommand*{\UrlFont}{\rmfamily}
 \printbibliography%
 \end{document}
