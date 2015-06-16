@@ -15,7 +15,7 @@ function [X_pred, allW] = BinnedRidgeRegression(X_orig, X_preds, nBins, lambda)
   allW = zeros(nPreds, nBins);
   for i=1:nBins
     idx = bins{i};
-    [X_pred(idx,:), currW] = RidgeRegression(
+    [X_pred(idx,:), currW] = RidgeRegression(...
       X_orig(idx,:), X_preds(idx,:,:), lambda);
     allW(:,i) = currW;
   end
