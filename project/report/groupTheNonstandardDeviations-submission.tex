@@ -165,23 +165,24 @@ Shortly after the Netflix Challenge started in 2006 Simon Funk proposed the idea
 of a ``regularized SVD''~\cite{funk2006netflix}. In contrast to an ordinary
 Singular Value Decomposition this approach does not rely on the imputation of
 missing values, but only considers actual present ratings for training. The
-algorithm tries to find two matrices $P \in \mathbb R^{M \times K}$ and $Q \in
-\mathbb R^{N \times K}$ that accurately represent user-item interactions. Both
-users and items get transformed to the same latent factor space of a fixed
-dimension $K$ where their dot product is taken to measure their compatibility. A
-rating $r_{ui}$ is then approximated by $\hat{r}_{ui} = b_{ui} + q_i^{T}p_u$. In
-order to avoid over-fitting to the data a regularize term is added that
-penalizes large magnitudes of $p_u$ and $q_i$. The associated least squares
-problem is the following:
+algorithm tries to find two matrices $\mathbf P \in \mathbb R^{M \times K}$ and
+$\mathbf Q \in \mathbb R^{N \times K}$ that accurately represent user-item
+interactions. Both users and items get transformed to the same latent factor
+space of a fixed dimension $K$ where their dot product is taken to measure their
+compatibility. A rating $r_{ui}$ is then approximated by $\hat{r}_{ui} = b_{ui}
++ \mathbf q_i^{T}\mathbf p_u$. In order to avoid over-fitting to the data a
+regularize term is added that penalizes large magnitudes of $\mathbf p_u$ and
+$\mathbf q_i$. The associated least squares problem is the following:
 
 \begin{equation}
-  \min_{q_*,p_*} \sum_{(u,i) \in \mathcal K} {(r_{ui} - b_{ui} + q_i^T p_u)}^2 +
-  \lambda (\norm{q_i} + \norm{p_u})
+  \min_{\mathbf q_*,\mathbf p_*} \sum_{(u,i) \in \mathcal K} {(r_{ui} - b_{ui} +
+    \mathbf q_i^T \mathbf p_u)}^2 +
+  \lambda (\norm{\mathbf q_i} + \norm{\mathbf p_u})
 \end{equation}
 
 This problem again can be solved using either ALS or SGD\@. Here we assume that
 the biases have been estimated in a preprocessing step, however it is also
-possible to learn them at the same time as $P$ and $Q$.
+possible to learn them at the same time as $\mathbf P$ and $\mathbf Q$.
 
 \subsubsection{SVD++}
 \label{ssub:SVDpp}
@@ -190,23 +191,24 @@ Based on the work of Simon Funk, several improvements to regularized SVD were
 suggested, that also consider the item-item relations present in the data.
 Theses methods include ``NSVD''~\cite{paterek2007improving} and
 ``Asymmetric-SVD''~\cite{koren2008factorization} which both aim to model the
-user vector $p_u$ based on the items that given user rated. For example in NSVD
-$p_u$ is modeled via the sum $\left( \sum_{j \in R(u)} x_j \right ) /
-\sqrt{\abs{R(u)}}$ where $X \in \mathbb R^{N \times K}$ is a item dependent
-factor matrix learned from the data. The term $\abs{R(u)}^{-1/2}$ serves as a
-user dependent normalization constant, which stabilizes the sum's variance
-across the range of observed values of $\abs{R(u)}$~\cite{koren2011advances}.
+user vector $\mathbf p_u$ based on the items that given user rated. For example
+in NSVD $\mathbf p_u$ is modeled via the sum $\left( \sum_{j \in R(u)} \mathbf
+  x_j \right ) / \sqrt{\abs{R(u)}}$ where $\mathbf X \in \mathbb R^{N \times K}$
+is a item dependent factor matrix learned from the data. The term
+$\abs{R(u)}^{-1/2}$ serves as a user dependent normalization constant, which
+stabilizes the sum's variance across the range of observed values of
+$\abs{R(u)}$~\cite{koren2011advances}.
 
 Building on top of these ideas two very similar models were developed, that
-again include an explicit $p_u$ vector for every user. These models are dubbed
-``MF-NSVD1''~\cite{takacs2008unified} and
+again include an explicit $\mathbf p_u$ vector for every user. These models are
+dubbed ``MF-NSVD1''~\cite{takacs2008unified} and
 ``SVD++''~\cite{koren2008factorization, koren2011advances} respectively. In
-SVD++ in addition to the user vector $p_u$ the sum over all rated items is kept,
-which leads to the following approximation formula:
+SVD++ in addition to the user vector $\mathbf p_u$ the sum over all rated items
+is kept, which leads to the following approximation formula:
 
 \begin{equation}
-  \hat{r}_{ui} = b_{ui} + q_i^T \left( p_u + \abs{R(u)}^{-1/2} \sum_{j \in
-      R(u)} x_j \right )
+  \hat{r}_{ui} = b_{ui} + \mathbf q_i^T \left( \mathbf p_u + \abs{R(u)}^{-1/2}
+    \sum_{j \in R(u)} \mathbf x_j \right )
 \end{equation}
 
 Observing that the modified user term is completely independent of the current
@@ -230,8 +232,42 @@ models tend to provide a better user experience, because they offer an
 explanation for their recommendations and users are usually more familiar with
 their previous rated items than other users that are supposedly similar to them.
 
+\subsubsection{A factorized User-User Model}
+\label{ssub:a_factorized_user_user_model}
 
+Given the fact that we already integrated an item-item model into the
+regularized SVD to obtain SVD++ we shift our focus here to user-user models.
+One possible approach to implement such a model is given with the following
+formula~\cite{koren2010factor, koren2011advances}:
 
+\begin{equation}
+  \hat{r}_{ui} = b_{ui} + \abs{R(i)}^{-1/2} \sum_{v \in R(i)} (r_{vj} -
+  b_{vj})w_{uv}
+\end{equation}
+
+Here $\mathbf W \in \mathbb R^{M \times M}$ is the similarity matrix between
+users. These similarities are weighted by the difference between the real
+rating and the baseline estimate. This is motivated by the fact that we want
+to be able to adjust our actual estimate when either the difference to the
+estimate or the weight between users is large. If either one is close to zero,
+it means that either our baseline estimate is already very good or the current
+users are not similar, so that we do not want to alter our current
+estimate~\cite{koren2010factor, koren2011advances}.
+
+The current model has time and space complexity both quadratic in the number of
+users, which is prohibitively expensive when the number of users is large.
+Assuming that the weights can be expressed as $w_{uv} = \mathbf p_u^T \mathbf
+z_v$ for suitable choices of $\mathbf P, \mathbf Z \in \mathbb R^{M\times K}$
+remedies this effect. Using this assumption, the rating estimate can be
+expressed as the following~\cite{koren2010factor, koren2011advances}:
+
+\begin{equation}
+  \hat{r}_{ui} = b_{ui} + \abs{R(i)}^{-1/2} \mathbf p_u^T \left( \sum_{v \in
+      R(i)} (r_{vj} - b_{vj}) \mathbf z_v \right )
+\end{equation}
+
+The term containing the sum does not depend on the current user $u$ and thus
+can be precomputed, leading to linear time and space complexity.
 % \subsection{Clustering}
 % \label{sub:clustering}
 
