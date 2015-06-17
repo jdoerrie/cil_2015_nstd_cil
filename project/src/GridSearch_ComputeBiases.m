@@ -58,7 +58,7 @@ for lam1=0:20
 
       % Predict the missing values here!
       tic;
-      [~,~,~,X_pred] = ComputeBiases(X_trn, lam1, lam2);
+      [~,~,~,X_pred] = ComputeBiases(X_trn, lam1, lam2, X_tst, nil);
       times(k) = toc;
 
       % Compute RMSE
