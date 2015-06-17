@@ -39,22 +39,11 @@
   %   - Say why it is an interesting problem.
   %   - Say what your solution achieves.
   %   - Say what follows from your solution.
-
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-  kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-  amet.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
 % Describe your problem and state your contributions.
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
 \section{Models and Methods}
 \label{sec:models_and_methods}
@@ -97,36 +86,25 @@ no sea takimata sanctus est Lorem ipsum dolor sit amet.
 %   Do not reproduce the full source code in the paper, but explain the key
 %   steps.
 
-\subsection{Dataset}
-\label{sub:dataset}
+In this section we describe what pre-existing algorithms we based our work on
+and how we used blending in the end to combine the predictions of several
+independent approaches. Furthermore we explain how we optimized our grade by
+finding a good quality / CPU time trade-off.
 
-The dataset which was used throughout the development of our algorithm was made
-available on the project course webpage~\cite{lab2015collaborative}. It contains
-the ratings of \num{10000} users on \num{1000} movies on a scale between $1$ and
-$5$. Naturally, not every user rated every movie, in fact only \num{1388107} of
-the \num{10000000} possible ratings were present leading to a data sparsity of
-$86\%$.
+\subsection{Preliminaries}
+\label{sub:preliminaries}
 
-\subsection{Evaluation of Results}
-\label{sub:evaluation_of_results}
-
-In order to train and test the developed algorithm the present ratings were
-randomly split in two disjoint sets of equal size. The first set then formed
-the training set, i.e.\ data that was trained on, and the second set was used
-for testing the algorithm. The chosen metric is ``Root Mean Squared Error''
-(RMSE) which is defined in the following way~\cite{koren2008factorization,
-  koren2010factor, koren2011advances}:
-
-\begin{equation}
-  \sqrt{\sum_{(u,i) \in \mathrm{TestSet}}
-    \frac{{(r_{ui} - \hat{r}_{ui})}^2}{\abs{\mathrm{TestSet}}}}
-\end{equation}
-
-Here $r_{ui}$ denotes the real rating while $\hat{r}_{ui}$ is the approximation
-through the algorithm. With ratings restricted to the interval $[1,5]$ valid
-RMSE values range between $0$ and $4$, with lower scores being better. In
-addition, the raw CPU time was evaluated for the project grade. This favors
-solutions that are efficient with regard to time.
+Throughout this section we make frequent use of the following notation. We
+denote by $\mathcal K$ the set of all existing ratings, i.e.\ $\mathcal K =
+\{(u,i) \mid \text{user $u$ rated item $i$}\}$. Additionally we define $M$ and
+$N$ to be the number of all users and items, respectively. In addition we define
+the set of ratings for user's and item's, $R(u) = \{i \mid (u,i) \in \mathcal
+K\}$ and $R(i) = \{u \mid (u,i) \in \mathcal K\}$. Furthermore we define the
+true rating of an item $i$ by user $u$ as $r_{ui}$ and denote this rating's
+approximation by $\hat{r}_{ui}$. Moreover we make frequent use of Greek letters,
+where $\mu = \abs{\mathcal K}^{-1} \sum_{(u,i) \in \mathcal K} r_{ui}$ is the
+global mean of all issued ratings, $\lambda$ denotes regularization constants
+and $\gamma$ is the learning rate in an Stochastic Gradient Descent algorithm.
 
 \subsection{Data Imputation and Baseline Estimators}
 \label{sub:data_imputation_and_baseline_estimators}
@@ -187,13 +165,14 @@ Shortly after the Netflix Challenge started in 2006 Simon Funk proposed the idea
 of a ``regularized SVD''~\cite{funk2006netflix}. In contrast to an ordinary
 Singular Value Decomposition this approach does not rely on the imputation of
 missing values, but only considers actual present ratings for training. The
-algorithm tries to find two matrices $P$ and $Q$ that accurately represent
-user-item interactions. Both users and items get transformed to the same latent
-factor space of a fixed dimension where their dot product is taken to measure
-their compatibility. A rating $r_{ui}$ is then approximated by $\hat{r}_{ui} =
-b_{ui} + q_i^{T}p_u$. In order to avoid over-fitting to the data a regularize
-term is added that penalizes large magnitudes of $p_u$ and $q_i$. The
-associated least squares problem is the following:
+algorithm tries to find two matrices $P \in \mathbb R^{M \times K}$ and $Q \in
+\mathbb R^{N \times K}$ that accurately represent user-item interactions. Both
+users and items get transformed to the same latent factor space of a fixed
+dimension $K$ where their dot product is taken to measure their compatibility. A
+rating $r_{ui}$ is then approximated by $\hat{r}_{ui} = b_{ui} + q_i^{T}p_u$. In
+order to avoid over-fitting to the data a regularize term is added that
+penalizes large magnitudes of $p_u$ and $q_i$. The associated least squares
+problem is the following:
 
 \begin{equation}
   \min_{q_*,p_*} \sum_{(u,i) \in \mathcal K} {(r_{ui} - b_{ui} + q_i^T p_u)}^2 +
@@ -203,6 +182,67 @@ associated least squares problem is the following:
 This problem again can be solved using either ALS or SGD\@. Here we assume that
 the biases have been estimated in a preprocessing step, however it is also
 possible to learn them at the same time as $P$ and $Q$.
+
+\subsubsection{SVD++}
+\label{ssub:SVDpp}
+
+Based on the work of Simon Funk, several improvements to regularized SVD were
+suggested, that also consider the item-item relations present in the data.
+Theses methods include ``NSVD''~\cite{paterek2007improving} and
+``Asymmetric-SVD''~\cite{koren2008factorization} which both aim to model the
+user vector $p_u$ based on the items that given user rated. For example in NSVD
+$p_u$ is modeled via the sum $\left( \sum_{j \in R(u)} x_j \right ) /
+\sqrt{\abs{R(u)}}$ where $X \in \mathbb R^{N \times K}$ is a item dependent
+factor matrix learned from the data. The term $\abs{R(u)}^{-1/2}$ serves as a
+user dependent normalization constant, which stabilizes the sum's variance
+across the range of observed values of $\abs{R(u)}$~\cite{koren2011advances}.
+
+Building on top of these ideas two very similar models were developed, that
+again include an explicit $p_u$ vector for every user. These models are dubbed
+``MF-NSVD1''~\cite{takacs2008unified} and
+``SVD++''~\cite{koren2008factorization, koren2011advances} respectively. In
+SVD++ in addition to the user vector $p_u$ the sum over all rated items is kept,
+which leads to the following approximation formula:
+
+\begin{equation}
+  \hat{r}_{ui} = b_{ui} + q_i^T \left( p_u + \abs{R(u)}^{-1/2} \sum_{j \in
+      R(u)} x_j \right )
+\end{equation}
+
+Observing that the modified user term is completely independent of the current
+item leads to a very quick learning and prediction algorithm that has a linear
+time complexity with regard to the input size. Similar to previous models we
+solved the regularized least squares problem using SGD.\@
+
+\subsection{Neighborhood Models}
+\label{sub:neighborhood_models}
+
+Historically neighborhood models enjoyed a huge popularity in Collaborative
+Filtering applications. These models include user-user and item-item based
+models. In user-user models one tries to find similar users to a given user $u$
+and use their existing ratings to recommend new items to $u$. Conversely, in
+item-item based models one tries to find similar items to the items a given
+user already rated, and recommend those. Usually the number of distinct items
+are less than the number of distinct users which results in item-item models
+being more efficient, because it is faster to compute similarities between all
+items than it is to compute them between all users. In addition, item-item
+models tend to provide a better user experience, because they offer an
+explanation for their recommendations and users are usually more familiar with
+their previous rated items than other users that are supposedly similar to them.
+
+
+
+% \subsection{Clustering}
+% \label{sub:clustering}
+
+
+\subsection{Blending of Results}
+\label{sub:blending_of_results}
+
+
+% \subsection{Optimizing for Speed}
+% \label{sub:optimizing_for_speed}
+
 
 \section{Results}
 \label{sec:results}
@@ -219,10 +259,37 @@ possible to learn them at the same time as $P$ and $Q$.
 % (average value) along with a measure of variability (standard deviation(s) or
 % standard error of the mean).
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsection{Dataset}
+\label{sub:dataset}
+
+The dataset which was used throughout the development of our algorithm was made
+available on the project course webpage~\cite{lab2015collaborative}. It contains
+the ratings of \num{10000} users on \num{1000} movies on a scale between $1$ and
+$5$. Naturally, not every user rated every movie, in fact only \num{1388107} of
+the \num{10000000} possible ratings were present leading to a data sparsity of
+$86\%$.
+
+\subsection{Evaluation of Results}
+\label{sub:evaluation_of_results}
+
+In order to train and test the developed algorithm the present ratings were
+randomly split in two disjoint sets of equal size. The first set then formed
+the training set, i.e.\ data that was trained on, and the second set was used
+for testing the algorithm. The chosen metric is ``Root Mean Squared Error''
+(RMSE) which is defined in the following way~\cite{koren2008factorization,
+  koren2010factor, koren2011advances}:
+
+\begin{equation}
+  \sqrt{\sum_{(u,i) \in \mathrm{TestSet}}
+    \frac{{(r_{ui} - \hat{r}_{ui})}^2}{\abs{\mathrm{TestSet}}}}
+\end{equation}
+
+Here $r_{ui}$ denotes the real rating while $\hat{r}_{ui}$ is the approximation
+through the algorithm. With ratings restricted to the interval $[1,5]$ valid
+RMSE values range between $0$ and $4$, with lower scores being better. In
+addition, the raw CPU time was evaluated for the project grade. This favors
+solutions that are efficient with regard to time.
+
 
 
 \section{Discussion}
@@ -230,20 +297,9 @@ no sea takimata sanctus est Lorem ipsum dolor sit amet.
 % Discuss the strengths and weaknesses of your approach, based on the results.
 % Point out the implications of your novel idea on the application concerned.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-
 \section{Summary}
 \label{sec:summary}
 % Summarize your contributions in light of the new results.
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
 \renewcommand*{\UrlFont}{\rmfamily}
 \printbibliography%
