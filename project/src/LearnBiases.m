@@ -1,4 +1,4 @@
-function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda)
+function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda, X_tst, nil)
   % set default values of lambda
   if (nargin < 2) gamma  = 1e-3; end
   if (nargin < 3) lambda = 1e-2; end
@@ -6,7 +6,7 @@ function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda)
   is_local = true;
 
   if is_local
-    nEpochs = Inf;
+    nEpochs = 1e6;
   else
     nEpochs = 40;
   end
@@ -48,18 +48,20 @@ function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda)
 
     if is_local
       B = mu + bsxfun(@plus, bu, bi');
-      curr_rmse = RMSE(B);
+      curr_rmse = RMSE(B, X_tst, nil);
       if prev_rmse < curr_rmse
+        fprintf('Epoch = %d, RMSE = %f, gamma = %f, lambda = %f\n', ...
+          iEpoch, curr_rmse, gamma, lambda);
         break;
       end
 
+      if mod(iEpoch, 5) == 0
+        fprintf('Epoch = %d, RMSE = %f, gamma = %f, lambda = %f\n', ...
+          iEpoch, curr_rmse, gamma, lambda);
+      end
       prev_rmse = curr_rmse;
     end
   end
 
   B = mu + bsxfun(@plus, bu, bi');
-  if is_local
-    fprintf('Epoch = %d, RMSE = %f, gamma = %f, lambda = %f\n', ...
-      iEpoch, RMSE(B), gamma, lambda);
-  end
 end

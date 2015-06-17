@@ -62,14 +62,14 @@ for lam=range
 
       % Predict the missing values here!
       tic;
-      [~,~,~,X_pred] = LearnBiases(X_trn, lam, gam);
+      [~,~,~,X_pred] = LearnBiases(X_trn, lam, gam, X_tst, nil);
       times(k) = toc;
 
       % Compute RMSE
       rmses(k) = RMSE(X_pred, X_tst, nil);  % error on known test values
     end
 
-    fprintf('%f,%f,%f,%f,%f,%f\n', ...
+    fprintf('%d,%d,%f,%f,%f,%f\n', ...
             lam, gam, mean(rmses), std(rmses), mean(times), std(times));
   end
 end
