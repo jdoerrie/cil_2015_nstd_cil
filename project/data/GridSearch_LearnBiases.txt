@@ -36,13 +36,13 @@ The output (if any) follows:
                     R2013b (8.2.0.701) 64-bit (glnxa64)
                               August 13, 2013
 
- 
+
 To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
- 
+
 Starting parallel pool (parpool) using the 'local' profile ... connected to 10 workers.
 Grid Search Learn Biases
-Lambda,Gamma,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU
+Gamma,Lambda,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU
 Epoch = 5, RMSE = 0.999556, gamma = 0.001000, lambda = 0.001000
 Epoch = 5, RMSE = 1.000789, gamma = 0.001000, lambda = 0.001000
 Epoch = 5, RMSE = 1.006381, gamma = 0.001000, lambda = 0.001000
@@ -1845,4 +1845,4 @@ Epoch = 3, RMSE = 1.042566, gamma = 0.100000, lambda = 0.100000
 Epoch = 3, RMSE = 1.044832, gamma = 0.100000, lambda = 0.100000
 1.000000e-01,1.000000e-01,1.046768,0.003047,1.983594,0.179580
 Parallel pool using the 'local' profile is shutting down.
->> 
+>>
