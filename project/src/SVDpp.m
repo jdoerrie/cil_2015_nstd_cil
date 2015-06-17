@@ -1,4 +1,4 @@
-function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
+function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink, X_tst, nil)
   % Matlab optimized implementation of SVD++ as seen in "Factorization
   % Meets the Neighborhood: a Multifaceted Collaborative Filtering Model".
   % An approximation of the ratings is achieved through the following
@@ -19,7 +19,6 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   % resulting in a faster algorithm but no progress reporting during the
   % run.
   is_local = true;
-  rng('default');
 
   % Hyperparameters and default values optimized via cross validation.
   if nargin < 2; K      =    64; end % number of latent factors
@@ -37,7 +36,7 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
 
   % Define the number of epochs.  An epoch in this context is a complete
   % iteration over all present ratings in X.
-  nEpochs = 30;
+  nEpochs = 100;
 
   % Determine the size of the input.  M is the number of users, N the
   % number of items.
@@ -156,15 +155,15 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
       X_curr = B + V'*Q;
       X_curr = min(max(X_curr, 1), 5);
 
-      if (RMSE(X_curr) + 1e-6 > RMSE(X_prev))
+      if (RMSE(X_curr, X_tst, nil) + 1e-6 > RMSE(X_prev, X_tst, nil))
         fprintf('Epoch: %03d, Curr RMSE: %f, Gamma: %f\n', iEpoch, ...
-                RMSE(X_prev), gamma);
+                RMSE(X_prev, X_tst, nil), gamma);
        break;
       end
 
-      if (mod(iEpoch, 1) == 0)
+      if (mod(iEpoch, 5) == 0)
         fprintf('Epoch: %03d, Curr RMSE: %f, Gamma: %f\n', iEpoch, ...
-                RMSE(X_curr), gamma);
+                RMSE(X_curr, X_tst, nil), gamma);
       end
 
       X_prev = X_curr;
@@ -180,10 +179,10 @@ function [X_pred, P_pred, Q_pred] = SVDpp(X, K, gamma, lambda, shrink)
   % returned.
   if is_local
     X_pred = X_prev;
-    fprintf(...
-      'SVD++, K = %d, gam = %f, lam = %f, shrink = %f, RMSE = %f\n', ...
-       K, orig_gamma, lambda, shrink, RMSE(X_pred) ...
-    );
+    % fprintf(...
+    %   'SVD++, K = %d, gam = %f, lam = %f, shrink = %f, RMSE = %f\n', ...
+    %    K, orig_gamma, lambda, shrink, RMSE(X_pred) ...
+    % );
   else
     for u=1:M
       Ru = R{u};
