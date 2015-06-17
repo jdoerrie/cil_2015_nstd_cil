@@ -41,36 +41,40 @@ end
 
 pool = parpool('local', 2);
 
-fprintf('Grid Search Learn Biases\n');
-fprintf('Lambda,Gamma,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU\n');
+fprintf('Grid Search SVD++\n');
+fprintf('K,Lambda,Gamma,Shrink,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU\n');
 
 range = [1e-3, 2e-3, 5e-3, 1e-2, 2e-2, 5e-2, 1e-1];
+shrinks = [0.750, 0.775, 0.800, 0.825, 0.850, 0.875, 0.900, 0.925, 0.950, 0.975, 1.000];
+
+K = 64;
 
 for lam=range
   for gam=range
-    parfor k=1:nFolds
-    % for k=1:nFolds
-      idx_trn = idxs_trn(k,:);
-      idx_tst = idxs_tst(k,:);
+    for shrink=shrinks
+      parfor k=1:nFolds
+      % for k=1:nFolds
+        idx_trn = idxs_trn(k,:);
+        idx_tst = idxs_tst(k,:);
 
-      % Build training and testing matrices
-      X_trn = ones(size(X))*NaN;
-      X_trn(idx_trn) = X(idx_trn);  % add known training values
+        % Build training and testing matrices
+        X_trn = ones(size(X))*NaN;
+        X_trn(idx_trn) = X(idx_trn);  % add known training values
 
-      X_tst = ones(size(X))*NaN;
-      X_tst(idx_tst) = X(idx_tst);  % add known training values
+        X_tst = ones(size(X))*NaN;
+        X_tst(idx_tst) = X(idx_tst);  % add known training values
 
-      % Predict the missing values here!
-      tic;
-      [~,~,~,X_pred] = LearnBiases(X_trn, lam, gam, X_tst, nil);
-      times(k) = toc;
+        % Predict the missing values here!
+        tic;
+        X_pred = SVDpp(X_trn, K, lam, gam, shrink, X_tst, nil);
+        times(k) = toc;
 
-      % Compute RMSE
-      rmses(k) = RMSE(X_pred, X_tst, nil);  % error on known test values
-    end
+        % Compute RMSE
+        rmses(k) = RMSE(X_pred, X_tst, nil);  % error on known test values
+      end
 
-    fprintf('%d,%d,%f,%f,%f,%f\n', ...
-            lam, gam, mean(rmses), std(rmses), mean(times), std(times));
+      fprintf('%d,%f,%f,%f,%f,%f,%f,%f\n', ...
+              K, lam, gam, shrink, mean(rmses), std(rmses), mean(times), std(times));
   end
 end
 
