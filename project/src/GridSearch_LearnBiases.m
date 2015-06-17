@@ -69,7 +69,7 @@ for lam=range
       rmses(k) = RMSE(X_pred, X_tst, nil);  % error on known test values
     end
 
-    fprintf('%d,%d,%f,%f,%f,%f\n', ...
+    fprintf('%f,%f,%f,%f,%f,%f\n', ...
             lam, gam, mean(rmses), std(rmses), mean(times), std(times));
   end
 end
