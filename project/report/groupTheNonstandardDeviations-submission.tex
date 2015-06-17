@@ -4,6 +4,7 @@
 \usepackage[group-separator = {\,}]{siunitx}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \usepackage{graphicx}
 \usepackage[backend=biber,style=ieee]{biblatex}
 \bibliography{groupTheNonstandardDeviations-literature}
@@ -150,7 +151,7 @@ Stochastic Gradient Descent (SGD). The baseline estimators are able to capture a
 lot of signal present in the data so that it is advisable to make this
 preprocessing step part of every more involved algorithm. For example, the RMSE
 score for a simple SVD solution improved drastically when missing data was
-imputed with optimized baseline estimators.
+imputed with optimized baseline estimators (see Section~\ref{sec:results}).
 
 \subsection{Factorized Models}
 \label{sub:factorized_models}
@@ -267,18 +268,37 @@ expressed as the following~\cite{koren2010factor, koren2011advances}:
 \end{equation}
 
 The term containing the sum does not depend on the current user $u$ and thus
-can be precomputed, leading to linear time and space complexity.
-% \subsection{Clustering}
-% \label{sub:clustering}
-
+can be precomputed, leading to linear time and space complexity. Once more the
+associated least squares problem can be solved with the help of SGD, while
+regularizing by penalizing large magnitudes of the vectors involved.
 
 \subsection{Blending of Results}
 \label{sub:blending_of_results}
 
+In order to be able to make use of all predictors to obtain our final rating
+estimate we applied binned Ridge Regression. Ridge Regression is a generalized
+linear model that includes the weight vector's $L_2$ norm in the cost function
+to penalize large magnitudes. Given a data matrix $\mathbf X$ and a target
+vector $\mathbf y$ it is described in the following way:
 
-% \subsection{Optimizing for Speed}
-% \label{sub:optimizing_for_speed}
+\begin{equation}
+  \min_{\bm \beta} \norm{\mathbf X \bm \beta - \mathbf y}^2 + \lambda
+  \norm{\bm \beta}^2
+\end{equation}
 
+The solution has form $\bm \beta^* = {\left(\mathbf X^T \mathbf X + \lambda
+    \mathbf I \right)}^{-1} \mathbf X^T \mathbf y$ and can be found very
+efficiently. The regularize parameter $\lambda$ has to found via
+cross-validation. For our purposes the columns of $\mathbf X$ contain the
+estimated ratings for which the true ratings are available in $\mathbf y$. With
+fixing a column of $\mathbf X$ to only consist of ones we are introducing a
+constant offset. In addition we partitioned the user ratings into a fixed number
+of equal sized bins, where we grouped users with a similar number of issued
+ratings together. This allows us to optimize the weights for every bin
+independently, which is motivated by the fact that the algorithms perform
+differently depending on the number of ratings issued by a given user. The usage
+of Binned Ridge Regression was motivated by the ``The BigChaos Solution to the
+Netflix Grand Prize''~\cite{toescher2009bigchaos}.
 
 \section{Results}
 \label{sec:results}
