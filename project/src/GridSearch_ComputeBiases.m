@@ -31,15 +31,23 @@ times = zeros(nFolds, 1);
 % Split intro training and testing index sets
 [trnSplits, tstSplits] = CrossValidationSplits(rp, nFolds);
 
+idxs_trn = zeros(size(trnSplits));
+idxs_tst = zeros(size(tstSplits));
+
+for k=1:nFolds
+  idxs_trn(k,:) = idx(trnSplits(k,:));
+  idxs_tst(k,:) = idx(tstSplits(k,:));
+end
+
+pool = parpool('local', 2);
+
 fprintf('Grid Search Compute Biases\n');
 fprintf('Lambda_1,Lambda_2,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU\n');
-
-pool = parpool('local',2);
 for lam1=0:20
   for lam2=0:20
     parfor k=1:nFolds
-      idx_trn = idx(trnSplits(k,:));
-      idx_tst = idx(tstSplits(k,:));
+      idx_trn = idxs_trn(k,:);
+      idx_tst = idxs_tst(k,:);
 
       % Build training and testing matrices
       X_trn = ones(size(X))*NaN;
