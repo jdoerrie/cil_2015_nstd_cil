@@ -9,7 +9,10 @@ rand('seed', 1);  % fix random seed for reproducibility
 
 % Constants
 filename = '../data/Data.mat';
-prc_trn = 0.5;  % percentage of training data
+
+% number of folds usedd for cross-validation
+nFolds = 10;
+
 global nil;
 nil = 0;  % missing value indicator
 
@@ -21,22 +24,46 @@ X = L.X;
 idx = find(X ~= nil);
 n = numel(idx);
 
-n_trn = round(n*prc_trn);
 rp = randperm(n);
-idx_trn = idx(rp(1:n_trn));
-idx_tst = idx(rp(n_trn+1:end));
+rmses = zeros(nFolds, 1);
+times = zeros(nFolds, 1);
 
-% Build training and testing matrices
-X_trn = ones(size(X))*nil;
-X_trn(idx_trn) = X(idx_trn);  % add known training values
+[trnSplits, tstSplits] = CrossValidationSplits(rp, nFolds);
 
-global X_tst;
-X_tst = ones(size(X))*nil;
-X_tst(idx_tst) = X(idx_tst);  % add known training values
+% for K=1:20
+fprintf('No initialization\n');
+for k=1:nFolds
+  idx_trn = idx(trnSplits(k,:));
+  idx_tst = idx(tstSplits(k,:));
 
-% Predict the missing values here!
-X_pred = PredictMissingValues(X_trn, nil);
-% Compute MSE
-mse = sqrt(mean((X_tst(X_tst ~= nil) - X_pred(X_tst ~= nil)).^2));  % error on known test values
+  % Build training and testing matrices
+  X_trn = ones(size(X))*nil;
+  X_trn(idx_trn) = X(idx_trn);  % add known training values
 
-disp(['Root of Mean-squared error: ' num2str(mse)]);
+  global X_tst;
+  X_tst = ones(size(X))*nil;
+  X_tst(idx_tst) = X(idx_tst);  % add known training values
+
+  % Predict the missing values here!
+  tic;
+%     nils = X_trn == nil;
+%     X_trn(nils) = NaN;
+%     [~,~,~,B] = ComputeBiases(X_trn);
+%     X_trn(nils) = B(nils);
+%   nils = X_trn == nil;
+%   mu = nanmean(X_trn(:));
+%   X_trn(nils) = mu;
+%     X_pred = TruncatedSVD(X_trn, 13);
+    X_pred = X_trn;
+times(k) = toc;
+
+  % Compute RMSE
+  rmses(k) = RMSE(X_pred, X_tst, nil);  % error on known test values
+  fprintf('Fold %2d / %d: RMSE = %f, CPU = %f\n', ...
+          k, nFolds, rmses(k), times(k));
+end
+
+% fprintf('SVD with mu: nFactors = %d\n', K);
+fprintf('RMSE: Mean = %f, Std = %f\n', mean(rmses), std(rmses));
+fprintf('CPU:  Mean = %f, Std = %f\n', mean(times), std(times));
+% end

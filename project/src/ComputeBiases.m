@@ -1,6 +1,6 @@
 function [mu, b_u, b_i, B] = ComputeBiases(X, l1, l2)
   if (nargin < 2) l1 =  0; end % regularizer term for item biases
-  if (nargin < 3) l2 = 12; end % regularizer term for user biases
+  if (nargin < 3) l2 = 11; end % regularizer term for user biases
 
   mu = nanmean(X(:));
   X = X - mu;
