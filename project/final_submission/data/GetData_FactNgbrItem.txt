@@ -1,0 +1,155 @@
+Sender: LSF System <lsfadmin@e2043>
+Subject: Job 8158363: <matlab -nodisplay -singleCompThread -r GetData_FactNgbrItem> in cluster <euler> Done
+
+Job <matlab -nodisplay -singleCompThread -r GetData_FactNgbrItem> was submitted from host <euler01> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <10*e2043>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun 18 17:41:34 2015
+Results reported on Thu Jun 18 18:05:07 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -singleCompThread -r GetData_FactNgbrItem
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               12175.72 sec.
+    Max Memory :             7295 MB
+    Average Memory :         5325.98 MB
+    Total Requested Memory : 10240.00 MB
+    Delta Memory :           2945.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          27
+    Max Threads :            339
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ... [Warning: Found 1 pre-existing communicating job(s) created by pool that are
+running. You can use 'delete(myCluster.Jobs)' to remove all jobs created with
+profile local. To create 'myCluster' use 'myCluster = parcluster('local')'.] 
+[> In InteractiveClient>InteractiveClient.pRemoveOldJobs at 473
+  In InteractiveClient>InteractiveClient.start at 305
+  In Pool.Pool>iStartClient at 499
+  In Pool.Pool>Pool.hBuildPool at 412
+  In parpool at 104
+  In GetData_FactNgbrItem at 33] 
+connected to 10 workers.
+FactNgbrItem Data Collection
+K,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU
+Fold  7 / 10: RMSE = 0.984942, CPU = 35.865191
+Fold  1 / 10: RMSE = 0.985843, CPU = 36.237290
+Fold  5 / 10: RMSE = 0.981841, CPU = 36.280728
+Fold  6 / 10: RMSE = 0.983088, CPU = 36.441110
+Fold 10 / 10: RMSE = 0.979826, CPU = 37.141125
+Fold  8 / 10: RMSE = 0.980881, CPU = 37.536340
+Fold  2 / 10: RMSE = 0.979275, CPU = 37.641347
+Fold  3 / 10: RMSE = 0.986983, CPU = 38.039126
+Fold  4 / 10: RMSE = 0.980388, CPU = 38.042939
+Fold  9 / 10: RMSE = 0.978976, CPU = 47.109228
+1,0.982204,0.002871,38.033442,3.284680
+Fold  7 / 10: RMSE = 0.977538, CPU = 38.944377
+Fold 10 / 10: RMSE = 0.971956, CPU = 39.563069
+Fold  4 / 10: RMSE = 0.973243, CPU = 40.061416
+Fold  6 / 10: RMSE = 0.975487, CPU = 40.162485
+Fold  1 / 10: RMSE = 0.977882, CPU = 40.578022
+Fold  8 / 10: RMSE = 0.973774, CPU = 41.113841
+Fold  2 / 10: RMSE = 0.972788, CPU = 42.074959
+Fold  5 / 10: RMSE = 0.974254, CPU = 43.642942
+Fold  9 / 10: RMSE = 0.971775, CPU = 44.299170
+Fold  3 / 10: RMSE = 0.979523, CPU = 52.270840
+2,0.974822,0.002684,42.271112,3.915263
+Fold  7 / 10: RMSE = 0.967914, CPU = 42.193253
+Fold  1 / 10: RMSE = 0.967657, CPU = 42.633879
+Fold  4 / 10: RMSE = 0.963618, CPU = 43.053827
+Fold  9 / 10: RMSE = 0.962229, CPU = 43.159869
+Fold 10 / 10: RMSE = 0.962797, CPU = 43.375418
+Fold  3 / 10: RMSE = 0.969577, CPU = 44.151862
+Fold  6 / 10: RMSE = 0.965441, CPU = 44.057770
+Fold  8 / 10: RMSE = 0.963750, CPU = 44.158801
+Fold  2 / 10: RMSE = 0.963225, CPU = 46.301044
+Fold  5 / 10: RMSE = 0.964136, CPU = 55.112057
+4,0.965034,0.002507,44.819778,3.789249
+Fold  7 / 10: RMSE = 0.958340, CPU = 46.522346
+Fold  1 / 10: RMSE = 0.958548, CPU = 47.018782
+Fold 10 / 10: RMSE = 0.954316, CPU = 47.660113
+Fold  3 / 10: RMSE = 0.959827, CPU = 48.279903
+Fold  5 / 10: RMSE = 0.954391, CPU = 48.328938
+Fold  8 / 10: RMSE = 0.953990, CPU = 48.925580
+Fold  4 / 10: RMSE = 0.954252, CPU = 49.366140
+Fold  6 / 10: RMSE = 0.956116, CPU = 49.618987
+Fold  2 / 10: RMSE = 0.954067, CPU = 49.956614
+Fold  9 / 10: RMSE = 0.953197, CPU = 60.243871
+8,0.955704,0.002354,49.592127,3.904193
+Fold  4 / 10: RMSE = 0.946064, CPU = 57.682666
+Fold  8 / 10: RMSE = 0.946262, CPU = 58.189600
+Fold 10 / 10: RMSE = 0.947210, CPU = 58.354818
+Fold  6 / 10: RMSE = 0.947981, CPU = 58.400821
+Fold  7 / 10: RMSE = 0.951440, CPU = 58.699201
+Fold  5 / 10: RMSE = 0.946852, CPU = 58.901870
+Fold  1 / 10: RMSE = 0.951236, CPU = 59.219494
+Fold  2 / 10: RMSE = 0.946272, CPU = 60.623644
+Fold  9 / 10: RMSE = 0.945913, CPU = 61.021208
+Fold  3 / 10: RMSE = 0.951967, CPU = 72.969332
+16,0.948120,0.002448,60.406265,4.538766
+Fold  3 / 10: RMSE = 0.949280, CPU = 75.530133
+Fold 10 / 10: RMSE = 0.944451, CPU = 75.414940
+Fold  4 / 10: RMSE = 0.943496, CPU = 76.554524
+Fold  9 / 10: RMSE = 0.943226, CPU = 76.616277
+Fold  1 / 10: RMSE = 0.948646, CPU = 77.567162
+Fold  7 / 10: RMSE = 0.948368, CPU = 77.799120
+Fold  5 / 10: RMSE = 0.943947, CPU = 77.936826
+Fold  8 / 10: RMSE = 0.943952, CPU = 83.496919
+Fold  6 / 10: RMSE = 0.945526, CPU = 83.887882
+Fold  2 / 10: RMSE = 0.943623, CPU = 93.642924
+32,0.945452,0.002381,79.844671,5.701606
+Fold  8 / 10: RMSE = 0.943370, CPU = 116.865422
+Fold 10 / 10: RMSE = 0.943770, CPU = 117.084913
+Fold  5 / 10: RMSE = 0.943048, CPU = 117.350376
+Fold  3 / 10: RMSE = 0.948488, CPU = 118.293020
+Fold  7 / 10: RMSE = 0.947703, CPU = 118.906015
+Fold  1 / 10: RMSE = 0.947874, CPU = 119.929303
+Fold  4 / 10: RMSE = 0.942762, CPU = 120.798046
+Fold  6 / 10: RMSE = 0.944891, CPU = 120.876996
+Fold  2 / 10: RMSE = 0.943086, CPU = 122.263756
+Fold  9 / 10: RMSE = 0.942415, CPU = 136.417824
+64,0.944741,0.002366,120.878567,5.752450
+Fold  5 / 10: RMSE = 0.942740, CPU = 206.944990
+Fold  7 / 10: RMSE = 0.947447, CPU = 231.360260
+Fold  1 / 10: RMSE = 0.947611, CPU = 231.872318
+Fold  3 / 10: RMSE = 0.948174, CPU = 232.323000
+Fold  8 / 10: RMSE = 0.943175, CPU = 232.783061
+Fold  9 / 10: RMSE = 0.942116, CPU = 235.952473
+Fold  6 / 10: RMSE = 0.944555, CPU = 237.882291
+Fold  4 / 10: RMSE = 0.942444, CPU = 238.706446
+Fold 10 / 10: RMSE = 0.943474, CPU = 240.398179
+Fold  2 / 10: RMSE = 0.942861, CPU = 259.760600
+128,0.944460,0.002365,234.798362,12.853743
+Fold  1 / 10: RMSE = 0.947385, CPU = 405.830783
+Fold  8 / 10: RMSE = 0.942986, CPU = 523.862328
+Fold  9 / 10: RMSE = 0.942005, CPU = 535.442426
+Fold  7 / 10: RMSE = 0.947221, CPU = 544.378831
+Fold  4 / 10: RMSE = 0.942351, CPU = 548.352789
+Fold  5 / 10: RMSE = 0.942607, CPU = 549.543702
+Fold  3 / 10: RMSE = 0.947981, CPU = 550.613461
+Fold 10 / 10: RMSE = 0.943265, CPU = 555.413497
+Fold  6 / 10: RMSE = 0.944417, CPU = 556.000944
+Fold  2 / 10: RMSE = 0.942797, CPU = 577.591623
+256,0.944302,0.002324,534.703038,47.377214
+Parallel pool using the 'local' profile is shutting down.
+>> 

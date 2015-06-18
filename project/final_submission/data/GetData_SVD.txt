@@ -1,0 +1,160 @@
+Sender: LSF System <lsfadmin@e2017>
+Subject: Job 8152836: <matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD> in cluster <euler> Done
+
+Job <matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD> was submitted from host <euler02> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2017>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun 18 12:08:41 2015
+Results reported on Thu Jun 18 12:16:56 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               565.02 sec.
+    Max Memory :             899 MB
+    Average Memory :         752.24 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           125.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Matlab SVD runs, K = 1
+Fold  1 / 10: RMSE = 0.999247, CPU = 5.341223
+Fold  2 / 10: RMSE = 0.992548, CPU = 4.769003
+Fold  3 / 10: RMSE = 0.999533, CPU = 4.815093
+Fold  4 / 10: RMSE = 0.993545, CPU = 4.735927
+Fold  5 / 10: RMSE = 0.995495, CPU = 4.729895
+Fold  6 / 10: RMSE = 0.996290, CPU = 4.913684
+Fold  7 / 10: RMSE = 0.998241, CPU = 4.942858
+Fold  8 / 10: RMSE = 0.994621, CPU = 4.821655
+Fold  9 / 10: RMSE = 0.992350, CPU = 4.878827
+Fold 10 / 10: RMSE = 0.993580, CPU = 4.949275
+RMSE: Mean = 0.995545, Std = 0.002694
+CPU:  Mean = 4.889744, Std = 0.177917
+Matlab SVD runs, K = 2
+Fold  1 / 10: RMSE = 0.991588, CPU = 4.817260
+Fold  2 / 10: RMSE = 0.985379, CPU = 4.901543
+Fold  3 / 10: RMSE = 0.992764, CPU = 4.823951
+Fold  4 / 10: RMSE = 0.986374, CPU = 4.835962
+Fold  5 / 10: RMSE = 0.988129, CPU = 4.872965
+Fold  6 / 10: RMSE = 0.989251, CPU = 4.889056
+Fold  7 / 10: RMSE = 0.991232, CPU = 4.971893
+Fold  8 / 10: RMSE = 0.987213, CPU = 4.940832
+Fold  9 / 10: RMSE = 0.985170, CPU = 4.757150
+Fold 10 / 10: RMSE = 0.986172, CPU = 4.899476
+RMSE: Mean = 0.988327, Std = 0.002749
+CPU:  Mean = 4.871009, Std = 0.063614
+Matlab SVD runs, K = 4
+Fold  1 / 10: RMSE = 0.981700, CPU = 4.804289
+Fold  2 / 10: RMSE = 0.975750, CPU = 4.842531
+Fold  3 / 10: RMSE = 0.982376, CPU = 4.891217
+Fold  4 / 10: RMSE = 0.976282, CPU = 4.790748
+Fold  5 / 10: RMSE = 0.977735, CPU = 4.831622
+Fold  6 / 10: RMSE = 0.979241, CPU = 4.819309
+Fold  7 / 10: RMSE = 0.980838, CPU = 4.870303
+Fold  8 / 10: RMSE = 0.976787, CPU = 4.956060
+Fold  9 / 10: RMSE = 0.975157, CPU = 4.798095
+Fold 10 / 10: RMSE = 0.976020, CPU = 4.857047
+RMSE: Mean = 0.978189, Std = 0.002659
+CPU:  Mean = 4.846122, Std = 0.050430
+Matlab SVD runs, K = 8
+Fold  1 / 10: RMSE = 0.975532, CPU = 4.871431
+Fold  2 / 10: RMSE = 0.968989, CPU = 4.848312
+Fold  3 / 10: RMSE = 0.975552, CPU = 4.896626
+Fold  4 / 10: RMSE = 0.970150, CPU = 4.915827
+Fold  5 / 10: RMSE = 0.971095, CPU = 4.971012
+Fold  6 / 10: RMSE = 0.971956, CPU = 4.962618
+Fold  7 / 10: RMSE = 0.974743, CPU = 4.801682
+Fold  8 / 10: RMSE = 0.970558, CPU = 4.887257
+Fold  9 / 10: RMSE = 0.968285, CPU = 4.865793
+Fold 10 / 10: RMSE = 0.969740, CPU = 4.944495
+RMSE: Mean = 0.971660, Std = 0.002703
+CPU:  Mean = 4.896505, Std = 0.053302
+Matlab SVD runs, K = 16
+Fold  1 / 10: RMSE = 0.974041, CPU = 4.916044
+Fold  2 / 10: RMSE = 0.967187, CPU = 4.832528
+Fold  3 / 10: RMSE = 0.973305, CPU = 4.839103
+Fold  4 / 10: RMSE = 0.967852, CPU = 4.854394
+Fold  5 / 10: RMSE = 0.968402, CPU = 4.783791
+Fold  6 / 10: RMSE = 0.970088, CPU = 4.811256
+Fold  7 / 10: RMSE = 0.972332, CPU = 4.859691
+Fold  8 / 10: RMSE = 0.968633, CPU = 4.857327
+Fold  9 / 10: RMSE = 0.966090, CPU = 4.984354
+Fold 10 / 10: RMSE = 0.968403, CPU = 4.947503
+RMSE: Mean = 0.969633, Std = 0.002711
+CPU:  Mean = 4.868599, Std = 0.062304
+Matlab SVD runs, K = 32
+Fold  1 / 10: RMSE = 0.976645, CPU = 4.820675
+Fold  2 / 10: RMSE = 0.970873, CPU = 4.862162
+Fold  3 / 10: RMSE = 0.976693, CPU = 4.896269
+Fold  4 / 10: RMSE = 0.971466, CPU = 4.820357
+Fold  5 / 10: RMSE = 0.972016, CPU = 4.849684
+Fold  6 / 10: RMSE = 0.974146, CPU = 4.880643
+Fold  7 / 10: RMSE = 0.975824, CPU = 4.842455
+Fold  8 / 10: RMSE = 0.971246, CPU = 4.819530
+Fold  9 / 10: RMSE = 0.969285, CPU = 4.833153
+Fold 10 / 10: RMSE = 0.971507, CPU = 4.784685
+RMSE: Mean = 0.972970, Std = 0.002649
+CPU:  Mean = 4.840961, Std = 0.032804
+Matlab SVD runs, K = 64
+Fold  1 / 10: RMSE = 0.983265, CPU = 4.845669
+Fold  2 / 10: RMSE = 0.977557, CPU = 4.819855
+Fold  3 / 10: RMSE = 0.983636, CPU = 4.816917
+Fold  4 / 10: RMSE = 0.978726, CPU = 4.836060
+Fold  5 / 10: RMSE = 0.979513, CPU = 4.822220
+Fold  6 / 10: RMSE = 0.980893, CPU = 4.834106
+Fold  7 / 10: RMSE = 0.982392, CPU = 4.827170
+Fold  8 / 10: RMSE = 0.978759, CPU = 4.832066
+Fold  9 / 10: RMSE = 0.977121, CPU = 4.839247
+Fold 10 / 10: RMSE = 0.977964, CPU = 4.821805
+RMSE: Mean = 0.979983, Std = 0.002408
+CPU:  Mean = 4.829511, Std = 0.009406
+Matlab SVD runs, K = 128
+Fold  1 / 10: RMSE = 0.990083, CPU = 4.888895
+Fold  2 / 10: RMSE = 0.983401, CPU = 5.004339
+Fold  3 / 10: RMSE = 0.989376, CPU = 4.900651
+Fold  4 / 10: RMSE = 0.984003, CPU = 4.872818
+Fold  5 / 10: RMSE = 0.985274, CPU = 4.912815
+Fold  6 / 10: RMSE = 0.986560, CPU = 4.873711
+Fold  7 / 10: RMSE = 0.989071, CPU = 4.890635
+Fold  8 / 10: RMSE = 0.985243, CPU = 4.942400
+Fold  9 / 10: RMSE = 0.983663, CPU = 4.881754
+Fold 10 / 10: RMSE = 0.984379, CPU = 4.893585
+RMSE: Mean = 0.986105, Std = 0.002531
+CPU:  Mean = 4.906160, Std = 0.040117
+Matlab SVD runs, K = 256
+Fold  1 / 10: RMSE = 0.994286, CPU = 5.079586
+Fold  2 / 10: RMSE = 0.987657, CPU = 5.054796
+Fold  3 / 10: RMSE = 0.994235, CPU = 5.059976
+Fold  4 / 10: RMSE = 0.988500, CPU = 5.029716
+Fold  5 / 10: RMSE = 0.990353, CPU = 5.049968
+Fold  6 / 10: RMSE = 0.990853, CPU = 5.041797
+Fold  7 / 10: RMSE = 0.993367, CPU = 5.075116
+Fold  8 / 10: RMSE = 0.990232, CPU = 5.040285
+Fold  9 / 10: RMSE = 0.987133, CPU = 5.054653
+Fold 10 / 10: RMSE = 0.988373, CPU = 5.027420
+RMSE: Mean = 0.990499, Std = 0.002680
+CPU:  Mean = 5.051331, Std = 0.017370
+>> 
