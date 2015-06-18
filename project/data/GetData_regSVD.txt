@@ -1,0 +1,261 @@
+Sender: LSF System <lsfadmin@e1385>
+Subject: Job 8146425: <matlab -nodisplay -singleCompThread -r GetData_regSVD> in cluster <euler> Done
+
+Job <matlab -nodisplay -singleCompThread -r GetData_regSVD> was submitted from host <euler01> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <10*e1385>, in queue <normal.24h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun 18 09:04:06 2015
+Results reported on Thu Jun 18 09:45:20 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -singleCompThread -r GetData_regSVD
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               21772.95 sec.
+    Max Memory :             7824 MB
+    Average Memory :         5971.36 MB
+    Total Requested Memory : 10240.00 MB
+    Delta Memory :           2416.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          27
+    Max Threads :            338
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ... [Warning: Found 3 pre-existing communicating job(s) created by pool that are
+running. You can use 'delete(myCluster.Jobs)' to remove all jobs created with
+profile local. To create 'myCluster' use 'myCluster = parcluster('local')'.] 
+[> In InteractiveClient>InteractiveClient.pRemoveOldJobs at 473
+  In InteractiveClient>InteractiveClient.start at 305
+  In Pool.Pool>iStartClient at 499
+  In Pool.Pool>Pool.hBuildPool at 412
+  In parpool at 104
+  In GetData_regSVD at 33] 
+connected to 10 workers.
+RegSVD runs, K = 1
+regSVD, Epochs = 11, K = 1, gamma = 0.009844, lambda = 0.050000, rmse = 0.985572
+Fold  7 / 10: RMSE = 0.985572, CPU = 221.128754
+regSVD, Epochs = 11, K = 1, gamma = 0.009844, lambda = 0.050000, rmse = 0.983930
+Fold  6 / 10: RMSE = 0.983930, CPU = 223.484655
+regSVD, Epochs = 11, K = 1, gamma = 0.009844, lambda = 0.050000, rmse = 0.987862
+Fold  3 / 10: RMSE = 0.987862, CPU = 227.771632
+regSVD, Epochs = 11, K = 1, gamma = 0.009844, lambda = 0.050000, rmse = 0.980148
+Fold  2 / 10: RMSE = 0.980148, CPU = 232.451960
+regSVD, Epochs = 12, K = 1, gamma = 0.008367, lambda = 0.050000, rmse = 0.980813
+Fold 10 / 10: RMSE = 0.980813, CPU = 243.652234
+regSVD, Epochs = 12, K = 1, gamma = 0.008367, lambda = 0.050000, rmse = 0.981639
+Fold  8 / 10: RMSE = 0.981639, CPU = 249.175747
+regSVD, Epochs = 12, K = 1, gamma = 0.008367, lambda = 0.050000, rmse = 0.979837
+Fold  9 / 10: RMSE = 0.979837, CPU = 254.173886
+regSVD, Epochs = 13, K = 1, gamma = 0.007112, lambda = 0.050000, rmse = 0.986596
+Fold  1 / 10: RMSE = 0.986596, CPU = 267.679132
+regSVD, Epochs = 15, K = 1, gamma = 0.005138, lambda = 0.050000, rmse = 0.983012
+Fold  5 / 10: RMSE = 0.983012, CPU = 307.495638
+regSVD, Epochs = 19, K = 1, gamma = 0.002682, lambda = 0.050000, rmse = 0.982734
+Fold  4 / 10: RMSE = 0.982734, CPU = 366.719963
+RMSE: Mean = 0.983214, Std = 0.002757
+CPU:  Mean = 259.373360, Std = 45.656072
+RegSVD runs, K = 2
+regSVD, Epochs = 14, K = 2, gamma = 0.006045, lambda = 0.050000, rmse = 0.980702
+Fold  3 / 10: RMSE = 0.980702, CPU = 156.332808
+regSVD, Epochs = 14, K = 2, gamma = 0.006045, lambda = 0.050000, rmse = 0.973252
+Fold 10 / 10: RMSE = 0.973252, CPU = 157.984981
+regSVD, Epochs = 14, K = 2, gamma = 0.006045, lambda = 0.050000, rmse = 0.976907
+Fold  6 / 10: RMSE = 0.976907, CPU = 158.622373
+regSVD, Epochs = 14, K = 2, gamma = 0.006045, lambda = 0.050000, rmse = 0.975259
+Fold  8 / 10: RMSE = 0.975259, CPU = 158.937609
+regSVD, Epochs = 15, K = 2, gamma = 0.005138, lambda = 0.050000, rmse = 0.974484
+Fold  4 / 10: RMSE = 0.974484, CPU = 166.107868
+regSVD, Epochs = 15, K = 2, gamma = 0.005138, lambda = 0.050000, rmse = 0.973606
+Fold  9 / 10: RMSE = 0.973606, CPU = 170.170776
+regSVD, Epochs = 15, K = 2, gamma = 0.005138, lambda = 0.050000, rmse = 0.973645
+Fold  2 / 10: RMSE = 0.973645, CPU = 171.886994
+regSVD, Epochs = 15, K = 2, gamma = 0.005138, lambda = 0.050000, rmse = 0.978841
+Fold  1 / 10: RMSE = 0.978841, CPU = 175.247687
+regSVD, Epochs = 16, K = 2, gamma = 0.004368, lambda = 0.050000, rmse = 0.975787
+Fold  5 / 10: RMSE = 0.975787, CPU = 186.704188
+regSVD, Epochs = 21, K = 2, gamma = 0.001938, lambda = 0.050000, rmse = 0.981490
+Fold  7 / 10: RMSE = 0.981490, CPU = 234.733501
+RMSE: Mean = 0.976397, Std = 0.003005
+CPU:  Mean = 173.672878, Std = 23.484776
+RegSVD runs, K = 4
+regSVD, Epochs = 16, K = 4, gamma = 0.004368, lambda = 0.050000, rmse = 0.965198
+Fold 10 / 10: RMSE = 0.965198, CPU = 179.438043
+regSVD, Epochs = 16, K = 4, gamma = 0.004368, lambda = 0.050000, rmse = 0.972594
+Fold  3 / 10: RMSE = 0.972594, CPU = 179.851116
+regSVD, Epochs = 16, K = 4, gamma = 0.004368, lambda = 0.050000, rmse = 0.965953
+Fold  8 / 10: RMSE = 0.965953, CPU = 180.284343
+regSVD, Epochs = 17, K = 4, gamma = 0.003713, lambda = 0.050000, rmse = 0.967984
+Fold  6 / 10: RMSE = 0.967984, CPU = 190.545101
+regSVD, Epochs = 17, K = 4, gamma = 0.003713, lambda = 0.050000, rmse = 0.964174
+Fold  9 / 10: RMSE = 0.964174, CPU = 193.342805
+regSVD, Epochs = 17, K = 4, gamma = 0.003713, lambda = 0.050000, rmse = 0.970089
+Fold  7 / 10: RMSE = 0.970089, CPU = 193.735216
+regSVD, Epochs = 17, K = 4, gamma = 0.003713, lambda = 0.050000, rmse = 0.966428
+Fold  5 / 10: RMSE = 0.966428, CPU = 194.894685
+regSVD, Epochs = 17, K = 4, gamma = 0.003713, lambda = 0.050000, rmse = 0.969824
+Fold  1 / 10: RMSE = 0.969824, CPU = 196.763489
+regSVD, Epochs = 18, K = 4, gamma = 0.003156, lambda = 0.050000, rmse = 0.966515
+Fold  4 / 10: RMSE = 0.966515, CPU = 202.085957
+regSVD, Epochs = 18, K = 4, gamma = 0.003156, lambda = 0.050000, rmse = 0.965788
+Fold  2 / 10: RMSE = 0.965788, CPU = 204.372367
+RMSE: Mean = 0.967455, Std = 0.002626
+CPU:  Mean = 191.531312, Std = 9.026264
+RegSVD runs, K = 8
+regSVD, Epochs = 19, K = 8, gamma = 0.002682, lambda = 0.050000, rmse = 0.959511
+Fold 10 / 10: RMSE = 0.959511, CPU = 216.313477
+regSVD, Epochs = 20, K = 8, gamma = 0.002280, lambda = 0.050000, rmse = 0.959011
+Fold  4 / 10: RMSE = 0.959011, CPU = 221.186231
+regSVD, Epochs = 20, K = 8, gamma = 0.002280, lambda = 0.050000, rmse = 0.960001
+Fold  8 / 10: RMSE = 0.960001, CPU = 225.028256
+regSVD, Epochs = 20, K = 8, gamma = 0.002280, lambda = 0.050000, rmse = 0.963689
+Fold  7 / 10: RMSE = 0.963689, CPU = 227.976992
+regSVD, Epochs = 20, K = 8, gamma = 0.002280, lambda = 0.050000, rmse = 0.957476
+regSVD, Epochs = 20, K = 8, gamma = 0.002280, lambda = 0.050000, rmse = 0.959045
+Fold  2 / 10: RMSE = 0.959045, CPU = 228.728511
+Fold  9 / 10: RMSE = 0.957476, CPU = 228.815327
+regSVD, Epochs = 20, K = 8, gamma = 0.002280, lambda = 0.050000, rmse = 0.959748
+Fold  5 / 10: RMSE = 0.959748, CPU = 233.385434
+regSVD, Epochs = 21, K = 8, gamma = 0.001938, lambda = 0.050000, rmse = 0.961864
+Fold  6 / 10: RMSE = 0.961864, CPU = 234.866926
+regSVD, Epochs = 21, K = 8, gamma = 0.001938, lambda = 0.050000, rmse = 0.965135
+Fold  3 / 10: RMSE = 0.965135, CPU = 235.258272
+regSVD, Epochs = 21, K = 8, gamma = 0.001938, lambda = 0.050000, rmse = 0.963788
+Fold  1 / 10: RMSE = 0.963788, CPU = 243.537841
+RMSE: Mean = 0.960927, Std = 0.002534
+CPU:  Mean = 229.509727, Std = 7.749562
+RegSVD runs, K = 16
+regSVD, Epochs = 21, K = 16, gamma = 0.001938, lambda = 0.050000, rmse = 0.958058
+Fold  6 / 10: RMSE = 0.958058, CPU = 242.705911
+regSVD, Epochs = 21, K = 16, gamma = 0.001938, lambda = 0.050000, rmse = 0.954465
+Fold  9 / 10: RMSE = 0.954465, CPU = 244.373003
+regSVD, Epochs = 21, K = 16, gamma = 0.001938, lambda = 0.050000, rmse = 0.956495
+Fold  5 / 10: RMSE = 0.956495, CPU = 248.187260
+regSVD, Epochs = 22, K = 16, gamma = 0.001647, lambda = 0.050000, rmse = 0.955934
+Fold  4 / 10: RMSE = 0.955934, CPU = 250.689266
+regSVD, Epochs = 22, K = 16, gamma = 0.001647, lambda = 0.050000, rmse = 0.961777
+Fold  3 / 10: RMSE = 0.961777, CPU = 254.364439
+regSVD, Epochs = 22, K = 16, gamma = 0.001647, lambda = 0.050000, rmse = 0.960654
+Fold  7 / 10: RMSE = 0.960654, CPU = 255.330565
+regSVD, Epochs = 22, K = 16, gamma = 0.001647, lambda = 0.050000, rmse = 0.956028
+Fold 10 / 10: RMSE = 0.956028, CPU = 256.571104
+regSVD, Epochs = 22, K = 16, gamma = 0.001647, lambda = 0.050000, rmse = 0.955867
+Fold  2 / 10: RMSE = 0.955867, CPU = 258.292046
+regSVD, Epochs = 22, K = 16, gamma = 0.001647, lambda = 0.050000, rmse = 0.956267
+Fold  8 / 10: RMSE = 0.956267, CPU = 260.051416
+regSVD, Epochs = 22, K = 16, gamma = 0.001647, lambda = 0.050000, rmse = 0.960645
+Fold  1 / 10: RMSE = 0.960645, CPU = 260.486131
+RMSE: Mean = 0.957619, Std = 0.002524
+CPU:  Mean = 253.105114, Std = 6.347363
+RegSVD runs, K = 32
+regSVD, Epochs = 21, K = 32, gamma = 0.001938, lambda = 0.050000, rmse = 0.952536
+Fold  9 / 10: RMSE = 0.952536, CPU = 254.181604
+regSVD, Epochs = 21, K = 32, gamma = 0.001938, lambda = 0.050000, rmse = 0.958347
+Fold  1 / 10: RMSE = 0.958347, CPU = 260.802619
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.953446
+Fold  4 / 10: RMSE = 0.953446, CPU = 261.290253
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.954083
+Fold 10 / 10: RMSE = 0.954083, CPU = 264.034080
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.959200
+Fold  3 / 10: RMSE = 0.959200, CPU = 264.948585
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.954020
+Fold  8 / 10: RMSE = 0.954020, CPU = 266.643544
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.955711
+Fold  6 / 10: RMSE = 0.955711, CPU = 266.732695
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.958664
+Fold  7 / 10: RMSE = 0.958664, CPU = 267.425793
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.954017
+Fold  5 / 10: RMSE = 0.954017, CPU = 268.584751
+regSVD, Epochs = 22, K = 32, gamma = 0.001647, lambda = 0.050000, rmse = 0.953163
+Fold  2 / 10: RMSE = 0.953163, CPU = 268.824893
+RMSE: Mean = 0.955319, Std = 0.002503
+CPU:  Mean = 264.346882, Std = 4.523471
+RegSVD runs, K = 64
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.952361
+Fold 10 / 10: RMSE = 0.952361, CPU = 261.586069
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.957351
+Fold  7 / 10: RMSE = 0.957351, CPU = 261.587694
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.951985
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.952608
+Fold  5 / 10: RMSE = 0.952608, CPU = 262.041069
+Fold  4 / 10: RMSE = 0.951985, CPU = 262.102726
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.951147
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.954183
+Fold  9 / 10: RMSE = 0.951147, CPU = 263.175568
+Fold  6 / 10: RMSE = 0.954183, CPU = 263.250795
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.957686
+Fold  3 / 10: RMSE = 0.957686, CPU = 263.608876
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.952717
+Fold  8 / 10: RMSE = 0.952717, CPU = 264.184918
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.951810
+Fold  2 / 10: RMSE = 0.951810, CPU = 265.761598
+regSVD, Epochs = 21, K = 64, gamma = 0.001938, lambda = 0.050000, rmse = 0.957077
+Fold  1 / 10: RMSE = 0.957077, CPU = 271.745090
+RMSE: Mean = 0.953892, Std = 0.002527
+CPU:  Mean = 263.904440, Std = 3.046124
+RegSVD runs, K = 128
+regSVD, Epochs = 19, K = 128, gamma = 0.002682, lambda = 0.050000, rmse = 0.951039
+Fold  2 / 10: RMSE = 0.951039, CPU = 251.575378
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.950783
+Fold  4 / 10: RMSE = 0.950783, CPU = 261.762554
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.951417
+Fold  8 / 10: RMSE = 0.951417, CPU = 263.056594
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.951594
+Fold 10 / 10: RMSE = 0.951594, CPU = 264.481714
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.956035
+Fold  7 / 10: RMSE = 0.956035, CPU = 265.879842
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.953216
+Fold  6 / 10: RMSE = 0.953216, CPU = 266.721676
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.950029
+Fold  9 / 10: RMSE = 0.950029, CPU = 267.591634
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.956626
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.951725
+Fold  5 / 10: RMSE = 0.951725, CPU = 267.641344
+Fold  3 / 10: RMSE = 0.956626, CPU = 267.734900
+regSVD, Epochs = 20, K = 128, gamma = 0.002280, lambda = 0.050000, rmse = 0.956083
+Fold  1 / 10: RMSE = 0.956083, CPU = 271.879526
+RMSE: Mean = 0.952855, Std = 0.002481
+CPU:  Mean = 264.832516, Std = 5.443708
+RegSVD runs, K = 256
+regSVD, Epochs = 18, K = 256, gamma = 0.003156, lambda = 0.050000, rmse = 0.951105
+Fold  8 / 10: RMSE = 0.951105, CPU = 255.346632
+regSVD, Epochs = 18, K = 256, gamma = 0.003156, lambda = 0.050000, rmse = 0.955763
+Fold  7 / 10: RMSE = 0.955763, CPU = 258.183893
+regSVD, Epochs = 18, K = 256, gamma = 0.003156, lambda = 0.050000, rmse = 0.950340
+Fold  2 / 10: RMSE = 0.950340, CPU = 258.660452
+regSVD, Epochs = 18, K = 256, gamma = 0.003156, lambda = 0.050000, rmse = 0.952789
+Fold  6 / 10: RMSE = 0.952789, CPU = 259.313849
+regSVD, Epochs = 18, K = 256, gamma = 0.003156, lambda = 0.050000, rmse = 0.950922
+Fold 10 / 10: RMSE = 0.950922, CPU = 260.352128
+regSVD, Epochs = 18, K = 256, gamma = 0.003156, lambda = 0.050000, rmse = 0.949483
+Fold  9 / 10: RMSE = 0.949483, CPU = 260.669749
+regSVD, Epochs = 18, K = 256, gamma = 0.003156, lambda = 0.050000, rmse = 0.955648
+Fold  1 / 10: RMSE = 0.955648, CPU = 267.193272
+regSVD, Epochs = 19, K = 256, gamma = 0.002682, lambda = 0.050000, rmse = 0.950285
+Fold  4 / 10: RMSE = 0.950285, CPU = 267.431855
+regSVD, Epochs = 19, K = 256, gamma = 0.002682, lambda = 0.050000, rmse = 0.956012
+Fold  3 / 10: RMSE = 0.956012, CPU = 271.099452
+regSVD, Epochs = 19, K = 256, gamma = 0.002682, lambda = 0.050000, rmse = 0.951143
+Fold  5 / 10: RMSE = 0.951143, CPU = 282.589349
+RMSE: Mean = 0.952349, Std = 0.002532
+CPU:  Mean = 264.084063, Std = 8.174800
+Parallel pool using the 'local' profile is shutting down.
+>> 
