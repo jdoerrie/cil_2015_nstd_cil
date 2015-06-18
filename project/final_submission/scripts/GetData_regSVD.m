@@ -13,7 +13,7 @@ filename = '../data/Data.mat';
 % number of folds usedd for cross-validation
 nFolds = 10;
 
-global nil;
+% global nil;
 nil = 0;  % missing value indicator
 
 % Load data
@@ -30,7 +30,7 @@ times = zeros(nFolds, 1);
 
 [trnSplits, tstSplits] = CrossValidationSplits(rp, nFolds);
 
-pool = parpool('local', 2);
+pool = parpool('local', 10);
 % for K=1:20
 for K=[1,2,4,8,16,32,64,128,256]
   fprintf('RegSVD runs, K = %d\n', K);
@@ -42,7 +42,7 @@ for K=[1,2,4,8,16,32,64,128,256]
     X_trn = ones(size(X))*nil;
     X_trn(idx_trn) = X(idx_trn);  % add known training values
 
-    global X_tst;
+    % global X_tst;
     X_tst = ones(size(X))*nil;
     X_tst(idx_tst) = X(idx_tst);  % add known training values
 

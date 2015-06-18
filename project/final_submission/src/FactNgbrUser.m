@@ -19,7 +19,6 @@ function X_pred = FactNgbrUser(X, K, gamma, lambda, shrink)
   % resulting in a faster algorithm but no progress reporting during the
   % run.
   is_local = false;
-  rng('default');
 
   % Hyperparameters and default values.
   if nargin < 2; K      =    64; end % number of latent factors

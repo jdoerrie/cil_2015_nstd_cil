@@ -19,13 +19,12 @@ function X_pred = FactNgbrItem(X, K, gamma, lambda, shrink)
   % resulting in a faster algorithm but no progress reporting during the
   % run.
   is_local = false;
-  rng('default');
 
   % Hyperparameters and default values.
   if nargin < 2; K      =    64; end % number of latent factors
-  if nargin < 3; gamma  = 0.020; end % learning rate
+  if nargin < 3; gamma  = 0.010; end % learning rate
   if nargin < 4; lambda = 0.100; end % regularizer term
-  if nargin < 5; shrink = 0.825; end % gamma shrinkage factor
+  if nargin < 5; shrink = 0.900; end % gamma shrinkage factor
 
   % Stores the original value of gamma to be able to log it later.  The
   % continued multiplication with the shrinkage term makes it impossible to
