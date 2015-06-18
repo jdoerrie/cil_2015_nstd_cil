@@ -1,9 +1,16 @@
-function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda)
+function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda, X_tst, nil)
   % set default values of lambda
   if (nargin < 2) gamma  = 1e-3; end
   if (nargin < 3) lambda = 1e-2; end
 
-  nEpochs = 40;
+  is_local = true;
+
+  if is_local
+    nEpochs = 1e6;
+  else
+    nEpochs = 40;
+  end
+
   % Learn Biases via Stochastic Gradient Descent.  Idea and notation are
   % inspired by "The BellKor Solution to the Netflix Grand Prize".
   [M, N] = size(X);
@@ -21,6 +28,10 @@ function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda)
   % nEntries is the total number of existing entries in the data matrix X
   nEntries = length(I);
 
+  if is_local
+    prev_rmse = Inf;
+  end
+
   B = zeros(M,N);
   for iEpoch=1:nEpochs
     for idx=1:nEntries
@@ -34,15 +45,23 @@ function [mu, bu, bi, B] = LearnBiases(X, gamma, lambda)
       bu(u) = bu(u) + gamma * (err - lambda * bu(u));
       bi(i) = bi(i) + gamma * (err - lambda * bi(i));
     end
+
+    if is_local
+      B = mu + bsxfun(@plus, bu, bi');
+      curr_rmse = RMSE(B, X_tst, nil);
+      if prev_rmse < curr_rmse
+        fprintf('Epoch = %d, RMSE = %f, gamma = %f, lambda = %f\n', ...
+          iEpoch, curr_rmse, gamma, lambda);
+        break;
+      end
+
+      if mod(iEpoch, 5) == 0
+        fprintf('Epoch = %d, RMSE = %f, gamma = %f, lambda = %f\n', ...
+          iEpoch, curr_rmse, gamma, lambda);
+      end
+      prev_rmse = curr_rmse;
+    end
   end
 
   B = mu + bsxfun(@plus, bu, bi');
 end
-
-% function l = loss(X, b_u, b_i, lambda)
-% l = norm2(X - bsxfun(@plus, b_u, b_i')) + lambda * (norm2(b_u) + norm2(b_i));
-% end
-
-% function n = norm2(X)
-%   n = nansum(X(:).^2);
-% end

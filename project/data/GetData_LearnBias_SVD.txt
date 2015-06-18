@@ -1,0 +1,315 @@
+Sender: LSF System <lsfadmin@e2132>
+Subject: Job 8152841: <matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD> in cluster <euler> Done
+
+Job <matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD> was submitted from host <euler02> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2132>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun 18 12:16:01 2015
+Results reported on Thu Jun 18 12:16:16 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               8.94 sec.
+    Max Memory :             650 MB
+    Average Memory :         34.00 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           374.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            8
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Matlab SVD runs Learn Biases
+K,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU
+{Error using LearnBiases (line 51)
+Not enough input arguments.
+
+Error in GetData_SVD (line 56)
+    [~,~,~,B] = LearnBiases(X_trn);
+} 
+>> Sender: LSF System <lsfadmin@e2092>
+Subject: Job 8152843: <matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD> in cluster <euler> Done
+
+Job <matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD> was submitted from host <euler02> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2092>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun 18 12:20:11 2015
+Results reported on Thu Jun 18 13:10:18 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -singleCompThread -nojvm -r GetData_SVD
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               3056.82 sec.
+    Max Memory :             863 MB
+    Average Memory :         767.58 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           161.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            9
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Matlab SVD runs Learn Biases
+K,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU
+Fold  1 / 10: RMSE = 0.999630, CPU = 15.230445
+Fold  2 / 10: RMSE = 0.992928, CPU = 14.598836
+Fold  3 / 10: RMSE = 0.999929, CPU = 14.573859
+Fold  4 / 10: RMSE = 0.993937, CPU = 14.586686
+Fold  5 / 10: RMSE = 0.995863, CPU = 14.606351
+Fold  6 / 10: RMSE = 0.996781, CPU = 14.540451
+Fold  7 / 10: RMSE = 0.998707, CPU = 14.564115
+Fold  8 / 10: RMSE = 0.994993, CPU = 14.497526
+Fold  9 / 10: RMSE = 0.992790, CPU = 14.516742
+Fold 10 / 10: RMSE = 0.993924, CPU = 14.465970
+1,0.995948,0.002705,14.618098,0.219929
+Fold  1 / 10: RMSE = 0.992085, CPU = 14.354037
+Fold  2 / 10: RMSE = 0.985957, CPU = 14.514990
+Fold  3 / 10: RMSE = 0.993172, CPU = 14.348145
+Fold  4 / 10: RMSE = 0.987020, CPU = 14.612691
+Fold  5 / 10: RMSE = 0.988525, CPU = 14.352950
+Fold  6 / 10: RMSE = 0.989827, CPU = 14.454406
+Fold  7 / 10: RMSE = 0.991853, CPU = 14.427118
+Fold  8 / 10: RMSE = 0.987891, CPU = 14.496317
+Fold  9 / 10: RMSE = 0.985774, CPU = 14.246637
+Fold 10 / 10: RMSE = 0.986694, CPU = 14.694625
+2,0.988880,0.002707,14.450192,0.134817
+Fold  1 / 10: RMSE = 0.985249, CPU = 14.505129
+Fold  2 / 10: RMSE = 0.979006, CPU = 14.629231
+Fold  3 / 10: RMSE = 0.986287, CPU = 14.403346
+Fold  4 / 10: RMSE = 0.980045, CPU = 14.512681
+Fold  5 / 10: RMSE = 0.981862, CPU = 14.477288
+Fold  6 / 10: RMSE = 0.983282, CPU = 14.649116
+Fold  7 / 10: RMSE = 0.984498, CPU = 14.376243
+Fold  8 / 10: RMSE = 0.980734, CPU = 14.505199
+Fold  9 / 10: RMSE = 0.978645, CPU = 14.491574
+Fold 10 / 10: RMSE = 0.979719, CPU = 14.459240
+3,0.981933,0.002741,14.500905,0.085666
+Fold  1 / 10: RMSE = 0.982297, CPU = 14.382683
+Fold  2 / 10: RMSE = 0.976318, CPU = 14.636527
+Fold  3 / 10: RMSE = 0.982909, CPU = 14.465975
+Fold  4 / 10: RMSE = 0.976860, CPU = 14.612000
+Fold  5 / 10: RMSE = 0.978250, CPU = 14.629543
+Fold  6 / 10: RMSE = 0.979870, CPU = 14.460374
+Fold  7 / 10: RMSE = 0.981422, CPU = 14.460650
+Fold  8 / 10: RMSE = 0.977368, CPU = 14.523916
+Fold  9 / 10: RMSE = 0.975747, CPU = 14.432457
+Fold 10 / 10: RMSE = 0.976557, CPU = 14.416606
+4,0.978760,0.002661,14.502073,0.093125
+Fold  1 / 10: RMSE = 0.979668, CPU = 14.105927
+Fold  2 / 10: RMSE = 0.973491, CPU = 14.467678
+Fold  3 / 10: RMSE = 0.980182, CPU = 14.197793
+Fold  4 / 10: RMSE = 0.974373, CPU = 14.258057
+Fold  5 / 10: RMSE = 0.975420, CPU = 14.207803
+Fold  6 / 10: RMSE = 0.976869, CPU = 14.255451
+Fold  7 / 10: RMSE = 0.978889, CPU = 14.152685
+Fold  8 / 10: RMSE = 0.974612, CPU = 14.353517
+Fold  9 / 10: RMSE = 0.973154, CPU = 14.254552
+Fold 10 / 10: RMSE = 0.973956, CPU = 14.239784
+5,0.976061,0.002656,14.249325,0.101679
+Fold  1 / 10: RMSE = 0.978170, CPU = 14.181729
+Fold  2 / 10: RMSE = 0.971966, CPU = 14.311331
+Fold  3 / 10: RMSE = 0.978333, CPU = 14.213639
+Fold  4 / 10: RMSE = 0.973131, CPU = 14.355436
+Fold  5 / 10: RMSE = 0.974158, CPU = 14.319946
+Fold  6 / 10: RMSE = 0.975007, CPU = 14.509752
+Fold  7 / 10: RMSE = 0.977439, CPU = 14.522797
+Fold  8 / 10: RMSE = 0.973303, CPU = 14.592902
+Fold  9 / 10: RMSE = 0.971496, CPU = 14.546569
+Fold 10 / 10: RMSE = 0.972643, CPU = 14.482371
+6,0.974565,0.002568,14.403647,0.145716
+Fold  1 / 10: RMSE = 0.977050, CPU = 14.431697
+Fold  2 / 10: RMSE = 0.970781, CPU = 14.564408
+Fold  3 / 10: RMSE = 0.977162, CPU = 14.454688
+Fold  4 / 10: RMSE = 0.971842, CPU = 14.555282
+Fold  5 / 10: RMSE = 0.972927, CPU = 14.346725
+Fold  6 / 10: RMSE = 0.973853, CPU = 14.521392
+Fold  7 / 10: RMSE = 0.976310, CPU = 14.509275
+Fold  8 / 10: RMSE = 0.972072, CPU = 14.452339
+Fold  9 / 10: RMSE = 0.970330, CPU = 14.418876
+Fold 10 / 10: RMSE = 0.971638, CPU = 14.825429
+7,0.973397,0.002581,14.508011,0.129989
+Fold  1 / 10: RMSE = 0.976158, CPU = 14.695541
+Fold  2 / 10: RMSE = 0.969675, CPU = 14.854041
+Fold  3 / 10: RMSE = 0.976134, CPU = 14.684010
+Fold  4 / 10: RMSE = 0.970832, CPU = 14.837674
+Fold  5 / 10: RMSE = 0.971677, CPU = 14.583884
+Fold  6 / 10: RMSE = 0.972670, CPU = 14.863809
+Fold  7 / 10: RMSE = 0.975366, CPU = 14.608523
+Fold  8 / 10: RMSE = 0.971167, CPU = 14.811072
+Fold  9 / 10: RMSE = 0.968956, CPU = 14.798387
+Fold 10 / 10: RMSE = 0.970362, CPU = 14.727112
+8,0.972300,0.002683,14.746405,0.101577
+Fold  1 / 10: RMSE = 0.975351, CPU = 14.625803
+Fold  2 / 10: RMSE = 0.969116, CPU = 14.748080
+Fold  3 / 10: RMSE = 0.975360, CPU = 14.839640
+Fold  4 / 10: RMSE = 0.970093, CPU = 14.668270
+Fold  5 / 10: RMSE = 0.970565, CPU = 14.768200
+Fold  6 / 10: RMSE = 0.971882, CPU = 14.844681
+Fold  7 / 10: RMSE = 0.974710, CPU = 14.710755
+Fold  8 / 10: RMSE = 0.970666, CPU = 14.690742
+Fold  9 / 10: RMSE = 0.967930, CPU = 14.560132
+Fold 10 / 10: RMSE = 0.969444, CPU = 14.852482
+9,0.971512,0.002716,14.730878,0.098538
+Fold  1 / 10: RMSE = 0.974913, CPU = 14.644762
+Fold  2 / 10: RMSE = 0.968583, CPU = 14.767684
+Fold  3 / 10: RMSE = 0.974875, CPU = 14.839346
+Fold  4 / 10: RMSE = 0.969448, CPU = 14.821458
+Fold  5 / 10: RMSE = 0.970037, CPU = 14.682749
+Fold  6 / 10: RMSE = 0.971269, CPU = 14.784495
+Fold  7 / 10: RMSE = 0.973971, CPU = 14.645809
+Fold  8 / 10: RMSE = 0.970006, CPU = 14.836534
+Fold  9 / 10: RMSE = 0.967560, CPU = 14.675470
+Fold 10 / 10: RMSE = 0.969005, CPU = 14.734311
+10,0.970967,0.002691,14.743262,0.077374
+Fold  1 / 10: RMSE = 0.974407, CPU = 14.815154
+Fold  2 / 10: RMSE = 0.968188, CPU = 14.775146
+Fold  3 / 10: RMSE = 0.974412, CPU = 14.865145
+Fold  4 / 10: RMSE = 0.968908, CPU = 14.870728
+Fold  5 / 10: RMSE = 0.969418, CPU = 14.608336
+Fold  6 / 10: RMSE = 0.971035, CPU = 14.859521
+Fold  7 / 10: RMSE = 0.973552, CPU = 14.664301
+Fold  8 / 10: RMSE = 0.969802, CPU = 14.910663
+Fold  9 / 10: RMSE = 0.967030, CPU = 14.676677
+Fold 10 / 10: RMSE = 0.968695, CPU = 14.849138
+11,0.970545,0.002687,14.789481,0.104109
+Fold  1 / 10: RMSE = 0.974450, CPU = 14.659576
+Fold  2 / 10: RMSE = 0.968267, CPU = 14.770890
+Fold  3 / 10: RMSE = 0.974359, CPU = 14.580735
+Fold  4 / 10: RMSE = 0.968814, CPU = 14.760262
+Fold  5 / 10: RMSE = 0.969453, CPU = 14.599395
+Fold  6 / 10: RMSE = 0.971068, CPU = 14.721811
+Fold  7 / 10: RMSE = 0.973474, CPU = 14.618018
+Fold  8 / 10: RMSE = 0.969592, CPU = 14.758254
+Fold  9 / 10: RMSE = 0.966989, CPU = 14.622102
+Fold 10 / 10: RMSE = 0.968719, CPU = 14.616897
+12,0.970518,0.002685,14.670794,0.074290
+Fold  1 / 10: RMSE = 0.974252, CPU = 14.541462
+Fold  2 / 10: RMSE = 0.967926, CPU = 14.730286
+Fold  3 / 10: RMSE = 0.973959, CPU = 14.685945
+Fold  4 / 10: RMSE = 0.968370, CPU = 14.738477
+Fold  5 / 10: RMSE = 0.969019, CPU = 14.668647
+Fold  6 / 10: RMSE = 0.970654, CPU = 14.753724
+Fold  7 / 10: RMSE = 0.973069, CPU = 14.590249
+Fold  8 / 10: RMSE = 0.969271, CPU = 14.851737
+Fold  9 / 10: RMSE = 0.966762, CPU = 14.761110
+Fold 10 / 10: RMSE = 0.968412, CPU = 14.721434
+13,0.970169,0.002683,14.704307,0.088617
+Fold  1 / 10: RMSE = 0.974555, CPU = 14.666290
+Fold  2 / 10: RMSE = 0.968133, CPU = 14.783951
+Fold  3 / 10: RMSE = 0.973901, CPU = 14.658258
+Fold  4 / 10: RMSE = 0.968532, CPU = 14.753515
+Fold  5 / 10: RMSE = 0.969045, CPU = 14.517673
+Fold  6 / 10: RMSE = 0.970890, CPU = 14.680749
+Fold  7 / 10: RMSE = 0.973332, CPU = 14.662436
+Fold  8 / 10: RMSE = 0.969178, CPU = 14.607818
+Fold  9 / 10: RMSE = 0.966887, CPU = 14.742377
+Fold 10 / 10: RMSE = 0.968819, CPU = 14.759304
+14,0.970327,0.002690,14.683237,0.080840
+Fold  1 / 10: RMSE = 0.974531, CPU = 14.693908
+Fold  2 / 10: RMSE = 0.968108, CPU = 14.649928
+Fold  3 / 10: RMSE = 0.973929, CPU = 14.748993
+Fold  4 / 10: RMSE = 0.968706, CPU = 14.744194
+Fold  5 / 10: RMSE = 0.968856, CPU = 14.659980
+Fold  6 / 10: RMSE = 0.970766, CPU = 14.787284
+Fold  7 / 10: RMSE = 0.973153, CPU = 14.771824
+Fold  8 / 10: RMSE = 0.969151, CPU = 14.795566
+Fold  9 / 10: RMSE = 0.966700, CPU = 14.611510
+Fold 10 / 10: RMSE = 0.968867, CPU = 14.712883
+15,0.970277,0.002691,14.717607,0.062633
+Fold  1 / 10: RMSE = 0.974623, CPU = 14.665435
+Fold  2 / 10: RMSE = 0.967843, CPU = 14.811061
+Fold  3 / 10: RMSE = 0.973958, CPU = 14.580816
+Fold  4 / 10: RMSE = 0.968429, CPU = 14.690069
+Fold  5 / 10: RMSE = 0.968961, CPU = 14.498639
+Fold  6 / 10: RMSE = 0.970816, CPU = 14.740773
+Fold  7 / 10: RMSE = 0.973051, CPU = 14.650872
+Fold  8 / 10: RMSE = 0.969316, CPU = 14.764870
+Fold  9 / 10: RMSE = 0.966803, CPU = 14.709115
+Fold 10 / 10: RMSE = 0.969006, CPU = 14.554934
+16,0.970281,0.002710,14.666658,0.098135
+Fold  1 / 10: RMSE = 0.974826, CPU = 14.730996
+Fold  2 / 10: RMSE = 0.968085, CPU = 14.732915
+Fold  3 / 10: RMSE = 0.974185, CPU = 14.840397
+Fold  4 / 10: RMSE = 0.968563, CPU = 14.671811
+Fold  5 / 10: RMSE = 0.969113, CPU = 14.718354
+Fold  6 / 10: RMSE = 0.970797, CPU = 14.709167
+Fold  7 / 10: RMSE = 0.973134, CPU = 14.714805
+Fold  8 / 10: RMSE = 0.969196, CPU = 14.731848
+Fold  9 / 10: RMSE = 0.967166, CPU = 14.690305
+Fold 10 / 10: RMSE = 0.968853, CPU = 14.613065
+17,0.970392,0.002713,14.715366,0.057247
+Fold  1 / 10: RMSE = 0.975019, CPU = 14.477632
+Fold  2 / 10: RMSE = 0.968386, CPU = 14.838018
+Fold  3 / 10: RMSE = 0.974453, CPU = 14.735515
+Fold  4 / 10: RMSE = 0.968827, CPU = 14.811523
+Fold  5 / 10: RMSE = 0.969575, CPU = 14.546459
+Fold  6 / 10: RMSE = 0.971100, CPU = 14.893676
+Fold  7 / 10: RMSE = 0.973261, CPU = 14.695872
+Fold  8 / 10: RMSE = 0.969396, CPU = 14.858419
+Fold  9 / 10: RMSE = 0.967501, CPU = 14.586588
+Fold 10 / 10: RMSE = 0.968991, CPU = 14.706979
+18,0.970651,0.002675,14.715068,0.141042
+Fold  1 / 10: RMSE = 0.975131, CPU = 14.634506
+Fold  2 / 10: RMSE = 0.968697, CPU = 14.811101
+Fold  3 / 10: RMSE = 0.974822, CPU = 14.644416
+Fold  4 / 10: RMSE = 0.969455, CPU = 14.742430
+Fold  5 / 10: RMSE = 0.969530, CPU = 14.619676
+Fold  6 / 10: RMSE = 0.971421, CPU = 14.757265
+Fold  7 / 10: RMSE = 0.973328, CPU = 14.612573
+Fold  8 / 10: RMSE = 0.969426, CPU = 14.715819
+Fold  9 / 10: RMSE = 0.967628, CPU = 14.629095
+Fold 10 / 10: RMSE = 0.968947, CPU = 14.863600
+19,0.970839,0.002686,14.703048,0.088724
+Fold  1 / 10: RMSE = 0.975535, CPU = 14.671558
+Fold  2 / 10: RMSE = 0.969012, CPU = 14.799341
+Fold  3 / 10: RMSE = 0.975466, CPU = 14.676921
+Fold  4 / 10: RMSE = 0.969711, CPU = 14.758370
+Fold  5 / 10: RMSE = 0.970021, CPU = 14.453169
+Fold  6 / 10: RMSE = 0.971943, CPU = 14.861518
+Fold  7 / 10: RMSE = 0.973749, CPU = 14.627635
+Fold  8 / 10: RMSE = 0.969901, CPU = 14.601733
+Fold  9 / 10: RMSE = 0.968115, CPU = 14.739127
+Fold 10 / 10: RMSE = 0.969566, CPU = 14.671483
+20,0.971302,0.002713,14.686085,0.113984
+>> 

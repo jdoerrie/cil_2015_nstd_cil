@@ -8,9 +8,9 @@
 rand('seed', 1);  % fix random seed for reproducibility
 
 % Constants
-filename = '../data/Data.mat';
+filename = '../../data/Data.mat';
 
-% number of folds usedd for cross-validation
+% number of folds used for cross-validation
 nFolds = 10;
 
 global nil;
@@ -31,7 +31,6 @@ times = zeros(nFolds, 1);
 [trnSplits, tstSplits] = CrossValidationSplits(rp, nFolds);
 
 % for K=1:20
-fprintf('No initialization\n');
 for k=1:nFolds
   idx_trn = idx(trnSplits(k,:));
   idx_tst = idx(tstSplits(k,:));
@@ -46,20 +45,17 @@ for k=1:nFolds
 
   % Predict the missing values here!
   tic;
-%     nils = X_trn == nil;
-%     X_trn(nils) = NaN;
-%     [~,~,~,B] = ComputeBiases(X_trn);
-%     X_trn(nils) = B(nils);
+  X_pred = PredictMissingValues(X_trn, nil);
 %   nils = X_trn == nil;
+%   X_trn(nils) = NaN;
 %   mu = nanmean(X_trn(:));
 %   X_trn(nils) = mu;
-%     X_pred = TruncatedSVD(X_trn, 13);
-    X_pred = X_trn;
-times(k) = toc;
+%   X_pred = TruncatedSVD(X_trn, K);
+  times(k) = toc;
 
   % Compute RMSE
-  rmses(k) = RMSE(X_pred, X_tst, nil);  % error on known test values
-  fprintf('Fold %2d / %d: RMSE = %f, CPU = %f\n', ...
+  rmses(k) = RMSE(X_pred);  % error on known test values
+  fprintf('Fold %02d / %d: RMSE = %f, CPU = %f\n', ...
           k, nFolds, rmses(k), times(k));
 end
 
