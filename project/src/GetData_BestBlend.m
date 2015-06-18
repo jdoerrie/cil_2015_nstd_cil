@@ -31,11 +31,11 @@ times = zeros(nFolds, 1);
 
 [trnSplits, tstSplits] = CrossValidationSplits(rp, nFolds);
 
-% pool = parpool('local', 10);
+pool = parpool('local', 10);
 % for K=1:20
 % for K=[1,2,4,8,16,32,64,128,256]
 fprintf('Best Blend\n');
-for k=1:nFolds
+parfor k=1:nFolds
   idx_trn = idx(trnSplits(k,:));
   idx_tst = idx(tstSplits(k,:));
 
@@ -53,8 +53,8 @@ for k=1:nFolds
   X_trn(nils) = NaN;
   X_preds = zeros(M, N, 4);
   X_preds(:,:,1) = SVDpp(X_trn, 256, 0.002, 0.02, 1.0);
-  X_preds(:,:,2) = FactNgbrItem(X_trn, 256, 0.02, 0.1, 0.825);
-  X_preds(:,:,3) = FactNgbrUser(X_trn, 256, 0.01, 0.05, 0.975);
+  X_preds(:,:,2) = FactNgbrItem(X_trn, 256, 0.01, 0.1, 0.900);
+  X_preds(:,:,3) = FactNgbrUser(X_trn, 64, 0.01, 0.05, 0.975);
   X_preds(:,:,4) = 1;
   [X_pred, allW] = BinnedRidgeRegression(X_trn, X_preds, 1000, 100);
   times(k) = toc;
@@ -68,6 +68,7 @@ for k=1:nFolds
   end
 end
 
-% fprintf('SVD with mu: nFactors = %d\n', K);
 fprintf('RMSE: Mean = %f, Std = %f\n', mean(rmses), std(rmses));
 fprintf('CPU:  Mean = %f, Std = %f\n', mean(times), std(times));
+
+delete pool;
