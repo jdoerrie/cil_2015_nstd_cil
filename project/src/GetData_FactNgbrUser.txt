@@ -1,0 +1,71 @@
+Sender: LSF System <lsfadmin@e2120>
+Subject: Job 8158339: <matlab -nodisplay -singleCompThread -r GetData_FactNgbrUser> in cluster <euler> Done
+
+Job <matlab -nodisplay -singleCompThread -r GetData_FactNgbrUser> was submitted from host <euler01> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <e2120>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Thu Jun 18 17:30:04 2015
+Results reported on Thu Jun 18 17:30:31 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -singleCompThread -r GetData_FactNgbrUser
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               13.82 sec.
+    Max Memory :             453 MB
+    Average Memory :         28.00 MB
+    Total Requested Memory : 1024.00 MB
+    Delta Memory :           571.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          3
+    Max Threads :            17
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ... [Warning: Found 1 pre-existing communicating job(s) created by pool that are
+running. You can use 'delete(myCluster.Jobs)' to remove all jobs created with
+profile local. To create 'myCluster' use 'myCluster = parcluster('local')'.] 
+[> In InteractiveClient>InteractiveClient.pRemoveOldJobs at 473
+  In InteractiveClient>InteractiveClient.start at 305
+  In Pool.Pool>iStartClient at 499
+  In Pool.Pool>Pool.hBuildPool at 412
+  In parpool at 104
+  In GetData_FactNgbrUser at 33] 
+
+{Error using parpool (line 111)
+Failed to start a parallel pool. (For information in addition to the causing
+error, validate the profile 'local' in the Cluster Profile Manager.)
+
+Error in GetData_FactNgbrUser (line 33)
+pool = parpool('local', 2);
+
+Caused by:
+    Error using parallel.internal.pool.InteractiveClient/start (line 326)
+    Failed to start pool.
+        Error using parallel.Job/submit (line 304)
+        You requested a minimum of 2 workers, but the cluster "local" has the
+        NumWorkers property set to allow a maximum of 1 workers. To run a
+        communicating job on more workers than this (up to a maximum of 12 for
+        the Local cluster), increase the value of the NumWorkers property for
+        the cluster. The default value of NumWorkers for a Local cluster is the
+        number of cores on the local machine.
+} 
+>> 

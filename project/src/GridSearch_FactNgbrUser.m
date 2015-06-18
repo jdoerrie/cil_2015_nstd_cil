@@ -41,7 +41,7 @@ end
 
 pool = parpool('local', 10);
 
-fprintf('Grid Search SVD++\n');
+fprintf('Grid Search FactNgbrUser\n');
 fprintf('K,Lambda,Gamma,Shrink,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU\n');
 
 range = [1e-3, 2e-3, 5e-3, 1e-2, 2e-2, 5e-2, 1e-1];
@@ -66,7 +66,7 @@ for lam=range
 
         % Predict the missing values here!
         tic;
-        X_pred = SVDpp(X_trn, K, lam, gam, shrink, X_tst, nil);
+        X_pred = FactNgbrUser(X_trn, K, lam, gam, shrink, X_tst, nil);
         times(k) = toc;
 
         % Compute RMSE

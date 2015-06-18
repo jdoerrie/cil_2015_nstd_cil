@@ -30,11 +30,14 @@ times = zeros(nFolds, 1);
 
 [trnSplits, tstSplits] = CrossValidationSplits(rp, nFolds);
 
-pool = parpool('local', 10);
+% pool = parpool('local', 10);
 % for K=1:20
-for K=[1,2,4,8,16,32,64,128,256]
-  fprintf('RegSVD runs, K = %d\n', K);
-  parfor k=1:nFolds
+% for K=[1,2,4,8,16,32,64,128,256]
+fprintf('Matlab SVD runs Learn Biases\n');
+fprintf('K,Mean_RMSE,Std_RMSE,Mean_CPU,Std_CPU\n');
+for K=1:20
+  % parfor k=1:nFolds
+  for k=1:nFolds
     idx_trn = idx(trnSplits(k,:));
     idx_tst = idx(tstSplits(k,:));
 
@@ -50,8 +53,9 @@ for K=[1,2,4,8,16,32,64,128,256]
     tic;
     nils = X_trn == nil;
     X_trn(nils) = NaN;
-    %X_trn(nils) = mean(X_trn(:), 'omitnan');
-    X_pred = regSVD2(X_trn, K, 0.05, 0.05, X_tst, nil);
+    [~,~,~,B] = LearnBiases(X_trn);
+    X_trn(nils) = B(nils);
+    X_pred = TruncatedSVD(X_trn, K);
     % X_trn(nils) = B(nils);
   %   nils = X_trn == nil;
   %   mu = nanmean(X_trn(:));
@@ -66,9 +70,10 @@ for K=[1,2,4,8,16,32,64,128,256]
             k, nFolds, rmses(k), times(k));
   end
 
-  % fprintf('SVD with mu: nFactors = %d\n', K);
-  fprintf('RMSE: Mean = %f, Std = %f\n', mean(rmses), std(rmses));
-  fprintf('CPU:  Mean = %f, Std = %f\n', mean(times), std(times));
+  fprintf('%d,%f,%f,%f,%f\n', K, mean(rmses), std(rmses), mean(times), std(times));
+  % % fprintf('SVD with mu: nFactors = %d\n', K);
+  % fprintf('RMSE: Mean = %f, Std = %f\n', mean(rmses), std(rmses));
+  % fprintf('CPU:  Mean = %f, Std = %f\n', mean(times), std(times));
 end
 
-delete(pool);
+% delete(pool);
