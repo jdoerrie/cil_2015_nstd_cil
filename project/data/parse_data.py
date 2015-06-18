@@ -2,6 +2,13 @@
 import sys
 import numpy
 
+"""
+This small script parses the data present in GridSearch_*.txt to extract
+information about how well the algorithm did after a given epoch. It finds the
+information for every run and aggregates the information about the RMSE. It
+finally reports the mean and standard deviation of it.
+"""
+
 
 def do_calc(buff, line):
     K, lam, gam, shr = line.split(',')[:4]
@@ -20,10 +27,9 @@ def do_calc(buff, line):
 
     for epoch in sorted(epochs):
         mean = epochs[epoch][0]
-        std  = epochs[epoch][1]
-        print("{},{},{},{},{},{:.6f},{:.6f}".format(K, lam, gam, shr, epoch, mean, std))
-
-        # print data
+        std = epochs[epoch][1]
+        print("{},{},{},{},{},{:.6f},{:.6f}".format(
+            K, lam, gam, shr, epoch, mean, std))
 
 
 def main():
