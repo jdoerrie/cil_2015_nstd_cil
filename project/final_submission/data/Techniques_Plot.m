@@ -1,3 +1,6 @@
+% Plots different techniques discussed in the report (mean and std).
+% Data files have to be loaded/imported first before using this script.
+
 fig = figure('Position', [200, 200, 600, 400]);
 
 a = errorbar(log2(GetDataSVD(:, 1)), GetDataSVD(:, 2), GetDataSVD(:, 3), GetDataSVD(:, 3)); 

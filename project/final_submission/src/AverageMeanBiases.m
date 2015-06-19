@@ -1,5 +1,8 @@
 function [ X_pred ] = AverageMeanBiases( X, lambda )
 
+% Initializes an X matrix (where missing values are NaN) with a weighted
+% average of the user and item mean.
+
 % Weight of the user mean (and 1-lambda refers to the item mean)
 if (nargin < 2) lambda  = 0.3; end
 

@@ -1,5 +1,10 @@
 function [ X_pred ] = Baseline_SVD( X_pred, k, X_tst, nil )
 
+% Implementation of SVD for CF, i.e. reconstructing the data matrix from U
+% and V with less dimensions (using k as cutoff). Again, used as baseline,
+% as it has been covered in class and also relates to the further
+% algorithms (improved SVD versions) in the report.
+
 %% Choose Initialization Technique
 
 % Average: Overall mean
@@ -7,7 +12,7 @@ function [ X_pred ] = Baseline_SVD( X_pred, k, X_tst, nil )
 %X_pred(isnan(X_pred)) = mu;
 
 % Average Mean: average of user and item means
-X_pred = AverageBiases(X_pred);
+%X_pred = AverageBiases(X_pred);
 
 % Compute Biases or Learn Biases
 %[~, ~, ~, B] = ComputeBiases(X_pred);

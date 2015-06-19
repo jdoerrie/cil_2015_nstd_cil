@@ -1,3 +1,6 @@
+% Plots differently initialized baseline SVD results (mean and std).
+% Data files have to be loaded first before using this script.
+
 figure('Position', [100, 100, 600, 400]);
 
 a = errorbar(Average_SVD(:, 2), Average_SVD(:, 3), 'color', [1, 0.5, 0.01]); 

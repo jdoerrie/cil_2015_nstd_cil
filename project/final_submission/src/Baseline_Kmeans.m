@@ -1,5 +1,8 @@
 function [ X_pred ] = Baseline_Kmeans( X, k )
 
+% Implementation of K-means for CF, i.e. predicting missing values by
+% clustering (used as baseline, as it has been covered in class)
+
 % Turn off warnings (as the max. iteration of k-means is set to 5, it
 % usually does not converge and gives a warning).
 warning('off','all');
