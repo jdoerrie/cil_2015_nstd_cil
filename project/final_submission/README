@@ -1,0 +1,8 @@
+This is the Code Submission of the NonStandardDeviation group.
+
+The top level contains code used for the final submission, together with the
+PredictMissingValues script. In addition, code that was used to create the
+data and plots in the report is located in ./scripts/, while the actual data
+resides in ./data/. Furthermore, ./code/ contains code that was used for
+baselines mentioned in the report, but not relevant to produce the final
+submission.
