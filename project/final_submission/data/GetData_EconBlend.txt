@@ -1,0 +1,108 @@
+Sender: LSF System <lsfadmin@e1068>
+Subject: Job 8165204: <matlab -nodisplay -singleCompThread -r GetData_EconBlend> in cluster <euler> Done
+
+Job <matlab -nodisplay -singleCompThread -r GetData_EconBlend> was submitted from host <euler04> by user <dojan> in cluster <euler>.
+Job was executed on host(s) <10*e1068>, in queue <normal.4h>, as user <dojan> in cluster <euler>.
+</cluster/home/dojan> was used as the home directory.
+</cluster/home/dojan/cil/cil_2015_nstd_git/project/src> was used as the working directory.
+Started at Fri Jun 19 10:59:00 2015
+Results reported on Fri Jun 19 11:01:37 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+matlab -nodisplay -singleCompThread -r GetData_EconBlend
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               882.72 sec.
+    Max Memory :             8680 MB
+    Average Memory :         4430.20 MB
+    Total Requested Memory : 10240.00 MB
+    Delta Memory :           1560.00 MB
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Processes :          27
+    Max Threads :            339
+
+The output (if any) follows:
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2013 The MathWorks, Inc.
+                    R2013b (8.2.0.701) 64-bit (glnxa64)
+                              August 13, 2013
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ... [Warning: Found 2 pre-existing communicating job(s) created by pool that are
+running. You can use 'delete(myCluster.Jobs)' to remove all jobs created with
+profile local. To create 'myCluster' use 'myCluster = parcluster('local')'.] 
+[> In InteractiveClient>InteractiveClient.pRemoveOldJobs at 473
+  In InteractiveClient>InteractiveClient.start at 305
+  In Pool.Pool>iStartClient at 499
+  In Pool.Pool>Pool.hBuildPool at 412
+  In parpool at 104
+  In GetData_EconBlend at 34] 
+connected to 10 workers.
+Econ Blend
+Fold  5 / 10: RMSE = 0.947083, CPU = 78.918525
+Weight 1: 0.154716 +/- 0.087407
+Weight 2: 0.424706 +/- 0.092560
+Weight 3: 0.441373 +/- 0.050575
+Weight 4: -0.089988 +/- 0.037190
+Fold  2 / 10: RMSE = 0.946931, CPU = 79.002179
+Weight 1: 0.155178 +/- 0.087461
+Weight 2: 0.425086 +/- 0.092058
+Weight 3: 0.440886 +/- 0.050850
+Weight 4: -0.090938 +/- 0.036147
+Fold  1 / 10: RMSE = 0.951338, CPU = 79.662760
+Weight 1: 0.158398 +/- 0.087667
+Weight 2: 0.420163 +/- 0.090966
+Weight 3: 0.442347 +/- 0.051457
+Weight 4: -0.090428 +/- 0.036695
+Fold  7 / 10: RMSE = 0.951329, CPU = 80.077277
+Weight 1: 0.155611 +/- 0.088681
+Weight 2: 0.429963 +/- 0.093434
+Weight 3: 0.435209 +/- 0.050427
+Weight 4: -0.089850 +/- 0.037639
+Fold  8 / 10: RMSE = 0.946314, CPU = 80.328338
+Weight 1: 0.153721 +/- 0.088741
+Weight 2: 0.427575 +/- 0.093549
+Weight 3: 0.439529 +/- 0.050026
+Weight 4: -0.089874 +/- 0.035323
+Fold  6 / 10: RMSE = 0.948056, CPU = 80.433701
+Weight 1: 0.156255 +/- 0.087005
+Weight 2: 0.426029 +/- 0.091119
+Weight 3: 0.438058 +/- 0.048701
+Weight 4: -0.088300 +/- 0.036780
+Fold  3 / 10: RMSE = 0.951552, CPU = 81.088679
+Weight 1: 0.155305 +/- 0.087475
+Weight 2: 0.423831 +/- 0.091690
+Weight 3: 0.441451 +/- 0.050555
+Weight 4: -0.089058 +/- 0.036811
+Fold  4 / 10: RMSE = 0.946076, CPU = 81.383934
+Fold 10 / 10: RMSE = 0.947007, CPU = 81.324167
+Weight 1: 0.153972 +/- 0.087740
+Weight 2: 0.427014 +/- 0.091698
+Weight 3: 0.439637 +/- 0.049108
+Weight 4: -0.089506 +/- 0.037212
+Weight 1: 0.155618 +/- 0.088226
+Weight 2: 0.426055 +/- 0.091693
+Weight 3: 0.438738 +/- 0.050485
+Weight 4: -0.088758 +/- 0.037610
+Fold  9 / 10: RMSE = 0.945534, CPU = 81.763448
+Weight 1: 0.154750 +/- 0.087739
+Weight 2: 0.429681 +/- 0.091374
+Weight 3: 0.436516 +/- 0.047206
+Weight 4: -0.090720 +/- 0.035221
+RMSE: Mean = 0.948122, Std = 0.002364
+CPU:  Mean = 80.398301, Std = 0.997668
+[Warning: File 'pool' not found.] 
+[> In GetData_EconBlend at 74] 
+>> 
