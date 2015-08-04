@@ -1,0 +1,327 @@
+\documentclass[conference,11pt]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[margin=1cm]{geometry}
+\usepackage{bm}
+\newtheorem*{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+
+\newcommand{\iver}[1]{\left[#1\right]}
+\newcommand{\card}[1]{\left\lvert#1\right\rvert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\matr}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\trns}[1]{#1^{\top}}
+\newcommand{\normal}{\mathcal{N}}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\title{CIL Cheat Sheet 2015}
+\author{Jan Wilken D\"orrie}
+\maketitle
+
+\section{Linear Algebra Primer}
+\subsection{Equivalent Conditions}
+For $\matr{A} \in \R^{M \times M}$ the following conditions
+are equivalent:
+\begin{itemize}
+  \item $\matr{A}$ has an inverse $\matr{A}^{-1}$,
+  \item $\mathrm{rank}(\matr{A}) = M$,
+  \item $\mathrm{range}(\matr{A}) = \R^M$,
+  \item $\mathrm{null}(\matr{A}) = \{\vect{0}\}$,
+  \item $0$ is not an eigenvalue of $\matr{A}$,
+  \item $0$ is not a singular value of $\matr{A}$
+\end{itemize}
+
+
+\section{Norms}
+\subsection{Vector norms}
+A \emph{norm} is a function $\norm{\bullet} : V \to \R$ quantifying the
+size of a vector. It must satisfy
+\begin{enumerate}
+  \item Positive scalability: $\norm{a \cdot \vect{x}} = \abs{a} \cdot
+    \norm{\vect{x}}$ for $a \in \R$
+  \item Triangle inequality: $\norm{\vect{x} + \vect{y}} \leq
+    \norm{\vect{x}} + \norm{\vect{y}}$ for $\vect{x}, \vect{y} \in V$.
+  \item Seperability: $\norm{\vect{x}} = 0$ implies $\vect{x} = 0$.
+\end{enumerate}
+
+\begin{itemize}
+  \item The most commonly used norms are the \emph{$p$-norms}:
+    \[
+      \norm{\vect{x}}_p := {\left(\sum_{i=1}^n \abs{x_i}^p \right)}^{1/p}
+    \]
+  \item A special case is the \emph{Euclidean norm}
+    \[ \norm{\vect{x}}_2 := \sqrt{\sum_{i=1}^n x_i^2} \]
+  \item The ``\emph{$0$-norm}'' (not really a norm) is
+    \( \norm{\vect{x}}_0 := \card{\{x_i \mid x_i \neq 0\}} \)
+\end{itemize}
+
+\subsection{Matrix norms}
+We can also define norms on matrices, satisfying the properties described
+above. $\matr{A} \in \R^{M \times N}$:
+\begin{itemize}
+  \item \emph{Frobenius norm}:
+    \[
+      \norm{\matr{A}}_F := \sqrt{\sum_{i=1}^M\sum_{j=1}^N a_{ij}^2}
+      = \sqrt{\sum_{i=1}^{K} \sigma_i^2}, \quad K = \min(M,N)
+    \]
+    Only depends on singular values of $\matr{A}$
+
+  \item \emph{$p$-norms for matrices}:
+    \(
+      \norm{\matr{A}}_p := \sup\{\norm{\matr{A}\vect{x}}_p :
+      \norm{\vect{x}}_p = 1\}
+    \)
+  \item \emph{Euclidean or spectral norm}:
+    \[
+      \norm{\matr{A}}_2 := \sup\{\norm{\matr{A}\vect{x}}_2 :
+      \norm{\vect{x}}_2 = 1\} = \sigma_1,
+    \]
+    the largest singular value.
+
+\end{itemize}
+
+\section{Dimension Reduction}
+\subsection{Principal Component Analysis (PCA)}
+Orthogonal linear projection of high dimensional data onto low
+dimensional subspace. Objectives:
+\begin{enumerate}
+  \item Minimize error $\norm{\vect{x} - \tilde{\vect{x}}}_2$ of
+    point $\vect{x}$ and its approximation $\tilde{\vect{x}}$.
+  \item Preserve information: maximize variance.
+\end{enumerate}
+Both objectives are shown to be formally equivalent.
+\subsubsection{Statistics of Projected Data}
+\begin{itemize}
+  \item Mean of the data: sample mean $\bar{\vect{x}}$
+  \item Covariance of the data:
+    \[
+      \matr{\Sigma} = \frac{1}{N} \sum_{n=1}^N (\vect{x}_n -
+      \bar{\vect{x}}) \trns{(\vect{x}_n - \bar{\vect{x}})}
+    \]
+\end{itemize}
+\subsubsection{Solution: Eigenvalue Decomposition}
+The eigenvalue decomposition of the covariance matrix
+$\matr{\Sigma} = \matr{U}\matr{\Lambda}\trns{\matr{U}}$ contains
+all relevant information.
+\begin{itemize}
+  \item For $K \leq D$ dimensional projection space: Choose $K$
+    eigenvectors $\{\vect{u}_1, \ldots, \vect{u}_K\}$ with largest
+    associated eigenvalues $\{\lambda_1, \ldots, \lambda_K\}$.
+\end{itemize}
+
+\subsection{Singular Value Decomposition}
+\begin{thm}[Eckart-Young]
+  Let $\matr{A}$ be a matrix of rank $R$, if we wish to
+  approximate $\matr{A}$ using a matrix of a lower rank $K$
+  then, $\tilde{\matr{A}} ̃= \sum_{k=1}^K d_k \vect{u}_k
+  \trns{\vect{v}_k}$ is the closest matrix in the Frobenius norm.
+  (Assumes ordering of singular values $d_k \geq d_{k+1}$)
+\end{thm}
+
+\section{Clustering}
+\subsection{K-Means}
+\subsubsection{Motivation}
+\begin{itemize}
+  \item Given: set of data points $\vect{x}_1, \ldots, \vect{x}_N \in \R^D$
+  \item Goal: find \emph{meaningful partition} of the data
+    \begin{itemize}
+      \item i.e.\ a labeling of each data point with a unique label
+        \[
+          \pi: \{1,\ldots,N\} \to \{1,\ldots,K\} \text{ or }
+          \pi: \R^D \to \{1,\ldots,K\}
+        \]
+      \item note: numbering of clusters is arbitrary
+      \item $k$-th cluster recovered by $\pi^{-1}(k) \subseteq \{1,\ldots,N\}$
+        or $\subseteq \R^D$
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Vector Quantization}
+\begin{itemize}
+  \item Partition of the space $\R^D$
+  \item Clusters represented by \emph{centroids} $\vect{u}_k \in \R^D$
+  \item Mapping induced via nearest centroid rule
+    \[ \pi(\vect{x}) = \argmin_{k=1,\ldots,K} \norm{\vect{u}_k - \vect{x}}_2 \]
+\end{itemize}
+
+\subsubsection{Objective Function for $K$-Means}
+\begin{itemize}
+  \item Useful notation: represent $\pi$ via indicator matrix $\matr{Z}$:
+    \[ z_{kn} := \iver{\pi(\vect{x}_n) = k} \]
+  \item $K$-means Objective function
+    \[
+      J(\matr{U},\matr{Z}) = \sum_{n=1}^N \sum_{k=1}^K z_{kn} \norm{\vect{x}_n
+        - \vect{u}_k}_2^2 = \norm{\matr{X} - \matr{U}\matr{Z}}_F^2,
+    \]
+    where $\matr{X} = [\vect{x}_1,\ldots,\vect{x}_N] \in \R^{D \times N}$
+    and   $\matr{U} = [\vect{u}_1,\ldots,\vect{u}_K] \in \R^{D \times K}$
+\end{itemize}
+
+\subsubsection{$K$-means Algorithm: Optimal Assignment}
+\begin{itemize}
+  \item Compute optimal assignment $\matr{Z}$, given centroids $\matr{U}$
+    \begin{itemize}
+      % \item each data point contributes to exactly one term in outer sum
+      \item minimize each column of $\matr{Z}$ separately
+        \[
+          \vect{z}_{\bullet n}^* = \argmin_{z_{1n},\ldots,z_{Kn}} \sum_{k=1}^K
+          z_{kn} \norm{\vect{x}_n - \vect{u}_k}_2^2
+        \]
+      \item optimum is attained by mapping to the closest centroid
+        \[
+          z_{kn}^*(\matr{U}) = \iver{k = \argmin_l \norm{\vect{x} - \vect{u}_l}_2}
+        \]
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{$K$-means Algorithm: Optimal Assignment}
+\begin{itemize}
+  \item Compute optimal choice of $\matr{U}$, given assignments $\matr{Z}$
+    \begin{itemize}
+      \item continuous variables: compute gradient and set to zero (necessary
+        optimality condition)
+      \item look at (partial) gradient for every centroid $\vect{u}_k$
+        \[
+          \nabla_{\vect{u}_k} J(\matr{U},\matr{Z}) = \sum_{n=1}^N z_{kn}
+          \nabla_{\vect{u}_k} \norm{\vect{x}_n - \vect{u}_k}_2^2 = -2
+          \sum_{n=1}^N z_{kn} (\vect{x}_n - \vect{u}_k)
+        \]
+      \item setting gradient to zero
+        \[
+          \nabla_{\matr{U}} J(\matr{U},\matr{Z}) \stackrel{!}{=} 0 \implies
+          \vect{u}_k^*(\matr{Z}) = \frac{\sum_{n=1}^N z_{kn} \vect{x}_n}
+          {\sum_{n=1}^N z_{kn}} %\text{, if } \sum_{n=1}^N z_{kn} > 0
+        \]
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{$K$-means Algorithm: Analysis}
+\begin{itemize}
+  \item Computational cost of each iteration is $O(KND)$
+  \item $K$-means convergence is guaranteed
+  \item $K$-means optimizes a non-convex objective. Hence we are not guaranteed
+    to find the global optimum.
+  \item Finds a local optimum $(\matr{U},\matr{Z})$ in the following sense
+    \begin{itemize}
+      \item for each $\matr{Z}'$ with $\frac{1}{2}\norm{\matr{Z}-\matr{Z}'}_0 = 1$
+        (differs in one assignment)
+      \item $J(\matr{U}^*(\matr{Z}'), \matr{Z}') \geq J(\matr{U},\matr{Z})$
+      \item may gain by changing assignments of $\geq 2$ points
+    \end{itemize}
+  \item $K$-means algorithm can be used to compress data
+    \begin{itemize}
+      \item with information loss, if $K < N$
+      \item store only the centroids and the assignments
+    \end{itemize}
+\end{itemize}
+% Alternate between two steps until convergence:
+% \begin{enumerate}
+%   \item Update assignments $z_{k,n}$ of data points to centroids:
+%     \[
+%       z_{k,n} = \begin{cases}
+%         1, &\text{if $k = \argmin_j \norm{\vect{x}_n - \vect{u}_j}_2$} \\
+%         0, &\text{else}
+%       \end{cases}
+%     \]
+%   \item Update centroid positions:
+%     \[
+%       \vect{u}_k = \frac{\sum_n z_{k,n} \vect{x}_n}{\sum_n z_{k,n}}
+%     \]
+% \end{enumerate}
+
+\subsection{Mixture Models}
+\subsubsection{Gaussian Mixture Model (GMM)}
+\[
+  p_{\theta}(\vect{x}) = \sum_{k=1}^K \pi_k \normal(\vect{x} \mid \vect{\mu}_k,
+  \matr{\Sigma}_k),
+\]
+where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
+
+\subsubsection{Complete Data Distribution}
+\begin{itemize}
+  \item Explicitly introduce latent variables in the generative model
+  \item Assignment variable (for a generic data point) $z_k \in \{0,1\}$,
+    $\sum_{k=1}^K z_k = 1$
+  \item We have that $\Pr(z_k = 1) = \pi_k$ or $p(\vect{z}) = \prod_{k=1}^K
+    \pi_k^{z_k}$
+  \item Joint distribution over $(\vect{x}, \vect{z})$ (\emph{complete data}
+    distribution) $p(\vect{x}, \vect{z}) = \prod_{k=1}^K {\left[ \pi_k
+        \normal(\vect{x} \mid \vect{\mu}_k, \matr{\Sigma}_k)\right]}^{z_k}$
+\end{itemize}
+
+\subsubsection{Posterior Assignments}
+\emph{Posterior probabilities} for assignments
+\[
+  \Pr(z_k = 1 \mid \vect{x}) = \frac{\pi_k \normal(\vect{x} \mid \vect{\mu}_k,
+    \matr{\Sigma}_k)}{\sum_{l=1}^K \pi_l \normal(\vect{x} \mid \vect{\mu}_l,
+    \matr{\Sigma}_l)}
+\]
+
+\subsubsection{Lower Bounding the Log-Likelihood}
+\begin{itemize}
+  \item Expectation Maximization
+    \begin{itemize}
+      \item maximize a lower bound on the log-likelihood
+      \item systematic way of deriving a family of bounds
+      \item based on complete data distribution
+    \end{itemize}
+  \item Specifically:
+    \begin{align*}
+      \ln p_{\theta}(\vect{x}) &= \ln \sum_{\vect{z}} p_{\theta}(\vect{x},
+      \vect{z}) = \ln \sum_{k=1}^K p(\vect{x}, \theta_k) \pi_k \\
+      &= \ln \sum_{k=1}^K q_k \frac{p(\vect{x}; \theta_k) \pi_k}{q_k} \\
+      &\geq \sum_{k=1}^K q_k \left[\ln p(\vect{x},\theta_k)+\ln\pi_k-\ln q_k \right]
+    \end{align*}
+    \begin{itemize}
+      \item follows from Jensen's inequality (concavity of logarithm)
+      \item can be done for the contribution of each data point (additive)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Mixture Model: Expectation Step}
+\[
+  q_k = \frac{\pi_k\; p(\vect{x}; \theta_k)}{\sum_{l=1}^K \pi_l\;p(\vect{x}, \theta_l)}
+  = \Pr(z_k = 1 \mid \vect{x})
+\]
+
+\subsubsection{Mixture Model: Maximization Step}
+\[ \pi_k^* = \frac{1}{N} \sum_{n=1}^N q_{kn} \]
+\[ \vect{\mu}_k^* = \frac{\sum_{n=1}^N q_{kn}\vect{x}_n}{\sum_{n=1}^N q_{kn}} \]
+\[
+  \matr{\Sigma}_k^* = \frac{\sum_{n=1}^N
+    q_{kn}\vect{x}_n\trns{\vect{x}_n}}{\sum_{n=1}^N q_{kn}}
+\]
+
+\subsubsection{AIC and BIC}
+\begin{itemize}
+  \item Trade-off: achieve balance between data fit --- measured by likelihood
+    $p(\matr{X}\mid\theta)$ --- and complexity. Complexity can be measured by
+    the number of free parameters $\kappa(\cdot)$.
+  \item Different Heuristics for choosing $K$
+    \begin{itemize}
+      \item \emph{Akaike Information Criterion} (AIC)
+        \[
+          \mathrm{AIC}(\theta\mid\matr{X}) = -\ln p_{\theta}(\matr{X}) +
+          \kappa(\theta)
+        \]
+      \item \emph{Bayesian Information Criterion} (BIC)
+        \[
+          \mathrm{BIC}(\theta\mid\matr{X}) = -\ln p_{\theta}(\matr{X}) +
+          \frac{1}{2} \kappa(\theta) \ln N
+        \]
+    \end{itemize}
+  \item Generally speaking, the BIC criterion penalizes complexity more than
+    the AIC criterion.
+\end{itemize}
+
+\section{Sparse Coding}
+
+\section{Robust PCA}
+
+\end{document}
