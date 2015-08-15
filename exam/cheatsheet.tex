@@ -1,4 +1,4 @@
-\documentclass[conference,11pt]{IEEEtran}
+\documentclass[11pt,a4paper,technote]{IEEEtran}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -27,70 +27,72 @@
 \author{Jan Wilken D\"orrie}
 \maketitle
 
-\section{Linear Algebra Primer}
-\subsection{Equivalent Conditions}
+\vspace{-2em}
+\section*{Linear Algebra Primer}
+\subsection*{Equivalent Conditions}
 For $\matr{A} \in \R^{M \times M}$ the following conditions
 are equivalent:
-\begin{itemize}
-  \item $\matr{A}$ has an inverse $\matr{A}^{-1}$,
-  \item $\mathrm{rank}(\matr{A}) = M$,
-  \item $\mathrm{range}(\matr{A}) = \R^M$,
-  \item $\mathrm{null}(\matr{A}) = \{\vect{0}\}$,
-  \item $0$ is not an eigenvalue of $\matr{A}$,
-  \item $0$ is not a singular value of $\matr{A}$
-\end{itemize}
+% \begin{itemize}
+   $\matr{A}$ has an inverse $\matr{A}^{-1}$;
+   $\mathrm{rank}(\matr{A}) = M$;
+   $\mathrm{range}(\matr{A}) = \R^M$;
+   $\mathrm{null}(\matr{A}) = \{\vect{0}\}$;
+   $0$ is not an eigenvalue of $\matr{A}$;
+   $0$ is not a singular value of $\matr{A}$.
+% \end{itemize}
 
 
-\section{Norms}
-\subsection{Vector norms}
+\section*{Norms}
+\subsection*{Vector norms}
 A \emph{norm} is a function $\norm{\cdot} : V \to \R$ quantifying the
 size of a vector. It must satisfy
 \begin{enumerate}
   \item Positive scalability: $\norm{a \cdot \vect{x}} = \abs{a} \cdot
     \norm{\vect{x}}$ for $a \in \R$
   \item Triangle inequality: $\norm{\vect{x} + \vect{y}} \leq
-    \norm{\vect{x}} + \norm{\vect{y}}$ for $\vect{x}, \vect{y} \in V$.
+    \norm{\vect{x}} + \norm{\vect{y}}$, $\vect{x}, \vect{y} \in V$.
   \item Seperability: $\norm{\vect{x}} = 0$ implies $\vect{x} = 0$.
 \end{enumerate}
 
 \begin{itemize}
-  \item The most commonly used norms are the \emph{$p$-norms}:
-    \[
+  \item Most common are \emph{$p$-norms}:
+    \(
       \norm{\vect{x}}_p := {\left(\sum_{i=1}^n \abs{x_i}^p \right)}^{1/p}
-    \]
-  \item A special case is the \emph{Euclidean norm}
-    \[ \norm{\vect{x}}_2 := \sqrt{\sum_{i=1}^n x_i^2} \]
-  \item The ``\emph{$0$-norm}'' (not really a norm, does not satisfy positive
-    scalability) is \( \norm{\vect{x}}_0 := \card{\{x_i \mid x_i \neq 0\}} \)
+    \)
+  \item Special case is \emph{Euclidean norm}:
+    \( \norm{\vect{x}}_2 := \sqrt{\sum_{i=1}^n x_i^2} \)
+  \item The ``\emph{$0$-norm}'' is \( \norm{\vect{x}}_0 := \card{\{x_i \mid x_i
+        \neq 0\}} \)
 \end{itemize}
 
-\subsection{Matrix norms}
+\subsection*{Matrix norms}
 We can also define norms on matrices, satisfying the properties described
 above. $\matr{A} \in \R^{M \times N}$:
 \begin{itemize}
-  \item \emph{Frobenius norm}:
-    \[
-      \norm{\matr{A}}_F := \sqrt{\sum_{i=1}^M\sum_{j=1}^N a_{ij}^2}
-      = \sqrt{\sum_{i=1}^{K} \sigma_i^2}, \quad K = \min(M,N)
-    \]
-    Only depends on singular values of $\matr{A}$
+  \item \emph{Frobenius}:
+    \(
+      \norm{\matr{A}}_F := \sqrt{\sum_{ij} a_{ij}^2}
+      = \sqrt{\sum_{i=1}^{\min(M,N)} \sigma_i^2}
+    \)
 
   \item \emph{$p$-norms for matrices}:
     \(
-      \norm{\matr{A}}_p := \sup\{\norm{\matr{A}\vect{x}}_p :
-      \norm{\vect{x}}_p = 1\}
+      \norm{\matr{A}}_p := \sup\{\norm{\matr{A}\vect{x}}_p/\norm{\vect{x}}_p\}
     \)
-  \item \emph{Euclidean or spectral norm}:
-    \[
-      \norm{\matr{A}}_2 := \sup\{\norm{\matr{A}\vect{x}}_2 :
-      \norm{\vect{x}}_2 = 1\} = \sigma_1,
-    \]
-    the largest singular value.
+  \item \emph{Euclidean}:
+    \(
+      \norm{\matr{A}}_2 := \sup\{\norm{\matr{A}\vect{x}}_2/\norm{\vect{x}}_2\}
+      = \sigma_{\max}
+    \)
+  \item \emph{Nuclear norm}:
+    \(
+      \norm{\matr{A}}_{*} := \sum_{i=1}^{\min(M,N)} \sigma_i
+    \)
 
 \end{itemize}
 
-\section{Statistics}
-\subsection{Kullback-Leibler Divergence}
+\section*{Statistics}
+\subsection*{Kullback-Leibler Divergence}
 \begin{itemize}
   \item Divergence between discrete probability distributions $P$ and $Q$:
     \(
@@ -108,8 +110,8 @@ above. $\matr{A} \in \R^{M \times N}$:
     \end{itemize}
 \end{itemize}
 
-\section{Dimension Reduction}
-\subsection{Principal Component Analysis (PCA)}
+\section*{Dimension Reduction}
+\subsection*{Principal Component Analysis (PCA)}
 Orthogonal linear projection of high dimensional data onto low
 dimensional subspace. Objectives:
 \begin{enumerate}
@@ -118,7 +120,7 @@ dimensional subspace. Objectives:
   \item Preserve information: maximize variance.
 \end{enumerate}
 Both objectives are shown to be formally equivalent.
-\subsubsection{Statistics of Projected Data}
+\subsubsection*{Statistics of Projected Data}
 \begin{itemize}
   \item Mean of the data: sample mean $\bar{\vect{x}}$
   \item Covariance of the data:
@@ -127,7 +129,7 @@ Both objectives are shown to be formally equivalent.
       \bar{\vect{x}}) \trns{(\vect{x}_n - \bar{\vect{x}})}
     \]
 \end{itemize}
-\subsubsection{Solution: Eigenvalue Decomposition}
+\subsubsection*{Solution: Eigenvalue Decomposition}
 The eigenvalue decomposition of the covariance matrix
 $\matr{\Sigma} = \matr{U}\matr{\Lambda}\trns{\matr{U}}$ contains
 all relevant information.
@@ -137,7 +139,7 @@ all relevant information.
     associated eigenvalues $\{\lambda_1, \ldots, \lambda_K\}$.
 \end{itemize}
 
-\subsection{Singular Value Decomposition}
+\subsection*{Singular Value Decomposition}
 \begin{thm}[Eckart-Young]
   Let $\matr{A}$ be a matrix of rank $R$, if we wish to
   approximate $\matr{A}$ using a matrix of a lower rank $K$
@@ -146,9 +148,9 @@ all relevant information.
   (Assumes ordering of singular values $d_k \geq d_{k+1}$)
 \end{thm}
 
-\section{Clustering}
-\subsection{K-Means}
-\subsubsection{Motivation}
+\section*{Clustering}
+\subsection*{K-Means}
+\subsubsection*{Motivation}
 \begin{itemize}
   \item Given: set of data points $\vect{x}_1, \ldots, \vect{x}_N \in \R^D$
   \item Goal: find \emph{meaningful partition} of the data
@@ -164,7 +166,7 @@ all relevant information.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Vector Quantization}
+\subsubsection*{Vector Quantization}
 \begin{itemize}
   \item Partition of the space $\R^D$
   \item Clusters represented by \emph{centroids} $\vect{u}_k \in \R^D$
@@ -172,7 +174,7 @@ all relevant information.
     \[ \pi(\vect{x}) = \argmin_{k=1,\ldots,K} \norm{\vect{u}_k - \vect{x}}_2 \]
 \end{itemize}
 
-\subsubsection{Objective Function for $K$-Means}
+\subsubsection*{Objective Function for $K$-Means}
 \begin{itemize}
   \item Useful notation: represent $\pi$ via indicator matrix $\matr{Z}$:
     \[ z_{kn} := \iver{\pi(\vect{x}_n) = k} \]
@@ -185,7 +187,7 @@ all relevant information.
     and   $\matr{U} = [\vect{u}_1,\ldots,\vect{u}_K] \in \R^{D \times K}$
 \end{itemize}
 
-\subsubsection{$K$-means Algorithm: Optimal Assignment}
+\subsubsection*{$K$-means Algorithm: Optimal Assignment}
 \begin{itemize}
   \item Compute optimal assignment $\matr{Z}$, given centroids $\matr{U}$
     \begin{itemize}
@@ -202,7 +204,7 @@ all relevant information.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{$K$-means Algorithm: Optimal Assignment}
+\subsubsection*{$K$-means Algorithm: Optimal Assignment}
 \begin{itemize}
   \item Compute optimal choice of $\matr{U}$, given assignments $\matr{Z}$
     \begin{itemize}
@@ -223,7 +225,7 @@ all relevant information.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{$K$-means Algorithm: Analysis}
+\subsubsection*{$K$-means Algorithm: Analysis}
 \begin{itemize}
   \item Computational cost of each iteration is $O(KND)$
   \item $K$-means convergence is guaranteed
@@ -257,15 +259,15 @@ all relevant information.
 %     \]
 % \end{enumerate}
 
-\subsection{Mixture Models}
-\subsubsection{Gaussian Mixture Model (GMM)}
+\subsection*{Mixture Models}
+\subsubsection*{Gaussian Mixture Model (GMM)}
 \[
   p_{\theta}(\vect{x}) = \sum_{k=1}^K \pi_k \normal(\vect{x} \mid \vect{\mu}_k,
   \matr{\Sigma}_k),
 \]
 where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
 
-\subsubsection{Complete Data Distribution}
+\subsubsection*{Complete Data Distribution}
 \begin{itemize}
   \item Explicitly introduce latent variables in the generative model
   \item Assignment variable (for a generic data point) $z_k \in \{0,1\}$,
@@ -277,7 +279,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
         \normal(\vect{x} \mid \vect{\mu}_k, \matr{\Sigma}_k)\right]}^{z_k}$
 \end{itemize}
 
-\subsubsection{Posterior Assignments}
+\subsubsection*{Posterior Assignments}
 \emph{Posterior probabilities} for assignments
 \[
   \Pr(z_k = 1 \mid \vect{x}) = \frac{\pi_k \normal(\vect{x} \mid \vect{\mu}_k,
@@ -285,7 +287,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \matr{\Sigma}_l)}
 \]
 
-\subsubsection{Lower Bounding the Log-Likelihood}
+\subsubsection*{Lower Bounding the Log-Likelihood}
 \begin{itemize}
   \item Expectation Maximization
     \begin{itemize}
@@ -306,13 +308,13 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Mixture Model: Expectation Step}
+\subsubsection*{Mixture Model: Expectation Step}
 \[
   q_k = \frac{\pi_k\; p(\vect{x}; \theta_k)}{\sum_{l=1}^K \pi_l\;p(\vect{x}, \theta_l)}
   = \Pr(z_k = 1 \mid \vect{x})
 \]
 
-\subsubsection{Mixture Model: Maximization Step}
+\subsubsection*{Mixture Model: Maximization Step}
 \[ \pi_k^* = \frac{1}{N} \sum_{n=1}^N q_{kn} \]
 \[ \vect{\mu}_k^* = \frac{\sum_{n=1}^N q_{kn}\vect{x}_n}{\sum_{n=1}^N q_{kn}} \]
 \[
@@ -320,7 +322,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \vect{\mu}_k^*)\trns{(\vect{x}_n - \vect{\mu}_k^*)}}{\sum_{n=1}^N q_{kn}}
 \]
 
-\subsubsection{AIC and BIC}
+\subsubsection*{AIC and BIC}
 \begin{itemize}
   \item Trade-off: achieve balance between data fit --- measured by likelihood
     $p(\matr{X}\mid\theta)$ --- and complexity. Complexity can be measured by
@@ -342,8 +344,8 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     the AIC criterion.
 \end{itemize}
 
-\subsection{Non-Negative Matrix Factorization}
-\subsubsection{Non-Negative Matrix Factorization}
+\subsection*{Non-Negative Matrix Factorization}
+\subsubsection*{Non-Negative Matrix Factorization}
 \begin{itemize}
   \item \emph{Document-term matrix} $\matr{X} \in \R_{\geq 0}^{D \times N}$
     storing the word counts for each document:
@@ -365,7 +367,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{pLSI --- Generative Model}
+\subsubsection*{pLSI --- Generative Model}
 \begin{itemize}
   \item For a given \emph{document} sample \emph{$\len(\mathrm{document})$}
     words by a two-stage procedure:
@@ -384,7 +386,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     model of LDA.\@
 \end{itemize}
 
-\subsubsection{pLSI --- Matrix Factorization View}
+\subsubsection*{pLSI --- Matrix Factorization View}
 \begin{itemize}
   \item \emph{Normalize} the elements of $\matr{X}$ so that they correspond to
     relative frequencies:
@@ -406,7 +408,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{pLSI --- Parameter Estimation}
+\subsubsection*{pLSI --- Parameter Estimation}
 \begin{itemize}
   \item Goal: maximize the likelihood of the data under the model
   \item Data: the relative frequencies $\matr{X}$
@@ -423,7 +425,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \)
 \end{itemize}
 
-\subsubsection{EM for pLSI --- Variational Likelihood}
+\subsubsection*{EM for pLSI --- Variational Likelihood}
 \begin{itemize}
   \item Follow similar recipe as for Gaussian Mixture Model
   \item Reindex the observations in a per token manner with $t = 1, \ldots, T$
@@ -446,7 +448,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{EM for pLSI --- Derivation of E-step}
+\subsubsection*{EM for pLSI --- Derivation of E-step}
 \begin{itemize}
   \item Compute the argmin in the variational bound
     \[
@@ -464,7 +466,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     index $d_t$ in document with index $n_t$) has been generated from topic $k$
 \end{itemize}
 
-\subsubsection{EM for pLSI --- Derivation of M-step}
+\subsubsection*{EM for pLSI --- Derivation of M-step}
 \begin{itemize}
   \item Differentiate lower bound with plugged in optimal choices for $q_t^*$
     $(t = 1,\ldots,T)$
@@ -481,9 +483,9 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
 
 \end{itemize}
 
-\section{Sparse Coding}
-\subsection{Optimization}
-\subsubsection{Coordinate Descent}
+\section*{Sparse Coding}
+\subsection*{Optimization}
+\subsubsection*{Coordinate Descent}
 \emph{Idea}: Update one coordinate at a time, while keeping others fixed.
 \begin{itemize}
   \item Algorithm:
@@ -500,7 +502,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Gradient Descent Method}
+\subsubsection*{Gradient Descent Method}
 \begin{itemize}
   \item Algorithm:
     \begin{itemize}
@@ -517,7 +519,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     $\gamma\approx\frac{1}{t}$
 \end{itemize}
 
-\subsubsection{Stochastic Gradient Descent}
+\subsubsection*{Stochastic Gradient Descent}
 \begin{itemize}
   \item Optimization Problem Structure: minimize $f(\vect{x}) = \frac{1}{N}
     \sum_{n=1}^N f_n(\vect{x})$ with $\vect{x} \in \R^D$
@@ -535,7 +537,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Duality for Constrained Optimization}
+\subsubsection*{Duality for Constrained Optimization}
 \begin{itemize}
   \item Constrained Problem Formulation (Standard Form): minimize $f(\vect{x})$
     subject to $g_i(\vect{x}) \leq 0$, $i = 1, \ldots, m$, $h_i(\vect{x}) = 0$,
@@ -545,7 +547,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     are ``brickwall'' indicator functions.
 \end{itemize}
 
-\subsubsection{Dual Problem}
+\subsubsection*{Dual Problem}
 \begin{itemize}
   \item Lagrangian: $L(\vect{x},\vect{\lambda},\vect{\nu}) := f(\vect{x}) +
     \sum_{i=1}^m \lambda_i g_i(\vect{x}) + \sum_{i=1}^p \nu_i h_i(\vect{x})$
@@ -564,7 +566,7 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Convexity}
+\subsubsection*{Convexity}
 \begin{itemize}
   \item Convex Set: A set $Q$ is convex if for any $\vect{x},\vect{y} \in Q$
     and any $\theta \in [0,1]$, we have $\theta\vect{x} + (1-\theta) \vect{y}
@@ -580,6 +582,6 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
 
 \end{itemize}
 
-\section{Robust PCA}
+\section*{Robust PCA}
 
 \end{document}
