@@ -17,6 +17,9 @@
 \newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
 \newcommand{\trns}[1]{#1^{\top}}
 \newcommand{\normal}{\mathcal{N}}
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\dom}{dom}
+\newcommand{\from}{\colon}
 \newcommand{\R}{\mathbb{R}}
 
 \begin{document}
@@ -40,7 +43,7 @@ are equivalent:
 
 \section{Norms}
 \subsection{Vector norms}
-A \emph{norm} is a function $\norm{\bullet} : V \to \R$ quantifying the
+A \emph{norm} is a function $\norm{\cdot} : V \to \R$ quantifying the
 size of a vector. It must satisfy
 \begin{enumerate}
   \item Positive scalability: $\norm{a \cdot \vect{x}} = \abs{a} \cdot
@@ -57,8 +60,8 @@ size of a vector. It must satisfy
     \]
   \item A special case is the \emph{Euclidean norm}
     \[ \norm{\vect{x}}_2 := \sqrt{\sum_{i=1}^n x_i^2} \]
-  \item The ``\emph{$0$-norm}'' (not really a norm) is
-    \( \norm{\vect{x}}_0 := \card{\{x_i \mid x_i \neq 0\}} \)
+  \item The ``\emph{$0$-norm}'' (not really a norm, does not satisfy positive
+    scalability) is \( \norm{\vect{x}}_0 := \card{\{x_i \mid x_i \neq 0\}} \)
 \end{itemize}
 
 \subsection{Matrix norms}
@@ -84,6 +87,25 @@ above. $\matr{A} \in \R^{M \times N}$:
     \]
     the largest singular value.
 
+\end{itemize}
+
+\section{Statistics}
+\subsection{Kullback-Leibler Divergence}
+\begin{itemize}
+  \item Divergence between discrete probability distributions $P$ and $Q$:
+    \(
+      D_{\mathrm{KL}}(P \| Q) = \sum_{\omega \in \Omega} P(\omega)
+      \log\left(\frac{P(\omega)}{Q(\omega)}\right).
+    \)
+  \item Properties of the Kullback-Leibler Divergence
+    \begin{itemize}
+      \item $D_{\mathrm{KL}}(P \| Q) \geq 0$.
+      \item $D_{\mathrm{KL}}(P \| Q) = 0$ if and only if $P$ and $Q$ are
+        identical.
+      \item $D_{\mathrm{KL}}(P \| Q) \neq D_{\mathrm{KL}}(Q \| P)$!
+      \item caution: the KL-Divergence is not symmetric, therefore it is not a
+        metric/distance!
+    \end{itemize}
 \end{itemize}
 
 \section{Dimension Reduction}
@@ -294,8 +316,8 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
 \[ \pi_k^* = \frac{1}{N} \sum_{n=1}^N q_{kn} \]
 \[ \vect{\mu}_k^* = \frac{\sum_{n=1}^N q_{kn}\vect{x}_n}{\sum_{n=1}^N q_{kn}} \]
 \[
-  \matr{\Sigma}_k^* = \frac{\sum_{n=1}^N
-    q_{kn}\vect{x}_n\trns{\vect{x}_n}}{\sum_{n=1}^N q_{kn}}
+  \matr{\Sigma}_k^* = \frac{\sum_{n=1}^N q_{kn}(\vect{x}_n -
+    \vect{\mu}_k^*)\trns{(\vect{x}_n - \vect{\mu}_k^*)}}{\sum_{n=1}^N q_{kn}}
 \]
 
 \subsubsection{AIC and BIC}
@@ -320,7 +342,243 @@ where $\pi_k \geq 0$, $\sum_{k=1}^K \pi_k = 1$.
     the AIC criterion.
 \end{itemize}
 
+\subsection{Non-Negative Matrix Factorization}
+\subsubsection{Non-Negative Matrix Factorization}
+\begin{itemize}
+  \item \emph{Document-term matrix} $\matr{X} \in \R_{\geq 0}^{D \times N}$
+    storing the word counts for each document:
+    \[ \matr{X} = \vect{x}_1, \vect{x}_2, \ldots, \vect{x}_N \]
+
+    $x_{dn}$: Frequency of the $d$-th word in the $n$-th document.
+
+  \item \emph{Non-negative matrix factorization} (NMF) of $\matr{X}$:
+    \[ \matr{X} \approx \matr{U}\matr{Z} \]
+    \begin{itemize}
+      \item with $\matr{U} \in \R_{\geq 0}^{D \times K}$ and $\matr{Z} \in
+        \R_{\geq 0}^{K \times N}$
+        \begin{itemize}
+          \item $N$: number of documents
+          \item $D$: vocabulary size
+          \item $K$: number of dimensions (design choice)
+          \item data reduction: $(D+N)K \ll DN$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{pLSI --- Generative Model}
+\begin{itemize}
+  \item For a given \emph{document} sample \emph{$\len(\mathrm{document})$}
+    words by a two-stage procedure:
+    \begin{itemize}
+      \item sample a topic according to $P(\mathrm{topic}\mid\mathrm{document})$
+      \item sample a word according to $P(\mathrm{word}\mid\mathrm{topic})$
+    \end{itemize}
+  \item Key assumption: \emph{conditional independence} of word and document
+    given topic
+  \item Conditional distribution of a word, given a document:
+    \[
+      P(\mathrm{word}\mid\mathrm{document}) = \sum_{k=1}^K P(\mathrm{word}\mid
+      \mathrm{topic}_k) P(\mathrm{topic}_k \mid \mathrm{document})
+    \]
+  \item Side note: how to sample a ``new'' document? Can use fully generative
+    model of LDA.\@
+\end{itemize}
+
+\subsubsection{pLSI --- Matrix Factorization View}
+\begin{itemize}
+  \item \emph{Normalize} the elements of $\matr{X}$ so that they correspond to
+    relative frequencies:
+    \[
+      T := \sum_{d=1}^D \sum_{n=1}^N x_{dn}, \qquad x_{dn}\gets\frac{x_{dn}}{T}
+    \]
+  \item \emph{Matrix Factorization}
+    \begin{itemize}
+      \item pLSI can be understood as a matrix factorization of the form
+        $\matr{X}\approx\matr{U}\matr{Z}$, with $\matr{U}\in\R_{\geq 0}^{D
+          \times K}$, and $\matr{Z}\in\R_{\geq 0}^{K \times N}$
+      \item where additionally we have the constraints:
+        \begin{itemize}
+          \item $\sum_{d=1}^D u_{dk} = 1 (\forall k)$, identify $u_{dk} \equiv
+            P(\mathrm{word}_d \mid \mathrm{topic}_k)$
+          \item $\sum_{k,n} z_{kn} = 1$, identify $z_{kn} \equiv
+            P(\mathrm{topic}_k \mid \mathrm{document}_n) P(\mathrm{document}_n)$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{pLSI --- Parameter Estimation}
+\begin{itemize}
+  \item Goal: maximize the likelihood of the data under the model
+  \item Data: the relative frequencies $\matr{X}$
+  \item Probabilistic model:
+    \(
+      P(\mathrm{word}_d, \mathrm{document}_n) = \sum_{k=1}^K P(\mathrm{word}_d \mid
+      \mathrm{topic}_k) P(\mathrm{topic}_k \mid \mathrm{document}_n)
+      = {(\matr{U}\matr{Z})}_{dn}
+    \)
+  \item \emph{Log likelihood}:
+    \(
+      \log \mathcal{L}(\matr{U}, \matr{Z}; \matr{X}) = \log P(\matr{X}; \matr{U}, \matr{Z})
+      = \sum_{d=1}^D\sum_{n=1}^N x_{dn} \log \sum_{k=1}^K u_{dk}z_{kn}
+    \)
+\end{itemize}
+
+\subsubsection{EM for pLSI --- Variational Likelihood}
+\begin{itemize}
+  \item Follow similar recipe as for Gaussian Mixture Model
+  \item Reindex the observations in a per token manner with $t = 1, \ldots, T$
+    \begin{itemize}
+      \item pairs of word/documents indexes $(d_t, n_t)$
+      \item note that $\sum_{t=1}^T f(d_t,n_t) = \sum_{d=1}^D\sum_{n=1}^N
+        x_{dn}f(d,n)$ for arbitrary functions $f$
+    \end{itemize}
+  \item \emph{Variational Likelihood}
+    \begin{align*}
+      &\log P(\matr{X};\matr{U},\matr{Z}) \\
+      &= \sum_{t=1}^T \log{(\matr{U} \matr{Z})}_{d_{t}n_{t}} = \sum_{t=1}^T
+      \log\left[\sum_{k=1}^K u_{d_{t}k} z_{kn_{t}}\right] \\
+      &\geq \sum_{t=1}^T \max_{q\in\mathcal{S}_K} \sum_{k=1}^K q_k [\log
+      u_{d_{t}k} + \log z_{kn_{t}} - \log q_k ]
+    \end{align*}
+    \begin{itemize}
+      \item $\mathcal{S}_K := \left\{x\in\R^K\mid x\geq 0, \sum_{k=1}^K x_k =
+          1\right\}$ (probability simplex)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{EM for pLSI --- Derivation of E-step}
+\begin{itemize}
+  \item Compute the argmin in the variational bound
+    \[
+      q_t^* = \argmax_{q\in\mathcal{S}_K}\sum_{k=1}^K q_k [\log u_{d_{t}k} +
+      \log z_{kn_{t}} + \log q_k]
+    \]
+  \item Form Lagrangian and differentiate
+    \begin{align*}
+      &\frac{\partial}{\partial q_k} \{ q_k [\log u_{d_{t}k} + \log z_{kn_{t}}
+      - \log q_k - \lambda_t^*] \} \stackrel{!}{=} 0 \\
+      \implies &q_{tk}^* \propto u_{d_{t}k}z_{kn_{t}}\text{, i.e. }q_{tk}^* =
+      \frac{u_{d_{t}k}z_{kn_{t}}}{\sum_{l=1}^K u_{d_{t}l}z_{l n_{t}}}
+    \end{align*}
+  \item $q_{tk}^* =$ posterior probability that $t$-th token (i.e.\ word with
+    index $d_t$ in document with index $n_t$) has been generated from topic $k$
+\end{itemize}
+
+\subsubsection{EM for pLSI --- Derivation of M-step}
+\begin{itemize}
+  \item Differentiate lower bound with plugged in optimal choices for $q_t^*$
+    $(t = 1,\ldots,T)$
+  \item \emph{M}-step solution for $\matr{U}$ and $\matr{Z}$
+    \[
+      u_{dk}^* = \frac{\sum_{t:d_t=d} q_{tk}^*}{\sum_{t=1}^T q_{tk}^*}
+      % = \frac{\text{\# tokens $t$ equal to $d$, weighted by $q_{tk}^*$}}
+      % {\text{\# tokens $t$ of any word, weighted by $q_{tk}^*$}}
+      \qquad
+      z_{kn}^* = \frac{\sum_{t:n_t=n} q_{tk}^*}{T}
+      % = \frac{\text{\# tokens $t$ equal to $d$, weighted by $q_{tk}^*$}}
+      % {\text{\# tokens $t$ of any word, weighted by $q_{tk}^*$}}
+    \]
+
+\end{itemize}
+
 \section{Sparse Coding}
+\subsection{Optimization}
+\subsubsection{Coordinate Descent}
+\emph{Idea}: Update one coordinate at a time, while keeping others fixed.
+\begin{itemize}
+  \item Algorithm:
+    \begin{itemize}
+      \item initialize $\vect{x}^{(0)} \in \R^D$
+      \item for $t = 0,\ldots,\mathrm{maxIter}$
+        \begin{itemize}
+          \item $d \gets \mathcal{U}\{1,D\}$
+          \item $u^* \gets \argmin_{u\in\R} f\left(x_1^{(t)}, \ldots,
+              x_{d-1}^{(t)}, u, x_{d+1}^{(t)}, \ldots, x_D^{(t)}\right)$
+          \item $x_d^{(t+1)}\gets u^*,\quad x_{d'}^{(t+1)}\gets x_{d'}^{(t)}$
+            for $d' \neq d$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Gradient Descent Method}
+\begin{itemize}
+  \item Algorithm:
+    \begin{itemize}
+      \item initialize $\vect{x}^{(0)} \in \R^D$
+      \item for $t = 0,\ldots,\mathrm{maxIter}$
+        \begin{itemize}
+          \item $\vect{x}^{(t+1)} \gets \vect{x}^{(t)} - \gamma\nabla
+            f\left(\vect{x}^{(t)}\right)$
+        \end{itemize}
+    \end{itemize}
+  \item simple to implement
+  \item good scalability and robustness
+  \item \emph{stepsize} $\gamma$ usually decreasing with
+    $\gamma\approx\frac{1}{t}$
+\end{itemize}
+
+\subsubsection{Stochastic Gradient Descent}
+\begin{itemize}
+  \item Optimization Problem Structure: minimize $f(\vect{x}) = \frac{1}{N}
+    \sum_{n=1}^N f_n(\vect{x})$ with $\vect{x} \in \R^D$
+\end{itemize}
+\begin{itemize}
+  \item Algorithm:
+    \begin{itemize}
+      \item initialize $\vect{x}^{(0)} \in \R^D$
+      \item for $t = 0,\ldots,\mathrm{maxIter}$
+        \begin{itemize}
+          \item $n \gets \mathcal{U}\{1,N\}$
+          \item $\vect{x}^{(t+1)} \gets \vect{x}^{(t)} - \gamma\nabla
+            f_n\left(\vect{x}^{(t)}\right)$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Duality for Constrained Optimization}
+\begin{itemize}
+  \item Constrained Problem Formulation (Standard Form): minimize $f(\vect{x})$
+    subject to $g_i(\vect{x}) \leq 0$, $i = 1, \ldots, m$, $h_i(\vect{x}) = 0$,
+    $i = 1,\ldots,p$
+  \item Unconstrained Problem: minimze $f(\vect{x}) + \sum_{i=1}^m
+    I_{-}(g_i(\vect{x})) + \sum_{i=1}^p I_{0}(h_i(\vect{x}))$. $I_{-}$ and $I_{0}$
+    are ``brickwall'' indicator functions.
+\end{itemize}
+
+\subsubsection{Dual Problem}
+\begin{itemize}
+  \item Lagrangian: $L(\vect{x},\vect{\lambda},\vect{\nu}) := f(\vect{x}) +
+    \sum_{i=1}^m \lambda_i g_i(\vect{x}) + \sum_{i=1}^p \nu_i h_i(\vect{x})$
+  \item Lagrange dual function: $d(\vect{\lambda},\vect{\nu}) := \inf_{\vect{x}}
+    L(\vect{x},\vect{\lambda},\vect{\nu})$
+  \item Lagrange \emph{dual problem}: maximize $d(\vect{\lambda},\vect{\nu})$
+    subject to $\vect{\lambda} \geq \vect{0}$.
+    \begin{itemize}
+      \item It is always a lower bound on the primal value $f(\vect{x})$ of any
+        feasible $\vect{x}$ and thus a lower bound on the unknown solution value
+        $f(\vect{x}^*)$ of the primal problem.
+      \item Strong Duality: If the primal optimization problem is convex and
+        under some additional conditions, the solution value of the dual
+        problem is \emph{equal} to the solution value $f(\vect{x}^*)$ of the
+        primal problem.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Convexity}
+\begin{itemize}
+  \item Convex Set: A set $Q$ is convex if for any $\vect{x},\vect{y} \in Q$
+    and any $\theta \in [0,1]$, we have $\theta\vect{x} + (1-\theta) \vect{y}
+    \in Q$.
+  \item Convex Function: A function $f\from\R^D\to\R$ is convex if $\dom f$ is
+    a convex set and if for all $\vect{x},\vect{y}\in\dom f$, and $\theta\in
+    [0,1]$ we have $f(\theta\vect{x} + (1-\theta)\vect{y}) \leq \theta
+    f(\vect{x}) + (1-\theta)f(\vect{y})$.
+  \item Convex Optimization: Convex Optimization Problems are of the form $\min
+    f(\vect{x})$ s.t.\ $\vect{x}\in Q$ where both $f$ is a convex function and
+    $Q$ is a convex set (note: $\R^D$ is convex). In Convex Optimization
+    Problems every local minimum is a \emph{global minimum}.
+
+\end{itemize}
 
 \section{Robust PCA}
 
