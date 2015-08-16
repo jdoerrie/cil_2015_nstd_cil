@@ -3,7 +3,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{interval}
-\usepackage[margin=1cm]{geometry}
+\usepackage[margin=0.8cm]{geometry}
 \usepackage{bm}
 \usepackage{fix-cm}
 \newtheorem*{thm}{Theorem}
@@ -37,7 +37,7 @@
 \begin{document}
 \title{CIL Cheat Sheet 2015}
 \author{Jan Wilken D\"orrie}
-\maketitle
+% \maketitle
 
 \vspace{-2em}
 % \section*{Linear Algebra Primer}
@@ -54,7 +54,7 @@
 % % \end{itemize}
 
 
-\section*{Norms}
+% \section*{Norms}
 \subsection*{Vector norms}
 A \emph{norm} is a function $\norm{\cdot} : V \to \R$ quantifying the
 size of a vector. It must satisfy
@@ -77,6 +77,7 @@ size of a vector. It must satisfy
         \neq 0\}} \)
 \end{itemize}
 
+\vspace{-1em}
 \subsection*{Matrix norms}
 We can also define norms on matrices, satisfying the properties described
 above. $\matr{A} \in \R^{M \times N}$:
@@ -84,10 +85,10 @@ above. $\matr{A} \in \R^{M \times N}$:
   \item \emph{Frobenius}:
     \(
       \norm{\matr{A}}_F := \sqrt{\sum_{ij} a_{ij}^2}
-      = \sqrt{\sum_{i=1}^{\min(M,N)} \sigma_i^2}
+      = \sqrt{\sum_i \sigma_i^2}
     \)
 
-  \item \emph{$p$-norms for matrices}:
+  \item \emph{$p$-norm}:
     \(
       \norm{\matr{A}}_p := \sup\{\norm{\matr{A}\vect{x}}_p/\norm{\vect{x}}_p\}
     \)
@@ -96,61 +97,61 @@ above. $\matr{A} \in \R^{M \times N}$:
       \norm{\matr{A}}_2 := \sup\{\norm{\matr{A}\vect{x}}_2/\norm{\vect{x}}_2\}
       = \sigma_{\max}
     \)
-  \item \emph{Nuclear norm}:
+  \item \emph{Nuclear}:
     \(
-      \norm{\matr{A}}_{*} := \sum_{i=1}^{\min(M,N)} \sigma_i
+      \norm{\matr{A}}_{*} := \sum_{i} \sigma_i
     \)
 
 \end{itemize}
 
-\section*{Statistics}
+% \section*{Statistics}
+\vspace{-1em}
 \subsection*{Kullback-Leibler Divergence}
-\begin{itemize}
-  \item Divergence between discrete probability distributions $P$ and $Q$:
-    \(
-      D_{\mathrm{KL}}(P \| Q) = \sum_{\omega \in \Omega} P(\omega)
-      \log\left(\frac{P(\omega)}{Q(\omega)}\right).
-    \)
-  \item Properties of the Kullback-Leibler Divergence
-    \begin{itemize}
-      \item $D_{\mathrm{KL}}(P \| Q) \geq 0$.
-      \item $D_{\mathrm{KL}}(P \| Q) = 0$ if and only if $P$ and $Q$ are
-        identical.
-      \item $D_{\mathrm{KL}}(P \| Q) \neq D_{\mathrm{KL}}(Q \| P)$!
-      \item caution: the KL-Divergence is not symmetric, therefore it is not a
-        metric/distance!
-    \end{itemize}
-\end{itemize}
+  Divergence between discrete probability distributions $P$ and $Q$:
+  \(
+    D_{\mathrm{KL}}(P \| Q) = \sum_{\omega \in \Omega} P(\omega)
+    \log\left(\frac{P(\omega)}{Q(\omega)}\right)
+  \). It has the following properties:
+  $D_{\mathrm{KL}}(P \| Q) \geq 0$;
+  $D_{\mathrm{KL}}(P \| Q) = 0 \iff P = Q$;
+  $D_{\mathrm{KL}}(P \| Q) \neq D_{\mathrm{KL}}(Q \| P)$.
+  Since it is not symmetric, it is not a metric/distance.
 
-\section*{Dimension Reduction}
+% \section*{Dimension Reduction}
+\vspace{-1em}
 \subsection*{Principal Component Analysis (PCA)}
-Orthogonal linear projection of high dimensional data onto low
-dimensional subspace. Objectives:
-\begin{enumerate}
-  \item Minimize error $\norm{\vect{x} - \tilde{\vect{x}}}_2$ of
-    point $\vect{x}$ and its approximation $\tilde{\vect{x}}$.
-  \item Preserve information: maximize variance.
-\end{enumerate}
+Orthogonal linear projection of high dimensional data onto low dimensional
+subspace. Objectives:
+1. Minimize error $\norm{\vect{x} - \tilde{\vect{x}}}_2$ of point $\vect{x}$
+and its approximation $\tilde{\vect{x}}$.
+2. Preserve information: maximize variance.
 Both objectives are shown to be formally equivalent.
 \subsubsection*{Statistics of Projected Data}
-\begin{itemize}
-  \item Mean of the data: sample mean $\bar{\vect{x}}$
-  \item Covariance of the data:
-    \[
+  Mean: sample mean $\bar{\vect{x}}$,
+  Covariance:
+    \(
       \matr{\Sigma} = \frac{1}{N} \sum_{n=1}^N (\vect{x}_n -
       \bar{\vect{x}}) \trns{(\vect{x}_n - \bar{\vect{x}})}
-    \]
-\end{itemize}
+    \)
 \subsubsection*{Solution: Eigenvalue Decomposition}
 The eigenvalue decomposition of the covariance matrix
 $\matr{\Sigma} = \matr{U}\matr{\Lambda}\trns{\matr{U}}$ contains
 all relevant information.
-\begin{itemize}
-  \item For $K \leq D$ dimensional projection space: Choose $K$
-    eigenvectors $\{\vect{u}_1, \ldots, \vect{u}_K\}$ with largest
-    associated eigenvalues $\{\lambda_1, \ldots, \lambda_K\}$.
-\end{itemize}
 
+For $K \leq D$ dimensional projection space: Choose $K$ eigenvectors
+$\{\vect{u}_1, \dotsc, \vect{u}_K\}$ with largest associated eigenvalues
+$\{\lambda_1, \dotsc, \lambda_K\}$.
+
+\vspace{-1em}
+\subsection*{Multivariate Normal Distribution}
+\hspace{-1em}
+ $\normal(\vect{\mu},\matr{\Sigma}) = {(2\pi)}^{-\frac{k}{2}}
+ \abs{\matr{\Sigma}}^{-\frac{1}{2}} \exp(-\frac{1}{2} \trns{(\vect{x}-\vect{\mu})}
+ \matr{\Sigma}^{-1}(\vect{x}-\vect{\mu}))$
+ % (\sigma^22\pi)^{-1/2}\exp(-{(x-\mu)}^2/2\sigma^2)$
+
+
+\vspace{-1em}
 \subsection*{Singular Value Decomposition}
 \begin{thm}[Eckart-Young]
   Let $\matr{A}$ be a matrix of rank $R$, if we wish to
@@ -160,102 +161,81 @@ all relevant information.
   (Assumes ordering of singular values $d_k \geq d_{k+1}$)
 \end{thm}
 
-\section*{Clustering}
+% \section*{Clustering}
+\vspace{-1em}
 \subsection*{K-Means}
-\subsubsection*{Motivation}
-\begin{itemize}
-  \item Given: set of data points $\vect{x}_1, \ldots, \vect{x}_N \in \R^D$
-  \item Goal: find \emph{meaningful partition} of the data
-    \begin{itemize}
-      \item i.e.\ a labeling of each data point with a unique label
-        \[
-          \pi: \{1,\ldots,N\} \to \{1,\ldots,K\} \text{ or }
-          \pi: \R^D \to \{1,\ldots,K\}
-        \]
-      \item note: numbering of clusters is arbitrary
-      \item $k$-th cluster recovered by $\pi^{-1}(k) \subseteq \{1,\ldots,N\}$
-        or $\subseteq \R^D$
-    \end{itemize}
-\end{itemize}
+Given a set of data points $\matr{X} = [\vect{x}_1, \dotsc, \vect{x}_N] \in
+\R^{D\times N}$ find \emph{meaningful partition} of the data with a unique label
+for each data point.
 
-\subsubsection*{Vector Quantization}
-\begin{itemize}
-  \item Partition of the space $\R^D$
-  \item Clusters represented by \emph{centroids} $\vect{u}_k \in \R^D$
-  \item Mapping induced via nearest centroid rule
-    \[ \pi(\vect{x}) = \argmin_{k=1,\ldots,K} \norm{\vect{u}_k - \vect{x}}_2 \]
-\end{itemize}
+\emph{Model Selection}: decide on number of labels $K$.
+    % \begin{itemize}
+    %   \item i.e.\ a labeling of each data point with a unique label
+    %     \[
+    %       \pi: \{1,\ldots,N\} \to \{1,\ldots,K\} \text{ or }
+    %       \pi: \R^D \to \{1,\ldots,K\}
+    %     \]
+    %   \item note: numbering of clusters is arbitrary
+    %   \item $k$-th cluster recovered by $\pi^{-1}(k) \subseteq \{1,\ldots,N\}$
+    %     or $\subseteq \R^D$
+    % \end{itemize}
 
-\subsubsection*{Objective Function for $K$-Means}
-\begin{itemize}
-  \item Useful notation: represent $\pi$ via indicator matrix $\matr{Z}$:
-    \[ z_{kn} := \iver{\pi(\vect{x}_n) = k} \]
-  \item $K$-means Objective function
-    \[
-      J(\matr{U},\matr{Z}) = \sum_{n=1}^N \sum_{k=1}^K z_{kn} \norm{\vect{x}_n
-        - \vect{u}_k}_2^2 = \norm{\matr{X} - \matr{U}\matr{Z}}_F^2,
-    \]
-    where $\matr{X} = [\vect{x}_1,\ldots,\vect{x}_N] \in \R^{D \times N}$
-    and   $\matr{U} = [\vect{u}_1,\ldots,\vect{u}_K] \in \R^{D \times K}$
-\end{itemize}
+% \subsubsection*{Vector Quantization}
+% \begin{itemize}
+  % \item Partition of the space $\R^D$
+  % \item Clusters represented by \emph{centroids} $\vect{u}_k \in \R^D$
+  % \item Mapping induced via nearest centroid rule
+    % \[ \pi(\vect{x}) = \argmin_{k=1,\ldots,K} \norm{\vect{u}_k - \vect{x}}_2 \]
+% \end{itemize}
 
-\subsubsection*{$K$-means Algorithm: Optimal Assignment}
-\begin{itemize}
-  \item Compute optimal assignment $\matr{Z}$, given centroids $\matr{U}$
-    \begin{itemize}
-      % \item each data point contributes to exactly one term in outer sum
-      \item minimize each column of $\matr{Z}$ separately
-        \[
-          \vect{z}_{\bullet n}^* = \argmin_{z_{1n},\ldots,z_{Kn}} \sum_{k=1}^K
-          z_{kn} \norm{\vect{x}_n - \vect{u}_k}_2^2
-        \]
-      \item optimum is attained by mapping to the closest centroid
-        \[
-          z_{kn}^*(\matr{U}) = \iver{k = \argmin_l \norm{\vect{x} - \vect{u}_l}_2}
-        \]
-    \end{itemize}
-\end{itemize}
+\subsubsection*{Objective Function}
+\(
+  \min_{\matr{U},\matr{Z}} J(\matr{U},\matr{Z}) = \sum_{n,k} z_{kn}
+  \norm{\vect{x}_n - \vect{u}_k}_2^2 = \norm{\matr{X} - \matr{U}\matr{Z}}_F^2
+\), s.t.\ $\matr{U}\in\R^{D \times K}$ and $\matr{Z}\in{\{0,1\}}^{K\times N}$,
+where $\sum_{k} z_{kn} = 1$ $\forall n$. Hard to optimize jointly, so alternate
+between optimizing $\matr{U}$ and $\matr{Z}$ while keeping the other fixed.
+% where $\matr{X} = [\vect{x}_1,\ldots,\vect{x}_N] \in \R^{D \times N}$
+% and   $\matr{U} = [\vect{u}_1,\ldots,\vect{u}_K] \in \R^{D \times K}$
+  % \item Useful notation: represent $\pi$ via indicator matrix $\matr{Z}$:
+  %   \[ z_{kn} := \iver{\pi(\vect{x}_n) = k} \]
 
-\subsubsection*{$K$-means Algorithm: Optimal Assignment}
-\begin{itemize}
-  \item Compute optimal choice of $\matr{U}$, given assignments $\matr{Z}$
-    \begin{itemize}
-      \item continuous variables: compute gradient and set to zero (necessary
-        optimality condition)
-      \item look at (partial) gradient for every centroid $\vect{u}_k$
-        \[
-          \nabla_{\vect{u}_k} J(\matr{U},\matr{Z}) = \sum_{n=1}^N z_{kn}
-          \nabla_{\vect{u}_k} \norm{\vect{x}_n - \vect{u}_k}_2^2 = -2
-          \sum_{n=1}^N z_{kn} (\vect{x}_n - \vect{u}_k)
-        \]
-      \item setting gradient to zero
-        \[
-          \nabla_{\matr{U}} J(\matr{U},\matr{Z}) \stackrel{!}{=} 0 \implies
-          \vect{u}_k^*(\matr{Z}) = \frac{\sum_{n=1}^N z_{kn} \vect{x}_n}
-          {\sum_{n=1}^N z_{kn}} %\text{, if } \sum_{n=1}^N z_{kn} > 0
-        \]
-    \end{itemize}
-\end{itemize}
+\subsubsection*{Optimal Assignment}
+Can minimize each column of $\matr{Z}$ separately.  Optimum is attained by
+mapping to the closest centroid: $z_{kn}^* (\matr{U}) = \iver{k = \argmin_l
+  \norm{\vect{x}_n - \vect{u}_l}_2}$.
+    % \end{itemize}
+% \end{itemize}
 
-\subsubsection*{$K$-means Algorithm: Analysis}
-\begin{itemize}
-  \item Computational cost of each iteration is $O(KND)$
-  \item $K$-means convergence is guaranteed
-  \item $K$-means optimizes a non-convex objective. Hence we are not guaranteed
-    to find the global optimum.
-  \item Finds a local optimum $(\matr{U},\matr{Z})$ in the following sense
-    \begin{itemize}
-      \item for each $\matr{Z}'$ with $\frac{1}{2}\norm{\matr{Z}-\matr{Z}'}_0 = 1$
-        (differs in one assignment)
-      \item $J(\matr{U}^*(\matr{Z}'), \matr{Z}') \geq J(\matr{U},\matr{Z})$
-      \item may gain by changing assignments of $\geq 2$ points
-    \end{itemize}
-  \item $K$-means algorithm can be used to compress data
-    \begin{itemize}
-      \item with information loss, if $K < N$
-      \item store only the centroids and the assignments
-    \end{itemize}
-\end{itemize}
+\subsubsection*{Optimal Centroids}
+Compute optimal choice of $\matr{U}$, given assignments $\matr{Z}$. Continuous
+variables: compute partial gradient for every centroid and set to zero:
+\(
+  \nabla_{\vect{u}_k} J(\matr{U},\matr{Z}) = -2 \sum_{n=1}^N z_{kn}
+  (\vect{x}_n - \vect{u}_k) \stackrel{!}{=} 0 \implies
+  \vect{u}_k^*(\matr{Z}) = \frac{\sum_{n=1}^N z_{kn} \vect{x}_n}
+  {\sum_{n=1}^N z_{kn}}
+\).
+
+% \subsubsection*{$K$-means Algorithm: Analysis}
+% \begin{itemize}
+%   \item Computational cost of each iteration is $O(KND)$
+%   \item $K$-means convergence is guaranteed
+%   \item $K$-means optimizes a non-convex objective. Hence we are not guaranteed
+%     to find the global optimum.
+%   \item Finds a local optimum $(\matr{U},\matr{Z})$ in the following sense
+%     \begin{itemize}
+%       \item for each $\matr{Z}'$ with $\frac{1}{2}\norm{\matr{Z}-\matr{Z}'}_0 = 1$
+%         (differs in one assignment)
+%       \item $J(\matr{U}^*(\matr{Z}'), \matr{Z}') \geq J(\matr{U},\matr{Z})$
+%       \item may gain by changing assignments of $\geq 2$ points
+%     \end{itemize}
+%   \item $K$-means algorithm can be used to compress data
+%     \begin{itemize}
+%       \item with information loss, if $K < N$
+%       \item store only the centroids and the assignments
+%     \end{itemize}
+% \end{itemize}
 % Alternate between two steps until convergence:
 % \begin{enumerate}
 %   \item Update assignments $z_{k,n}$ of data points to centroids:
@@ -271,60 +251,60 @@ all relevant information.
 %     \]
 % \end{enumerate}
 
-\subsection*{Mixture Models}
-\subsubsection*{GMM}
-\(
-  p_{\theta}(\vect{x}) = \sum_{k} \pi_k \normal(\vect{x}; \vect{\mu}_k,
-  \matr{\Sigma}_k),
-\)
-$\vect{\pi}\geq\vect{0}$, $\norm{\vect{\pi}}_1 = 1$.
+\vspace{-1em}
+\subsection*{Gaussian Mixture Models (GMM)}
+$p_{\theta}(\vect{x}) = \sum_{k} \pi_k \normal(\vect{x}; \vect{\mu}_k,
+\matr{\Sigma}_k)$, $\vect{\pi}\geq\vect{0}$, $\norm{\vect{\pi}}_1 = 1$.
 
 \subsubsection*{Complete Data Distribution}
-\begin{itemize}
-  \item Explicitly introduce latent variables in the generative model
-  \item Assignment variable (for a generic data point) $z_k \in \{0,1\}$,
-    $\sum_{k=1}^K z_k = 1$
-  \item We have that $\Pr(z_k = 1) = \pi_k$ or $p(\vect{z}) = \prod_{k=1}^K
-    \pi_k^{z_k}$
-  \item Joint distribution over $(\vect{x}, \vect{z})$ (\emph{complete data}
-    distribution) $p(\vect{x}, \vect{z}) = \prod_{k=1}^K {\left[ \pi_k
-        \normal(\vect{x} \mid \vect{\mu}_k, \matr{\Sigma}_k)\right]}^{z_k}$
-\end{itemize}
+Introduces latent variables $\vect{z}\in\R^K$:
+$p(\vect{x}, \vect{z}) = \prod_{k=1}^K {\left[ \pi_k \normal(\vect{x};
+    \vect{\mu}_k, \matr{\Sigma}_k)\right]}^{z_k}$
+% \begin{itemize}
+  % \item Explicitly introduce latent variables in the generative model
+  % \item Assignment variable (for a generic data point) $z_k \in \{0,1\}$,
+  %   $\sum_{k=1}^K z_k = 1$
+  % \item We have that $\Pr(z_k = 1) = \pi_k$ or $p(\vect{z}) = \prod_{k=1}^K
+  %   \pi_k^{z_k}$
+  % \item Joint distribution over $(\vect{x}, \vect{z})$ (\emph{complete data}
+    % distribution)
+% \end{itemize}
 
 \subsubsection*{Posterior Assignments}
 \emph{Posterior probabilities} for assignments
-\[
+\(
   \Pr(z_k = 1 \mid \vect{x}) = \frac{\pi_k \normal(\vect{x} \mid \vect{\mu}_k,
     \matr{\Sigma}_k)}{\sum_{l=1}^K \pi_l \normal(\vect{x} \mid \vect{\mu}_l,
     \matr{\Sigma}_l)}
-\]
+\)
 
 \subsubsection*{Lower Bounding the Log-Likelihood}
-\begin{itemize}
-  \item Expectation Maximization
-    \begin{itemize}
-      \item maximize a lower bound on the log-likelihood
-      \item systematic way of deriving a family of bounds
-      \item based on complete data distribution
-    \end{itemize}
-  \item Specifically:
-    \begin{align*}
-      \ln p_{\theta}(\vect{x}) &= \ln \sum_{\vect{z}} p_{\theta}(\vect{x},
-      \vect{z}) = \ln \sum_{k=1}^K p(\vect{x}, \theta_k) \pi_k \\
-      &= \ln \sum_{k=1}^K q_k \frac{p(\vect{x}; \theta_k) \pi_k}{q_k} \\
-      &\geq \sum_{k=1}^K q_k \left[\ln p(\vect{x},\theta_k)+\ln\pi_k-\ln q_k \right]
-    \end{align*}
-    \begin{itemize}
-      \item follows from Jensen's inequality (concavity of logarithm)
-      \item can be done for the contribution of each data point (additive)
-    \end{itemize}
-\end{itemize}
+% \begin{itemize}
+%   \item Expectation Maximization
+%     \begin{itemize}
+%       \item maximize a lower bound on the log-likelihood
+%       \item systematic way of deriving a family of bounds
+%       \item based on complete data distribution
+%     \end{itemize}
+%   \item Specifically:
+%     \begin{align*}
+      $\ln p_{\theta}(\vect{x})
+      % &= \ln \sum_{\vect{z}} p_{\theta}(\vect{x},
+      % \vect{z}) = \ln \sum_{k=1}^K p(\vect{x}, \theta_k) \pi_k \\
+      % &= \ln \sum_{k=1}^K q_k \frac{p(\vect{x}; \theta_k) \pi_k}{q_k} \\
+      \geq \sum_{k=1}^K q_k \left[\ln p(\vect{x},\theta_k)+\ln\pi_k-\ln q_k \right]$
+    % \end{align*}
+    % \begin{itemize}
+    %   \item follows from Jensen's inequality (concavity of logarithm)
+    %   \item can be done for the contribution of each data point (additive)
+    % \end{itemize}
+% \end{itemize}
 
 \subsubsection*{Mixture Model: Expectation Step}
-\[
+\(
   q_k = \frac{\pi_k\; p(\vect{x}; \theta_k)}{\sum_{l=1}^K \pi_l\;p(\vect{x}, \theta_l)}
   = \Pr(z_k = 1 \mid \vect{x})
-\]
+\)
 
 \subsubsection*{Mixture Model: Maximization Step}
 \( \pi_k^* = \frac{1}{N} \sum_{n=1}^N q_{kn} \),
@@ -336,243 +316,257 @@ and
 \)
 
 \subsubsection*{AIC and BIC}
-\begin{itemize}
-  \item Trade-off: achieve balance between data fit --- measured by likelihood
-    $p(\matr{X}\mid\theta)$ --- and complexity. Complexity can be measured by
-    the number of free parameters $\kappa(\cdot)$.
-  \item Different Heuristics for choosing $K$
-    \begin{itemize}
-      \item \emph{Akaike Information Criterion} (AIC)
-        \[
-          \mathrm{AIC}(\theta\mid\matr{X}) = -\ln p_{\theta}(\matr{X}) +
-          \kappa(\theta)
-        \]
-      \item \emph{Bayesian Information Criterion} (BIC)
-        \[
-          \mathrm{BIC}(\theta\mid\matr{X}) = -\ln p_{\theta}(\matr{X}) +
-          \frac{1}{2} \kappa(\theta) \ln N
-        \]
-    \end{itemize}
-  \item Generally speaking, the BIC criterion penalizes complexity more than
-    the AIC criterion.
-\end{itemize}
+Trade-off: achieve balance between data fit --- measured by likelihood
+$p(\matr{X}\mid\theta)$ --- and complexity. Complexity can be measured by
+the number of free parameters $\kappa(\cdot)$.
 
+\emph{Akaike Information Criterion}: $-\ln p_{\theta}(\matr{X})+\kappa(\theta)$
+
+\emph{Bayesian Information Criterion}: $-\ln p_{\theta}(\matr{X})+\frac{1}{2}
+\kappa(\theta)\ln N$
+
+\vspace{-1em}
 \subsection*{Non-Negative Matrix Factorization}
-\subsubsection*{Non-Negative Matrix Factorization}
-\begin{itemize}
-  \item \emph{Document-term matrix} $\matr{X} \in \R_{\geq 0}^{D \times N}$
-    storing the word counts for each document:
-    \[ \matr{X} = \vect{x}_1, \vect{x}_2, \ldots, \vect{x}_N \]
+Solve $\matr{X}\approx\matr{U}\matr{Z}$ for $\matr{U}\in\R_{+}^{M\times K}$,
+$\matr{Z}\in\R_{+}^{K\times N}$.
+\subsubsection*{pLSI}
+Interprets $x_{mn}$ as $\Pr(w_m, d_n)$ (words and documents).
+Normalizes $\matr{X}$ s.t.\ $\sum_{m,n} x_{mn} = 1$, constrains $\sum_m u_{mk} = 1$,
+$\sum_{k,n} x_{kn} = 1$. $z$s serve as hidden topics, assumes $\Pr(w\mid d) =
+\sum_{z} \Pr(w\mid z)\Pr(z\mid d)$. Word and document are independent given topic.
+Tries to find $\Pr(w,d) = \sum_{z} \Pr(w\mid z)\Pr(d\mid z)\Pr(z)$.
+Done via Expectation-Maximization:
 
-    $x_{dn}$: Frequency of the $d$-th word in the $n$-th document.
+\emph{E-Step}:
+$\Pr(z\mid,d,w) = \frac{\Pr(z)\Pr(d\mid z)\Pr(w\mid z)}{\sum_{z'\in\set{Z}}
+  \Pr(z')\Pr(d\mid z')\Pr(w\mid z')}$
 
-  \item \emph{Non-negative matrix factorization} (NMF) of $\matr{X}$:
-    \[ \matr{X} \approx \matr{U}\matr{Z} \]
-    \begin{itemize}
-      \item with $\matr{U} \in \R_{\geq 0}^{D \times K}$ and $\matr{Z} \in
-        \R_{\geq 0}^{K \times N}$
-        \begin{itemize}
-          \item $N$: number of documents
-          \item $D$: vocabulary size
-          \item $K$: number of dimensions (design choice)
-          \item data reduction: $(D+N)K \ll DN$
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
+\emph{M-Step}:
+$\Pr(w\mid z)\propto \sum_{d\in\set{D}} f(d,w) \Pr(z\mid d,w)$,
+$\Pr(d\mid z)\propto \sum_{w\in\set{W}} f(d,w) \Pr(z\mid d,w)$,
+$\Pr(z) \propto \sum_{d,w} f(d,w) \Pr(z\mid d,w)$
+\subsubsection*{Quadratic NMF}
+Different objective (min Frobenius norm instead of max LL), update rules:
+$u_{dk} \gets u_{dk} {(\matr{X}\trns{\matr{Z}})}_{dk} /
+{(\matr{U}\matr{Z}\trns{\matr{Z}})}_{dk}$,
+$z_{kn} \gets z_{kn} {(\trns{\matr{U}}\matr{X})}_{kn} /
+{(\trns{\matr{U}}\matr{U}\matr{Z})}_{kn}$.
 
-\subsubsection*{pLSI --- Generative Model}
-\begin{itemize}
-  \item For a given \emph{document} sample \emph{$\len(\mathrm{document})$}
-    words by a two-stage procedure:
-    \begin{itemize}
-      \item sample a topic according to $P(\mathrm{topic}\mid\mathrm{document})$
-      \item sample a word according to $P(\mathrm{word}\mid\mathrm{topic})$
-    \end{itemize}
-  \item Key assumption: \emph{conditional independence} of word and document
-    given topic
-  \item Conditional distribution of a word, given a document:
-    \[
-      P(\mathrm{word}\mid\mathrm{document}) = \sum_{k=1}^K P(\mathrm{word}\mid
-      \mathrm{topic}_k) P(\mathrm{topic}_k \mid \mathrm{document})
-    \]
-  \item Side note: how to sample a ``new'' document? Can use fully generative
-    model of LDA.\@
-\end{itemize}
+% \subsubsection*{Non-Negative Matrix Factorization}
+% \begin{itemize}
+%   \item \emph{Document-term matrix} $\matr{X} \in \R_{\geq 0}^{D \times N}$
+%     storing the word counts for each document:
+%     \[ \matr{X} = \vect{x}_1, \vect{x}_2, \ldots, \vect{x}_N \]
 
-\subsubsection*{pLSI --- Matrix Factorization View}
-\begin{itemize}
-  \item \emph{Normalize} the elements of $\matr{X}$ so that they correspond to
-    relative frequencies:
-    \[
-      T := \sum_{d=1}^D \sum_{n=1}^N x_{dn}, \qquad x_{dn}\gets\frac{x_{dn}}{T}
-    \]
-  \item \emph{Matrix Factorization}
-    \begin{itemize}
-      \item pLSI can be understood as a matrix factorization of the form
-        $\matr{X}\approx\matr{U}\matr{Z}$, with $\matr{U}\in\R_{\geq 0}^{D
-          \times K}$, and $\matr{Z}\in\R_{\geq 0}^{K \times N}$
-      \item where additionally we have the constraints:
-        \begin{itemize}
-          \item $\sum_{d=1}^D u_{dk} = 1 (\forall k)$, identify $u_{dk} \equiv
-            P(\mathrm{word}_d \mid \mathrm{topic}_k)$
-          \item $\sum_{k,n} z_{kn} = 1$, identify $z_{kn} \equiv
-            P(\mathrm{topic}_k \mid \mathrm{document}_n) P(\mathrm{document}_n)$
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
+%     $x_{dn}$: Frequency of the $d$-th word in the $n$-th document.
 
-\subsubsection*{pLSI --- Parameter Estimation}
-\begin{itemize}
-  \item Goal: maximize the likelihood of the data under the model
-  \item Data: the relative frequencies $\matr{X}$
-  \item Probabilistic model:
-    \(
-      P(\mathrm{word}_d, \mathrm{document}_n) = \sum_{k=1}^K P(\mathrm{word}_d \mid
-      \mathrm{topic}_k) P(\mathrm{topic}_k \mid \mathrm{document}_n)
-      = {(\matr{U}\matr{Z})}_{dn}
-    \)
-  \item \emph{Log likelihood}:
-    \(
-      \log\likely(\matr{U}, \matr{Z}; \matr{X}) = \log P(\matr{X}; \matr{U},
-      \matr{Z}) = \sum_{d=1}^D\sum_{n=1}^N x_{dn} \log \sum_{k=1}^K
-      u_{dk}z_{kn}
-    \)
-\end{itemize}
+%   \item \emph{Non-negative matrix factorization} (NMF) of $\matr{X}$:
+%     \[ \matr{X} \approx \matr{U}\matr{Z} \]
+%     \begin{itemize}
+%       \item with $\matr{U} \in \R_{\geq 0}^{D \times K}$ and $\matr{Z} \in
+%         \R_{\geq 0}^{K \times N}$
+%         \begin{itemize}
+%           \item $N$: number of documents
+%           \item $D$: vocabulary size
+%           \item $K$: number of dimensions (design choice)
+%           \item data reduction: $(D+N)K \ll DN$
+%         \end{itemize}
+%     \end{itemize}
+% \end{itemize}
 
-\subsubsection*{EM for pLSI --- Variational Likelihood}
-\begin{itemize}
-  \item Follow similar recipe as for Gaussian Mixture Model
-  \item Reindex the observations in a per token manner with $t = 1, \ldots, T$
-    \begin{itemize}
-      \item pairs of word/documents indexes $(d_t, n_t)$
-      \item note that $\sum_{t=1}^T f(d_t,n_t) = \sum_{d=1}^D\sum_{n=1}^N
-        x_{dn}f(d,n)$ for arbitrary functions $f$
-    \end{itemize}
-  \item \emph{Variational Likelihood}
-    \begin{align*}
-      &\log P(\matr{X};\matr{U},\matr{Z}) \\
-      &= \sum_{t=1}^T \log{(\matr{U} \matr{Z})}_{d_{t}n_{t}} = \sum_{t=1}^T
-      \log\left[\sum_{k=1}^K u_{d_{t}k} z_{kn_{t}}\right] \\
-      &\geq \sum_{t=1}^T \max_{q\in\set{S}_K} \sum_{k=1}^K q_k [\log
-      u_{d_{t}k} + \log z_{kn_{t}} - \log q_k ]
-    \end{align*}
-    \begin{itemize}
-      \item $\set{S}_K := \left\{x\in\R^K\mid x\geq 0, \sum_{k=1}^K x_k =
-          1\right\}$ (probability simplex)
-    \end{itemize}
-\end{itemize}
+% \subsubsection*{pLSI --- Generative Model}
+% \begin{itemize}
+%   \item For a given \emph{document} sample \emph{$\len(\mathrm{document})$}
+%     words by a two-stage procedure:
+%     \begin{itemize}
+%       \item sample a topic according to $P(\mathrm{topic}\mid\mathrm{document})$
+%       \item sample a word according to $P(\mathrm{word}\mid\mathrm{topic})$
+%     \end{itemize}
+%   \item Key assumption: \emph{conditional independence} of word and document
+%     given topic
+%   \item Conditional distribution of a word, given a document:
+%     \[
+%       P(\mathrm{word}\mid\mathrm{document}) = \sum_{k=1}^K P(\mathrm{word}\mid
+%       \mathrm{topic}_k) P(\mathrm{topic}_k \mid \mathrm{document})
+%     \]
+%   \item Side note: how to sample a ``new'' document? Can use fully generative
+%     model of LDA.\@
+% \end{itemize}
 
-\subsubsection*{EM for pLSI --- Derivation of E-step}
-\begin{itemize}
-  \item Compute the argmin in the variational bound
-    \[
-      q_t^* = \argmax_{q\in\set{S}_K}\sum_{k=1}^K q_k [\log u_{d_{t}k} +
-      \log z_{kn_{t}} + \log q_k]
-    \]
-  \item Form Lagrangian and differentiate
-    \begin{align*}
-      &\frac{\partial}{\partial q_k} \{ q_k [\log u_{d_{t}k} + \log z_{kn_{t}}
-      - \log q_k - \lambda_t^*] \} \stackrel{!}{=} 0 \\
-      \implies &q_{tk}^* \propto u_{d_{t}k}z_{kn_{t}}\text{, i.e. }q_{tk}^* =
-      \frac{u_{d_{t}k}z_{kn_{t}}}{\sum_{l=1}^K u_{d_{t}l}z_{l n_{t}}}
-    \end{align*}
-  \item $q_{tk}^* =$ posterior probability that $t$-th token (i.e.\ word with
-    index $d_t$ in document with index $n_t$) has been generated from topic $k$
-\end{itemize}
+% \subsubsection*{pLSI --- Matrix Factorization View}
+% \begin{itemize}
+%   \item \emph{Normalize} the elements of $\matr{X}$ so that they correspond to
+%     relative frequencies:
+%     \[
+%       T := \sum_{d=1}^D \sum_{n=1}^N x_{dn}, \qquad x_{dn}\gets\frac{x_{dn}}{T}
+%     \]
+%   \item \emph{Matrix Factorization}
+%     \begin{itemize}
+%       \item pLSI can be understood as a matrix factorization of the form
+%         $\matr{X}\approx\matr{U}\matr{Z}$, with $\matr{U}\in\R_{\geq 0}^{D
+%           \times K}$, and $\matr{Z}\in\R_{\geq 0}^{K \times N}$
+%       \item where additionally we have the constraints:
+%         \begin{itemize}
+%           \item $\sum_{d=1}^D u_{dk} = 1 (\forall k)$, identify $u_{dk} \equiv
+%             P(\mathrm{word}_d \mid \mathrm{topic}_k)$
+%           \item $\sum_{k,n} z_{kn} = 1$, identify $z_{kn} \equiv
+%             P(\mathrm{topic}_k \mid \mathrm{document}_n) P(\mathrm{document}_n)$
+%         \end{itemize}
+%     \end{itemize}
+% \end{itemize}
 
-\subsubsection*{EM for pLSI --- Derivation of M-step}
-\begin{itemize}
-  \item Differentiate lower bound with plugged in optimal choices for $q_t^*$
-    $(t = 1,\ldots,T)$
-  \item \emph{M}-step solution for $\matr{U}$ and $\matr{Z}$
-    \[
-      u_{dk}^* = \frac{\sum_{t:d_t=d} q_{tk}^*}{\sum_{t=1}^T q_{tk}^*}
-      % = \frac{\text{\# tokens $t$ equal to $d$, weighted by $q_{tk}^*$}}
-      % {\text{\# tokens $t$ of any word, weighted by $q_{tk}^*$}}
-      \qquad
-      z_{kn}^* = \frac{\sum_{t:n_t=n} q_{tk}^*}{T}
-      % = \frac{\text{\# tokens $t$ equal to $d$, weighted by $q_{tk}^*$}}
-      % {\text{\# tokens $t$ of any word, weighted by $q_{tk}^*$}}
-    \]
+% \subsubsection*{pLSI --- Parameter Estimation}
+% \begin{itemize}
+%   \item Goal: maximize the likelihood of the data under the model
+%   \item Data: the relative frequencies $\matr{X}$
+%   \item Probabilistic model:
+%     \(
+%       P(\mathrm{word}_d, \mathrm{document}_n) = \sum_{k=1}^K P(\mathrm{word}_d \mid
+%       \mathrm{topic}_k) P(\mathrm{topic}_k \mid \mathrm{document}_n)
+%       = {(\matr{U}\matr{Z})}_{dn}
+%     \)
+%   \item \emph{Log likelihood}:
+%     \(
+%       \log\likely(\matr{U}, \matr{Z}; \matr{X}) = \log P(\matr{X}; \matr{U},
+%       \matr{Z}) = \sum_{d=1}^D\sum_{n=1}^N x_{dn} \log \sum_{k=1}^K
+%       u_{dk}z_{kn}
+%     \)
+% \end{itemize}
 
-\end{itemize}
+% \subsubsection*{EM for pLSI --- Variational Likelihood}
+% \begin{itemize}
+%   \item Follow similar recipe as for Gaussian Mixture Model
+%   \item Reindex the observations in a per token manner with $t = 1, \ldots, T$
+%     \begin{itemize}
+%       \item pairs of word/documents indexes $(d_t, n_t)$
+%       \item note that $\sum_{t=1}^T f(d_t,n_t) = \sum_{d=1}^D\sum_{n=1}^N
+%         x_{dn}f(d,n)$ for arbitrary functions $f$
+%     \end{itemize}
+%   \item \emph{Variational Likelihood}
+%     \begin{align*}
+%       &\log P(\matr{X};\matr{U},\matr{Z}) \\
+%       &= \sum_{t=1}^T \log{(\matr{U} \matr{Z})}_{d_{t}n_{t}} = \sum_{t=1}^T
+%       \log\left[\sum_{k=1}^K u_{d_{t}k} z_{kn_{t}}\right] \\
+%       &\geq \sum_{t=1}^T \max_{q\in\set{S}_K} \sum_{k=1}^K q_k [\log
+%       u_{d_{t}k} + \log z_{kn_{t}} - \log q_k ]
+%     \end{align*}
+%     \begin{itemize}
+%       \item $\set{S}_K := \left\{x\in\R^K\mid x\geq 0, \sum_{k=1}^K x_k =
+%           1\right\}$ (probability simplex)
+%     \end{itemize}
+% \end{itemize}
 
-\section*{Sparse Coding}
+% \subsubsection*{EM for pLSI --- Derivation of E-step}
+% \begin{itemize}
+%   \item Compute the argmin in the variational bound
+%     \[
+%       q_t^* = \argmax_{q\in\set{S}_K}\sum_{k=1}^K q_k [\log u_{d_{t}k} +
+%       \log z_{kn_{t}} + \log q_k]
+%     \]
+%   \item Form Lagrangian and differentiate
+%     \begin{align*}
+%       &\frac{\partial}{\partial q_k} \{ q_k [\log u_{d_{t}k} + \log z_{kn_{t}}
+%       - \log q_k - \lambda_t^*] \} \stackrel{!}{=} 0 \\
+%       \implies &q_{tk}^* \propto u_{d_{t}k}z_{kn_{t}}\text{, i.e. }q_{tk}^* =
+%       \frac{u_{d_{t}k}z_{kn_{t}}}{\sum_{l=1}^K u_{d_{t}l}z_{l n_{t}}}
+%     \end{align*}
+%   \item $q_{tk}^* =$ posterior probability that $t$-th token (i.e.\ word with
+%     index $d_t$ in document with index $n_t$) has been generated from topic $k$
+% \end{itemize}
+
+% \subsubsection*{EM for pLSI --- Derivation of M-step}
+% \begin{itemize}
+%   \item Differentiate lower bound with plugged in optimal choices for $q_t^*$
+%     $(t = 1,\ldots,T)$
+%   \item \emph{M}-step solution for $\matr{U}$ and $\matr{Z}$
+%     \[
+%       u_{dk}^* = \frac{\sum_{t:d_t=d} q_{tk}^*}{\sum_{t=1}^T q_{tk}^*}
+%       % = \frac{\text{\# tokens $t$ equal to $d$, weighted by $q_{tk}^*$}}
+%       % {\text{\# tokens $t$ of any word, weighted by $q_{tk}^*$}}
+%       \qquad
+%       z_{kn}^* = \frac{\sum_{t:n_t=n} q_{tk}^*}{T}
+%       % = \frac{\text{\# tokens $t$ equal to $d$, weighted by $q_{tk}^*$}}
+%       % {\text{\# tokens $t$ of any word, weighted by $q_{tk}^*$}}
+%     \]
+
+% \end{itemize}
+
+% \section*{Sparse Coding}
+\vspace{-1em}
 \subsection*{Optimization}
-\subsubsection*{Coordinate Descent}
-\emph{Idea}: Update one coordinate at a time, while keeping others fixed.
-\begin{itemize}
-  \item Algorithm:
-    \begin{itemize}
-      \item initialize $\vect{x}^{(0)} \in \R^D$
-      \item for $t = 0,\ldots,\mathrm{maxIter}$
-        \begin{itemize}
-          \item $d \gets \unif{1}{D}$
-          \item $u^* \gets \argmin_{u\in\R} f\left(x_1^{(t)}, \ldots,
-              x_{d-1}^{(t)}, u, x_{d+1}^{(t)}, \ldots, x_D^{(t)}\right)$
-          \item $x_d^{(t+1)}\gets u^*,\quad x_{d'}^{(t+1)}\gets x_{d'}^{(t)}$
-            for $d' \neq d$
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
+% \subsubsection*{Coordinate Descent}
+% \emph{Idea}: Update one coordinate at a time, while keeping others fixed.
+% \begin{itemize}
+%   \item Algorithm:
+%     \begin{itemize}
+%       \item initialize $\vect{x}^{(0)} \in \R^D$
+%       \item for $t = 0,\ldots,\mathrm{maxIter}$
+%         \begin{itemize}
+%           \item $d \gets \unif{1}{D}$
+%           \item $u^* \gets \argmin_{u\in\R} f\left(x_1^{(t)}, \ldots,
+%               x_{d-1}^{(t)}, u, x_{d+1}^{(t)}, \ldots, x_D^{(t)}\right)$
+%           \item $x_d^{(t+1)}\gets u^*,\quad x_{d'}^{(t+1)}\gets x_{d'}^{(t)}$
+%             for $d' \neq d$
+%         \end{itemize}
+%     \end{itemize}
+% \end{itemize}
 
-\subsubsection*{Gradient Descent Method}
-\begin{itemize}
-  \item Algorithm:
-    \begin{itemize}
-      \item initialize $\vect{x}^{(0)} \in \R^D$
-      \item for $t = 0,\ldots,\mathrm{maxIter}$
-        \begin{itemize}
-          \item $\vect{x}^{(t+1)} \gets \vect{x}^{(t)} - \gamma\nabla
-            f\left(\vect{x}^{(t)}\right)$
-        \end{itemize}
-    \end{itemize}
-  \item simple to implement
-  \item good scalability and robustness
-  \item \emph{stepsize} $\gamma$ usually decreasing with
-    $\gamma\approx\frac{1}{t}$
-\end{itemize}
+% \subsubsection*{Gradient Descent Method}
+% \begin{itemize}
+%   \item Algorithm:
+%     \begin{itemize}
+%       \item initialize $\vect{x}^{(0)} \in \R^D$
+%       \item for $t = 0,\ldots,\mathrm{maxIter}$
+%         \begin{itemize}
+%           \item $\vect{x}^{(t+1)} \gets \vect{x}^{(t)} - \gamma\nabla
+%             f\left(\vect{x}^{(t)}\right)$
+%         \end{itemize}
+%     \end{itemize}
+%   \item simple to implement
+%   \item good scalability and robustness
+%   \item \emph{stepsize} $\gamma$ usually decreasing with
+%     $\gamma\approx\frac{1}{t}$
+% \end{itemize}
 
-\subsubsection*{Stochastic Gradient Descent}
-\begin{itemize}
-  \item Optimization Problem Structure: minimize $f(\vect{x}) = \frac{1}{N}
-    \sum_{n=1}^N f_n(\vect{x})$ with $\vect{x} \in \R^D$
-\end{itemize}
-\begin{itemize}
-  \item Algorithm:
-    \begin{itemize}
-      \item initialize $\vect{x}^{(0)} \in \R^D$
-      \item for $t = 0,\ldots,\mathrm{maxIter}$
-        \begin{itemize}
-          \item $n\gets\unif{1}{N}$
-          \item $\vect{x}^{(t+1)} \gets \vect{x}^{(t)} - \gamma\nabla
-            f_n\left(\vect{x}^{(t)}\right)$
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
+% \subsubsection*{Stochastic Gradient Descent}
+% \begin{itemize}
+%   \item Optimization Problem Structure: minimize $f(\vect{x}) = \frac{1}{N}
+%     \sum_{n=1}^N f_n(\vect{x})$ with $\vect{x} \in \R^D$
+% \end{itemize}
+% \begin{itemize}
+%   \item Algorithm:
+%     \begin{itemize}
+%       \item initialize $\vect{x}^{(0)} \in \R^D$
+%       \item for $t = 0,\ldots,\mathrm{maxIter}$
+%         \begin{itemize}
+%           \item $n\gets\unif{1}{N}$
+%           \item $\vect{x}^{(t+1)} \gets \vect{x}^{(t)} - \gamma\nabla
+%             f_n\left(\vect{x}^{(t)}\right)$
+%         \end{itemize}
+%     \end{itemize}
+% \end{itemize}
 
 \subsubsection*{Duality for Constrained Optimization}
 \begin{itemize}
-  \item Constrained Problem Formulation (Standard Form): minimize $f(\vect{x})$
-    subject to $g_i(\vect{x}) \leq 0$, $i = 1, \ldots, m$, $h_i(\vect{x}) = 0$,
-    $i = 1,\ldots,p$
-  \item Unconstrained Problem: minimze $f(\vect{x}) + \sum_{i=1}^m
+  \item Constrained Problem Formulation (Standard Form): $\min f(\vect{x})$
+    s.t.\ $g_i(\vect{x}) \leq 0$, $h_i(\vect{x}) = 0$
+  \item Unconstrained: $\min f(\vect{x}) + \sum_{i=1}^m
     I_{-}(g_i(\vect{x})) + \sum_{i=1}^p I_{0}(h_i(\vect{x}))$. $I_{-}$ and $I_{0}$
     are ``brickwall'' indicator functions.
 \end{itemize}
 
 \subsubsection*{Dual Problem}
 \begin{itemize}
-  \item Lagrangian: $L(\vect{x},\vect{\lambda},\vect{\nu}) := f(\vect{x}) +
+  \item $L(\vect{x},\vect{\lambda},\vect{\nu}) := f(\vect{x}) +
     \sum_{i=1}^m \lambda_i g_i(\vect{x}) + \sum_{i=1}^p \nu_i h_i(\vect{x})$
-  \item Lagrange dual function: $d(\vect{\lambda},\vect{\nu}) := \inf_{\vect{x}}
-    L(\vect{x},\vect{\lambda},\vect{\nu})$
-  \item Lagrange \emph{dual problem}: maximize $d(\vect{\lambda},\vect{\nu})$
-    subject to $\vect{\lambda} \geq \vect{0}$.
+  \item Lagrange \emph{dual function}: $d(\vect{\lambda},\vect{\nu}) :=
+    \inf_{\vect{x}} L(\vect{x},\vect{\lambda},\vect{\nu})$.
+  \item Lagrange \emph{dual problem}: $d(\vect{\lambda},\vect{\nu})$
+    s.t.\ $\vect{\lambda} \geq \vect{0}$.
 
-    It is always a lower bound on the primal value $f(\vect{x})$ of any
-    feasible $\vect{x}$ and thus a lower bound on the unknown solution
-    value $f(\vect{x}^*)$ of the primal problem.
+    % It is always a lower bound on the primal value $f(\vect{x})$ of any
+    % feasible $\vect{x}$ and thus a lower bound on the unknown solution
+    % value $f(\vect{x}^*)$ of the primal problem.
 
     \emph{Strong Duality}: If the primal optimization problem is convex
     and under some additional conditions, the solution value of the dual
@@ -586,31 +580,30 @@ and
   \item Convex Set: A set $\set{Q}$ is convex if for any $\vect{x},\vect{y} \in
     \set{Q}$ and any $\theta\in\interval{0}{1}$, we have $\theta\vect{x} +
     (1-\theta) \vect{y} \in \set{Q}$.
-  \item Convex Function: A function $f\from\R^D\to\R$ is convex if $\dom f$ is
-    a convex set and if for all $\vect{x},\vect{y}\in\dom f$, and $\theta\in
-    \interval{0}{1}$ we have $f(\theta\vect{x} + (1-\theta)\vect{y}) \leq \theta
-    f(\vect{x}) + (1-\theta)f(\vect{y})$.
+  \item Convex Function: $f\from\R^D\to\R$ is convex if $\dom f$ is
+    a convex set and $f(\theta\vect{x} + (1-\theta)\vect{y}) \leq \theta
+    f(\vect{x}) + (1-\theta)f(\vect{y})$ $\forall \vect{x},\vect{y}\in\dom f,
+    \theta\in\interval{0}{1}$.
   \item Convex Optimization: Convex Optimization Problems are of the form $\min
     f(\vect{x})$ s.t.\ $\vect{x}\in \set{Q}$ where both $f$ is a convex
-    function and $\set{Q}$ is a convex set (note: $\R^D$ is convex). In Convex
-    Optimization Problems every local minimum is a \emph{global minimum}.
+    function and $\set{Q}$ is a convex set.
 \end{itemize}
 
 \vspace{-1em}
 \subsection*{Sparse Coding}
-\subsubsection*{Properties of Haar Wavelets}
+\subsubsection*{Haar Wavelets}
 \begin{itemize}
   \item Mother wavelet: $\psi(t) = \iver{t\in\interval[open
       right]{0}{\frac{1}{2}}} - \iver{t\in\interval[open right]{\frac{1}{2}}{1}}$
     \item Haar function: $\psi_{n,k}(t) = 2^{n/2}\psi(2^{n}t-k)$, $n,k\in\Z$
-    \item $\psi_{n,k}(t)$ non-zero on $I_{n,k} = \interval[open right]{k2^{-n}}
-      {(k+1)2^{-n}}$
-    \item Integral $0$: $\int_{\R}\psi_{n,k}(t)\diff t = 0$
-    \item Norm $1$: $\norm{\psi_{n,k}}_{L^2(\R)}^2 = \int_{\R}
-      {\psi_{n,k}(t)}^2\diff t = 1$
-    \item Orthogonal: $\int_{\R}\psi_{n_1,k_1}(t) \psi_{n_2,k_2}(t)
-      \diff t = \delta_{n_1,n_2}\delta_{k_1,k_2}$
-    \item $\implies$ Haar system is orthonormal basis in $L^2(\R)$
+    % \item $\psi_{n,k}(t)$ non-zero on $I_{n,k} = \interval[open right]{k2^{-n}}
+    %   {(k+1)2^{-n}}$
+    % \item Integral $0$: $\int_{\R}\psi_{n,k}(t)\diff t = 0$
+    % \item Norm $1$: $\norm{\psi_{n,k}}_{L^2(\R)}^2 = \int_{\R}
+    %   {\psi_{n,k}(t)}^2\diff t = 1$
+    % \item Orthogonal: $\int_{\R}\psi_{n_1,k_1}(t) \psi_{n_2,k_2}(t)
+    %   \diff t = \delta_{n_1,n_2}\delta_{k_1,k_2}$
+    % \item $\implies$ Haar system is orthonormal basis in $L^2(\R)$
 \end{itemize}
 Any continuous real function on $\interval{0}{1}$ can be approximated uniformly
 on $\interval{0}{1}$ by linear combinations of the constant function $\vect{1},
@@ -619,9 +612,9 @@ on $\interval{0}{1}$ by linear combinations of the constant function $\vect{1},
 \subsubsection*{Discrete cosine transform (DCT)}
 \begin{itemize}
   \item 1D DCT:\@ $z_k = \sum_{n=0}^{N-1}x_n\cos[\frac{\pi}{N}(n+\frac{1}{2})k]$
-  \item 2D DCT:\@ $ z_{k_1,k_2} = \sum_{n_1=0}^{N_1-1} \sum_{n_2=0}^{N_2-1}
-    x_{n_1,n_2} \cos [\frac{\pi}{N_1} (n_1+\frac{1}{2}) k_1 ] \cos
-    [\frac{\pi}{N_2}(n_2+\frac{1}{2}) k_2]$
+  % \item 2D DCT:\@ $ z_{k_1,k_2} = \sum_{n_1=0}^{N_1-1} \sum_{n_2=0}^{N_2-1}
+    % x_{n_1,n_2} \cos [\frac{\pi}{N_1} (n_1+\frac{1}{2}) k_1 ] \cos
+    % [\frac{\pi}{N_2}(n_2+\frac{1}{2}) k_2]$
 \end{itemize}
 
 \subsubsection*{Compressive Sensing}
@@ -649,13 +642,16 @@ $\norm{\vect{z}}_0$.
 \emph{Dictionary choice}: Fourier Dictionary is good for ``sine like'' signals,
 Wavelet Dictionary is good for localized signals.
 
+\vspace{-1em}
 \subsection*{Overcomplete Dictionaries}
-In contract to othogonal bases there are more atoms than dimensions ($L > D$).
-Coding algorithm chooses best representation (subset of atoms), but this is
-mathematically involved due to non-orthogonality (no closed form reconstruction).
+More atoms than dimensions are used ($L>D$), which can result in sparser solutions
+but does not have a closed form solution.
+% In contract to othogonal bases there are more atoms than dimensions ($L > D$).
+% Coding algorithm chooses best representation (subset of atoms), but this is
+% mathematically involved due to non-orthogonality (no closed form reconstruction).
 
 \subsubsection*{Coherence}
-Increasing the Overcompleteness factor $\frac L D$ potentially increases the
+Increasing the Overcompleteness factor $\frac L D$ can increase the
 sparsity of the coding, but also increases the linear dependency between atoms.
 Coherence is a measurement for this: $m(\matr{U}) = \max_{i,j:i\neq j}
 \abs{\trns{\vect{u}_i} \vect{u}_j}$. $m(\matr{U}) = 0$ for an orthogonal basis
@@ -692,6 +688,7 @@ $\norm{\matr{M}(\vect{x} - \matr{U}\vect{z})}_2 < \sigma$. Image reconstruction
 using mask: $\hat{\vect{x}} = \matr{M}\vect{x} + (\matr{I} - \matr{M})
 \matr{U}\vect{z}^*$.
 
+\vspace{-1em}
 \subsection*{Dictionary Learning}
 When learning the dictionary we adapt a dictionary to signal
 characteristics in the data, for which we have to solve a matrix
@@ -711,11 +708,13 @@ $\matr{Z}$ but convex in either of them when the other one is fixed.
     all $l$ and $\matr{Z}$ being fixed.
 \end{enumerate}
 Coding step can be done column-wise via \emph{Matching Pursuit} and dictionary
-update via \emph{K-SVD} algorithm involving a power iteration to approximate SVD
-solution. Dictionary learning can also be used for Speech Enhancement by learning
-the Speech and Noise dictionaries and then setting the noise coefficients to zero.
+update via \emph{K-SVD} algorithm involving a power iteration to approximate
+SVD solution. Dictionary learning can also be used for Speech Enhancement by
+learning the Speech and Noise dictionaries and then setting the noise
+coefficients to zero.
 
-\section*{Robust PCA}
+\vspace{-1em}
+\subsection*{Robust PCA}
 Goal: Find a low rank representation of a matrix $\matr{X}$, which is corrupted
 by a sparse perturbation or sparse structured noise.
 Additive decomposition problem: $\min_{\matr{L},\matr{S}} \rank(\matr{L}) +
@@ -757,13 +756,13 @@ $\mathcal{S}_{\tau}$ to all $x_{ij}$, $\mathcal{D}_{\tau}(\matr{X}) = \matr{U}
 \mathcal{S}_{\tau}(\matr{\Sigma})\trns{\matr{V}}$, where $\SVD(\matr{X}) =
 \matr{U}\matr{\Sigma}\trns{\matr{V}}$.
 
-\subsubsection*{Identifiability}
-The solutions to the convex relaxation solve the original problem when the Coherence
-condition is fulfilled (principal components must not be sparse (spiky)) and
-both the rank of $\matr{L}_0$ and the number of non-zero entries of $\matr{Z}_0$
-is not too large.
+% \subsubsection*{Identifiability}
+% The solutions to the convex relaxation solve the original problem when the Coherence
+% condition is fulfilled (principal components must not be sparse (spiky)) and
+% both the rank of $\matr{L}_0$ and the number of non-zero entries of $\matr{Z}_0$
+% is not too large.
 
-RPCA can be used for collaborative filtering when relaxing the constraints to
-only consider known observations.
+% RPCA can be used for collaborative filtering when relaxing the constraints to
+% only consider known observations.
 
 \end{document}
